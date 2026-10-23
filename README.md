@@ -38,13 +38,13 @@ Bên trong `experiments/` giữ cấu trúc package của repo cá nhân đang c
 6. Panel dev ba seed 11/29/47, XGB natural; C03 matched, A2/A4/A8 và size-matched native theo review.
 7. Ngày 08/11 trình QĐ5 và freeze manifest. Chưa được tự mở test hoặc đổi split/metric theo điểm ứng viên.
 
-Hướng dẫn chạy và các config hiện hành nằm trong [experiments/README.md](experiments/README.md). A2/A4 hiện còn cần triển khai runtime; config có sẵn không đồng nghĩa panel đã chạy hoặc đã được duyệt.
+Hướng dẫn chạy và các config hiện hành nằm trong [experiments/README.md](experiments/README.md). A2/A4 và C03 matched đã có đường chạy chuẩn bị cho train/dev; xem [phạm vi ablation](experiments/docs/cq_v4/ABLATIONS_PREPARATION.md). Config và kiểm thử không đồng nghĩa đã có kết quả panel hoặc đã được duyệt. Các bổ sung sau snapshot gốc được ghi ở [IMPLEMENTATION_CHANGES.json](IMPLEMENTATION_CHANGES.json).
 
 ## Giữ nguyên code nguồn
 
 Nguồn: [UIT23521830/skq-experiment](https://github.com/UIT23521830/skq-experiment), nhánh `cq-v1-protocol-fixes`, commit `ba2cbcd0f66b0d32c3215518c9741d676f072579`.
 
-Bản nhập đầu tiên giữ 222 file. Bản hiện tại bỏ hướng dẫn GitHub/Kaggle cũ, config và script không dùng; ghi rõ danh sách ở [CURATION.json](CURATION.json). Các file runtime, config CQ V4, test và dependency được giữ vẫn phải khớp hash nguồn. README được viết lại, không thuộc nhóm file bất biến.
+Bản nhập đầu tiên giữ 222 file. Bản hiện tại bỏ hướng dẫn GitHub/Kaggle cũ, config và script không dùng; ghi rõ danh sách ở [CURATION.json](CURATION.json). Các file còn nằm trong `SOURCE_SNAPSHOT_SHA256SUMS.txt` phải khớp hash nguồn. Runner/registry được mở rộng cho ablation, có hash riêng trong `IMPLEMENTATION_CHANGES.json`; engine SKQ-PC gốc, các config và test cũ không đổi. README được viết lại, không thuộc nhóm file bất biến.
 
 ```text
 python tools/verify_source_snapshot.py

@@ -28,6 +28,7 @@ from .diagnostics import build_d02, build_d04
 from .native import AutoCoresetNativeSelector, BDISNativeSelector, CoreTabNativeSelector, CRAIGNativeSelector
 from .proposed.structured_kquad import StructuredKQuadSelector
 from .proposed.skq_pc import SKQPCSelector
+from .proposed.cq_ablations import A2, A4, C03_MATCHED, ClassOnlySKQPC
 from .proposed.sharded_merge_reduce import ShardedMergeReduceSelector
 from .synthetic import TAMEOfficialGenerator, TDBenchGenerator
 
@@ -361,6 +362,24 @@ METHOD_SPECS = {
             confirmatory_allowed=True, max_dev_configs=1,
         ),
         MethodSpec(
+            A2, "A2 SKQ-PC class-only", "ablation", "implemented",
+            note="Dev-only source-matched class-only stratification; unchanged SKQ-PC engine.",
+            fidelity_tier="proposed", evidence_role="dev_selection",
+            confirmatory_allowed=False, max_dev_configs=1,
+        ),
+        MethodSpec(
+            A4, "A4 equal weights on source rows", "ablation", "derived",
+            note="Same source rows; equal phase-class mass weights. Source QP cost remains; not a speed comparison.",
+            fidelity_tier="proposed", evidence_role="dev_selection",
+            confirmatory_allowed=False, max_dev_configs=1,
+        ),
+        MethodSpec(
+            C03_MATCHED, "C03 matched source quotas", "control", "derived",
+            note="Random rows with exact realized phase-class quotas of declared source; dev-only.",
+            fidelity_tier="local_reimplementation", evidence_role="dev_selection",
+            confirmatory_allowed=False, max_dev_configs=1,
+        ),
+        MethodSpec(
             "x_coretab_mc_cell",
             "SKQ-PC/CoreTab-cell (pending approval)",
             "experimental_candidate",
@@ -425,6 +444,8 @@ def build_selector(method_id: str, seed: int, *, n_components: int = 256, extern
         raise RuntimeError(f"{method_id} không phải selector trực tiếp: status={spec.status}")
     options = dict(options or {})
     repo_root = Path(external_root or "external/repos")
+    if method_id == A2:
+        return ClassOnlySKQPC(seed, options)
     if method_id == "c02_stratified_random":
         return StratifiedRandomSelector(seed)
     if method_id == "c01_uniform_random":

@@ -81,7 +81,7 @@ Tên script calibration còn V1 là để tương thích; `--dataset course_qual
 - Ba ứng viên hiện hành: `skq_pc`, `skq_pc_lrq_sq`, `skq_pc_sqrt`. R không còn là ứng viên thứ tư.
 - C03 chính phải cùng allocation/floor với winner; C03 proportional chỉ mô tả nếu không khớp winner.
 - BDIS native giữ realized size; thêm C02/SKQ chốt cùng size, không trim/pad rồi vẫn gắn nhãn native.
-- A2/A4 còn cần triển khai; A8 không refit. Panel/ablation/freeze chưa được tạo chỉ bằng việc có config.
+- A2/A4/C03 matched đã có đường chạy chuẩn bị và kiểm thử; xem `docs/cq_v4/ABLATIONS_PREPARATION.md`. A4 giữ source rows và chi phí QP nguồn, chỉ đo tác động trọng số; không gọi bước reweight là tăng tốc selector không QP. A8 không refit. Chưa có utility panel/ablation hoặc freeze đã được duyệt.
 - Giữ test khóa đến freeze M1 được duyệt; không lấy config confirm legacy để mở CQ V4 test.
 
 ## 6. Kiểm thử và file giữ lại có chủ đích
@@ -90,7 +90,7 @@ Tên script calibration còn V1 là để tương thích; `--dataset course_qual
 python -m pytest tests -q
 ```
 
-Giữ toàn bộ 200 tests hồi quy, không xóa test để rút gọn repo hoặc làm kết quả qua. Vì test hiện đọc một số config V1/Adult/CQ_med và gọi script dùng chung, 17 config ngoài V4 và các module tương ứng được giữ đúng đường dẫn cũ làm fixture/dependency. **Không dùng chúng cho lượt CQ V4 mới.** Danh sách cụ thể và lý do ở `../CURATION.json`.
+Giữ toàn bộ 200 tests hồi quy ban đầu và thêm tests ablation, không xóa test để rút gọn repo hoặc làm kết quả qua. Vì test hiện đọc một số config V1/Adult/CQ_med và gọi script dùng chung, 17 config ngoài V4 và các module tương ứng được giữ đúng đường dẫn cũ làm fixture/dependency. **Không dùng chúng cho lượt CQ V4 mới.** Danh sách cụ thể và lý do ở `../CURATION.json`.
 
 Một số module source còn chứa method legacy vì registry/factory và regression đang import; bỏ module đó sẽ thành refactor chứ không còn dọn file an toàn. Chỉ danh sách method trong config V4 là panel hiện hành.
 

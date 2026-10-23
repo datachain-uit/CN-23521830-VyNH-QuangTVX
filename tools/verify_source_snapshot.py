@@ -46,8 +46,28 @@ def main() -> int:
         for relative in mismatches:
             print(relative)
         return 1
+    extension_count = 0
+    extension_record = root / "IMPLEMENTATION_CHANGES.json"
+    if extension_record.is_file():
+        import json
+        extension = json.loads(extension_record.read_text(encoding="utf-8"))
+        for relative, expected in extension["current_file_sha256"].items():
+            target = (root / relative).resolve()
+            if not target.is_relative_to(root) or relative in seen:
+                raise ValueError(f"Unsafe or overlapping extension path: {relative}")
+            if args.index:
+                result = subprocess.run(["git", "show", f":{relative}"], cwd=root, capture_output=True, check=False)
+                content = result.stdout if result.returncode == 0 else None
+            else:
+                content = target.read_bytes() if target.is_file() else None
+            if content is None or hashlib.sha256(content).hexdigest() != expected:
+                mismatches.append(relative)
+            extension_count += 1
+        if mismatches:
+            print("FAIL: extension bytes differ: " + ", ".join(mismatches))
+            return 1
     surface = "Git index" if args.index else "worktree"
-    print(f"PASS: {len(seen)} imported files match the pinned source ({surface})")
+    print(f"PASS: {len(seen)} unchanged imported files and {extension_count} declared extension files ({surface})")
     return 0
 
 

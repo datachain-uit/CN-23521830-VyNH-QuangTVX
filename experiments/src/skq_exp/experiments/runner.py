@@ -32,6 +32,10 @@ from ..methods import allowed_learners_for, build_generator, build_selector, get
 from ..methods.diagnostics import equal_group_weights
 from ..methods.proposed.allocation import make_group_ids
 from ..methods.proposed.query_losses import make_oof_query_losses
+from ..methods.proposed.cq_ablations import (
+    A2, A4, C03_MATCHED, CQ_ABLATIONS,
+    derive_phase_class_selection, resolve_ablation_options,
+)
 from ..methods.result import SelectionResult
 from ..methods.synthetic.result import GeneratedDatasetResult
 from ..resources import (
@@ -541,9 +545,17 @@ def _produce_or_block(
                 "Method cần frozen proposed_winner",
             )
         options["source_method"] = frozen_roles["proposed_winner"]
-    if method_id in LRQ_METHODS:
+    if method_id in CQ_ABLATIONS:
+        if config.stage_id != "s1_screen" or not config.test_locked:
+            return SelectionResult.failure(method_id, "gate_locked", requested, "Prepared CQ ablations are train/dev-only; test requires a separate reviewed freeze path")
+        try:
+            options = resolve_ablation_options(method_id, config.method_options or {})
+        except ValueError as error:
+            return SelectionResult.failure(method_id, "blocked", requested, str(error))
+    query_method = options["source_method"] if method_id == A2 else method_id
+    if query_method in LRQ_METHODS:
         gate_reason, lrq_provenance = _validate_lrq_gate(
-            config, options, freeze_manifest, method_id=method_id
+            config, options, freeze_manifest, method_id=query_method
         )
         if gate_reason is not None:
             return SelectionResult.failure(
@@ -627,6 +639,19 @@ def _produce_or_block(
             return failure
         except Exception as error:
             return GeneratedDatasetResult.failure(method_id, "failed", requested, repr(error))
+    if method_id in {A4, C03_MATCHED}:
+        source = options["source_method"]
+        base = selection_cache.get((source, seed))
+        if base is None:
+            base = _load_selection_artifact(config, dataset_id, source, seed)
+        if base is None or base.method_id != source:
+            return SelectionResult.failure(method_id, "blocked", requested, f"CQ ablation needs its declared source selection first: {source}")
+        result = derive_phase_class_selection(
+            method_id, base, y_train, data.get("phase_train"),
+            config.budget_ratio, seed=seed, resource_guard=guard,
+        )
+        result.diagnostics.update(resource_diagnostics)
+        return result
     if method_id == "d05_equal_group_weight":
         source = str(options.get("source_method", "p05_skq_lrq_mq"))
         base = selection_cache.get((source, seed))
@@ -692,9 +717,10 @@ def _produce_or_block(
                     "Parent structure thiếu candidate_mask",
                 )
             kwargs["candidate_mask"] = structure["candidate_mask"]
-    if method_id in LRQ_METHODS:
-        query_ids = tuple(options.get("query_learners", ["lr"] if method_id.endswith("sq") else ["lr", "rf", "xgb"]))
+    if query_method in LRQ_METHODS:
+        query_ids = tuple(options.get("query_learners", ["lr"] if query_method.endswith("sq") else ["lr", "rf", "xgb"]))
         cache_key = (query_ids, seed)
+        query_cache_hit = cache_key in query_cache
         if cache_key not in query_cache:
             try:
                 query_started = time.perf_counter()
@@ -721,6 +747,14 @@ def _produce_or_block(
         failure.diagnostics.update(resource_diagnostics)
         return failure
     result.diagnostics.update(resource_diagnostics)
+    if result.status == "success" and query_method == "skq_pc_lrq_sq":
+        # SKQ-PC has no structure parent, so the parent-cost branch below does
+        # not account for its OOF query. Declare full dependency and cache reuse;
+        # an end-to-end workflow must charge this query once, not once per method.
+        own_total = float(result.timings.get("total", 0.0))
+        query_total = float((kwargs.get("query_metadata") or {}).get("seconds", 0.0))
+        result.timings.update(skq_only=own_total, query=query_total, total=own_total + query_total)
+        result.diagnostics.update(query_cache_hit=query_cache_hit, query_cost_shared=True)
     if result.status == "success" and spec.needs_parent:
         own_total = float(result.timings.get("total", 0.0))
         parent_total = float(np.asarray(structure.get("_producer_total_seconds", 0.0)).item())
