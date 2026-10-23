@@ -6,7 +6,7 @@
   "branch_instruction": {
     "user_supplied_repository_request": "No branch explicitly specified",
     "review22_Y19": "PR without squash from cq-v1-protocol-fixes to main, in original repository context",
-    "new_repository_convention": "main is integrated code; codex/data-pipeline is a data-team placeholder",
+    "new_repository_convention": "main is integrated code; data-pipeline is a data-team placeholder",
     "old_repository_PR_or_tag_completed_by_this_import": false
   },
   "active_cq_v4_configs": [

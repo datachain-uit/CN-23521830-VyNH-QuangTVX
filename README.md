@@ -24,7 +24,7 @@ Bên trong `experiments/` giữ cấu trúc package của repo cá nhân đang c
 | Nhánh | Vai trò |
 |---|---|
 | `main` | Bản code tích hợp để nhóm và giảng viên đối chiếu |
-| `codex/data-pipeline` | Nhánh dành cho nhóm dữ liệu tự cập nhật mã nguồn; hiện chỉ có tài liệu bàn giao, chưa có builder |
+| `data-pipeline` | Nhánh dành cho nhóm dữ liệu tự cập nhật mã nguồn; hiện chỉ có tài liệu bàn giao, chưa có builder |
 
 Đoạn yêu cầu cung cấp repo chung chưa chỉ định nhánh nộp. Y19 của Review22 yêu cầu hợp nhánh `cq-v1-protocol-fixes` vào `main` qua pull request, không squash, trong ngữ cảnh repo nguồn. Không xem việc nhập code sang repo này là đã hoàn tất PR/tag của repo nguồn hoặc là bằng chứng cô yêu cầu một nhánh cụ thể cho repo mới.
 

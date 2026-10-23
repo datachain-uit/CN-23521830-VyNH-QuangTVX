@@ -25,7 +25,7 @@
   "verification_command": "python tools/verify_source_snapshot.py",
   "additional_files_scope": "Organization READMEs, ignores, verifier, source provenance and curation records; no runtime algorithm/config/test changes",
   "data_pipeline_status": "placeholder_only_team_data_will_upload_own_code",
-  "data_branch": "codex/data-pipeline",
+  "data_branch": "data-pipeline",
   "data_or_row_level_outputs_included": false,
   "upstream_repositories_vendored": false,
   "historical_run_commits_replaced": false,
