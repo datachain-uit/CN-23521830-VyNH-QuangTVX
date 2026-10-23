@@ -236,7 +236,7 @@ def load_processed(dataset_id: str, processed_root: str | Path, mmap: bool = Tru
         if dev_feature_path.exists() and dev_label_path.exists():
             result[f"X_dev_phase{phase}"] = np.load(dev_feature_path, mmap_mode=mode)
             result[f"y_dev_phase{phase}"] = np.load(dev_label_path, mmap_mode=mode)
-            for metadata_stem in ("row_ids", "course_groups", "course_family_groups"):
+            for metadata_stem in ("row_ids", "source_row_ids", "course_groups", "course_family_groups"):
                 metadata_path = root / f"{metadata_stem}_dev_phase{phase}.npy"
                 if metadata_path.exists():
                     result[f"{metadata_stem}_dev_phase{phase}"] = np.load(

@@ -16,6 +16,7 @@ from typing import Any
 
 import joblib
 import numpy as np
+import pandas as pd
 
 from .. import __version__
 from ..artifacts import (
@@ -28,6 +29,7 @@ from ..artifacts import (
 from ..config import ExperimentConfig
 from ..data import load_processed
 from ..data.toy import make_toy_data
+from ..data.cq_lr_views import lr_onehot_views
 from ..methods import allowed_learners_for, build_generator, build_selector, get_method_spec
 from ..methods.diagnostics import equal_group_weights
 from ..methods.proposed.allocation import make_group_ids
@@ -51,6 +53,10 @@ from ..training import (
     fit_selection_learner,
 )
 from .provenance import dataset_fingerprint, protocol_hash
+from .cq_review_1023 import (
+    guard_feature_view, diagnostic_training_data, early_stopping_data, xgb_round_diagnostics,
+)
+from ..data.cq_patch_1023 import code_gain_share
 
 
 LRQ_METHODS = {
@@ -132,6 +138,11 @@ def run_config(
     layout = ArtifactLayout(config.paths.artifact_root)
     for current_dataset in datasets:
         data = load_processed(current_dataset, config.paths.processed_root)
+        guard_feature_view(config, data)
+        data = diagnostic_training_data(config, data)
+        if config.label_shuffle_seed is not None:
+            data = dict(data)
+            data["y_train"] = np.random.default_rng(config.label_shuffle_seed).permutation(data["y_train"])
         data_fingerprint = dataset_fingerprint(config, current_dataset)
         if config.stage_id == "s2_confirm" or config.requires_freeze_manifest:
             expected = freeze_manifest["dataset_fingerprints"].get(current_dataset)
@@ -270,8 +281,10 @@ def run_config(
                         learner_params = (config.learner_params or {}).get(
                             current_learner,
                         )
-                        X_dev = np.asarray(data["X_dev"])
-                        y_dev = np.asarray(data["y_dev"])
+                        learner_data, encoding = data, None
+                        if current_learner == "lr" and config.feature_view == "cd3":
+                            learner_data, encoding = lr_onehot_views(data)
+                        X_dev, y_dev = early_stopping_data(config, learner_data)
                         if isinstance(result, GeneratedDatasetResult):
                             fitted = fit_generated_learner(
                                 result,
@@ -287,9 +300,9 @@ def run_config(
                             )
                         else:
                             fit_X = np.asarray(
-                                data["X_fulltrain_a_train"]
+                                learner_data["X_fulltrain_a_train"]
                                 if current_method == "c00_full_train_a"
-                                else data["X_train"]
+                                else learner_data["X_train"]
                             )
                             fit_y = np.asarray(
                                 data["y_fulltrain_a_train"]
@@ -309,6 +322,23 @@ def run_config(
                                 class_weight_policy=config.class_weight_policy,
                                 early_stopping=config.early_stopping,
                             )
+                        if current_dataset == "course_quality_v4":
+                            fitted.base_cost.update({
+                                "feature_view": (data.get("feature_contract") or {}).get("feature_view", "v4"),
+                                "feature_contract_hash": (data.get("feature_contract") or {}).get("contract_hash"),
+                                "held_out_columns": (data.get("feature_contract") or {}).get("held_out_columns", []),
+                                "training_phases": list(config.training_phases) or ["P1", "P2", "P3", "P4"],
+                                "lr_gender_encoding": encoding,
+                                "label_shuffle_seed": config.label_shuffle_seed,
+                                "learner_columns_sha256": stable_hash((data.get("feature_contract") or {}).get("learner_columns", [])),
+                                "selector_columns_sha256": stable_hash((data.get("feature_contract") or {}).get("selector_columns", [])),
+                            })
+                            if current_learner == "xgb" and config.feature_view == "v4":
+                                names = (data.get("feature_contract") or {})["learner_columns"]
+                                selector_names = (data.get("feature_contract") or {})["selector_columns"]
+                                codes = [c for c in names if c not in selector_names and c != "phase_fraction"]
+                                fitted.base_cost["v4_code_gain_share"] = code_gain_share(fitted.model.get_booster(), names, codes)
+                                fitted.base_cost["v4_code_columns"] = codes
                     except MemoryError:
                         _save_evaluation_failures(
                             pending, learner_rows, "oom", None,
@@ -330,13 +360,17 @@ def run_config(
                         try:
                             metrics, predictions = evaluate_fitted_learner(
                                 fitted,
-                                np.asarray(data[f"X_{eval_name}"]),
+                                np.asarray(learner_data[f"X_{eval_name}"]),
                                 np.asarray(data[f"y_{eval_name}"]),
                                 evaluation_split_count=len(eval_names),
                             )
                             row_key = f"row_ids_{eval_name}"
                             course_key = f"course_groups_{eval_name}"
                             family_key = f"course_family_groups_{eval_name}"
+                            phase_name = f"P{eval_name[-1]}" if eval_name.startswith("dev_phase") else eval_name
+                            predictions["phase"] = np.repeat(phase_name, len(predictions["y_true"]))
+                            if f"source_row_ids_{eval_name}" in data:
+                                predictions["source_row_id"] = np.asarray(data[f"source_row_ids_{eval_name}"])
                             if row_key in data:
                                 predictions["row_id"] = np.asarray(data[row_key])
                             if course_key in data:
@@ -344,6 +378,11 @@ def run_config(
                             if family_key in data:
                                 predictions["course_family_id"] = np.asarray(data[family_key])
                             phase_policy = dict(config.artifact_policy or {})
+                            if current_learner == "xgb" and phase_policy.get("diagnostic_rounds"):
+                                metrics["round_diagnostics"] = xgb_round_diagnostics(
+                                    fitted.model, np.asarray(learner_data[f"X_{eval_name}"]),
+                                    np.asarray(data[f"y_{eval_name}"]), phase_policy["diagnostic_rounds"],
+                                )
                             if eval_index > 0:
                                 phase_policy["save_models"] = False
                             _save_evaluation(
@@ -424,6 +463,8 @@ def _evaluation_splits(
                 raise RuntimeError(
                     "CQ development phải đánh giá đủ dev P1-P4; test vẫn khóa"
                 )
+            if getattr(config, "training_phases", ()) == ("P4",):
+                return ("dev_phase4",)  # S is a diagnostic, not a four-phase candidate.
             return dev_phases
         return ("dev",)
     phases = tuple(
@@ -1280,7 +1321,7 @@ def _save_evaluation(
             if probability_dtype not in {"float16", "float32", "float64"}:
                 raise ValueError("artifact_policy.probability_dtype không hợp lệ")
             payload["y_prob"] = np.asarray(predictions["y_prob"], dtype=probability_dtype)
-        for metadata_name in ("row_id", "course_id", "course_family_id"):
+        for metadata_name in ("row_id", "source_row_id", "course_id", "course_family_id"):
             if metadata_name in predictions:
                 metadata = np.asarray(predictions[metadata_name])
                 if len(metadata) != len(payload["y_pred"]):
@@ -1298,11 +1339,34 @@ def _save_evaluation(
                     policy, layout, experiment_id, reserve_bytes=estimated_bytes,
                 )
                 np.savez_compressed(run_dir / "predictions.npz", **payload)
+                if bool(policy.get("save_predictions_parquet", False)):
+                    required = {"row_id", "source_row_id", "phase", "y_true", "y_prob"}
+                    if not required <= set(predictions):
+                        raise ValueError(f"Y25 parquet missing fields: {sorted(required-set(predictions))}")
+                    prob = np.asarray(predictions["y_prob"], dtype=np.float32)
+                    if prob.shape != (len(payload["y_pred"]), 3):
+                        raise ValueError("Y25 parquet requires aligned E/G/A probabilities")
+                    frame = pd.DataFrame({
+                        "row_id": predictions["source_row_id"], "runtime_row_id": predictions["row_id"],
+                        "phase": predictions["phase"],
+                        "y": predictions["y_true"], "y_pred": payload["y_pred"],
+                        **{f"p_{label}": prob[:, i] for i, label in enumerate("EGA")},
+                        **{k: payload[k] for k in ("course_id", "course_family_id") if k in payload},
+                    })
+                    manifest = json.loads((run_dir / "manifest.json").read_text(encoding="utf-8"))
+                    frame["run_id"] = manifest.get("run_id", stable_hash(manifest))
+                    _enforce_storage_policy(policy, layout, experiment_id, reserve_bytes=estimated_bytes)
+                    frame.to_parquet(run_dir / "predictions.parquet", index=False)
+                    retention["parquet"] = "saved_float32_EGA"
                 retention["predictions"] = "saved_y_pred"
                 retention["y_true"] = "saved" if "y_true" in payload else "reload_from_processed_split"
                 retention["probabilities"] = "saved" if "y_prob" in payload else "metrics_only"
             except ArtifactStorageError as error:
+                if policy.get("save_predictions_parquet", False):
+                    raise
                 retention["predictions"] = f"skipped_storage_guard: {error}"
+        if policy.get("save_predictions_parquet", False) and retention.get("parquet") != "saved_float32_EGA":
+            raise ArtifactStorageError("Y25 predictions parquet required; retention guard rejected it")
     with (run_dir / "metrics_per_label.csv").open("w", newline="", encoding="utf-8") as stream:
         rows = metrics["per_label"]
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]) if rows else [])

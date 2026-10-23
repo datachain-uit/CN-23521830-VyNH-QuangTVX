@@ -54,6 +54,9 @@ class ExperimentConfig:
     class_weight_policy: str = "balanced"
     learner_params: dict[str, dict[str, Any]] | None = None
     early_stopping: dict[str, Any] | None = None
+    feature_view: str | None = None
+    training_phases: tuple[str, ...] = ()
+    label_shuffle_seed: int | None = None
 
     @classmethod
     def from_json(cls, path: str | Path) -> "ExperimentConfig":
@@ -87,6 +90,7 @@ class ExperimentConfig:
             learner_ids=tuple(payload.pop("learner_ids")),
             selector_seeds=tuple(int(v) for v in payload.pop("selector_seeds")),
             frozen_method_roles=tuple(payload.pop("frozen_method_roles", ())),
+            training_phases=tuple(payload.pop("training_phases", ())),
             paths=paths,
             **payload,
         )
@@ -132,6 +136,33 @@ class ExperimentConfig:
                 f"learner_params chứa learner chưa đăng ký: {sorted(unknown_param_learners)}"
             )
         early_stopping = self.early_stopping or {}
+        policy = self.artifact_policy or {}
+        if policy.get("save_predictions_parquet") and (
+            not all(policy.get(key) for key in ("save_predictions", "save_y_true", "save_probabilities"))
+            or policy.get("probability_dtype", "float32") != "float32"
+        ):
+            raise ValueError("Y25 parquet requires predictions, y_true and float32 probabilities")
+        if self.feature_view not in {None, "v4", "cd3"}:
+            raise ValueError("feature_view chỉ nhận v4 hoặc cd3")
+        if self.feature_view is not None and self.dataset_ids != ("course_quality_v4",):
+            raise ValueError("feature_view chỉ áp dụng CQ V4")
+        if self.feature_view is not None and not self.test_locked:
+            raise ValueError("Review 23/10 chỉ mở train/dev, test_locked phải true")
+        if self.training_phases:
+            if (
+                self.training_phases != ("P4",)
+                or self.method_ids != ("c00_full_train",)
+                or self.feature_view != "cd3"
+                or not self.test_locked
+            ):
+                raise ValueError("training_phases chỉ cho diagnostic S: CD3 FullTrain P4")
+        if self.label_shuffle_seed is not None and (
+            self.label_shuffle_seed not in {20261022, 20261023, 20261024}
+            or self.method_ids != ("c00_full_train",) or self.learner_ids != ("xgb",)
+            or self.feature_view != "cd3" or not self.test_locked
+            or self.evidence_role != "diagnostic_shuffled_labels" or self.training_phases
+        ):
+            raise ValueError("Y26 label shuffle is only the registered CD3 dev diagnostic")
         if early_stopping:
             if not isinstance(early_stopping.get("enabled", False), bool):
                 raise ValueError("early_stopping.enabled phải là bool")
@@ -139,6 +170,13 @@ class ExperimentConfig:
                 raise ValueError("early_stopping.patience phải dương")
             if early_stopping.get("enabled", False) and early_stopping.get("source") != "dev":
                 raise ValueError("early stopping chỉ được phép dùng source=dev")
+            phases = early_stopping.get("phases")
+            if phases is not None and (
+                not isinstance(phases, list) or not phases
+                or len(phases) != len(set(phases))
+                or any(p not in {"P1", "P2", "P3", "P4"} for p in phases)
+            ):
+                raise ValueError("early_stopping.phases cần danh sách P1–P4 không trùng")
         options = self.method_options or {}
         pending_candidates = [
             method_id for method_id in self.method_ids
@@ -243,7 +281,7 @@ class ExperimentConfig:
                 )
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        payload = {
             "schema_version": self.schema_version,
             "experiment_id": self.experiment_id,
             "protocol_id": self.protocol_id,
@@ -275,6 +313,14 @@ class ExperimentConfig:
                 "external_root": str(self.paths.external_root),
             },
         }
+        # Giữ nguyên hash của config cũ khi không bật contract Review 23/10.
+        if self.feature_view is not None:
+            payload["feature_view"] = self.feature_view
+        if self.training_phases:
+            payload["training_phases"] = list(self.training_phases)
+        if self.label_shuffle_seed is not None:
+            payload["label_shuffle_seed"] = self.label_shuffle_seed
+        return payload
 
 
 def _resolve_path(base: Path, value: str) -> Path:

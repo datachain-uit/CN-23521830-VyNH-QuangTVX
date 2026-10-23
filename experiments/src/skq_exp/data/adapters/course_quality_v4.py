@@ -129,6 +129,7 @@ class CourseQualityV4Adapter(DatasetAdapter):
             phase: int(np.count_nonzero(phase_values == phase)) for phase in PHASES
         }
         dev_families: set[int] = set()
+        canonical_rows_saved = True
         for position, phase in enumerate(PHASES, start=1):
             frame = pd.read_parquet(pool / f"dev_phase{position}.parquet")
             _require_columns(frame, {
@@ -137,6 +138,10 @@ class CourseQualityV4Adapter(DatasetAdapter):
             X = _finite_matrix(frame, learner_columns, f"dev {phase}")
             y = _labels(frame["y_alpha_1"], f"dev {phase}")
             rows = _row_ids(frame, phase=phase)
+            if "row_id" in frame:
+                _save(output, f"source_row_ids_dev_phase{position}", frame.row_id.astype(str).to_numpy(dtype=str))
+            else:
+                canonical_rows_saved = False
             families = _group_ids(frame["course_family_id"])
             courses = _group_ids(frame["course_id"])
             dev_families.update(int(value) for value in np.unique(families))
@@ -194,6 +199,7 @@ class CourseQualityV4Adapter(DatasetAdapter):
             "fulltrain_a_contract": "lambda_1_same_train_cohort",
             "test_locked": True,
             "test_data_packaged": False,
+            "canonical_row_ids_saved": canonical_rows_saved,
         }
         contract["contract_hash"] = stable_hash(contract)
         atomic_json(output / "feature_contract.json", contract)

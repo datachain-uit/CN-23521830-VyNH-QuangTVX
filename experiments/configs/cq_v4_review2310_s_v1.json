@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "experiment_id": "cq_v4_review2310_s_dev_v1",
+  "protocol_id": "cq_v4_review2310_d13_step1_v1",
+  "stage_id": "s1_screen",
+  "evidence_role": "diagnostic_not_candidate",
+  "split_id": "cq_v4_family_latest20_train70_dev10_seed42",
+  "dataset_ids": [
+    "course_quality_v4"
+  ],
+  "method_ids": [
+    "c00_full_train"
+  ],
+  "learner_ids": [
+    "xgb"
+  ],
+  "budget_ratio": 1,
+  "split_seed": 42,
+  "selector_seeds": [
+    11
+  ],
+  "model_seed": 42,
+  "test_locked": true,
+  "requires_freeze_manifest": false,
+  "class_weight_policy": "natural",
+  "paths": {
+    "raw_root": "data/raw",
+    "processed_root": "data/processed_cd3",
+    "artifact_root": "artifacts/review2310",
+    "external_root": "external/repos"
+  },
+  "resource": {
+    "timeout_seconds": 21600,
+    "max_ram_gb": 24,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "artifact_policy": {
+    "save_models": false,
+    "save_predictions": true,
+    "save_y_true": true,
+    "save_probabilities": true,
+    "probability_dtype": "float32",
+    "max_prediction_mb_per_run": 64,
+    "max_total_gb": 10,
+    "save_predictions_parquet": true,
+    "diagnostic_rounds": [
+      50,
+      100,
+      200,
+      400
+    ]
+  },
+  "learner_params": {
+    "xgb": {
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "n_estimators": 1000,
+      "tree_method": "hist",
+      "device": "cuda"
+    }
+  },
+  "early_stopping": {
+    "enabled": true,
+    "source": "dev",
+    "patience": 50,
+    "phases": [
+      "P4"
+    ]
+  },
+  "feature_view": "cd3",
+  "training_phases": [
+    "P4"
+  ]
+}

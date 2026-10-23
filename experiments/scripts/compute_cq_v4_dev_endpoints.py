@@ -15,7 +15,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, log_loss
 
 from skq_exp.artifacts import atomic_json
 from skq_exp.data.adapters.course_quality_v4 import _group_ids, _row_ids
@@ -24,6 +24,9 @@ from skq_exp.training.course_metrics import (
     prior_correct_predictions,
 )
 from skq_exp.training.metrics import compute_overall_metrics, compute_per_label_metrics
+from skq_exp.data.cq_patch_1023 import (
+    calibration_in_the_large, subgroup_log_loss, ul_log_loss,
+)
 
 LABELS = np.asarray(["E", "G", "A"])
 
@@ -47,7 +50,8 @@ def align_predictions(frame: pd.DataFrame, prediction: dict) -> dict:
     return aligned
 
 
-def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: str | None = None) -> dict:
+def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: str | None = None,
+            review_1023: bool = False) -> dict:
     train = pd.read_parquet(source / "pool_b/train.parquet")
     unique = train.drop_duplicates(["user_id", "course_id"])
     mu = class_conditional_means(unique.rename(columns={"q_alpha_1": "q", "y_alpha_1": "y"}))
@@ -86,6 +90,7 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
             if set(items) != set(dev):
                 raise ValueError(f"Missing dev phase for {key}")
             frames, overall, per_label, confusion = [], {}, {}, {}
+            calibration, subgroups, fit_diagnostics = {}, {}, {}
             source_priors = []
             for evaluation, (pred, cost) in sorted(items.items()):
                 raw = dev[evaluation]
@@ -102,6 +107,22 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
                 overall[phase], _ = compute_overall_metrics(pred["y_true"], pred["y_pred"], pred["y_prob"], labels=np.arange(3))
                 counts = raw.groupby("course_id").course_id.transform("size").to_numpy()
                 overall[phase]["ul_course_equal"] = float(f1_score(pred["y_true"], pred["y_pred"], labels=[0,1,2], average="macro", sample_weight=1.0/counts, zero_division=0))
+                if review_1023:
+                    if cost.get("feature_view") not in {"cd3", "v4"}:
+                        raise ValueError("Review 23/10 requires feature-view provenance, not legacy run relabeling")
+                    overall[phase]["log_loss_course_equal"] = float(log_loss(
+                        pred["y_true"], pred["y_prob"], labels=[0, 1, 2], sample_weight=1.0/counts,
+                    ))
+                    calibration[phase] = calibration_in_the_large(pred["y_prob"], pred["y_true"])
+                    user_groups = np.where(raw.user_id.isin(train.user_id), "seen", "new")
+                    subgroups[phase] = {"user": subgroup_log_loss(pred["y_prob"], pred["y_true"], user_groups)}
+                    if "teacher_subgroup" in raw:
+                        subgroups[phase]["teacher"] = subgroup_log_loss(
+                            pred["y_prob"], pred["y_true"], raw.teacher_subgroup.fillna("missing").to_numpy(),
+                        )
+                    else:
+                        subgroups[phase]["teacher"] = {"status": "missing_data_team_teacher_mapping"}
+                    fit_diagnostics[phase] = cost
                 per_label[phase] = compute_per_label_metrics(pred["y_true"], pred["y_pred"], pred["y_prob"], np.arange(3))
                 matrix = np.zeros((3,3), dtype=int)
                 np.add.at(matrix, (pred["y_true"].astype(int), pred["y_pred"].astype(int)), 1)
@@ -124,6 +145,24 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
                 "confusion_matrices": confusion,
                 "mean_metrics": {k: float(np.mean([v[k] for v in overall.values()])) for k in overall["P1"] if all(v.get(k) is not None for v in overall.values())},
             })
+            if review_1023:
+                def ll(frame):
+                    parts = {p: frame[frame.phase == p] for p in ("P1", "P2", "P3", "P4")}
+                    return ul_log_loss(
+                        # Restore row normalization after float32 probability storage.
+                        {p: (lambda v: v / v.sum(axis=1, keepdims=True))(
+                            f[["p_E", "p_G", "p_A"]].to_numpy(float)) for p, f in parts.items()},
+                        {p: f.y_true.map({"E": 0, "G": 1, "A": 2}).to_numpy(int) for p, f in parts.items()},
+                    )
+                runs[-1].update({
+                    "primary_endpoint": "mean_log_loss_P1_P4", "direction": "lower_is_better",
+                    "ul_log_loss": ll(private),
+                    "macro_f1_secondary": runs[-1]["mean_metrics"]["f1_macro"],
+                    "calibration_in_the_large": calibration, "subgroup_log_loss": subgroups,
+                    "fit_diagnostics_by_phase": fit_diagnostics,
+                    "legacy_pcc_ul_fields_are_macro_f1_not_primary": True,
+                })
+                runs[-1]["a8_prior_correction"]["ul_log_loss"] = ll(corrected)
     finally:
         if archive:
             archive.close()
@@ -139,8 +178,10 @@ def main():
     parser.add_argument("--output", required=True)
     parser.add_argument("--n-min", type=int, default=30)
     parser.add_argument("--experiment-id")
+    parser.add_argument("--review-1023", action="store_true", help="Report QD25 primary LL and D13 diagnostics")
     args = parser.parse_args()
-    result = compute(Path(args.input_dir), Path(args.artifacts), n_min=args.n_min, experiment_id=args.experiment_id)
+    result = compute(Path(args.input_dir), Path(args.artifacts), n_min=args.n_min,
+                     experiment_id=args.experiment_id, review_1023=args.review_1023)
     atomic_json(Path(args.output), result)
     print(json.dumps({"runs": len(result["runs"]), "output": args.output}))
 

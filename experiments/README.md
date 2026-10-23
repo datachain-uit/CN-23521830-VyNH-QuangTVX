@@ -1,6 +1,28 @@
 # Thực nghiệm CQ V4
 
-Tất cả lệnh dưới đây chạy trong `experiments/`. Cấu trúc `src/`, `configs/`, `scripts/`, `tests/`, tên package `skq_exp` và API được giữ từ repo cá nhân. Dọn file không thay cơ chế selector, seed, trọng số, early stopping hoặc config CQ V4.
+Tất cả lệnh dưới đây chạy trong `experiments/`. Cấu trúc `src/`, `configs/`, `scripts/`, `tests/`, tên package `skq_exp` và API được giữ từ repo cá nhân. Cơ chế selector gốc không đổi; phần learner/view/endpoint được bổ sung theo review 23/10, tách khỏi config và kết quả lịch sử.
+
+## Cập nhật hiện hành theo review 23 tháng 10
+
+Xem [phạm vi cài đặt và thứ tự chạy](docs/cq_v4/REVIEW_2026_10_23_IMPLEMENTATION.md).
+UL chính là **log loss trung bình P1–P4**, nhỏ tốt hơn; Macro-F1 là phụ. Main
+view là CD3 trên spine/nhãn/split V4, QA23 và V1-Median train-only. V4 view cũ
+chỉ dùng diagnostic V20/V50 và sensitivity, không tham gia chọn L0/L1.
+
+Config mới mang prefix `cq_v4_review2310_`. Bước chạy được trước khi nhận CD3:
+
+```text
+python -m skq_exp.cli prepare-external --config configs/cq_v4_review2310_v20_v1.json --input-dir <runtime_dev_only_V4> --dataset course_quality_v4
+python -m skq_exp.cli run --config configs/cq_v4_review2310_v20_v1.json
+python -m skq_exp.cli run --config configs/cq_v4_review2310_v50_v1.json
+```
+
+Không trỏ nhầm V4 ready vào config CD3. CD3 runtime và artifact 23/10 dùng
+thư mục mới, giữ canonical row ID cho Parquet; không dùng `--overwrite` lên
+runtime lịch sử. Panel và test chưa được phép chạy chỉ vì config đã có.
+
+Các mục hướng dẫn 22/10 bên dưới được giữ để tái lập lịch sử; không dùng
+headroom/selection dựa Macro-F1 cũ cho quyết định mới.
 
 ## 1. Môi trường và phần cứng
 
@@ -32,7 +54,7 @@ python -m skq_exp.cli prepare-external --config configs/cq_v4_m0_fulltrain_b_dev
 
 Các đường dẫn `data/processed`, `artifacts`, `external/repos` tính từ thư mục hiện tại. Chúng không được commit. Không lấy toàn bộ cột số làm X hoặc fit lại scaler trên dev.
 
-## 3. Chỉ dùng các config CQ V4 sau cho lượt chạy mới
+## 3. Cấu hình CQ V4 lịch sử theo review 22 tháng 10
 
 | Công việc | Config/đầu vào |
 |---|---|
@@ -74,7 +96,7 @@ Tên script calibration còn V1 là để tương thích; `--dataset course_qual
 
 ## 5. Endpoint và panel
 
-- UL: mean enrollment Macro-F1 P1–P4; course-equal là diagnostic bổ sung.
+- Theo QĐ25 ngày 23/10: UL chính là mean enrollment log loss P1–P4; Macro-F1 và course-equal là bổ sung. Script endpoint cần `--review-1023` để xuất trường LL chính và LL sau A8; trường `ul_*` trong phần PCC legacy vẫn là F1, không dùng nhầm.
 - EC: MAE của Q_hat theo PCC trên course có n≥30; kèm signed error và A8.
 - Báo precision/recall/F1/PR-AUC từng lớp, từng phase; không chỉ mean F1.
 - Main policy natural; balanced sensitivity không thay main vì điểm dev đẹp hơn.

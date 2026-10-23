@@ -8,6 +8,7 @@ test để early stopping hay tuning.
 from __future__ import annotations
 
 import time
+import json
 import warnings
 from dataclasses import dataclass
 from typing import Any
@@ -242,6 +243,8 @@ def _fit_learner(
     resolved_params = dict(learner_params or {})
     if early_enabled and has_dev:
         if learner_id == "xgb":
+            if "early_stopping_rounds" in resolved_params and int(resolved_params["early_stopping_rounds"]) != patience:
+                raise ValueError("learner_params early_stopping_rounds conflicts with protocol patience")
             resolved_params.setdefault("early_stopping_rounds", patience)
         elif learner_id == "cat":
             resolved_params.setdefault("use_best_model", True)
@@ -320,6 +323,7 @@ def _fit_learner(
         "early_stopping_enabled": bool(early_enabled and supports_early_stopping),
         "early_stopping_source": "dev" if early_enabled and supports_early_stopping else None,
         "early_stopping_patience": patience if early_enabled and supports_early_stopping else None,
+        "early_stopping_phases": early_policy.get("phases"),
         "best_iteration": _best_iteration(learner),
         "fit_converged": (
             not convergence_warnings if learner_id == "lr" else None
@@ -327,6 +331,22 @@ def _fit_learner(
         "optimizer_iterations": _optimizer_iterations(learner),
         "convergence_warnings": convergence_warnings,
     }
+    if learner_id == "xgb" and hasattr(learner, "get_booster"):
+        booster = learner.get_booster()
+        fitted_rounds = int(booster.num_boosted_rounds())
+        best = _best_iteration(learner)
+        used_rounds = best + 1 if best is not None else fitted_rounds
+        booster_config = json.loads(booster.save_config())["learner"]
+        tree_params = booster_config["gradient_booster"].get("gbtree_model_param", {})
+        parallel = int(tree_params.get("num_parallel_tree", 1))
+        trees_per_round = (len(labels) if len(labels) > 2 else 1) * parallel
+        base_cost.update({
+            "boosting_rounds_fitted": fitted_rounds,
+            "boosting_rounds_used_for_prediction": used_rounds,
+            "trees_fitted": int(tree_params["num_trees"]) if "num_trees" in tree_params else None,
+            "trees_used_for_prediction": used_rounds * trees_per_round,
+            "trees_per_boosting_round": trees_per_round,
+        })
     return FittedLearner(model=learner, labels=labels, base_cost=base_cost)
 
 
