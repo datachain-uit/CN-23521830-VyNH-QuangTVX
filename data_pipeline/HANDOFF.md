@@ -1,6 +1,6 @@
 # Nhánh bàn giao cho nhóm dữ liệu
 
-Nhánh: `codex/data-pipeline`. Đây là nhánh chuẩn bị để nhóm dữ liệu tự đưa mã nguồn lên. **Hiện chưa có builder, loader hoặc notebook của nhóm dữ liệu được nhập.** Commit tạo nhánh chỉ thêm tài liệu bàn giao, không nhận phần công việc dữ liệu là do người thực nghiệm viết.
+Nhánh: `data-pipeline`. Đây là nhánh chuẩn bị để nhóm dữ liệu tự đưa mã nguồn lên. **Hiện chưa có builder, loader hoặc notebook của nhóm dữ liệu được nhập.** Commit tạo nhánh chỉ thêm tài liệu bàn giao, không nhận phần công việc dữ liệu là do người thực nghiệm viết.
 
 ## Khi nhóm dữ liệu bắt đầu
 
