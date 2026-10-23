@@ -1,0 +1,31 @@
+{
+  "_example_only": true,
+  "schema_version": 1,
+  "record_id": "sha256-of-all-fields-except-record-id",
+  "claim_id": "CL-TABLE2-UL-001",
+  "requirement_ids": ["QD6", "G13", "G16"],
+  "created_at_utc": "2026-10-14T00:00:00+00:00",
+  "table_figure_cell": "Table 2 / proposed winner / UL",
+  "runs_long_row_keys": [
+    {
+      "dataset_id": "course_quality_v1",
+      "method_id": "approved-winner",
+      "budget_ratio": 0.01,
+      "selector_seed": 11,
+      "learner_id": "xgb",
+      "phase": "P1"
+    }
+  ],
+  "run_ids": ["run-id"],
+  "provenance": {
+    "config_hash": "sha256",
+    "split_hash": "sha256",
+    "code_commit": "full-git-commit"
+  },
+  "evidence_ids": ["EV-QD15-WEIGHTS-001"],
+  "raw_private_artifact_sha256": {
+    "predictions.parquet": "sha256-without-private-path"
+  },
+  "allowed_claim": "claim text allowed by the frozen analysis protocol",
+  "status": "supported"
+}

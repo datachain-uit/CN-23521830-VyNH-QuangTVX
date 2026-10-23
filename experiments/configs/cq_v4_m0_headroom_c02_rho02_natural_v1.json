@@ -1,0 +1,8 @@
+{
+  "extends": "cq_v4_m0_fulltrain_b_dev_natural_xgb_v1.json",
+  "experiment_id": "cq_v4_m0_headroom_c02_rho02_natural_v1",
+  "protocol_id": "cq_v4_m0_headroom_qd12_qd21_v1",
+  "method_ids": ["c02_stratified_random"],
+  "budget_ratio": 0.02,
+  "selector_seeds": [11, 29, 47, 71, 101]
+}

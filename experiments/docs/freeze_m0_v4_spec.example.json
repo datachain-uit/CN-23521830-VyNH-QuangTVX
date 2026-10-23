@@ -1,0 +1,23 @@
+{
+  "candidate_list": [
+    "approved_candidate_id"
+  ],
+  "split_strategy": "temporal",
+  "rho_star": 0.01,
+  "n_min": 30,
+  "delta_c": 0.02,
+  "shard_policy": {
+    "rows": 200000,
+    "shared": true
+  },
+  "resource_decision_rule": {
+    "calibration_rows": [50000, 200000, 800000],
+    "replicates_per_size": 3,
+    "selector_timeout_seconds": 10800,
+    "environment_policy": "same-declared-kaggle-t4-environment"
+  },
+  "data_card_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "headroom_evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "resource_evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "plan_version": "2.0.0"
+}

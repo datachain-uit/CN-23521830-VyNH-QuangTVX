@@ -1,0 +1,11 @@
+{
+  "extends": "cq_v3_m0_fulltrain_b_dev_balanced_v1.json",
+  "experiment_id": "cq_v3_m0_headroom_c02_rho02_natural_v1",
+  "protocol_id": "cq_v3_m0_headroom_2026_10_21_v1",
+  "evidence_role": "m0_headroom_development_protocol_deviation_pending_approval",
+  "method_ids": ["c02_stratified_random"],
+  "learner_ids": ["xgb"],
+  "budget_ratio": 0.02,
+  "selector_seeds": [11, 29, 47],
+  "class_weight_policy": "natural"
+}

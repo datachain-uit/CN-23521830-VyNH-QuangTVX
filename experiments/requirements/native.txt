@@ -1,0 +1,10 @@
+# Dependency chỉ cần cho các repo đối chứng native; cài trong environment riêng.
+-r base.txt
+torch>=2.2,<3
+fast-enum>=1.3
+# BDIS có wheel faiss-cpu cho Python 3.13 từ dòng 1.10.
+faiss-cpu>=1.10,<2
+# AutoCoreset import các gói này ngay cả khi chạy dữ liệu bảng.
+iterative-stratification>=0.1.9,<1
+torchvision>=0.17,<1
+tqdm>=4.66,<5

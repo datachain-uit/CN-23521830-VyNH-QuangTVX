@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "evidence_split": "dev",
+  "allowed_inputs": [
+    "FullTrain-B",
+    "C02"
+  ],
+  "selector_seeds": [
+    11,
+    29,
+    47,
+    71,
+    101
+  ],
+  "full_train_b_ul": 0.42916541639727723,
+  "gap": 0.01,
+  "ratios": {
+    "0.005": {
+      "mean": 0.3892053004135628,
+      "delta_full_minus_c02": 0.039960115983714406,
+      "eligible": true
+    },
+    "0.01": {
+      "mean": 0.43166962700586425,
+      "delta_full_minus_c02": -0.002504210608587021,
+      "eligible": false
+    },
+    "0.02": {
+      "mean": 0.4223421206926473,
+      "delta_full_minus_c02": 0.006823295704629917,
+      "eligible": false
+    },
+    "0.05": {
+      "mean": 0.47144785281430635,
+      "delta_full_minus_c02": -0.04228243641702911,
+      "eligible": false
+    }
+  },
+  "rho_star": 0.005,
+  "fallback_to_smallest": false,
+  "secondary_descriptive_ratio": 0.05,
+  "protocol_id": "cq_v4_m0_headroom_qd12_qd21_v1",
+  "test_data_read": false,
+  "test_locked": true,
+  "phase_aggregation": "mean_P1_P4_within_seed",
+  "replicate_unit": "selector_seed",
+  "learner_id": "xgb",
+  "class_weight_policy": "natural",
+  "repository_commit": "896b191865691b890037356e6b09d28cee13485a",
+  "artifact_sha256": {
+    "rho005": "F9DA1842E7FF462EFA953F503C16BD54FEBED6DFB157073E243CC6103A423F2C",
+    "rho01": "C9BF7488A42A239F48DB0FB43A37A28050AAF7F70AA349E029A4A1DB396AE3A3",
+    "rho02": "909F7CBEFF6CEFBEE08CD3727E0D669BE71AD3F4788844EEE6D9498FB4AD4A2A",
+    "rho05": "8FC43D22E771E73DBC2E36ECDED1419D547750658C3042DC20E0E930F34BB648"
+  },
+  "family_bootstrap": {
+    "replicates": 2000,
+    "cluster_unit": "course_family_id",
+    "family_count": 173,
+    "all_interval_estimates_include_zero": true,
+    "artifact_sha256": "36B0B3E05A36830538E8A41251CAA3C32BCCDDF11324A82F26369FB271B5EBC1"
+  }
+}

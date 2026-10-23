@@ -1,0 +1,69 @@
+{
+  "schema_version": 3,
+  "experiment_id": "cq_v1_dev_smoke_afelo1_seed11",
+  "protocol_id": "cq_v1_pool_b_review_2026_10_12_13_dev_v1",
+  "stage_id": "s1_screen",
+  "evidence_role": "dev_selection",
+  "split_id": "provided_course_split_phase_features_v2_provisional_course_id",
+  "dataset_ids": ["course_quality_v1"],
+  "method_ids": [
+    "c00_full_train",
+    "c02_stratified_random",
+    "c03_phase_class_random",
+    "skq_pc",
+    "skq_pc_lrq_sq",
+    "skq_pc_r"
+  ],
+  "learner_ids": ["xgb"],
+  "budget_ratio": 0.01,
+  "split_seed": 20261002,
+  "selector_seeds": [11],
+  "model_seed": 42,
+  "test_locked": true,
+  "requires_freeze_manifest": false,
+  "class_weight_policy": "balanced",
+  "paths": {
+    "raw_root": "data/raw",
+    "processed_root": "data/processed",
+    "artifact_root": "artifacts",
+    "external_root": "external/repos"
+  },
+  "resource": {
+    "timeout_seconds": 21600,
+    "max_ram_gb": 24,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "artifact_policy": {
+    "save_models": false,
+    "save_predictions": true,
+    "save_probabilities": true,
+    "max_total_gb": 10
+  },
+  "method_options": {
+    "skq_pc": {"n_components": 256},
+    "skq_pc_lrq_sq": {
+      "n_components": 256,
+      "query_learners": ["lr"],
+      "query_alpha": 0.5,
+      "oof_folds": 5
+    },
+    "skq_pc_r": {"n_components": 256}
+  },
+  "learner_params": {
+    "xgb": {
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "n_estimators": 1000,
+      "tree_method": "hist",
+      "device": "cuda"
+    }
+  },
+  "early_stopping": {
+    "enabled": true,
+    "source": "dev",
+    "patience": 20
+  }
+}

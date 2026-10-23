@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "review_authority": [
+    "Review-2026-10-12 QĐ6, O2, O3",
+    "Review-2026-10-13 QĐ12, Y8"
+  ],
+  "effect_convention": {
+    "ul": "delta_ul = MacroF1(A) - MacroF1(B); positive favors A",
+    "ec": "delta_ec = MAE(B) - MAE(A); positive favors A"
+  },
+  "bootstrap": {
+    "unit": "course_root_id",
+    "replicates": 2000,
+    "seed": 20261012,
+    "alpha_one_sided": 0.05,
+    "same_resample_within_comparison": true,
+    "p_value_correction": "(1 + count)/(B + 1)"
+  },
+  "multiple_testing": {
+    "procedure": "Holm step-down",
+    "families": [["K1", "K2", "K3", "K4", "K5"], ["K1c", "K2c", "K3c", "K4c", "K5c"]]
+  },
+  "hypotheses": {
+    "K1": {"comparison": "SKQ-PC vs strongest baseline", "h0": "delta_ul <= 0", "h1": "delta_ul > 0"},
+    "K2": {"comparison": "SKQ-PC vs C03", "h0": "delta_ul <= 0", "h1": "delta_ul > 0"},
+    "K3": {"comparison": "SKQ-PC vs A2", "h0": "delta_ul <= 0", "h1": "delta_ul > 0"},
+    "K4": {"comparison": "SKQ-PC vs A4", "h0": "delta_ul <= 0", "h1": "delta_ul > 0"},
+    "K5": {"comparison": "SKQ-PC vs FullTrain-B", "h0": "delta_ul <= -0.005", "h1": "delta_ul > -0.005"},
+    "K1c-K4c": {"comparison": "EC counterparts", "h0": "delta_ec <= 0", "h1": "delta_ec > 0"},
+    "K5c": {"comparison": "SKQ-PC vs FullTrain-B on EC", "h0": "delta_ec <= -delta_C", "h1": "delta_ec > -delta_C"}
+  },
+  "missing_failed_policy": {
+    "expected_denominator": "all preregistered method×selector_seed×phase cells",
+    "drop_failed_or_timeout": false,
+    "impute_failed_metric_zero": false,
+    "report_status_and_failure_rate": true,
+    "inferential_rule": "If any registered cell or paired course prediction is missing/non-success, the affected hypothesis is not_estimable_incomplete; descriptive status remains reportable."
+  },
+  "m0_frozen_fields": ["delta_C", "n_min", "rho_star", "selector_seeds", "candidate_list"],
+  "test_tuning_forbidden": true
+}

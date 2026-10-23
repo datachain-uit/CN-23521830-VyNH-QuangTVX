@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skq-experiment"
+version = "0.3.0"
+description = "Khung thực nghiệm tái lập cho Structured Kernel Quadrature trên dữ liệu bảng."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "numpy>=1.26,<3",
+  "scipy>=1.11,<2",
+  "pandas>=2.1,<3",
+  "scikit-learn>=1.4,<2",
+  "joblib>=1.3,<2",
+  "psutil>=5.9,<7",
+  "matplotlib>=3.8,<4",
+  "statsmodels>=0.14,<1",
+  "pyahocorasick>=2.1,<3",
+]
+
+[project.optional-dependencies]
+boosting = ["xgboost>=2.0,<4", "catboost>=1.2,<2"]
+deep = ["torch>=2.2,<3"]
+data = ["kagglehub>=0.3,<1"]
+native = [
+  "torch>=2.2,<3",
+  "fast-enum>=1.3",
+  "faiss-cpu>=1.10,<2",
+  "iterative-stratification>=0.1.9,<1",
+  "torchvision>=0.17,<1",
+  "tqdm>=4.66,<5",
+]
+# Môi trường chính trên Kaggle: chạy toàn panel trừ KIP trước khi
+# thay JAX/CUDA. Tách extra này để plugin JAX có sẵn của Kaggle không ảnh
+# hưởng BDIS/AutoCoreset/MTT/TAME và các downstream learner.
+kaggle-panel = [
+  "xgboost>=2.0,<4",
+  "catboost>=1.2,<2",
+  "torch>=2.2,<3",
+  "torchvision>=0.17,<1",
+  "tqdm>=4.66,<5",
+  "fast-enum>=1.3",
+  "faiss-cpu>=1.10,<2",
+  "iterative-stratification>=0.1.9,<1",
+  "goodpoints @ git+https://github.com/microsoft/goodpoints.git@181b12ade5dd02a61b65ed5cb9444c916fa3135f",
+]
+# TDBench/KIP dùng API JAX cũ; 0.4.38 có wheel Python 3.13 và vẫn thuộc
+# nhánh API tương thích với neural-tangents 0.6.5.
+tdbench-kip = [
+  "jax==0.4.38",
+  "jaxlib==0.4.38",
+  "jax-cuda12-plugin[with-cuda]==0.4.38",
+  "jax-cuda12-pjrt==0.4.38",
+  "neural-tangents==0.6.5",
+]
+kaggle-full = [
+  "xgboost>=2.0,<4",
+  "catboost>=1.2,<2",
+  "torch>=2.2,<3",
+  "torchvision>=0.17,<1",
+  "tqdm>=4.66,<5",
+  "fast-enum>=1.3",
+  "faiss-cpu>=1.10,<2",
+  "iterative-stratification>=0.1.9,<1",
+  "goodpoints @ git+https://github.com/microsoft/goodpoints.git@181b12ade5dd02a61b65ed5cb9444c916fa3135f",
+  "jax==0.4.38",
+  "jaxlib==0.4.38",
+  "jax-cuda12-plugin[with-cuda]==0.4.38",
+  "jax-cuda12-pjrt==0.4.38",
+  "neural-tangents==0.6.5",
+]
+dev = ["pytest>=8,<9", "pytest-cov>=5,<7", "ruff>=0.6,<1"]
+
+[project.scripts]
+skq = "skq_exp.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

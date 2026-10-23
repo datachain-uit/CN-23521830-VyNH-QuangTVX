@@ -1,0 +1,36 @@
+{
+  "schema_version": 3,
+  "experiment_id": "adult_quick_seed11_v1",
+  "protocol_id": "static_tabular_quick_check_v1",
+  "stage_id": "s1_screen",
+  "evidence_role": "integration_debug",
+  "split_id": "registered_split_v1",
+  "dataset_ids": ["adult_uci2_v1"],
+  "method_ids": ["c00_full_train", "d04_global_rff_quadrature"],
+  "learner_ids": ["lr"],
+  "budget_ratio": 0.05,
+  "split_seed": 20261002,
+  "selector_seeds": [11],
+  "model_seed": 42,
+  "test_locked": true,
+  "paths": {
+    "raw_root": "data/raw",
+    "processed_root": "data/processed",
+    "artifact_root": "artifacts",
+    "external_root": "external/repos"
+  },
+  "resource": {
+    "timeout_seconds": 1800,
+    "max_ram_gb": 8,
+    "max_threads": 4,
+    "max_estimated_operations": 30000000000
+  },
+  "artifact_policy": {
+    "save_models": false,
+    "save_predictions": true,
+    "save_probabilities": true
+  },
+  "method_options": {
+    "d04_global_rff_quadrature": {"n_components": 128}
+  }
+}

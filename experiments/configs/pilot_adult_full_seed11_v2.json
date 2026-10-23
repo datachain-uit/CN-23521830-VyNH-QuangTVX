@@ -1,0 +1,174 @@
+{
+  "schema_version": 3,
+  "experiment_id": "adult_full_matrix_seed11_v2",
+  "protocol_id": "static_tabular_full_pilot_v2",
+  "stage_id": "s1_screen",
+  "evidence_role": "integration_debug",
+  "split_id": "registered_split_v1",
+  "dataset_ids": ["adult_uci2_v1"],
+  "method_ids": [
+    "c00_full_train",
+    "c02_stratified_random",
+    "n01_coretab_dt_subset",
+    "n02_coretab_xgb_subset",
+    "n_bdis_native",
+    "n_autocoreset_native",
+    "a_craig_feature_space",
+    "n_gcoreset_benchmark",
+    "n_leverage_benchmark",
+    "s_kip_tdbench",
+    "s_mtt_tdbench",
+    "s_gm_tdbench",
+    "s_datm_tdbench",
+    "s_tame_official",
+    "d02_parent_structured_random",
+    "d04_global_rff_quadrature",
+    "p01_skq_coretab_dt",
+    "p02_skq_coretab_xgb",
+    "p03_skq_bdis_filtered",
+    "p04_skq_lrq_sq",
+    "p05_skq_lrq_mq",
+    "d05_equal_group_weight"
+  ],
+  "learner_ids": ["lr", "rf", "xgb", "cat", "mlp"],
+  "budget_ratio": 0.05,
+  "split_seed": 20261002,
+  "selector_seeds": [11],
+  "model_seed": 42,
+  "test_locked": true,
+  "paths": {
+    "raw_root": "data/raw",
+    "processed_root": "data/processed",
+    "artifact_root": "artifacts",
+    "external_root": "external/repos"
+  },
+  "resource": {
+    "timeout_seconds": 7200,
+    "max_ram_gb": 12,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "artifact_policy": {
+    "save_models": false,
+    "save_predictions": true,
+    "save_probabilities": true
+  },
+  "method_options": {
+    "c02_stratified_random": {
+      "allowed_learners": ["lr", "rf", "xgb", "cat", "mlp"]
+    },
+    "n01_coretab_dt_subset": {
+      "sample_percent": 0.03,
+      "examples_to_keep": 1000
+    },
+    "n02_coretab_xgb_subset": {
+      "trees_number": 30,
+      "sample_percent": 0.03,
+      "examples_to_keep": 10000,
+      "n_jobs": 4
+    },
+    "n_bdis_native": {
+      "t1": -1,
+      "t2": 7
+    },
+    "s_kip_tdbench": {
+      "parameter_profile": "pilot_resource_bounded",
+      "n_epochs": 100,
+      "mlp_dim": 128
+    },
+    "s_mtt_tdbench": {
+      "parameter_profile": "pilot_resource_bounded",
+      "n_epochs": 20,
+      "n_experts": 2,
+      "expert_epochs": 2,
+      "syn_steps": 5,
+      "max_start_epoch": 10,
+      "mlp_dim": 64,
+      "n_iter": 100,
+      "lr_teacher": 0.01,
+      "lr_data": 0.1,
+      "lr_lr": 0.00001,
+      "mom_lr": 0.5,
+      "mom_data": 0.5,
+      "n_hidden_layers": 2
+    },
+    "s_gm_tdbench": {
+      "parameter_profile": "pilot_resource_bounded",
+      "n_epochs": 100,
+      "mlp_dim": 128,
+      "lr_mlp": 0.01,
+      "lr_data": 0.1,
+      "mom_data": 0.5,
+      "n_hidden_layers": 2
+    },
+    "s_datm_tdbench": {
+      "parameter_profile": "pilot_resource_bounded",
+      "n_epochs": 20,
+      "n_experts": 2,
+      "expert_epochs": 2,
+      "syn_steps": 5,
+      "mlp_dim": 64,
+      "n_iter": 100,
+      "min_start_epoch": 0,
+      "current_max_start_epoch": 5,
+      "max_start_epoch": 10,
+      "expansion_end_epoch": 50,
+      "lr_teacher": 0.01,
+      "lr_data": 0.1,
+      "lr_lr": 0.00001,
+      "mom_lr": 0.5,
+      "mom_data": 0.5,
+      "n_hidden_layers": 2
+    },
+    "s_tame_official": {
+      "max_rows": 2000,
+      "dm_iters": 100,
+      "dm_lr": 0.5,
+      "dm_batch_real": 128,
+      "dm_embed_hidden": 128,
+      "dm_embed_dim": 64,
+      "dm_embedder_type": "ln_res_l",
+      "dm_embedder_size": "small",
+      "cov_weight": 1.0,
+      "dm_views": 1
+    },
+    "d02_parent_structured_random": {
+      "parent_source": "n02_coretab_xgb_subset",
+      "n_components": 256
+    },
+    "d04_global_rff_quadrature": {
+      "n_components": 256
+    },
+    "p01_skq_coretab_dt": {
+      "parent_source": "n01_coretab_dt_subset",
+      "n_components": 256
+    },
+    "p02_skq_coretab_xgb": {
+      "parent_source": "n02_coretab_xgb_subset",
+      "n_components": 256
+    },
+    "p03_skq_bdis_filtered": {
+      "parent_source": "n_bdis_native",
+      "n_components": 256,
+      "budget_policy": "cap_at_candidate_pool"
+    },
+    "p04_skq_lrq_sq": {
+      "parent_source": "n02_coretab_xgb_subset",
+      "query_learners": ["lr"],
+      "query_alpha": 0.5,
+      "oof_folds": 5,
+      "n_components": 256
+    },
+    "p05_skq_lrq_mq": {
+      "parent_source": "n02_coretab_xgb_subset",
+      "query_learners": ["lr", "rf", "xgb"],
+      "query_alpha": 0.5,
+      "oof_folds": 5,
+      "n_components": 256
+    },
+    "d05_equal_group_weight": {
+      "source_method": "p05_skq_lrq_mq",
+      "parent_source": "n02_coretab_xgb_subset"
+    }
+  }
+}

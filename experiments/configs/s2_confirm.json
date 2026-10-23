@@ -1,0 +1,53 @@
+{
+  "schema_version": 3,
+  "experiment_id": "public_static_confirm_v1",
+  "protocol_id": "static_tabular_v1",
+  "stage_id": "s2_confirm",
+  "evidence_role": "confirmatory",
+  "split_id": "registered_split_v1",
+  "dataset_ids": [
+    "adult_uci2_v1", "creditcard_ulb2013_v1", "letter_uci59_v1",
+    "covertype_uci31_v1", "jannis_openml41168_v1", "helena_openml41169_v1"
+  ],
+  "method_ids": [
+    "c02_stratified_random", "d02_parent_structured_random",
+    "d04_global_rff_quadrature", "d05_equal_group_weight"
+  ],
+  "frozen_method_roles": ["published_reference", "proposed_winner"],
+  "learner_ids": ["xgb"],
+  "budget_ratio": 0.05,
+  "split_seed": 20261002,
+  "selector_seeds": [11, 29, 47, 71, 101],
+  "model_seed": 42,
+  "test_locked": false,
+  "requires_freeze_manifest": true,
+  "non_inferiority_margin": 0.005,
+  "holm_contrasts": 5,
+  "paths": {
+    "raw_root": "data/raw",
+    "processed_root": "data/processed",
+    "artifact_root": "artifacts"
+  },
+  "resource": {
+    "timeout_seconds": 14400,
+    "max_ram_gb": 12,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "artifact_policy": {
+    "save_models": false,
+    "save_predictions": true,
+    "save_probabilities": true
+  },
+  "method_options": {
+    "d02_parent_structured_random": {
+      "parent_source": "@base_winner_structure",
+      "n_components": 256
+    },
+    "d05_equal_group_weight": {
+      "source_method": "@proposed_winner",
+      "parent_source": "@base_winner_structure"
+    }
+  }
+}
+

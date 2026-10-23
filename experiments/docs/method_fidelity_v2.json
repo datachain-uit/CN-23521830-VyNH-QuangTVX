@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "review_authority": [
+    "Review-2026-10-12 Mục 7.6, 7.11 và bảng 28",
+    "Review-2026-10-13 QĐ14, QĐ16 và Mục 7.3"
+  ],
+  "policy": "Không proxy; source/dependency lỗi giữ nguyên status và nằm trong mẫu số.",
+  "methods": [
+    {
+      "method_id": "c01_uniform_random",
+      "source_lock_key": null,
+      "upstream_commit": null,
+      "fidelity_tier": "local_reimplementation",
+      "task_contract": "task_agnostic",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Đối chứng cục bộ; lấy mẫu đều không hoàn lại."],
+      "toy_test_id": "fidelity_c01_exact"
+    },
+    {
+      "method_id": "c02_stratified_random",
+      "source_lock_key": null,
+      "upstream_commit": null,
+      "fidelity_tier": "local_reimplementation",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Đối chứng cục bộ; largest-remainder theo lớp."],
+      "toy_test_id": "fidelity_c02_exact"
+    },
+    {
+      "method_id": "c03_phase_class_random",
+      "source_lock_key": null,
+      "upstream_commit": null,
+      "fidelity_tier": "local_reimplementation",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Đối chứng trực tiếp SKQ-PC; phase×class và mass |Pg|/mg."],
+      "toy_test_id": "fidelity_c03_mass"
+    },
+    {
+      "method_id": "n_gcoreset_benchmark",
+      "source_lock_key": "tabular_data_distillation",
+      "upstream_commit": "ea38d3c45e3f3e6dac06ea95826fd5768c4e47e1",
+      "fidelity_tier": "benchmark_source_adapter",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Compile riêng hàm distill_coreset để bỏ import SDV; inject seed và khôi phục row index."],
+      "toy_test_id": "fidelity_kcenter_upstream"
+    },
+    {
+      "method_id": "b_moderate_ds_adapted",
+      "source_lock_key": "moderate_ds",
+      "upstream_commit": "7f64d319624aab981dab1604a1aa3d528eb82f76",
+      "fidelity_tier": "official_source_adapter",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Thay embedding ảnh bằng selector_view bảng chuẩn hóa; giữ score khoảng cách tới median lớp và cửa sổ trung tâm."],
+      "toy_test_id": "fidelity_moderate_ds_tabular"
+    },
+    {
+      "method_id": "b_ccs_oof_xgb_adapted",
+      "source_lock_key": "ccs",
+      "upstream_commit": "b37f166ace760e17f4d5baae17a828bdb88c6667",
+      "fidelity_tier": "official_source_adapter",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Theo review: thay training dynamics ảnh bằng EL2N từ xác suất OOF-XGBoost; gọi nguyên hàm stratified_sampling 50 tầng upstream."],
+      "toy_test_id": "fidelity_ccs_oof_upstream"
+    },
+    {
+      "method_id": "b_dataoob_official",
+      "source_lock_key": "dataoob",
+      "upstream_commit": "5375f8087763a4125fd99948cd6eec76148e801a",
+      "fidelity_tier": "official_source_with_declared_patches",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Vá tạm import sklearn.utils.fixes.delayed sang joblib.delayed; thuật toán RandomForestDV và OOB value giữ nguyên.", "Paper/source trả data values; protocol chọn stable top-k để tạo subset exact-budget, nên không gọi là native nguyên trạng."],
+      "toy_test_id": "fidelity_dataoob_upstream"
+    },
+    {
+      "method_id": "b_kernel_thinning_classwise",
+      "source_lock_key": "goodpoints",
+      "upstream_commit": "181b12ade5dd02a61b65ed5cb9444c916fa3135f",
+      "fidelity_tier": "official_source_adapter",
+      "task_contract": "multiclass",
+      "budget_contract": "exact",
+      "adaptation_or_patch_notes": ["Quota largest-remainder theo lớp; deterministic pre-pool quota*2^m; GoodPoints kt.thin store_K=False; RBF median heuristic."],
+      "toy_test_id": "fidelity_goodpoints_classwise"
+    },
+    {
+      "method_id": "a_coretab_xgb_ova",
+      "source_lock_key": "coretab",
+      "upstream_commit": "74edad5129e0ada98d9f04150ab9ffdb6773c5fc",
+      "fidelity_tier": "official_source_adapter",
+      "task_contract": "multiclass",
+      "budget_contract": "at_most",
+      "adaptation_or_patch_notes": ["QĐ14: OVA theo lớp, quota largest-remainder, giữ positive rows, không pad và báo realized size."],
+      "toy_test_id": "fidelity_coretab_ova_upstream"
+    },
+    {
+      "method_id": "n_bdis_native",
+      "source_lock_key": "bdis",
+      "upstream_commit": "3a74b6ae06934c9c90cb5182a5a41b874988f208",
+      "fidelity_tier": "official_source_adapter",
+      "task_contract": "task_agnostic",
+      "budget_contract": "native_realized",
+      "adaptation_or_patch_notes": ["Chỉ alias numpy.int cho NumPy mới; không ép budget, báo realized size native."],
+      "toy_test_id": "fidelity_bdis_upstream"
+    }
+  ]
+}

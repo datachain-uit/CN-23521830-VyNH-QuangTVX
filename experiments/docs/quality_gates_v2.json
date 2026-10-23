@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "plan_version": "2.0.0",
+  "gates": [
+    {"gate_id": "G00", "phase": "pre_m0", "pass_condition": "Config không gọi method retired hoặc synthetic ngoài phạm vi", "evidence": "config audit", "fail_action": "Chặn run"},
+    {"gate_id": "G01", "phase": "pre_release", "pass_condition": "Không có banned artifact, credential hoặc dữ liệu mức dòng trong tracked files, history và archive", "evidence": "privacy audit", "fail_action": "Chặn public release"},
+    {"gate_id": "G02", "phase": "pre_m0", "pass_condition": "CQ v1 đúng schema enrollment và data card", "evidence": "D01 D09 D10", "fail_action": "Dừng M0"},
+    {"gate_id": "G03", "phase": "pre_m0", "pass_condition": "Course root disjoint và split decision có hash", "evidence": "split evidence", "fail_action": "Dừng M0"},
+    {"gate_id": "G04", "phase": "pre_m0", "pass_condition": "q y Qc mu ICC và oracle floor qua kiểm tra", "evidence": "D09 D10 D11 D12", "fail_action": "Dừng M0"},
+    {"gate_id": "G05", "phase": "pre_m0", "pass_condition": "Hai mươi ca cutoff kiểm thủ công đạt", "evidence": "D06", "fail_action": "Dừng tạo snapshot"},
+    {"gate_id": "G06", "phase": "pre_m0", "pass_condition": "Effective weight mean one và run summary khớp", "evidence": "unit test và run evidence", "fail_action": "Chặn train"},
+    {"gate_id": "G07", "phase": "pre_m0", "pass_condition": "ID và target derived không vào selector view", "evidence": "schema hash và invariant tests", "fail_action": "Chặn selector"},
+    {"gate_id": "G08", "phase": "pre_m0", "pass_condition": "Learner tune một lần và early stopping dev only", "evidence": "spy tests và frozen params", "fail_action": "Chặn confirmatory"},
+    {"gate_id": "G09", "phase": "pre_m0", "pass_condition": "Mỗi selector có ba cỡ nhân ba replicate trên môi trường khai báo", "evidence": "resource calibration", "fail_action": "Đo thêm shard hoặc giữ TIMEOUT riêng"},
+    {"gate_id": "G10", "phase": "pre_m1", "pass_condition": "Baseline có upstream commit patch list và toy reproduction", "evidence": "method fidelity manifest", "fail_action": "Không đưa baseline vào bảng chính"},
+    {"gate_id": "G11", "phase": "pre_m1", "pass_condition": "SKQ PC qua exact budget mass cell và QP tests", "evidence": "candidate contract tests", "fail_action": "Không cho candidate vào M1"},
+    {"gate_id": "G12", "phase": "pre_m1", "pass_condition": "CoreTab OVA qua quota no pad realized và upstream toy", "evidence": "OVA diagnostics", "fail_action": "Không đưa vào bảng chính"},
+    {"gate_id": "G13", "phase": "pre_m1", "pass_condition": "Hypothesis sign alpha bootstrap Holm và missing policy đã freeze", "evidence": "statistics protocol hash", "fail_action": "Chỉ báo cáo descriptive"},
+    {"gate_id": "G14", "phase": "m0", "pass_condition": "M0 manifest đủ protocol fields và bất biến", "evidence": "M0 validation", "fail_action": "Không chạy dev selection"},
+    {"gate_id": "G15", "phase": "m1", "pass_condition": "M1 kế thừa M0 và khóa winner evidence extensions", "evidence": "M1 validation", "fail_action": "Không mở test"},
+    {"gate_id": "G16", "phase": "reporting", "pass_condition": "Mọi claim truy được run evidence config split và commit", "evidence": "Claim Ledger audit", "fail_action": "Không xuất bảng hoặc bài"}
+  ]
+}

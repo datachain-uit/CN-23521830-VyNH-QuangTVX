@@ -1,0 +1,32 @@
+{
+  "schema_version": 3,
+  "experiment_id": "skq_smoke_v1",
+  "protocol_id": "static_tabular_v1",
+  "stage_id": "s0_smoke",
+  "evidence_role": "smoke",
+  "split_id": "toy_registered_split_v1",
+  "dataset_ids": ["toy_multiclass_v1"],
+  "method_ids": ["c02_stratified_random", "d04_global_rff_quadrature"],
+  "learner_ids": ["lr"],
+  "budget_ratio": 0.05,
+  "split_seed": 20261002,
+  "selector_seeds": [11],
+  "model_seed": 42,
+  "paths": {
+    "raw_root": "data/raw",
+    "processed_root": "data/processed",
+    "artifact_root": "artifacts"
+  },
+  "resource": {
+    "timeout_seconds": 300,
+    "max_ram_gb": 8,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "artifact_policy": {
+    "save_models": false,
+    "save_predictions": true,
+    "save_probabilities": true
+  }
+}
+

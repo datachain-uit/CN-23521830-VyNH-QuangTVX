@@ -1,0 +1,41 @@
+{
+  "_example_only": true,
+  "schema_version": 4,
+  "manifest_id": "sha256-of-all-fields-except-manifest-id",
+  "previous_manifest_id": "m0-protocol-manifest-id",
+  "state": "M1_METHOD_FROZEN",
+  "plan_version": "2.0.0",
+  "review_hashes": {
+    "2026-10-12": "3C48CAAA4024FF9A7D19F948428142586BE0097849319B45B056BE39880538AB",
+    "2026-10-13": "35F6CE05910ACEB5777610B482FC9D12BD14FF35E0E0FD8590D26C79970E8EA2"
+  },
+  "code_commit": "full-git-commit",
+  "config_hash": "dev-protocol-sha256",
+  "confirmatory_config_hash": "confirmatory-protocol-sha256",
+  "dataset_fingerprints": {"course_quality_v1": "sha256"},
+  "split_hashes": {"course_quality_v1": "sha256"},
+  "feature_schema_hashes": {"course_quality_v1": "sha256"},
+  "selector_seeds": [11, 29, 47],
+  "model_seed": 42,
+  "rho_star": 0.01,
+  "class_weight_policy": "balanced-or-natural-decided-at-M0",
+  "learner_params": {"xgb": {"replace": "with-frozen-winner"}},
+  "early_stopping_policy": {"enabled": true, "source": "dev", "patience": 20},
+  "shard_policy": {"rows": 200000, "shared": true},
+  "method_roles": {
+    "published_reference": "registered-reference-id",
+    "strongest_baseline": "registered-baseline-id",
+    "proposed_winner": "approved-skq-pc-candidate-id"
+  },
+  "candidate_list": ["at-most-three-approved-skq-pc-candidate-ids"],
+  "selected_candidate": "approved-skq-pc-candidate-id",
+  "selection_evidence_hash": "sha256",
+  "stats_protocol_hash": "sha256",
+  "allowed_extensions": [],
+  "test_access_policy": {
+    "test_locked_until_manifest_valid": true,
+    "confirmatory_unlocks_allowed": 1,
+    "test_accessed_at_freeze": false
+  },
+  "deviations": []
+}

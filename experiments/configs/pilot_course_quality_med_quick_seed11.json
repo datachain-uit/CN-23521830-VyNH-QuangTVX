@@ -1,0 +1,21 @@
+{
+  "extends": "pilot_adult_full_seed11_v2.json",
+  "experiment_id": "course_quality_med_quick_seed11_v1",
+  "protocol_id": "static_tabular_course_quality_integration_v1",
+  "stage_id": "s4_temporal",
+  "evidence_role": "integration_debug_split_overlap_temporal",
+  "split_id": "provided_course_quality_med_split_v1",
+  "dataset_ids": ["course_quality_med_v1"],
+  "test_locked": false,
+  "method_ids": [
+    "c00_full_train",
+    "c02_stratified_random"
+  ],
+  "learner_ids": ["lr"],
+  "resource": {
+    "timeout_seconds": 21600,
+    "max_ram_gb": 24,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  }
+}

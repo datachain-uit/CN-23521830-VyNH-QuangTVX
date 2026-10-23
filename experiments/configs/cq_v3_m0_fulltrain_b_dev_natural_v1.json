@@ -1,0 +1,5 @@
+{
+  "extends": "cq_v3_m0_fulltrain_b_dev_balanced_v1.json",
+  "experiment_id": "cq_v3_m0_fulltrain_b_dev_natural_v1",
+  "class_weight_policy": "natural"
+}

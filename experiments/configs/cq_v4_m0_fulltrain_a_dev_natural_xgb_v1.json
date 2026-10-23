@@ -1,0 +1,5 @@
+{
+  "extends": "cq_v4_m0_fulltrain_b_dev_natural_xgb_v1.json",
+  "experiment_id": "cq_v4_m0_fulltrain_a_dev_natural_xgb_v1",
+  "method_ids": ["c00_full_train_a"]
+}

@@ -1,0 +1,4 @@
+# BDIS/Faiss phải chạy trong Python 3.11 hoặc 3.12, tách khỏi main Python 3.13.
+-r base.txt
+fast-enum>=1.3
+faiss-cpu>=1.10,<2

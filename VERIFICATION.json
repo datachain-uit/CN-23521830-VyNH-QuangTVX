@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "source_commit": "ba2cbcd0f66b0d32c3215518c9741d676f072579",
+  "imported_source_files": 222,
+  "source_worktree_sha256_verification": "PASS",
+  "source_git_index_sha256_verification": "PASS",
+  "source_algorithm_config_and_test_edits": 0,
+  "research_test_split_opened": false,
+  "unit_tests": {
+    "python": "3.13.2",
+    "tests": 200,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 31.793,
+    "data_scope": "synthetic fixtures and temporary test data; not CQ research test evaluation",
+    "upstream_required_for_tests": {
+      "tabular_data_distillation": "ea38d3c45e3f3e6dac06ea95826fd5768c4e47e1"
+    },
+    "first_attempt_note": "Two tests failed when the upstream checkout was absent. Fetching the exact locked source resolved both; no source/config/test edits were made."
+  },
+  "pre_upload_scan": {
+    "source_and_new_python_syntax": "PASS",
+    "json_parse": "PASS",
+    "raw_data_model_row_output_or_archive_files_in_candidates": 0,
+    "credential_value_pattern_matches": 0,
+    "vendored_upstream_sources_in_git": false,
+    "data_pipeline_implementation_files": 0
+  },
+  "limitations": [
+    "Snapshot parity and unit tests do not establish scientific GO or downstream performance.",
+    "CQ V4 input data is not included; production notebooks need the same authorized input bundle and pinned environment.",
+    "Existing personal-repository notebooks and historical run commit IDs are not changed.",
+    "Upstream file encodings and line endings are preserved to retain byte identity; no style-only cleanup was applied."
+  ]
+}

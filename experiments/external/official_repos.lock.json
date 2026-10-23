@@ -1,0 +1,80 @@
+{
+  "coretab": {
+    "url": "https://github.com/avivhadar33/coretab.git",
+    "commit_prefix": "74edad",
+    "methods": ["n01_coretab_dt_subset", "n02_coretab_xgb_subset"],
+    "status": "adapter_smoke_passed_adult",
+    "commit": "74edad5129e0ada98d9f04150ab9ffdb6773c5fc"
+  },
+  "bdis": {
+    "url": "https://github.com/CQQXY161120/Instance-Selection.git",
+    "commit_prefix": "3a74b6",
+    "methods": ["n_bdis_native"],
+    "status": "adapter_ready_faiss_dependency_gate",
+    "commit": "3a74b6ae06934c9c90cb5182a5a41b874988f208"
+  },
+  "autocoreset": {
+    "url": "https://github.com/alaamaalouf/AutoCoreset.git",
+    "commit_prefix": "9090f1",
+    "methods": ["n_autocoreset_native"],
+    "status": "isolated_artifact_driver_ready",
+    "commit": "9090f1cb0694bfebfcd7b8cd29eb8e37d24ec0dc"
+  },
+  "craig": {
+    "url": "https://github.com/baharanm/craig.git",
+    "commit_prefix": "b0374a",
+    "methods": ["a_craig_feature_space"],
+    "status": "adapter_ready_pairwise_resource_gate",
+    "commit": "b0374a27f2503e9058ac529b556b8f5dc8b68577"
+  },
+  "tabular_data_distillation": {
+    "url": "https://github.com/corneliuflorea/Tabular-Data-Distillation.git",
+    "commit_prefix": "ea38d3",
+    "methods": ["n_gcoreset_benchmark", "n_leverage_benchmark"],
+    "status": "benchmark_reimplementation_smoke_passed_adult",
+    "commit": "ea38d3c45e3f3e6dac06ea95826fd5768c4e47e1"
+  },
+  "tdbench": {
+    "url": "https://github.com/inwonakng/tdbench.git",
+    "commit_prefix": "0b3ee8",
+    "methods": ["s_kip_tdbench", "s_mtt_tdbench"],
+    "status": "adapter_ready_dependency_and_max_rows_gate",
+    "commit": "0b3ee85065c5b51372e59c31c699fd637a13a357"
+  },
+  "tame": {
+    "url": "https://github.com/eduard-b/TAME.git",
+    "commit_prefix": "ac15fc",
+    "methods": ["s_tame_official"],
+    "status": "adapter_ready_torch_and_max_rows_gate",
+    "commit": "ac15fc12fa6f3f7c2b53e1ce5e43acda3a0fdaca"
+  },
+  "moderate_ds": {
+    "url": "https://github.com/tmllab/2023_ICLR_Moderate-DS.git",
+    "commit_prefix": "7f64d3",
+    "methods": ["b_moderate_ds_adapted"],
+    "status": "official_source_locked_tabular_adapter_required",
+    "commit": "7f64d319624aab981dab1604a1aa3d528eb82f76"
+  },
+  "ccs": {
+    "url": "https://github.com/haizhongzheng/Coverage-centric-coreset-selection.git",
+    "commit_prefix": "b37f16",
+    "methods": ["b_ccs_oof_xgb_adapted"],
+    "status": "official_source_locked_oof_xgb_adapter_required",
+    "commit": "b37f166ace760e17f4d5baae17a828bdb88c6667"
+  },
+  "dataoob": {
+    "url": "https://github.com/ykwon0407/dataoob.git",
+    "commit_prefix": "5375f8",
+    "methods": ["b_dataoob_official"],
+    "status": "official_source_locked_interface_pending_toy_test",
+    "commit": "5375f8087763a4125fd99948cd6eec76148e801a"
+  },
+  "goodpoints": {
+    "url": "https://github.com/microsoft/goodpoints.git",
+    "commit_prefix": "181b12",
+    "methods": ["b_kernel_thinning_classwise"],
+    "status": "official_source_locked_classwise_adapter_required",
+    "commit": "181b12ade5dd02a61b65ed5cb9444c916fa3135f",
+    "sparse_paths": ["goodpoints"]
+  }
+}

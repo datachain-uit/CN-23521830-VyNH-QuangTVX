@@ -1,0 +1,8 @@
+{
+  "extends": "cq_v1_m0_fulltrain_b_dev_balanced_v1.json",
+  "experiment_id": "cq_v1_m0_fulltrain_b_dev_natural_xgb_v1",
+  "protocol_id": "cq_v1_m0_headroom_2026_10_21_v1",
+  "evidence_role": "m0_headroom_reference",
+  "learner_ids": ["xgb"],
+  "class_weight_policy": "natural"
+}

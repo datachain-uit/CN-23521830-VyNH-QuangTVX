@@ -1,0 +1,3 @@
+# Preserve imported Git blob bytes so snapshot SHA-256 stays identical.
+experiments/** -text
+SOURCE_SNAPSHOT_SHA256SUMS.txt -text

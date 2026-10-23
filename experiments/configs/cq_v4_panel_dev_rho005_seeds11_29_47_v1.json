@@ -1,0 +1,56 @@
+{
+  "extends": "cq_v4_m0_fulltrain_b_dev_natural_xgb_v1.json",
+  "experiment_id": "cq_v4_panel_dev_rho005_seeds11_29_47_v1",
+  "protocol_id": "cq_v4_panel_dev_review1022_pending_m0_approval_v1",
+  "evidence_role": "dev_selection",
+  "method_ids": [
+    "c01_uniform_random",
+    "c02_stratified_random",
+    "c03_phase_class_random",
+    "n_gcoreset_benchmark",
+    "n_bdis_native",
+    "b_moderate_ds_adapted",
+    "a_coretab_xgb_ova",
+    "b_ccs_oof_xgb_adapted",
+    "b_dataoob_official",
+    "b_kernel_thinning_classwise",
+    "skq_pc",
+    "skq_pc_lrq_sq",
+    "skq_pc_sqrt"
+  ],
+  "budget_ratio": 0.005,
+  "selector_seeds": [
+    11,
+    29,
+    47
+  ],
+  "resource": {
+    "timeout_seconds": 10800,
+    "max_ram_gb": 24,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "method_options": {
+    "c03_phase_class_random": {
+      "allocation_policy": "proportional",
+      "allocation_floor": 20
+    },
+    "skq_pc": {
+      "n_components": 256,
+      "max_cells_per_stratum": 128,
+      "allocation_policy": "proportional"
+    },
+    "skq_pc_lrq_sq": {
+      "n_components": 256,
+      "max_cells_per_stratum": 128,
+      "query_alpha": 0.5,
+      "allocation_policy": "proportional"
+    },
+    "skq_pc_sqrt": {
+      "n_components": 256,
+      "max_cells_per_stratum": 128,
+      "allocation_policy": "sqrt_floor",
+      "allocation_floor": 20
+    }
+  }
+}

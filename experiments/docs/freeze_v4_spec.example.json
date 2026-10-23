@@ -1,0 +1,20 @@
+{
+  "candidate_list": [
+    "approved_candidate_id"
+  ],
+  "selected_candidate": "approved_candidate_id",
+  "published_reference": "registered_published_reference_id",
+  "strongest_baseline": "registered_strongest_baseline_id",
+  "confirmatory_config_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "rho_star": 0.01,
+  "selection_evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "stats_protocol_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "shard_policy": {
+    "rows": 200000,
+    "shared": true
+  },
+  "allowed_extensions": [],
+  "previous_manifest_id": null,
+  "deviations": [],
+  "plan_version": "2.0.0"
+}
