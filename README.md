@@ -1,42 +1,60 @@
-# Khóa luận CQ và thực nghiệm nén dữ liệu
+# CQ V4 — Thực nghiệm nén dữ liệu theo giai đoạn và lớp
 
-Repo chung của nhóm, tổ chức phần dữ liệu và thực nghiệm riêng để dễ bàn giao.
+Repo chung của nhóm cho giao thức CQ V4 theo review ngày 12, 13 và 22/10/2026. Phạm vi hiện tại là kiểm tra dữ liệu, chạy tham chiếu và chuẩn bị so sánh coreset trên train/dev. **Test chỉ mở sau freeze manifest M1 được giảng viên duyệt.**
 
-| Phần | Nơi làm việc | Phạm vi |
-|---|---|---|
-| Thực nghiệm | `main`, thư mục [experiments/](experiments/) | Code, config, test và lock dependency từ nhánh `cq-v1-protocol-fixes` của repo thực nghiệm |
-| Dữ liệu | Nhánh `codex/data-pipeline`, thư mục [data_pipeline/](data_pipeline/) | Nhánh bàn giao cho nhóm dữ liệu tự đưa mã nguồn lên; hiện chỉ có hướng dẫn, chưa có builder |
-| Báo cáo, archive và dữ liệu | Folder Drive riêng do nhóm cung cấp | Không đưa dữ liệu hoặc kết quả mức dòng lên repo này |
+## Cấu trúc
 
-## Nguồn code và tính nhất quán
+```text
+data_pipeline/                 # Giữ chỗ cho mã nguồn nhóm dữ liệu
+experiments/
+  src/skq_exp/                 # Adapter, selector, training, metrics và runner
+  configs/                    # Config CQ V4 và fixture cần cho regression
+  scripts/                    # Audit, endpoint, headroom, hiệu chuẩn và runner phụ trợ
+  tests/                      # Kiểm thử giao thức và hồi quy
+  external/official_repos.lock.json
+  requirements/
+  pyproject.toml
+tools/verify_source_snapshot.py
+```
 
-Code thực nghiệm được nhập nguyên trạng từ:
+Bên trong `experiments/` giữ cấu trúc package của repo cá nhân đang chạy. Không di chuyển/đổi tên module, không sửa thuật toán hoặc config CQ V4 để tổ chức lại repo.
 
-- Repo: https://github.com/UIT23521830/skq-experiment
-- Nhánh nguồn: `cq-v1-protocol-fixes`
-- Commit nguồn: `ba2cbcd0f66b0d32c3215518c9741d676f072579`
-- Người nhập snapshot: `UIT23521830`; việc nhập code không thay đổi quyền tác giả của mã nguồn gốc.
+## Nhánh làm việc
 
-Đây là snapshot file, không sao chép hoặc viết lại lịch sử repo nguồn. `src/`, `configs/`, `tests/` và các script nhập vào không được sửa thuật toán/config trong lần chuyển này. Tài liệu mới ở repo chung chỉ hướng dẫn bố cục và truy vết. Những thay đổi chưa commit ở repo cá nhân không tự được nhập.
+| Nhánh | Vai trò |
+|---|---|
+| `main` | Bản code tích hợp để nhóm và giảng viên đối chiếu |
+| `codex/data-pipeline` | Nhánh dành cho nhóm dữ liệu tự cập nhật mã nguồn; hiện chỉ có tài liệu bàn giao, chưa có builder |
 
-[SOURCE_IMPORT.json](SOURCE_IMPORT.json) và [SOURCE_SNAPSHOT_SHA256SUMS.txt](SOURCE_SNAPSHOT_SHA256SUMS.txt) ghi nguồn và hash từng file. Kiểm tra từ thư mục gốc:
+Đoạn yêu cầu cung cấp repo chung chưa chỉ định nhánh nộp. Y19 của Review22 yêu cầu hợp nhánh `cq-v1-protocol-fixes` vào `main` qua pull request, không squash, trong ngữ cảnh repo nguồn. Không xem việc nhập code sang repo này là đã hoàn tất PR/tag của repo nguồn hoặc là bằng chứng cô yêu cầu một nhánh cụ thể cho repo mới.
+
+## Quy trình CQ V4 hiện hành
+
+1. Nhận bundle `runtime_dev_only/` từ nhóm dữ liệu; audit hash, schema, cohort và split theo `course_family_id`.
+2. FullTrain-A/B XGB natural; LR FullTrain-B là tham chiếu, balanced chỉ sensitivity.
+3. Headroom trên dev tại 0,5/1/2/5%, C02 với năm seed 11/29/47/71/101; báo SD/SE và family CI.
+4. QĐ16 cho baseline và ba ứng viên `skq_pc`, `skq_pc_lrq_sq`, `skq_pc_sqrt`; ghi fidelity, time/RSS và failure thật.
+5. Trình V4, rho*, nmin/delta_C và khác biệt dữ liệu để cô chốt trước panel.
+6. Panel dev ba seed 11/29/47, XGB natural; C03 matched, A2/A4/A8 và size-matched native theo review.
+7. Ngày 08/11 trình QĐ5 và freeze manifest. Chưa được tự mở test hoặc đổi split/metric theo điểm ứng viên.
+
+Hướng dẫn chạy và các config hiện hành nằm trong [experiments/README.md](experiments/README.md). A2/A4 hiện còn cần triển khai runtime; config có sẵn không đồng nghĩa panel đã chạy hoặc đã được duyệt.
+
+## Giữ nguyên code nguồn
+
+Nguồn: [UIT23521830/skq-experiment](https://github.com/UIT23521830/skq-experiment), nhánh `cq-v1-protocol-fixes`, commit `ba2cbcd0f66b0d32c3215518c9741d676f072579`.
+
+Bản nhập đầu tiên giữ 222 file. Bản hiện tại bỏ hướng dẫn GitHub/Kaggle cũ, config và script không dùng; ghi rõ danh sách ở [CURATION.json](CURATION.json). Các file runtime, config CQ V4, test và dependency được giữ vẫn phải khớp hash nguồn. README được viết lại, không thuộc nhóm file bất biến.
 
 ```text
 python tools/verify_source_snapshot.py
 ```
 
-## Chạy thực nghiệm
+Notebook đang chạy từ repo cá nhân giữ nguyên URL/commit/input. Không đổi nguồn giữa lượt chạy hoặc thay commit lịch sử trong archive. Notebook mới dùng repo chung phải chạy từ thư mục `experiments/`.
 
-Đọc [hướng dẫn CQ V4](experiments/RUN_CQ_V4.md). Mọi lệnh package chạy từ `experiments/`, không chạy từ thư mục gốc rồi tự đổi đường dẫn config. Với notebook mới, thư mục cài đặt editable là `<checkout>/experiments`.
+## Phân định dữ liệu và kết quả
 
-Notebook đang chạy từ repo cá nhân vẫn giữ URL/commit và nguồn dữ liệu cũ để đối chiếu; không đổi commit giữa một lượt chạy. Kết quả lịch sử tiếp tục ghi commit nguồn, không thay bằng commit nhập repo chung.
-
-## Quy tắc bàn giao
-
-- Nhóm dữ liệu tự cập nhật code trên nhánh riêng; không nhận loader hoặc audit của nhóm thực nghiệm làm toàn bộ pipeline tạo dữ liệu.
-- Không commit dữ liệu, model, predictions, selected indices, token, notebook có output hoặc archive kết quả.
-- Các ví dụ/config legacy giữ để tái lập, không phải danh sách run đã được cô duyệt. Test CQ V4 thực vẫn khóa; test unit dùng dữ liệu tổng hợp không đồng nghĩa mở test nghiên cứu.
-- A2/A4 hiện còn cần triển khai runtime; panel utility chưa được chạy trong lần nhập repo này. Có code/config không đồng nghĩa đủ GO hoặc đã freeze.
-- Không vendor repo bên ngoài: dependency được tải đúng commit trong `experiments/external/official_repos.lock.json` và bị Git ignore.
-
-Link Drive chung: **chờ nhóm bổ sung**. Việc tải mã nguồn lên GitHub không đồng nghĩa đã tải báo cáo lên Drive.
+- `data_pipeline/` chỉ giữ chỗ; nhóm dữ liệu tự đưa code lên nhánh riêng. Adapter trong `experiments/src/skq_exp/data/` không thay cho builder từ raw log.
+- Drive chung lưu báo cáo theo ngày, dữ liệu và archive theo quyền truy cập. Link Drive: **chờ nhóm bổ sung**.
+- Không commit dữ liệu, predictions, selected indices, model, token, archive hoặc notebook có output.
+- Repo ngoài chỉ fetch đúng commit khóa, không vendor vào Git.
