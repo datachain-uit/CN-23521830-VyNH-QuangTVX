@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "source_commit": "ba2cbcd0f66b0d32c3215518c9741d676f072579",
+  "initial_import_commit": "43a68e07b439c011163c7c4cfe97cea95fbfa2e9",
+  "policy": "Preserve original runtime, retained config, dependency and test bytes; curate documentation and unused files only.",
+  "branch_instruction": {
+    "user_supplied_repository_request": "No branch explicitly specified",
+    "review22_Y19": "PR without squash from cq-v1-protocol-fixes to main, in original repository context",
+    "new_repository_convention": "main is integrated code; data-pipeline is a data-team placeholder",
+    "old_repository_PR_or_tag_completed_by_this_import": false
+  },
+  "active_cq_v4_configs": [
+    "experiments/configs/cq_v4_m0_fulltrain_a_dev_natural_xgb_v1.json",
+    "experiments/configs/cq_v4_m0_fulltrain_b_dev_natural_xgb_v1.json",
+    "experiments/configs/cq_v4_m0_headroom_c02_rho005_natural_v1.json",
+    "experiments/configs/cq_v4_m0_headroom_c02_rho01_natural_v1.json",
+    "experiments/configs/cq_v4_m0_headroom_c02_rho02_natural_v1.json",
+    "experiments/configs/cq_v4_m0_headroom_c02_rho05_natural_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_01_natural_lbfgs_c1_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_02_natural_lbfgs_c01_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_03_natural_newton_c1_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_04_natural_newton_c01_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_05_balanced_lbfgs_c1_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_06_balanced_lbfgs_c01_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_07_balanced_newton_c1_v1.json",
+    "experiments/configs/cq_v4_m0_lr_tune_08_balanced_newton_c01_v1.json",
+    "experiments/configs/cq_v4_panel_dev_rho005_seeds11_29_47_v1.json"
+  ],
+  "regression_only_configs": [
+    "experiments/configs/cq_v1_m0_fulltrain_b_dev_balanced_v1.json",
+    "experiments/configs/cq_v1_m0_fulltrain_b_dev_natural_xgb_v1.json",
+    "experiments/configs/cq_v1_m0_headroom_c02_rho005_natural_v1.json",
+    "experiments/configs/cq_v1_m0_headroom_c02_rho01_natural_v1.json",
+    "experiments/configs/cq_v1_m0_headroom_c02_rho02_natural_v1.json",
+    "experiments/configs/cq_v1_m0_headroom_c02_rho05_natural_v1.json",
+    "experiments/configs/pilot_adult_full_seed11.json",
+    "experiments/configs/pilot_adult_full_seed11_v2.json",
+    "experiments/configs/pilot_adult_full_seed11_v3.json",
+    "experiments/configs/pilot_adult_full_seed11_v4.json",
+    "experiments/configs/pilot_adult_seed11.json",
+    "experiments/configs/pilot_course_quality_med_seed11_v3.json",
+    "experiments/configs/pilot_course_quality_med_temporal_seed11.json",
+    "experiments/configs/pilot_course_quality_med_temporal_seed11_v4.json",
+    "experiments/configs/s0_smoke.json",
+    "experiments/configs/s1_screen.json",
+    "experiments/configs/s2_confirm.json"
+  ],
+  "removed_files": [
+    {
+      "path": "experiments/configs/cq_v1_dev_smoke_afelo1_seed11.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_fulltrain_b_dev_natural_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_01_natural_lbfgs_c1_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_02_natural_lbfgs_c01_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_03_natural_newton_c1_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_04_natural_newton_c01_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_05_balanced_lbfgs_c1_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_06_balanced_lbfgs_c01_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_07_balanced_newton_c1_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v1_m0_lr_tune_08_balanced_newton_c01_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_fulltrain_b_dev_balanced_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_fulltrain_b_dev_natural_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_fulltrain_b_dev_natural_xgb_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_headroom_c02_rho005_natural_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_headroom_c02_rho01_natural_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_headroom_c02_rho02_natural_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/cq_v3_m0_headroom_c02_rho05_natural_v1.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/pilot_adult_quick_seed11.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/pilot_course_quality_med_quick_seed11.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/configs/pilot_course_quality_med_seed11.json",
+      "reason": "Unused V1/V3/quick legacy config; not in V4 or regression extends closure"
+    },
+    {
+      "path": "experiments/GUIDELINE_GITHUB_KAGGLE.md",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/RUN_CQ_V4.md",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/DATASET_ADAPTERS.md",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/IMPLEMENTATION_STATUS.md",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/KAGGLE_T4_FIDELITY_G10.md",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/claim_record.example.json",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/evidence_manifest.example.json",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/freeze_m0_v4_spec.example.json",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/freeze_manifest.example.json",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/freeze_manifest_v4.example.json",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/docs/freeze_v4_spec.example.json",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/scripts/build_review_response_docx.py",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/scripts/prepare_cq_v3_m0_bundle.py",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/scripts/prepare_cq_v4_review_package.py",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/scripts/inventory_kaggle_dataset_tree.py",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    },
+    {
+      "path": "experiments/requirements/kaggle.txt",
+      "reason": "Legacy/redundant documentation, report packaging, or JAX installation not required for current CQ V4 run"
+    }
+  ],
+  "rewritten_documentation": [
+    "README.md",
+    "experiments/README.md"
+  ],
+  "retained_source_file_count": 186,
+  "unchanged_source_counts": {
+    "src": 75,
+    "tests": 47,
+    "configs": 32,
+    "scripts": 22,
+    "docs": 4,
+    "requirements": 3,
+    "external": 1,
+    "pyproject.toml": 1,
+    ".editorconfig": 1
+  },
+  "original_files_recoverable_from_git": true,
+  "research_test_evaluation_performed": false
+}
