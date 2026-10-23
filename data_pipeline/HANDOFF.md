@@ -1,6 +1,6 @@
 # Nhánh bàn giao cho nhóm dữ liệu
 
-Nhánh: `data-pipeline`. Đây là nhánh chuẩn bị để nhóm dữ liệu tự đưa mã nguồn lên. **Hiện chưa có builder, loader hoặc notebook của nhóm dữ liệu được nhập.** Commit tạo nhánh chỉ thêm tài liệu bàn giao, không nhận phần công việc dữ liệu là do người thực nghiệm viết.
+Nhánh: `data-pipeline`. **Source builder, notebook đã xóa output và kiểm thử của nhóm dữ liệu đã được nhập vào thư mục này.** Hướng dẫn chạy và giao diện V4 nằm trong [README.md](README.md). Dữ liệu và loader/artifact được sinh vẫn bàn giao qua kho riêng, không nằm trong Git. Commit tạo nhánh ban đầu chỉ thêm tài liệu bàn giao; phần pipeline được nhóm dữ liệu bổ sung sau đó.
 
 ## Khi nhóm dữ liệu bắt đầu
 

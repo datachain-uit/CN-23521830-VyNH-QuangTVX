@@ -1,0 +1,95 @@
+# Code-only repository: new data/report formats stay local by default.
+*
+!*/
+!*.py
+!*.ipynb
+!*.sh
+!requirements*.txt
+!pyproject.toml
+!.gitignore
+!/.gitattributes
+!/README.md
+!/GITHUB_CODE_ONLY.md
+
+# Raw/derived datasets, runtime bundles and snapshots (including copied code).
+input/
+data/
+datasets/
+artifacts/
+final_quality*/
+phase_features*/
+weighted_loqv*/
+fullA*/
+fulltrain_a*/
+cq_v4*/
+source_snapshot/
+# Private D06 viewer copied into the trusted workspace; never publish its files.
+/private_d06_cq_v4_2026_10_23/
+_stage/
+_scratch/
+encoders/
+pretrained/
+models/
+checkpoints/
+
+# Keep the dependency specification, not the sentiment cache or outputs.
+/afelo_sentiment_cardiff/*
+!/afelo_sentiment_cardiff/requirements-sentiment.txt
+
+# Local copies of notebooks before output cleanup must never be published.
+.local_notebook_backups/
+.git/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv/
+venv/
+.aws/
+.ssh/
+.idea/
+.vscode/
+
+# This notebook contains a real learner example in source/Markdown as well
+# as outputs. Its source-only Python implementation remains publishable.
+/17_eda_final_quality_v2.ipynb
+
+# Explicit protection for private files, even if a rule above is expanded.
+.env
+.env.*
+*.pem
+*.key
+*.parquet
+*.csv
+*.tsv
+*.json
+*.jsonl
+*.ndjson
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.safetensors
+*.db
+*.sqlite*
+*.duckdb*
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.7z
+*.xlsx
+*.xls
+*.docx
+*.pdf
+*.log
+*.tmp
+*.py[cod]
+.DS_Store
+~$*
