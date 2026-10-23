@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source_commit": "ba2cbcd0f66b0d32c3215518c9741d676f072579",
   "initial_import_commit": "43a68e07b439c011163c7c4cfe97cea95fbfa2e9",
-  "policy": "Preserve original runtime, retained config, dependency and test bytes; curate documentation and unused files only.",
+  "policy": "Original curation preserved retained source bytes. Subsequent dev-only extensions in runner/registry are declared separately; original SKQ-PC engine, existing configs and legacy tests remain byte-identical.",
   "branch_instruction": {
     "user_supplied_repository_request": "No branch explicitly specified",
     "review22_Y19": "PR without squash from cq-v1-protocol-fixes to main, in original repository context",
@@ -195,9 +195,9 @@
     "README.md",
     "experiments/README.md"
   ],
-  "retained_source_file_count": 186,
+  "retained_source_file_count": 184,
   "unchanged_source_counts": {
-    "src": 75,
+    "src": 73,
     "tests": 47,
     "configs": 32,
     "scripts": 22,
@@ -208,5 +208,12 @@
     ".editorconfig": 1
   },
   "original_files_recoverable_from_git": true,
-  "research_test_evaluation_performed": false
+  "research_test_evaluation_performed": false,
+  "curated_baseline_source_file_count": 186,
+  "extension_record": "IMPLEMENTATION_CHANGES.json",
+  "prepared_ablation_configs": [
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_v1.json",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_lrq_sq_v1.json",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_sqrt_v1.json"
+  ]
 }

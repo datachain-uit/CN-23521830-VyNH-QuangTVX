@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "base_repository_commit": "94e9ad22277514061b8d184e59629868b568cb98",
+  "original_source_commit": "ba2cbcd0f66b0d32c3215518c9741d676f072579",
+  "scope": "Prepare dev-only A2/A4/C03 matched; no research test or new CQ utility run",
+  "delivery_state": "TESTED_EXTENSION_SNAPSHOT_AUTHORIZED_FOR_PUBLICATION",
+  "modified_original_runtime_files": [
+    "experiments/src/skq_exp/methods/registry.py",
+    "experiments/src/skq_exp/experiments/runner.py"
+  ],
+  "original_engine_skq_pc_unchanged": true,
+  "retained_original_source_files": 184,
+  "prepared_config_templates": [
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_v1.json",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_lrq_sq_v1.json",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_sqrt_v1.json"
+  ],
+  "current_file_sha256": {
+    "experiments/src/skq_exp/methods/registry.py": "509f79aede09b7e737aa1473bf01a77987ac56025ac70c09917a341a9dbd9e7b",
+    "experiments/src/skq_exp/experiments/runner.py": "4c33079e25f79b1dbad78180872ddb01a86f4af0f592b8407c27c1e44aeb2245",
+    "experiments/src/skq_exp/methods/proposed/cq_ablations.py": "a9708b8c56cf401f0fabdbce4bf6283278f89e015f9410b9e9e4eaa312a75917",
+    "experiments/tests/test_cq_v4_ablations.py": "a75503725460d6c76e9d76138cab63300e77a91043d51a22a7013bc0a7ad7a90",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_v1.json": "0e6ef12098447a2eb1d328889b40c2e375798e91a8311ef33fb5486207875fc3",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_lrq_sq_v1.json": "1f8bf163e51196dab6f9aed44114e7225dcd959b4ba3508a64508bc844ca7025",
+    "experiments/configs/cq_v4_dev_ablations_from_skq_pc_sqrt_v1.json": "5cf35862236f07bc897a3d3fd90e757fbb573e9136c7621969c24d9ee0fc7996",
+    "experiments/docs/cq_v4/ABLATIONS_PREPARATION.md": "a416a8a4ba95532375ab74b80a2d3c1eeb84f8679ef0d7cf2592ee1ca1618290",
+    "README.md": "a82f657790cafbc6fde05c172337b79bd77a8fc3ab354422890e63814edb5b97",
+    "experiments/README.md": "bf336c36d7c2c1aad96fcb97237ad76889e6658c58e4bf79131662b92c1300a2",
+    "tools/verify_source_snapshot.py": "c278969ecb6d37f8b33370eb7a6461a48896e6a86a5e3486137a2de9db152bc9"
+  },
+  "unit_tests": {
+    "tests": 218,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 17.625,
+    "scope": "200 unchanged legacy tests plus 18 new synthetic ablation/runner/config tests",
+    "preparation_test_iteration_note": "New synthetic integration fixture uses short Windows paths and the actual metrics_overall.json/metrics_per_label.csv filenames. No legacy tests were edited."
+  },
+  "limitations": [
+    "No candidate or winner has been selected by this change",
+    "A4 inherits already-paid source selection/QP cost and is a weight utility ablation, not a QP-free speed measurement",
+    "Standalone ablation configs rerun the declared source; cross-experiment artifact reuse is not silently enabled",
+    "No CQ V4 utility panel, ablation dataset run, or research test was executed"
+  ],
+  "cost_accounting_change": "SKQ-PC LRQ/A2-LRQ runner total now includes OOF query seconds and declares query_cache_hit/query_cost_shared; historical archives and selected rows/weights are unchanged."
+}

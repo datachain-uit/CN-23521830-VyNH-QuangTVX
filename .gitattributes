@@ -1,3 +1,5 @@
 # Preserve imported Git blob bytes so snapshot SHA-256 stays identical.
 experiments/** -text
 SOURCE_SNAPSHOT_SHA256SUMS.txt -text
+# The extension receipt also verifies the root README byte-for-byte.
+README.md -text

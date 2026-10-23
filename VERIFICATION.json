@@ -1,24 +1,25 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "source_commit": "ba2cbcd0f66b0d32c3215518c9741d676f072579",
-  "imported_source_files": 186,
+  "imported_source_files": 184,
   "source_worktree_sha256_verification": "PASS",
   "source_git_index_sha256_verification": "PASS",
-  "source_algorithm_config_and_test_edits": 0,
   "research_test_split_opened": false,
   "unit_tests": {
     "python": "3.13.2",
-    "tests": 200,
+    "tests": 218,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
-    "elapsed_seconds": 54.177,
+    "elapsed_seconds": 17.625,
     "data_scope": "synthetic fixtures and temporary test data; not CQ research test evaluation",
     "upstream_required_for_tests": {
       "tabular_data_distillation": "ea38d3c45e3f3e6dac06ea95826fd5768c4e47e1"
     },
     "first_attempt_note": "Two tests failed when the upstream checkout was absent. Fetching the exact locked source resolved both; no source/config/test edits were made.",
-    "verification_phase": "post_curation_full_unchanged_suite"
+    "verification_phase": "post_D04_ablation_preparation_200_legacy_plus_18_new",
+    "scope": "200 unchanged legacy tests plus 18 new synthetic ablation/runner/config tests",
+    "preparation_test_iteration_note": "New synthetic integration fixture uses short Windows paths and the actual metrics_overall.json/metrics_per_label.csv filenames. No legacy tests were edited."
   },
   "pre_upload_scan": {
     "source_and_new_python_syntax": "PASS",
@@ -39,5 +40,14 @@
   "curation_record": "CURATION.json",
   "retained_active_cq_v4_configs": 15,
   "retained_regression_only_configs": 17,
-  "removed_files": 36
+  "removed_files": 36,
+  "curated_baseline_source_files": 186,
+  "original_import_algorithm_config_and_test_edits": 0,
+  "extension_record": "IMPLEMENTATION_CHANGES.json",
+  "extended_runtime_files": [
+    "experiments/src/skq_exp/methods/registry.py",
+    "experiments/src/skq_exp/experiments/runner.py"
+  ],
+  "prepared_ablation_config_templates": 3,
+  "cost_accounting_change": "SKQ-PC LRQ/A2-LRQ runner total now includes OOF query seconds and declares query_cache_hit/query_cost_shared; historical archives and selected rows/weights are unchanged."
 }

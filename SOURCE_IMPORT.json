@@ -1,12 +1,12 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "import_type": "pinned_file_snapshot_not_git_history_rewrite",
   "source_repository": "https://github.com/UIT23521830/skq-experiment",
   "source_branch": "cq-v1-protocol-fixes",
   "source_commit": "ba2cbcd0f66b0d32c3215518c9741d676f072579",
   "destination_repository": "https://github.com/datachain-uit/CN-23521830-VyNH-QuangTVX",
   "imported_by": "UIT23521830",
-  "source_file_count": 186,
+  "source_file_count": 184,
   "source_file_groups": {
     ".editorconfig": 1,
     "configs": 32,
@@ -15,7 +15,7 @@
     "pyproject.toml": 1,
     "requirements": 3,
     "scripts": 22,
-    "src": 75,
+    "src": 73,
     "tests": 47
   },
   "byte_identity_verified": true,
@@ -23,7 +23,7 @@
   "uncommitted_source_changes_imported": false,
   "snapshot_manifest": "SOURCE_SNAPSHOT_SHA256SUMS.txt",
   "verification_command": "python tools/verify_source_snapshot.py",
-  "additional_files_scope": "Organization READMEs, ignores, verifier, source provenance and curation records; no runtime algorithm/config/test changes",
+  "additional_files_scope": "Organization/provenance files plus separately declared dev-only A2/A4/C03-matched extensions; original SKQ-PC engine and existing configs/tests unchanged",
   "data_pipeline_status": "placeholder_only_team_data_will_upload_own_code",
   "data_branch": "data-pipeline",
   "data_or_row_level_outputs_included": false,
@@ -31,5 +31,7 @@
   "historical_run_commits_replaced": false,
   "initial_import_file_count": 222,
   "initial_import_commit": "43a68e07b439c011163c7c4cfe97cea95fbfa2e9",
-  "curation_record": "CURATION.json"
+  "curation_record": "CURATION.json",
+  "curated_baseline_source_file_count": 186,
+  "extension_record": "IMPLEMENTATION_CHANGES.json"
 }

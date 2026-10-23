@@ -1,0 +1,40 @@
+{
+  "extends": "cq_v4_m0_fulltrain_b_dev_natural_xgb_v1.json",
+  "experiment_id": "cq_v4_dev_ablations_from_skq_pc_v1",
+  "protocol_id": "cq_v4_dev_ablations_review1022_prepared_pending_approval_v1",
+  "evidence_role": "dev_selection",
+  "method_ids": [
+    "skq_pc",
+    "a2_skq_pc_class_only",
+    "a4_skq_pc_uniform_weights",
+    "c03_matched_skq_pc"
+  ],
+  "budget_ratio": 0.005,
+  "selector_seeds": [
+    11,
+    29,
+    47
+  ],
+  "resource": {
+    "timeout_seconds": 10800,
+    "max_ram_gb": 24,
+    "max_threads": 4,
+    "max_estimated_operations": 50000000000
+  },
+  "method_options": {
+    "skq_pc": {
+      "n_components": 256,
+      "max_cells_per_stratum": 128,
+      "allocation_policy": "proportional"
+    },
+    "a2_skq_pc_class_only": {
+      "source_method": "skq_pc"
+    },
+    "a4_skq_pc_uniform_weights": {
+      "source_method": "skq_pc"
+    },
+    "c03_matched_skq_pc": {
+      "source_method": "skq_pc"
+    }
+  }
+}
