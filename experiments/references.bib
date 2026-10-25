@@ -1,5 +1,5 @@
 % Review 25 October foundations. Primary metadata checked 2026-10-25.
-% Partial bibliography: the complete baseline/education reference audit is still pending (Y17).
+% Baseline/education metadata extended 2026-10-25; see docs/Y17_REFERENCE_AUDIT.md for unresolved fields.
 @article{saerens2002prior,
   author = {Saerens, Marco and Latinne, Patrice and Decaestecker, Christine},
   title = {Adjusting the Outputs of a Classifier to New a Priori Probabilities: A Simple Procedure},
@@ -30,4 +30,123 @@
   year = {2002}, pages = {253--260},
   doi = {10.1145/564376.564421},
   url = {https://dpennock.com/papers/schein-sigir-2002-cold-start.pdf}
+}
+
+% Pre-M0 baseline/mechanism metadata verified from primary sources 2026-10-25.
+% These citations identify methods; they do not certify faithful reproduction.
+@article{hadar2024coretab,
+  author = {Hadar, Aviv and Milo, Tova and Razmadze, Kathy},
+  title = {Datamap-Driven Tabular Coreset Selection for Classifier Training},
+  journal = {Proceedings of the VLDB Endowment},
+  volume = {18}, number = {3}, pages = {876--888}, year = {2024},
+  doi = {10.14778/3712221.3712249},
+  url = {https://www.vldb.org/pvldb/vol18/p876-razmadze.pdf}
+}
+@article{chen2022bdis,
+  author = {Chen, Qingqiang and Cao, Fuyuan and Xing, Ying and Liang, Jiye},
+  title = {Instance Selection: A Bayesian Decision Theory Perspective},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume = {36}, number = {6}, pages = {6287--6294}, year = {2022},
+  doi = {10.1609/aaai.v36i6.20578},
+  url = {https://ojs.aaai.org/index.php/AAAI/article/view/20578}
+}
+@inproceedings{xia2023moderate,
+  author = {Xia, Xiaobo and Liu, Jiale and Yu, Jun and Shen, Xu and Han, Bo and Liu, Tongliang},
+  title = {Moderate Coreset: A Universal Method of Data Selection for Real-world Data-efficient Deep Learning},
+  booktitle = {International Conference on Learning Representations}, year = {2023},
+  url = {https://openreview.net/forum?id=7D5EECbOaf9},
+  note = {Metadata checked against the authors' official repository tmllab/2023_ICLR_Moderate-DS}
+}
+@inproceedings{zheng2023ccs,
+  author = {Zheng, Haizhong and Liu, Rui and Lai, Fan and Prakash, Atul},
+  title = {Coverage-centric Coreset Selection for High Pruning Rates},
+  booktitle = {International Conference on Learning Representations}, year = {2023},
+  url = {https://arxiv.org/abs/2210.15809}
+}
+@inproceedings{kwon2023dataoob,
+  author = {Kwon, Yongchan and Zou, James},
+  title = {Data-{OOB}: Out-of-bag Estimate as a Simple and Efficient Data Value},
+  booktitle = {Proceedings of the 40th International Conference on Machine Learning},
+  series = {Proceedings of Machine Learning Research}, volume = {202},
+  pages = {18135--18152}, year = {2023}, publisher = {PMLR},
+  url = {https://proceedings.mlr.press/v202/kwon23e.html}
+}
+@article{dwivedi2024kernel,
+  author = {Dwivedi, Raaz and Mackey, Lester},
+  title = {Kernel Thinning}, journal = {Journal of Machine Learning Research},
+  volume = {25}, number = {152}, pages = {1--77}, year = {2024},
+  url = {https://www.jmlr.org/papers/v25/21-1334.html}
+}
+@inproceedings{shetty2022compress,
+  author = {Shetty, Abhishek and Dwivedi, Raaz and Mackey, Lester},
+  title = {Distribution Compression in Near-linear Time},
+  booktitle = {International Conference on Learning Representations}, year = {2022},
+  url = {https://arxiv.org/abs/2111.07941}
+}
+@inproceedings{rahimi2007rff,
+  author = {Rahimi, Ali and Recht, Benjamin},
+  title = {Random Features for Large-Scale Kernel Machines},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume = {20}, year = {2007},
+  url = {https://papers.nips.cc/paper_files/paper/2007/hash/013a006f03dbc5392effeb8f18fda755-Abstract.html}
+}
+@inproceedings{chen2010herding,
+  author = {Chen, Yutian and Welling, Max and Smola, Alex},
+  title = {Super-Samples from Kernel Herding},
+  booktitle = {Proceedings of the 26th Conference on Uncertainty in Artificial Intelligence},
+  pages = {117--124}, year = {2010},
+  url = {https://proceedings.mlr.press/r8/chen10a.html}
+}
+@article{gonzalez1985clustering,
+  author = {Gonzalez, Teofilo F.},
+  title = {Clustering to Minimize the Maximum Intercluster Distance},
+  journal = {Theoretical Computer Science}, volume = {38}, pages = {293--306}, year = {1985},
+  doi = {10.1016/0304-3975(85)90224-5},
+  url = {https://www.sciencedirect.com/science/article/pii/0304397585902245}
+}
+@misc{florea2026tabularsource,
+  author = {Florea, C. and Barnoviciu, E.},
+  title = {Tabular Data Distillation: Comparative Study -- Source Repository},
+  year = {2026},
+  url = {https://github.com/corneliuflorea/Tabular-Data-Distillation},
+  note = {Repository README lists Tabular Data Distillation: An Extensive Comparison as under review; no accepted venue or DOI is asserted. Pinned benchmark source commit ea38d3c45e3f3e6dac06ea95826fd5768c4e47e1}
+}
+@inproceedings{whitehill2017measure,
+  author = {Whitehill, Jacob and Mohan, Kiran and Seaton, Daniel and Rosen, Yigal and Tingley, Dustin},
+  title = {{MOOC} Dropout Prediction: How to Measure Accuracy?},
+  booktitle = {Proceedings of the Fourth ACM Conference on Learning at Scale},
+  year = {2017}, doi = {10.1145/3051457.3053974},
+  url = {https://scholar.harvard.edu/files/dtingley/files/whitehill-mooc.pdf}
+}
+@misc{whitehill2017delving,
+  author = {Whitehill, Jacob and Mohan, Kiran and Seaton, Daniel and Rosen, Yigal and Tingley, Dustin},
+  title = {Delving Deeper into {MOOC} Student Dropout Prediction},
+  year = {2017}, eprint = {1702.06404}, archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/1702.06404},
+  note = {Expanded preprint by the same authors; do not count the short and expanded versions as independent empirical evidence}
+}
+@article{abda2024quality,
+  author = {Abda, Youssouf and Mehenaoui, Zohra and Lafifi, Yacine and Boudjehem, Rochdi},
+  title = {A New Approach for Assessing the Quality of Online Courses},
+  journal = {Education and Information Technologies}, year = {2024},
+  volume = {29}, pages = {13929--13956}, doi = {10.1007/s10639-023-12247-w},
+  url = {https://link.springer.com/article/10.1007/s10639-023-12247-w},
+  note = {First online 28 December 2023; volume publication year 2024}
+}
+@inproceedings{nguyen2027lodibi,
+  author = {Nguyen, Man and Nguyen, Thu and {Tan VO}, Khoa and Nguyen, Phuc and Nguyen-Hoang, Tu-Anh},
+  title = {{LoDiBi}: Automated Course Quality Evaluation Framework with {LOQCA}, {DeepIFSA}, and {BiLSTM}},
+  booktitle = {Information and Communication Technology: SOICT 2025},
+  series = {Communications in Computer and Information Science}, volume = {2913},
+  pages = {399--409}, year = {2027}, publisher = {Springer},
+  doi = {10.1007/978-981-92-2587-3_31},
+  url = {https://link.springer.com/chapter/10.1007/978-981-92-2587-3_31},
+  note = {Publisher citation year 2027; first online 12 August 2026; conference SOICT 2025. These three dates are distinct}
+}
+@misc{nguyenTempoDQ,
+  author = {Nguyen, Thu and Nguyen, Hong-Tri and Nguyen-Hoang, Tu-Anh},
+  title = {{TEMPO-DQ} Framework: A Temporal-Ensemble, Multi-phase Operational Data Quality Approach for Early Multi-class Prediction under Heterogeneous Big Data},
+  doi = {10.1016/j.ipm.2026.105175},
+  url = {https://www.sciencedirect.com/science/article/pii/S0306457326005650},
+  note = {Publisher search metadata verifies title, authors and DOI. Final volume, issue and citation year await publisher citation export; not inferred from DOI. Official source repository: https://github.com/datachain-uit/TEMPO-DQ-Framework}
 }

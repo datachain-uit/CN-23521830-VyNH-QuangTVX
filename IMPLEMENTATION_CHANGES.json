@@ -83,7 +83,7 @@
     "experiments/docs/REVIEW1025_APPENDIX_SOURCE.json": "1a9e3090d176cca6e5af9981d0789fe1c5c2408e59149b195e0366212de02abb",
     "experiments/docs/REVIEW1025_IMPLEMENTATION.md": "958f5a3140de624d89f650d46721346fdf384b9652e4d3aab3185b0711ab854f",
     "experiments/docs/REVIEW1025_TEST_RESULT.json": "dc38024fdac137282b905aa43a00f8341f498584e5adaa04f033d67b80e11905",
-    "experiments/references.bib": "123e9923e7ec4e090f33622a05ce6ac73a364bd27e03fbcce790a94be3552c06",
+    "experiments/references.bib": "07fbd7263d700ff3eaed75dec32c4a343c0e84dc66e8a72ce3756f6920270169",
     "experiments/scripts/analyze_cq_review2510_saved.py": "10f95866bb78842a0044a5895c864de38c0fe05cd900dd26880d4194565c6cd4",
     "experiments/scripts/audit_cq_probability_basis.py": "f722e69d7bdb01d501e08f0c52da198023fb48309131dcf685ad410a710971c7",
     "experiments/scripts/materialize_cq_review2510_configs.py": "dd647faec2728063fc2c5d04fc2692b1b6dcab7f9c5ac5a0e2d4e7ba5296477f",
@@ -93,7 +93,8 @@
     "experiments/tests/test_cq_review2510.py": "6fed4174ff61fb02c41268222f4a9969a968f09403ce8970d724a8451af08a34",
     "experiments/tests/test_cq_cd3_date_contract.py": "6eb2a43de5dbc5b2bd74ca18b4e0998616bca914119d1db1a1d721865a4504c1",
     "experiments/docs/CD3_RECEIPT_COMPATIBILITY.md": "14dc62f068b02ac089f8afa8ea20055f8e819d4f42440d71f768fe693ffaabe8",
-    "experiments/docs/CD3_RECEIPT_TEST_RESULT.json": "3ae43dac47c230bcdf73dc2d60fbc64d2e45c1fd8fff9f5957dacbfe7717f49f"
+    "experiments/docs/CD3_RECEIPT_TEST_RESULT.json": "3ae43dac47c230bcdf73dc2d60fbc64d2e45c1fd8fff9f5957dacbfe7717f49f",
+    "experiments/docs/Y17_REFERENCE_AUDIT.md": "8f1805db70a133471182c2a79f0d1ab866c1f02e93235d1ebdb8af74fbc0eb17"
   },
   "unit_tests": {
     "tests": 283,
@@ -202,5 +203,11 @@
     "real_data_received": true,
     "teacher_subgroup": "pending_data_team",
     "D06_human_signoff": false
+  },
+  "bibliography_metadata_update": {
+    "verified_keys": 20,
+    "scope": "metadata and citation scope only; no runtime code/config change",
+    "unresolved": "TEMPO-DQ final volume/issue/year citation export; fulltext synthesis",
+    "fit_code_pin": "7e10e8047441d82f26d8caea3ab8fafb82ccce47"
   }
 }
