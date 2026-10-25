@@ -17,7 +17,8 @@ from skq_exp.data.adapters.course_quality_v4 import CourseQualityV4Adapter, _ver
 from skq_exp.data.cq_cd3_views import build_cd3_views, PHASES
 
 
-def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path) -> Path:
+def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path,
+            *, feature_variant: str = "main") -> Path:
     if bundle.exists() or (processed_root / "course_quality_v4").exists():
         raise FileExistsError("Use fresh CD3 output paths; do not overwrite a prior runtime")
     for source in (raw_root, v4_bundle):
@@ -45,6 +46,7 @@ def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path)
                 raise ValueError(f"{name}: immutable V4 spine mismatch in {col}")
     ready, audit, contract, prep = build_cd3_views(
         frames["train"], {p: frames[f"dev_phase{p[-1]}"] for p in PHASES}, frames["fulltrain_a"],
+        feature_variant=feature_variant,
     )
     bundle.mkdir(parents=True)
     for name in ("splits.json", "run_manifest.json", "family_splits.parquet", "course_splits.parquet"):
@@ -61,7 +63,10 @@ def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path)
     atomic_json(bundle / "validation.json", {"dataset_version": "CQ V4", "test_excluded": True,
                                             "feature_view": "cd3", "immutable_spine_matches": True})
     atomic_json(bundle / "bundle_manifest.json", {"dataset_version": "CQ V4", "test_excluded": True,
-        "feature_view": "cd3", "raw_source_sha256": sha256_file(raw_root / "SHA256SUMS.txt"),
+        "feature_view": "cd3", "feature_variant": feature_variant,
+        "learner_column_representation": "V1_Median_under_original_column_names",
+        "raw_audit_source": "original raw_root/raw_features; use for D06 and QA23",
+        "raw_source_sha256": sha256_file(raw_root / "SHA256SUMS.txt"),
         "raw_input_files_sha256": {path: sha256_file(raw / path) for path in paths.values()},
         "v4_source_sha256": sha256_file(v4_bundle / "SHA256SUMS.txt"), "contract": contract})
     hashes = [f"{sha256_file(p)}  {p.relative_to(bundle).as_posix()}" for p in sorted(bundle.rglob("*")) if p.is_file()]
@@ -75,7 +80,8 @@ def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path)
     atomic_json(runtime / "feature_contract.json", adapter_contract)
     atomic_json(runtime / "schema.json", adapter_contract)
     manifest = json.loads(result.read_text(encoding="utf-8"))
-    manifest.update(feature_view="cd3", feature_contract_hash=adapter_contract["contract_hash"],
+    manifest.update(feature_view="cd3", feature_variant=feature_variant,
+                    feature_contract_hash=adapter_contract["contract_hash"],
                     raw_source_sha256=sha256_file(raw_root / "SHA256SUMS.txt"))
     atomic_json(result, manifest)
     return result
@@ -87,8 +93,11 @@ def main() -> int:
     parser.add_argument("--v4-bundle", type=Path, required=True)
     parser.add_argument("--output-bundle", type=Path, required=True)
     parser.add_argument("--processed-root", type=Path, required=True)
+    parser.add_argument("--feature-variant", choices=("main", "qa23_all"), default="main",
+                        help="Y29: qa23_all must use fresh separate output bundle/runtime")
     args = parser.parse_args()
-    print(prepare(args.raw_root.resolve(), args.v4_bundle.resolve(), args.output_bundle.resolve(), args.processed_root.resolve()))
+    print(prepare(args.raw_root.resolve(), args.v4_bundle.resolve(), args.output_bundle.resolve(),
+                  args.processed_root.resolve(), feature_variant=args.feature_variant))
     return 0
 
 

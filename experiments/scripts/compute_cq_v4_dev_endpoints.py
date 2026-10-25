@@ -27,6 +27,8 @@ from skq_exp.training.metrics import compute_overall_metrics, compute_per_label_
 from skq_exp.data.cq_patch_1023 import (
     calibration_in_the_large, subgroup_log_loss, ul_log_loss,
 )
+from skq_exp.data.cq_patch_1025 import a8_defined
+from skq_exp.experiments.cq_review_1025 import e_phase_report, DECISION_ENDPOINT
 
 LABELS = np.asarray(["E", "G", "A"])
 
@@ -51,7 +53,8 @@ def align_predictions(frame: pd.DataFrame, prediction: dict) -> dict:
 
 
 def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: str | None = None,
-            review_1023: bool = False) -> dict:
+            review_1023: bool = False, review_1025: bool = False, n_bootstrap: int = 2000) -> dict:
+    review_1023 = review_1023 or review_1025
     train = pd.read_parquet(source / "pool_b/train.parquet")
     unique = train.drop_duplicates(["user_id", "course_id"])
     mu = class_conditional_means(unique.rename(columns={"q_alpha_1": "q", "y_alpha_1": "y"}))
@@ -128,19 +131,30 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
                 np.add.at(matrix, (pred["y_true"].astype(int), pred["y_pred"].astype(int)), 1)
                 confusion[phase] = matrix.tolist()
                 effective = cost["effective_class_prior"]
-                source_priors.append({LABELS[int(label)]: float(prob) for label, prob in zip(effective["labels"], effective["probabilities"], strict=True)})
+                source_prior = {label: 0.0 for label in LABELS}
+                for label, prob in zip(effective["labels"], effective["probabilities"], strict=True):
+                    source_prior[LABELS[int(label)]] = float(prob)
+                if (not np.isfinite(list(source_prior.values())).all()
+                        or min(source_prior.values()) < 0
+                        or not np.isclose(sum(source_prior.values()), 1)):
+                    raise ValueError("Invalid effective source prior")
+                source_priors.append(source_prior)
             if any(not np.allclose([p[l] for l in LABELS], [source_priors[0][l] for l in LABELS]) for p in source_priors):
                 raise ValueError("Effective prior differs across phases of one fitted model")
             private = pd.concat(frames, ignore_index=True)
             pcc = cq_endpoints(private, mu, n_min=n_min, mode="pcc")
-            corrected = prior_correct_predictions(private, source_priors[0], targets)
+            a8_undefined = not a8_defined([source_priors[0][label] for label in LABELS])
+            corrected = None if a8_undefined else prior_correct_predictions(private, source_priors[0], targets)
             runs.append({
                 "status": "success", "experiment_id": key[0], "method_id": key[1],
                 "selector_seed": key[2], "learner_id": key[3], "model_seed": key[4],
                 "n_min": n_min, "mu_train": mu, "root_policy": "course_family_id",
                 "course_endpoint_unit": "course_id", "bootstrap_unit": "course_family_id",
                 "pcc": pcc, "cc_sensitivity": cq_endpoints(private, mu, n_min=n_min, mode="cc"),
-                "a8_prior_correction": {"retrained": False, "assumption": "label_shift_only", "source_prior": source_priors[0], "target_prior_by_phase": targets, "pcc": cq_endpoints(corrected, mu, n_min=n_min)},
+                "a8_prior_correction": {"retrained": False, "assumption": "label_shift_only", "source_prior": source_priors[0], "target_prior_by_phase": targets,
+                    "a8_undefined": a8_undefined,
+                    "status": "A8 không xác định (thiếu lớp)" if a8_undefined else "defined",
+                    "pcc": None if a8_undefined else cq_endpoints(corrected, mu, n_min=n_min)},
                 "overall_by_phase": overall, "per_label_by_phase": per_label,
                 "confusion_matrices": confusion,
                 "mean_metrics": {k: float(np.mean([v[k] for v in overall.values()])) for k in overall["P1"] if all(v.get(k) is not None for v in overall.values())},
@@ -162,7 +176,33 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
                     "fit_diagnostics_by_phase": fit_diagnostics,
                     "legacy_pcc_ul_fields_are_macro_f1_not_primary": True,
                 })
-                runs[-1]["a8_prior_correction"]["ul_log_loss"] = ll(corrected)
+                runs[-1]["a8_prior_correction"]["ul_log_loss"] = None if a8_undefined else ll(corrected)
+            if review_1025:
+                phase_priors = next(iter(items.values()))[1].get("effective_class_prior_by_training_phase")
+                if phase_priors is None and key[1] in {"c00_full_train", "c00_full_train_a"}:
+                    phase_priors = {ph: source_priors[0] for ph in targets}
+                dp = {ph: (float(sum((phase_priors[ph][lab] - targets[ph][lab])*mu[lab] for lab in LABELS))
+                           if phase_priors and phase_priors.get(ph) is not None else None) for ph in targets}
+                def e_report(frame):
+                    parts = {p: frame[frame.phase == p] for p in ("P1", "P2", "P3", "P4")}
+                    return e_phase_report(
+                        {p: f[["p_E", "p_G", "p_A"]].to_numpy(float) for p, f in parts.items()},
+                        {p: f.y_true.map({"E": 0, "G": 1, "A": 2}).to_numpy(int) for p, f in parts.items()},
+                        {p: f.course_root_id.to_numpy() for p, f in parts.items()}, n_bootstrap=n_bootstrap)
+                raw_ul = runs[-1]["ul_log_loss"]["ul"]
+                corrected_ul = None if a8_undefined else runs[-1]["a8_prior_correction"]["ul_log_loss"]["ul"]
+                runs[-1].update(primary_endpoint=DECISION_ENDPOINT,
+                    ul_raw=raw_ul, ul_a8=corrected_ul,
+                    ul_decision=raw_ul if a8_undefined else corrected_ul,
+                    a8_undefined=a8_undefined, decision_probability_basis="raw_missing_class_fallback" if a8_undefined else "A8_to_Pool_B_by_phase",
+                    e_class_raw=e_report(private),
+                    e_class_a8=None if a8_undefined else e_report(corrected),
+                    dp_by_phase=dp,
+                    dp_basis="effective_selected_prior_conditional_on_training_phase",
+                    dp_missing_phase_policy="undefined_not_replaced_by_global_prior",
+                    ec_decision_basis="raw_missing_class_fallback" if a8_undefined else "A8",
+                    ec_decision=runs[-1]["pcc"] if a8_undefined else runs[-1]["a8_prior_correction"]["pcc"],
+                    feature_variant=next(iter(items.values()))[1].get("feature_variant", "main"))
     finally:
         if archive:
             archive.close()
@@ -179,9 +219,14 @@ def main():
     parser.add_argument("--n-min", type=int, default=30)
     parser.add_argument("--experiment-id")
     parser.add_argument("--review-1023", action="store_true", help="Report QD25 primary LL and D13 diagnostics")
+    parser.add_argument("--review-1025", action="store_true", help="QD30 ULA8 decisions and QD32 E metrics/cluster CI")
+    parser.add_argument("--n-bootstrap", type=int, default=2000)
     args = parser.parse_args()
     result = compute(Path(args.input_dir), Path(args.artifacts), n_min=args.n_min,
-                     experiment_id=args.experiment_id, review_1023=args.review_1023)
+                     experiment_id=args.experiment_id, review_1023=args.review_1023,
+                     review_1025=args.review_1025, n_bootstrap=args.n_bootstrap)
+    if Path(args.output).exists():
+        raise FileExistsError("Use a fresh endpoint output; preserve historical results")
     atomic_json(Path(args.output), result)
     print(json.dumps({"runs": len(result["runs"]), "output": args.output}))
 

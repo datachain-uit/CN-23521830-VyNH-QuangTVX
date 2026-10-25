@@ -1,0 +1,14 @@
+{
+  "tests": 283,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 176.1,
+  "timestamp": "2026-10-25T21:17:47.299305+07:00",
+  "environment": "Python3.13.2 numpy2.2.3 pandas2.2.3 sklearn1.6.1 xgb3.0.0 pyarrow20.0.0 pytest9.1.1 CPU",
+  "scope": "263 retained tests + 8 teacher Appendix1025 + 12 Review25 integration/edge tests",
+  "target_environment_note": "Local pytest9.1.1 differs from project dev extra >=8,<9; not Kaggle validation",
+  "junit_sha256": "3d6475e5c993b7c365b3a7063be94c667d068cf05a717bcf7cdc76a978684e51",
+  "test_data_read": false,
+  "real_CQ_model_fits": 0
+}

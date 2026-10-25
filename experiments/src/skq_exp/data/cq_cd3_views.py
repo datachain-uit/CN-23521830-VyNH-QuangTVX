@@ -41,8 +41,11 @@ def _check(frame: pd.DataFrame, name: str, split: str, phases: set[str]) -> None
         raise ValueError(f"{name}: observation masks must be 0/1 audit columns")
 
 
-def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: pd.DataFrame):
+def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: pd.DataFrame,
+                    *, feature_variant: str = "main"):
     """Return ready frames, QA audit, feature contract and serializable fit parameters."""
+    if feature_variant not in {"main", "qa23_all"}:
+        raise ValueError("Unknown CD3 feature_variant")
     _check(train, "train", "train", set(PHASES))
     if set(dev) != set(PHASES):
         raise ValueError("CD3 needs exactly four dev phases")
@@ -86,7 +89,8 @@ def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: p
     if len(numeric) != 74:
         raise ValueError(f"Expected 74 numeric before QA23, got {len(numeric)}")
     audit = qa23_audit(add_hour_cyclical(train), "q_alpha_1", numeric)
-    drop = held_out_columns(audit)
+    flagged = held_out_columns(audit)
+    drop = [] if feature_variant == "qa23_all" else flagged
     views = CQRawEarlyViews().fit(train, drop=drop)
     frames = {"train": train, **{f"dev_phase{p[-1]}": dev[p] for p in PHASES}, "fulltrain_a": full_a}
     ready = {}
@@ -94,7 +98,9 @@ def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: p
         matrix = views.transform(frame)["learner"]
         if not np.isfinite(matrix.to_numpy(float)).all():
             raise ValueError(f"{name}: nonfinite ready features")
-        # Metadata and raw columns remain available for endpoint audit; only allowlist enters X.
+        # Learner columns are overwritten by V1 values under the original names.
+        # Metadata/non-learner columns remain; D06/QA23 must read raw_features,
+        # never treat these ready columns as untransformed event aggregates (Y30).
         ready[name] = frame.copy()
         ready[name][matrix.columns] = matrix
     prep = {
@@ -106,6 +112,8 @@ def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: p
     }
     contract = {
         "feature_view": "cd3", "selector_columns": views.cols["selector"],
+        "feature_variant": feature_variant, "qa23_flagged_columns": flagged,
+        "ready_learner_representation": "V1_Median_under_original_column_names",
         "learner_columns": views.cols["learner"], "held_out_columns": drop,
         "gender_missing_code": views.maps.get("gender", {}).get("<MISSING>"),
         "preprocessing_scope": "TRAIN_POOLED_P1_P4_V1_MEDIAN",

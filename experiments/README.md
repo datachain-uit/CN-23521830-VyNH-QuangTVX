@@ -2,7 +2,17 @@
 
 Tất cả lệnh dưới đây chạy trong `experiments/`. Cấu trúc `src/`, `configs/`, `scripts/`, `tests/`, tên package `skq_exp` và API được giữ từ repo cá nhân. Cơ chế selector gốc không đổi; phần learner/view/endpoint được bổ sung theo review 23/10, tách khỏi config và kết quả lịch sử.
 
-## Cập nhật hiện hành theo review 23 tháng 10
+## Cập nhật hiện hành theo review 25 tháng 10
+
+Xem [mã và hướng dẫn Review25](docs/REVIEW1025_IMPLEMENTATION.md).
+**ULA8** (log loss sau hiệu chỉnh về prior Pool B theo phase) là đại lượng
+ra quyết định theo QĐ30; UL thô báo song song. Dùng `--review-1025` khi tính
+endpoint/headroom mới; chế độ 1023 bên dưới được giữ để tái lập lịch sử.
+`qa23_all` là diagnostic dùng bundle/runtime riêng, không phải ứng viên.
+Chỉ gate S−A ở P4 được kiểm ở D13 bước1; B−A theo phase là mô tả (QĐ29).
+Mọi thay đổi vào main qua PR, không tự merge hoặc mở test.
+
+## Cấu hình kế thừa từ review 23 tháng 10
 
 Xem [phạm vi cài đặt và thứ tự chạy](docs/cq_v4/REVIEW_2026_10_23_IMPLEMENTATION.md).
 UL chính là **log loss trung bình P1–P4**, nhỏ tốt hơn; Macro-F1 là phụ. Main

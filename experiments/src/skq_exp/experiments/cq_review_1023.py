@@ -19,6 +19,10 @@ def guard_feature_view(config, data: dict) -> None:
     actual = contract.get("feature_view", "v4")
     if actual != expected:
         raise ValueError(f"feature_view mismatch: requested={expected}, prepared={actual}")
+    variant = getattr(config, "feature_variant", None) or "main"
+    actual_variant = contract.get("feature_variant", "main")
+    if variant != actual_variant:
+        raise ValueError(f"feature_variant mismatch: requested={variant}, prepared={actual_variant}")
     if not config.test_locked:
         raise ValueError("Review 23/10 requires test_locked=true")
     if any(key.startswith(("X_test", "y_test")) for key in data):
