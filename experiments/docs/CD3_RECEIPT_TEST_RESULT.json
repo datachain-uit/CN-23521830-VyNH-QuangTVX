@@ -1,0 +1,12 @@
+{
+  "tests": 293,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 78.894,
+  "timestamp": "2026-10-25T22:30:47.736371+07:00",
+  "scope": "283 previous tests plus 10 CD3 date/order regressions",
+  "junit_sha256": "d76123eb7e7f95ac11feb66698dd0c703c72e740feba626c5db4a94fbdf69c79",
+  "research_test_read": false,
+  "new_CQ_CD3_model_fits": 0
+}

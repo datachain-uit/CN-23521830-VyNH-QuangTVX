@@ -17,6 +17,27 @@ from skq_exp.data.adapters.course_quality_v4 import CourseQualityV4Adapter, _ver
 from skq_exp.data.cq_cd3_views import build_cd3_views, PHASES
 
 
+def _immutable_equal(left: pd.Series, right: pd.Series, column: str) -> bool:
+    """Compare dates/timestamps by exact time, preserving row keys and timezone.
+
+    The frozen V4 enroll_time is Arrow date32, while the CD3 builder writes
+    timestamp[us]. Do not reject that representation change, round timestamps,
+    strip timezone information, or accept a changed time as the same day.
+    All non-time fields retain the original strict equality check.
+    """
+    if column not in {"enroll_time", "cutoff_time"}:
+        return left.equals(right)
+    if not left.index.equals(right.index):
+        return False
+    if any(pd.api.types.is_numeric_dtype(s.dtype) for s in (left, right)):
+        return False  # Numeric epochs need an explicit unit, never infer one.
+    try:
+        a, b = (pd.to_datetime(s, errors="raise").dt.as_unit("ns") for s in (left, right))
+    except (ValueError, TypeError, OverflowError, AttributeError):
+        return False
+    return a.equals(b)
+
+
 def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path,
             *, feature_variant: str = "main") -> Path:
     if bundle.exists() or (processed_root / "course_quality_v4").exists():
@@ -29,7 +50,10 @@ def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path,
     raw = raw_root / "raw_features"
     paths = {"train": "pool_b/train.parquet", "fulltrain_a": "fulltrain_a/train.parquet",
              **{f"dev_phase{i}": f"pool_b/dev_phase{i}.parquet" for i in range(1, 5)}}
-    frames = {name: pd.read_parquet(raw / path) for name, path in paths.items()}
+    # Match the data builder's declared row_id order before ntile (ties) and
+    # first-seen category maps; parquet physical row order is not a fit rule.
+    frames = {name: pd.read_parquet(raw / path).sort_values("row_id", kind="stable").reset_index(drop=True)
+              for name, path in paths.items()}
     # Check against original V4 rows before fitting anything; never create a new split/cohort.
     identity = ["row_id", "enrollment_id", "user_id", "course_id", "course_family_id", "y_alpha_1"]
     for name, path in paths.items():
@@ -42,7 +66,7 @@ def prepare(raw_root: Path, v4_bundle: Path, bundle: Path, processed_root: Path,
                 raise ValueError(f"{name}: missing immutable field {col}")
             left = a.set_index("row_id", drop=False)[col].sort_index()
             right = b.set_index("row_id", drop=False)[col].sort_index()
-            if not left.equals(right):
+            if not _immutable_equal(left, right, col):
                 raise ValueError(f"{name}: immutable V4 spine mismatch in {col}")
     ready, audit, contract, prep = build_cd3_views(
         frames["train"], {p: frames[f"dev_phase{p[-1]}"] for p in PHASES}, frames["fulltrain_a"],

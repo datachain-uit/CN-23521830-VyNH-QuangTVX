@@ -41,7 +41,7 @@
     "tools/verify_source_snapshot.py": "c278969ecb6d37f8b33370eb7a6461a48896e6a86a5e3486137a2de9db152bc9",
     "experiments/configs/cq_v4_review2310_v50_v1.json": "f5f27babdddc88c4f3ca6c80fbd164e0b5898443199e9b7b5bdf864b10ba6770",
     "experiments/src/skq_exp/experiments/cq_review_1023.py": "f44e86f80e5c9bfb715a98cf2c902f1c5a512f36f507d087210d748c6f50d7fb",
-    "experiments/scripts/prepare_cq_cd3_dev.py": "888015c0b51131ca2685c1a405750a90b03d81b88051e55bee211d908ffef704",
+    "experiments/scripts/prepare_cq_cd3_dev.py": "a8376f12d30238b295efc6bcd1dcd05157611f3bbb1a511ed07e0ff955fc32d1",
     "experiments/configs/cq_v4_review2310_l1_v1.json": "3b04d2bf6bb46d8fd622cc730bb2b379992180daf25a98529ece5fe3b72481c0",
     "experiments/configs/cq_v4_review2310_lr_03_v1.json": "2b4920cf560d5ef21a0e21929fd175d6cb5344d726eb9eabc6af95b319b94958",
     "experiments/configs/cq_v4_review2310_s_v1.json": "0a74e3c7d1f4cd3ba5c5d34518b1377441021abdae6f849c5d512c55a23c2bf7",
@@ -90,7 +90,10 @@
     "experiments/src/skq_exp/data/cq_patch_1025.py": "9c5158ec6f6a3c66ae5da675db9a3556521ba868261527cf60e77d7fb3344574",
     "experiments/src/skq_exp/experiments/cq_review_1025.py": "2e004453102812651af299790de72585580a8bc99f0a30a5042b7227edde716b",
     "experiments/tests/test_cq_patch_1025.py": "24d518b9596ffd7b28ccb352e83556f8403bc0bf9476aa5a253ff4ab1703e0ab",
-    "experiments/tests/test_cq_review2510.py": "6fed4174ff61fb02c41268222f4a9969a968f09403ce8970d724a8451af08a34"
+    "experiments/tests/test_cq_review2510.py": "6fed4174ff61fb02c41268222f4a9969a968f09403ce8970d724a8451af08a34",
+    "experiments/tests/test_cq_cd3_date_contract.py": "6eb2a43de5dbc5b2bd74ca18b4e0998616bca914119d1db1a1d721865a4504c1",
+    "experiments/docs/CD3_RECEIPT_COMPATIBILITY.md": "14dc62f068b02ac089f8afa8ea20055f8e819d4f42440d71f768fe693ffaabe8",
+    "experiments/docs/CD3_RECEIPT_TEST_RESULT.json": "3ae43dac47c230bcdf73dc2d60fbc64d2e45c1fd8fff9f5957dacbfe7717f49f"
   },
   "unit_tests": {
     "tests": 283,
@@ -179,5 +182,25 @@
     "teacher_subgroup": "pending_data_team",
     "human_resource_hours": "pending_user",
     "no_test_or_panel_authorization": true
+  },
+  "cd3_receipt_20261025": {
+    "previous_commit": "3b8d6dccdc636692bd84819cabf1da6df9d8ab30",
+    "previous_receipt_sha256": "cc64a5ed9e84643ad4ddc05bcd27f6e48cbaabfb1ec798b4be1159e4b43287d8",
+    "test_result": {
+      "tests": 293,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 78.894,
+      "timestamp": "2026-10-25T22:30:47.736371+07:00",
+      "scope": "283 previous tests plus 10 CD3 date/order regressions",
+      "junit_sha256": "d76123eb7e7f95ac11feb66698dd0c703c72e740feba626c5db4a94fbdf69c79",
+      "research_test_read": false,
+      "new_CQ_CD3_model_fits": 0
+    },
+    "scope": "date32/timestamp exact-spine compatibility and deterministic row_id fit order; no feature helper or selector changes",
+    "real_data_received": true,
+    "teacher_subgroup": "pending_data_team",
+    "D06_human_signoff": false
   }
 }
