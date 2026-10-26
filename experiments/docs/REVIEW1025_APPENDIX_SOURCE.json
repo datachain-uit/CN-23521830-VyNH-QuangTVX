@@ -1,0 +1,17 @@
+{
+  "source_docx_sha256": "44eac54884bb529f462d3455d314b041822aa5e62e9fa9058340f847cfc82162",
+  "review": "Review-2026-10-25",
+  "extraction": "DOCX table cells; LF/trailing-space normalization only; executable statements unchanged",
+  "files": [
+    {
+      "path": "src/skq_exp/data/cq_patch_1025.py",
+      "sha256": "9c5158ec6f6a3c66ae5da675db9a3556521ba868261527cf60e77d7fb3344574",
+      "docx_table_zero_based": 19
+    },
+    {
+      "path": "tests/test_cq_patch_1025.py",
+      "sha256": "24d518b9596ffd7b28ccb352e83556f8403bc0bf9476aa5a253ff4ab1703e0ab",
+      "docx_table_zero_based": 20
+    }
+  ]
+}

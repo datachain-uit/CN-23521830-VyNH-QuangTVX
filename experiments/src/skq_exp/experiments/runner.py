@@ -323,8 +323,21 @@ def run_config(
                                 early_stopping=config.early_stopping,
                             )
                         if current_dataset == "course_quality_v4":
+                            if not isinstance(result, GeneratedDatasetResult):
+                                from .cq_review_1025 import selection_phase_priors
+                                if current_method == "c00_full_train_a":
+                                    global_prior = fitted.base_cost["effective_class_prior"]
+                                    values = {"E": 0., "G": 0., "A": 0.}
+                                    for label, prob in zip(global_prior["labels"], global_prior["probabilities"], strict=True):
+                                        values["EGA"[int(label)]] = float(prob)
+                                    by_phase_prior = {p: dict(values) for p in ("P1", "P2", "P3", "P4")}
+                                else:
+                                    by_phase_prior = selection_phase_priors(fit_y, result.indices,
+                                        result.weights, data["phase_train"], config.class_weight_policy)
+                                fitted.base_cost["effective_class_prior_by_training_phase"] = by_phase_prior
                             fitted.base_cost.update({
                                 "feature_view": (data.get("feature_contract") or {}).get("feature_view", "v4"),
+                                "feature_variant": (data.get("feature_contract") or {}).get("feature_variant", "main"),
                                 "feature_contract_hash": (data.get("feature_contract") or {}).get("contract_hash"),
                                 "held_out_columns": (data.get("feature_contract") or {}).get("held_out_columns", []),
                                 "training_phases": list(config.training_phases) or ["P1", "P2", "P3", "P4"],
@@ -339,6 +352,12 @@ def run_config(
                                 codes = [c for c in names if c not in selector_names and c != "phase_fraction"]
                                 fitted.base_cost["v4_code_gain_share"] = code_gain_share(fitted.model.get_booster(), names, codes)
                                 fitted.base_cost["v4_code_columns"] = codes
+                            if config.feature_variant == "qa23_all":
+                                names = data["feature_contract"]["learner_columns"]
+                                flagged = data["feature_contract"].get("qa23_flagged_columns", [])
+                                fitted.base_cost["qa23_retained_gain_share"] = code_gain_share(
+                                    fitted.model.get_booster(), names, flagged)
+                                fitted.base_cost["qa23_retained_columns"] = flagged
                     except MemoryError:
                         _save_evaluation_failures(
                             pending, learner_rows, "oom", None,

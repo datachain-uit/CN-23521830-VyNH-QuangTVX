@@ -57,6 +57,7 @@ class ExperimentConfig:
     feature_view: str | None = None
     training_phases: tuple[str, ...] = ()
     label_shuffle_seed: int | None = None
+    feature_variant: str | None = None
 
     @classmethod
     def from_json(cls, path: str | Path) -> "ExperimentConfig":
@@ -144,6 +145,17 @@ class ExperimentConfig:
             raise ValueError("Y25 parquet requires predictions, y_true and float32 probabilities")
         if self.feature_view not in {None, "v4", "cd3"}:
             raise ValueError("feature_view chỉ nhận v4 hoặc cd3")
+        if self.feature_variant not in {None, "qa23_all"}:
+            raise ValueError("feature_variant chỉ nhận qa23_all hoặc mặc định")
+        if self.feature_variant is not None and self.feature_view != "cd3":
+            raise ValueError("qa23_all requires feature_view=cd3")
+        if self.feature_variant == "qa23_all" and (
+            self.method_ids != ("c00_full_train",) or self.model_seed != 42
+            or self.training_phases or self.label_shuffle_seed is not None
+            or self.learner_ids != ("xgb",) or self.budget_ratio != 1.0
+            or self.class_weight_policy != "natural"
+        ):
+            raise ValueError("qa23_all is a FullTrain-B XGB seed42 diagnostic, not a candidate")
         if self.feature_view is not None and self.dataset_ids != ("course_quality_v4",):
             raise ValueError("feature_view chỉ áp dụng CQ V4")
         if self.feature_view is not None and not self.test_locked:
@@ -320,6 +332,8 @@ class ExperimentConfig:
             payload["training_phases"] = list(self.training_phases)
         if self.label_shuffle_seed is not None:
             payload["label_shuffle_seed"] = self.label_shuffle_seed
+        if self.feature_variant is not None:
+            payload["feature_variant"] = self.feature_variant
         return payload
 
 
