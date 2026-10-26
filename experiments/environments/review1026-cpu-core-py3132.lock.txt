@@ -1,0 +1,14 @@
+# Review26 measured CPU core; Python must be 3.13.2 (checked by runner).
+# OS-specific optional baselines are locked separately; no Torch/GPU required.
+numpy==2.2.3
+scipy==1.15.2
+pandas==2.2.3
+scikit-learn==1.6.1
+joblib==1.4.2
+psutil==7.0.0
+matplotlib==3.10.1
+statsmodels==0.14.4
+pyahocorasick==2.3.0
+xgboost==3.0.0
+pytest==9.1.1
+pyarrow==20.0.0

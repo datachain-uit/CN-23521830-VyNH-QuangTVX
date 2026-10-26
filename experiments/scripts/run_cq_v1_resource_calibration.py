@@ -340,6 +340,8 @@ def main() -> int:
     parser.add_argument("--external-root", default="external/repos")
     parser.add_argument("--max-threads", type=int, default=4)
     parser.add_argument("--replicates", type=int, default=3)
+    parser.add_argument("--review-1026", action="store_true",
+                        help="QD33/O34: exactly the 13 main selectors; exclude historical CoreTab subset")
     parser.add_argument(
         "--resume", action="store_true",
         help="Tiếp tục từ observations_<method>.json trên đúng environment.",
@@ -374,7 +376,10 @@ def main() -> int:
     output = Path(args.output).resolve()
     external_root = Path(args.external_root).resolve()
     output.mkdir(parents=True, exist_ok=True)
-    methods = tuple(args.method or METHODS)
+    panel_methods = tuple(m for m in METHODS if m != "n02_coretab_xgb_subset") if args.review_1026 else METHODS
+    methods = tuple(args.method or panel_methods)
+    if args.review_1026 and any(m not in panel_methods for m in methods):
+        raise ValueError("Review26 QD16 permits only the registered 13-selector panel")
     summary_path = output / "resource_decision_all.json"
     all_results: dict[str, Any] = {}
     if args.resume and summary_path.is_file():
@@ -510,12 +515,12 @@ def main() -> int:
         },
         "selector_feature_count": int(X_selector_all.shape[1]),
         "learner_feature_count": int(X_learner_all.shape[1]),
-        "fixed_methods": list(FIXED_METHODS),
+        "fixed_methods": [m for m in FIXED_METHODS if m in panel_methods],
         "adapted_methods": list(ADAPTED_METHODS),
         "candidate_methods": list(CANDIDATE_METHODS),
-        "expected_method_count": len(METHODS),
+        "expected_method_count": len(panel_methods),
         "measured_method_count": len(all_results),
-        "panel_complete": set(all_results) == set(METHODS),
+        "panel_complete": set(all_results) == set(panel_methods),
         "external_root": str(external_root),
         "selector_device": selector_device,
         "methods": all_results,

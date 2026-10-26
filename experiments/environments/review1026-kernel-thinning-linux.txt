@@ -1,0 +1,4 @@
+# Linux CPU build; install core lock and Cython first.
+Cython==3.3.0
+faiss-cpu==1.15.1
+goodpoints @ git+https://github.com/microsoft/goodpoints.git@181b12ade5dd02a61b65ed5cb9444c916fa3135f

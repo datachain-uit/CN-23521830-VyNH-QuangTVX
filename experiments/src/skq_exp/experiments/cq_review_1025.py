@@ -28,22 +28,26 @@ def probabilities(value, y=None):
     return p / p.sum(1, keepdims=True)
 
 
-def verdict_proposal(a, b, delta, raw_a, raw_b):
+def verdict_proposal(a, b, delta, raw_a, raw_b, *, historical=False, phase_a=None, phase_b=None):
     """Require all registered dev selector seeds, record both verdicts and no approval."""
-    if set(a) != {11, 29, 47} or set(raw_a) != set(a):
-        raise ValueError("Decision requires registered selector seeds 11/29/47")
+    from ..data.cq_patch_1026 import PANEL_SEEDS, verdict_panel
+    required = {11, 29, 47} if historical else set(PANEL_SEEDS)
+    if set(a) != required or set(raw_a) != set(a):
+        raise ValueError(f"Decision requires registered selector seeds {sorted(required)}")
     for values in (a, b, raw_a, raw_b):
         arr = np.asarray(list(values.values()) if isinstance(values, dict) else [values], float)
         if not np.isfinite(arr).all() or np.any(arr < 0):
             raise ValueError("Invalid loss values")
     if not np.isfinite(delta) or delta <= 0:
         raise ValueError("Margin must be finite and positive")
-    out = verdict_a8(a, b, delta, raw_a, raw_b)
+    out = (verdict_a8(a, b, delta, raw_a, raw_b) if historical else
+           verdict_panel(a, b, delta, raw_a, raw_b, phase_a, phase_b))
+    out["rule_revision"] = "Review-2026-10-25" if historical else "Review-2026-10-26"
     out.update(approval_status="pending_teacher", test_data_read=False)
     return out
 
 
-def choose_fixed_budget_baseline(records):
+def choose_fixed_budget_baseline(records, *, historical=False):
     """K1: lowest mean decision loss, exclude C03 and native-size runs explicitly."""
     eligible = []
     for record in records:
@@ -52,8 +56,10 @@ def choose_fixed_budget_baseline(records):
         if record.get("budget_mode") != "fixed":
             continue
         scores = record["ul_decision_by_seed"]
-        if set(scores) != {11, 29, 47}:
-            raise ValueError("Baseline selection requires complete three-seed decisions")
+        from ..data.cq_patch_1026 import PANEL_SEEDS
+        required = {11, 29, 47} if historical else set(PANEL_SEEDS)
+        if set(scores) != required:
+            raise ValueError(f"Baseline selection requires seeds {sorted(required)}")
         values = np.asarray(list(scores.values()), float)
         if not np.isfinite(values).all() or np.any(values < 0):
             raise ValueError("Invalid baseline scores")

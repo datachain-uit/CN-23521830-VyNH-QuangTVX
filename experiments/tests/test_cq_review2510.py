@@ -36,7 +36,7 @@ def test_K1_excludes_C03_and_native_even_when_their_score_is_lower():
                 "ul_decision_by_seed": {s: loss for s in (11,29,47)}}
                for name, mode, role, loss in [("c03", "fixed", "C03", .1),
                     ("native", "native", "baseline", .2), ("random", "fixed", "baseline", .5)]]
-    assert choose_fixed_budget_baseline(records)["method_id"] == "random"
+    assert choose_fixed_budget_baseline(records, historical=True)["method_id"] == "random"
 
 
 @pytest.mark.parametrize("ties", [False, True])
@@ -86,7 +86,7 @@ def test_A8_headroom_selects_corrected_not_raw_and_keeps_grid_guard():
 def test_verdict_requires_three_seeds_and_marks_prior_dependence():
     a8 = {s: .5 for s in (11,29,47)}
     raw = {s: .52 for s in a8}
-    result = verdict_proposal(a8, .5, .008, raw, .5)
+    result = verdict_proposal(a8, .5, .008, raw, .5, historical=True)
     assert result["verdict"] == "hòa" and result["raw_verdict"] == "thua"
     assert result["prior_dependent"] and result["approval_status"] == "pending_teacher"
     with pytest.raises(ValueError):

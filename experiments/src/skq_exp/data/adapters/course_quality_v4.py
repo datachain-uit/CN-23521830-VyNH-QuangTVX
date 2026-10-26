@@ -87,7 +87,17 @@ class CourseQualityV4Adapter(DatasetAdapter):
 
         selector_columns = _column_list(source / "selector_feature_columns.json")
         learner_columns = _column_list(source / "learner_feature_columns.json")
-        if not selector_columns or not set(selector_columns) <= set(learner_columns):
+        ctx_contract = bundle_manifest.get("contract", {})
+        registered_minus_ctx = (
+            bundle_manifest.get("feature_view") == "cd3"
+            and bundle_manifest.get("feature_variant") == "cd3_minus_ctx"
+            and ctx_contract.get("selector_view_unchanged") is True
+            and ctx_contract.get("feature_variant_role") == "registered_descriptive_ablation_QD35"
+            and set(selector_columns) - set(learner_columns)
+                == set(ctx_contract.get("removed_learner_context", {}).get("g_ctx", []))
+        )
+        if (not selector_columns or not learner_columns
+                or (not set(selector_columns) <= set(learner_columns) and not registered_minus_ctx)):
             raise ValueError("Feature view CQ V4 rỗng hoặc selector không thuộc learner view")
         forbidden = {
             "user_id", "course_id", "course_family_id", "phase", "split",
