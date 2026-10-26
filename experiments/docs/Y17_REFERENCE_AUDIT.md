@@ -35,3 +35,9 @@ Metadata đối chiếu nguồn chính ngày 25/10/2026. Danh mục ở [`refere
 - [Whitehill short / tác giả](https://scholar.harvard.edu/files/dtingley/files/whitehill-mooc.pdf), [expanded preprint](https://arxiv.org/abs/1702.06404)
 
 Đã bổ sung 16 mục vào bốn tài liệu nền, tổng 20 khóa không trùng. Đây là kiểm metadata và phạm vi trích dẫn. Chưa ghi Y17 hoàn tất toàn bộ: cần chốt metadata TEMPO-DQ còn thiếu và kiểm nội dung toàn văn khi viết chương tổng quan; không dùng abstract/metadata để khẳng định tái lập hay so sánh trực tiếp với CQ.
+
+## Cập nhật metadata TEMPO DQ ngày 26 tháng 10 năm 2026
+
+Đã bổ sung journal, volume 64, issue 2, article 105175 và trang 1–41 từ [hồ sơ nghiên cứu của tác giả tại Aalto](https://research.aalto.fi/en/publications/tempo-dq-framework-a-temporal-ensemble-multi-phase-operational-da/). Hồ sơ ghi citation theo số tạp chí năm 2027, online ngày 25/09/2026; BibTeX/RIS export dùng năm online 2026. Entry giữ khóa nguyenTempoDQ, dùng năm citation 2027 và ghi rõ ngày online/cách export trong note. Không suy năm từ DOI. Publisher và PDF trả 403 ở lần truy cập này; không ghi là đã tải citation export trực tiếp từ publisher.
+
+Phần thiếu metadata ở ghi chú ngày 25/10 đã được bổ sung bằng nguồn tác giả ở trên. Việc tổng hợp nội dung toàn văn vẫn là công việc riêng; cập nhật metadata không được coi là đã hoàn tất tổng quan tài liệu.

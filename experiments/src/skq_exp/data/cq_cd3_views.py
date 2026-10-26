@@ -44,7 +44,7 @@ def _check(frame: pd.DataFrame, name: str, split: str, phases: set[str]) -> None
 def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: pd.DataFrame,
                     *, feature_variant: str = "main"):
     """Return ready frames, QA audit, feature contract and serializable fit parameters."""
-    if feature_variant not in {"main", "qa23_all"}:
+    if feature_variant not in {"main", "qa23_all", "cd3_minus_ctx"}:
         raise ValueError("Unknown CD3 feature_variant")
     _check(train, "train", "train", set(PHASES))
     if set(dev) != set(PHASES):
@@ -92,6 +92,14 @@ def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: p
     flagged = held_out_columns(audit)
     drop = [] if feature_variant == "qa23_all" else flagged
     views = CQRawEarlyViews().fit(train, drop=drop)
+    learner_views = views
+    ctx = None
+    if feature_variant == "cd3_minus_ctx":
+        from .cq_patch_1026 import course_constant_columns
+        candidates = list(dict.fromkeys(views.cols["learner"] + views.cols["selector"]))
+        ctx = course_constant_columns(add_hour_cyclical(train),
+                                      [c for c in candidates if c != "phase_fraction"])
+        learner_views = CQRawEarlyViews().fit(train, drop=[*drop, *ctx["g_ctx"]])
     frames = {"train": train, **{f"dev_phase{p[-1]}": dev[p] for p in PHASES}, "fulltrain_a": full_a}
     ready = {}
     for name, frame in frames.items():
@@ -103,6 +111,9 @@ def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: p
         # never treat these ready columns as untransformed event aggregates (Y30).
         ready[name] = frame.copy()
         ready[name][matrix.columns] = matrix
+        if learner_views is not views:
+            learner_matrix = learner_views.transform(frame)["learner"]
+            ready[name][learner_matrix.columns] = learner_matrix
     prep = {
         "fit_scope": "TRAIN_POOLED_P1_P4", "static_scope": "once_per_enrollment",
         "center": views.v1.center, "scale": views.v1.scale,
@@ -120,5 +131,14 @@ def build_cd3_views(train: pd.DataFrame, dev: dict[str, pd.DataFrame], full_a: p
         "qa23_scope": "train_only_per_phase", "qa23_approved_by_teacher": False,
         "preprocessing_hash": stable_hash(prep),
     }
+    if ctx is not None:
+        contract.update(learner_columns=learner_views.cols["learner"],
+                        removed_learner_context=ctx, selector_view_unchanged=True,
+                        feature_variant_role="registered_descriptive_ablation_QD35")
+        prep["learner_refit"] = {"columns": learner_views.cols["learner"],
+            "center": learner_views.v1.center, "scale": learner_views.v1.scale,
+            "log_columns": learner_views.v1.log_columns, "category_maps": learner_views.maps,
+            "fit_scope": "TRAIN_POOLED_P1_P4"}
+        contract["preprocessing_hash"] = stable_hash(prep)
     contract["contract_hash"] = stable_hash(contract)
     return ready, audit, contract, prep

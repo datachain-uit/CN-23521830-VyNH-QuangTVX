@@ -117,7 +117,7 @@ def main() -> int:
     parser.add_argument("--v4-bundle", type=Path, required=True)
     parser.add_argument("--output-bundle", type=Path, required=True)
     parser.add_argument("--processed-root", type=Path, required=True)
-    parser.add_argument("--feature-variant", choices=("main", "qa23_all"), default="main",
+    parser.add_argument("--feature-variant", choices=("main", "qa23_all", "cd3_minus_ctx"), default="main",
                         help="Y29: qa23_all must use fresh separate output bundle/runtime")
     args = parser.parse_args()
     print(prepare(args.raw_root.resolve(), args.v4_bundle.resolve(), args.output_bundle.resolve(),

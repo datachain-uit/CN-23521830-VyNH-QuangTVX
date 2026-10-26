@@ -3,3 +3,5 @@ experiments/** -text
 SOURCE_SNAPSHOT_SHA256SUMS.txt -text
 # The extension receipt also verifies the root README byte-for-byte.
 README.md -text
+tools/verify_source_snapshot.py -text
+.gitattributes -text

@@ -1,0 +1,19 @@
+{
+  "tests": 311,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "seconds": 139.595,
+  "junit_sha256": "47967162e3bdd12e731298fa55b0b7d987bfbd1fdd88c0726bc83d3b6be0c62c",
+  "test_data_read": false,
+  "real_CQ_fits_by_test_suite": 0,
+  "note": "293 previous tests +11 unchanged teacher appendix tests +7 Review26 integration/guards",
+  "supplementary_stage_tests": {
+    "tests": 2,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_sha256": "96fefc931d0703e48046397a8e319ec411c2268aaf20f687f4b8503261498b3e"
+  },
+  "total_distinct_tests_verified": 313
+}

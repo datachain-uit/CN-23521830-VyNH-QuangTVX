@@ -1,0 +1,17 @@
+{
+  "review": "Review-2026-10-26",
+  "source_docx_sha256": "05176dc105f9e237d64b33c909f184a0b8947331738f23bcbd4d616bd95ef15d",
+  "extraction": "mechanical first-cell text, LF only",
+  "files": [
+    {
+      "path": "src/skq_exp/data/cq_patch_1026.py",
+      "docx_table_zero_based": 23,
+      "sha256": "566c7ccbbd3edf5fd52c0549ab07cc6b9cacf8a6cfad5dcea6ca4ec3d894552e"
+    },
+    {
+      "path": "tests/test_cq_patch_1026.py",
+      "docx_table_zero_based": 24,
+      "sha256": "08efaa467794f9974b313b622fa6964f6e2e80f3af9e9152ac00d844e9e0fe9a"
+    }
+  ]
+}

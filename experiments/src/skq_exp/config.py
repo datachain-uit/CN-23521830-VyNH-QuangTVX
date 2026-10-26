@@ -145,8 +145,8 @@ class ExperimentConfig:
             raise ValueError("Y25 parquet requires predictions, y_true and float32 probabilities")
         if self.feature_view not in {None, "v4", "cd3"}:
             raise ValueError("feature_view chỉ nhận v4 hoặc cd3")
-        if self.feature_variant not in {None, "qa23_all"}:
-            raise ValueError("feature_variant chỉ nhận qa23_all hoặc mặc định")
+        if self.feature_variant not in {None, "qa23_all", "cd3_minus_ctx"}:
+            raise ValueError("feature_variant chỉ nhận qa23_all, cd3_minus_ctx hoặc mặc định")
         if self.feature_variant is not None and self.feature_view != "cd3":
             raise ValueError("qa23_all requires feature_view=cd3")
         if self.feature_variant == "qa23_all" and (
@@ -156,6 +156,16 @@ class ExperimentConfig:
             or self.class_weight_policy != "natural"
         ):
             raise ValueError("qa23_all is a FullTrain-B XGB seed42 diagnostic, not a candidate")
+        if self.feature_variant == "cd3_minus_ctx" and (
+            self.method_ids not in {("c00_full_train",), ("c02_stratified_random",)}
+            or self.learner_ids != ("xgb",) or self.class_weight_policy != "natural"
+            or self.training_phases or self.label_shuffle_seed is not None
+            or (self.method_ids == ("c00_full_train",) and
+                (self.model_seed not in {42, 43, 44} or self.budget_ratio != 1.0))
+            or (self.method_ids == ("c02_stratified_random",) and
+                (self.model_seed != 42 or self.budget_ratio != .005))
+        ):
+            raise ValueError("cd3_minus_ctx is the registered FullB/C02 dev ablation only")
         if self.feature_view is not None and self.dataset_ids != ("course_quality_v4",):
             raise ValueError("feature_view chỉ áp dụng CQ V4")
         if self.feature_view is not None and not self.test_locked:

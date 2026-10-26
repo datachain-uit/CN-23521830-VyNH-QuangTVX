@@ -53,7 +53,9 @@ def align_predictions(frame: pd.DataFrame, prediction: dict) -> dict:
 
 
 def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: str | None = None,
-            review_1023: bool = False, review_1025: bool = False, n_bootstrap: int = 2000) -> dict:
+            review_1023: bool = False, review_1025: bool = False, review_1026: bool = False,
+            n_bootstrap: int = 2000) -> dict:
+    review_1025 = review_1025 or review_1026
     review_1023 = review_1023 or review_1025
     train = pd.read_parquet(source / "pool_b/train.parquet")
     unique = train.drop_duplicates(["user_id", "course_id"])
@@ -69,6 +71,7 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
         names = [p.relative_to(artifacts).as_posix() for p in artifacts.rglob("manifest.json")]
         read = lambda name: (artifacts / name).read_bytes()
     grouped = {}
+    manifests = {}
     try:
         for name in names:
             if not name.endswith("/manifest.json") or "/experiments/" not in "/" + name:
@@ -83,6 +86,7 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
                 continue
             stem = name.removesuffix("manifest.json")
             key = tuple(manifest[k] for k in ("experiment_id", "method_id", "selector_seed", "learner_id", "model_seed"))
+            manifests[key] = manifest
             if evaluation in grouped.setdefault(key, {}):
                 raise ValueError(f"Duplicate evaluation identity: {key}/{evaluation}")
             with np.load(io.BytesIO(read(stem + "predictions.npz")), allow_pickle=False) as p:
@@ -203,6 +207,24 @@ def compute(source: Path, artifacts: Path, *, n_min: int = 30, experiment_id: st
                     ec_decision_basis="raw_missing_class_fallback" if a8_undefined else "A8",
                     ec_decision=runs[-1]["pcc"] if a8_undefined else runs[-1]["a8_prior_correction"]["pcc"],
                     feature_variant=next(iter(items.values()))[1].get("feature_variant", "main"))
+            if review_1026:
+                from skq_exp.experiments.cq_review_1026 import selection_support, extend_endpoint
+                def payload(relative):
+                    if archive:
+                        matches = [n for n in names if n == relative or n.endswith('/' + relative)]
+                        if len(matches) != 1:
+                            raise ValueError(f"Missing/ambiguous Review26 selection payload: {relative}")
+                        return read(matches[0])
+                    return read(relative)
+                cost = next(iter(items.values()))[1]
+                full_a = (pd.read_parquet(source / "fulltrain_a/train.parquet")
+                          if key[1] == "c00_full_train_a" else None)
+                support = selection_support(manifests[key], cost, source, train, full_a, payload)
+                extend_endpoint(runs[-1],
+                    {"P" + ev[-1]: pred["y_prob"] for ev, (pred, _) in items.items()},
+                    {"P" + ev[-1]: pred["y_true"] for ev, (pred, _) in items.items()},
+                    source_priors[0], phase_priors, targets, support,
+                    is_full_a=key[1] == "c00_full_train_a")
     finally:
         if archive:
             archive.close()
@@ -220,11 +242,13 @@ def main():
     parser.add_argument("--experiment-id")
     parser.add_argument("--review-1023", action="store_true", help="Report QD25 primary LL and D13 diagnostics")
     parser.add_argument("--review-1025", action="store_true", help="QD30 ULA8 decisions and QD32 E metrics/cluster CI")
+    parser.add_argument("--review-1026", action="store_true", help="QD33-35: phase A8, support, E floors/flags and marginals")
     parser.add_argument("--n-bootstrap", type=int, default=2000)
     args = parser.parse_args()
     result = compute(Path(args.input_dir), Path(args.artifacts), n_min=args.n_min,
                      experiment_id=args.experiment_id, review_1023=args.review_1023,
-                     review_1025=args.review_1025, n_bootstrap=args.n_bootstrap)
+                     review_1025=args.review_1025, review_1026=args.review_1026,
+                     n_bootstrap=args.n_bootstrap)
     if Path(args.output).exists():
         raise FileExistsError("Use a fresh endpoint output; preserve historical results")
     atomic_json(Path(args.output), result)
