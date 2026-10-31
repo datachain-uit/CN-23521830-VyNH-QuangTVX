@@ -2,6 +2,10 @@
 
 Mã nguồn của nhóm dữ liệu để chuyển raw MOOCubeX thành bảng chất lượng, nhãn, đặc trưng theo phase, FullTrain-A và bundle bàn giao V4. Thư mục này giữ cấu trúc các script/notebook đã phát triển; không chứa dataset, model, cache hoặc kết quả thực nghiệm.
 
+Nguồn dữ liệu: [MOOCCubeX của THU KEG](https://github.com/THU-KEG/MOOCCubeX); Yu và cộng sự, “MOOCCubeX: A Large Knowledge-centered Repository for Adaptive Learning in MOOCs”, CIKM 2021, tr. 4643–4652. Repo công khai chỉ bàn giao mã và tài liệu tổng hợp theo QĐ40. Xem [hồ sơ xử lý Review 31/10](GITHUB_REVIEW_2026_10_31.md) để biết trạng thái gỡ PR #5/LFS và niêm phong test.
+
+Trước freeze M1 được duyệt, chỉ dùng gói train/dev/FULL_A và metadata đã lọc train/dev. Các lệnh dựng test hoặc kiểm bundle đầy đủ bên dưới mô tả khả năng của source, chỉ thực hiện khi có quyết định của giảng viên theo QĐ42. Bản data card công khai đã hiệu đính ngày 31/10; builder 28 tái lập bản đo 30/10 và không được chạy lại để ghi đè các hiệu đính này trong quá trình xử lý GitHub.
+
 Phần chạy mô hình/selector ở [`../experiments/`](../experiments/) được giữ riêng. Việc nhập source này không thay đổi thuật toán, công thức, split hoặc kết quả đã có của hai nhóm.
 
 ## Lấy code và môi trường
@@ -9,7 +13,7 @@ Phần chạy mô hình/selector ở [`../experiments/`](../experiments/) đư�
 Lần đầu:
 
 ```bash
-git clone --branch data-pipeline https://github.com/datachain-uit/CN-23521830-VyNH-QuangTVX.git
+git clone --branch feat/cd3-v4-2-data-handoff https://github.com/datachain-uit/CN-23521830-VyNH-QuangTVX.git
 cd CN-23521830-VyNH-QuangTVX/data_pipeline
 python3.12 -m venv .venv
 source .venv/bin/activate
@@ -19,7 +23,7 @@ python -m pip install -r requirements-v4.txt
 Các lần cập nhật sau, tại repo đã clone:
 
 ```bash
-git pull --ff-only origin data-pipeline
+git pull --ff-only origin feat/cd3-v4-2-data-handoff
 ```
 
 `requirements-v4.txt` khóa môi trường cho builder V4 và kiểm thử giao thức. Các bước cũ/sentiment có dependency riêng; tham khảo import của từng script và [`afelo_sentiment_cardiff/requirements-sentiment.txt`](afelo_sentiment_cardiff/requirements-sentiment.txt). Không chạy toàn bộ pipeline nếu chỉ cần cập nhật code.
@@ -58,6 +62,93 @@ python 23_finalize_data_card_v4.py
 ```
 
 Không chạy lại các bước 01–20 chỉ để đọc bundle hoặc pull code. Những bước đó có đầu vào/dependency riêng và có thể tính lại dữ liệu.
+
+## Feature CD3 V4.2 theo QĐ28
+
+`25_build_phase_features_v4_2.py` tính lại feature CQ từ event gốc theo
+`cq_tempo_features.py`, trên spine V4 đã đóng băng. Đầu ra mặc định là
+`phase_features_v4_2/`, gồm Pool B train, dev P1–P4 và FULL_A train. Builder
+không mở snapshot test và không huấn luyện mô hình.
+
+```bash
+python -m pip install -r requirements-v4_2.txt
+python -m pytest -q test_cq_tempo_features.py tests/test_cq_v4_2_builder.py
+python 25_build_phase_features_v4_2.py --threads 2 --memory 1200MB --batch-size 1500
+python 26_verify_phase_features_v4_2.py
+```
+
+Data card của bộ CD3 đang dùng là [DATA_CARD_V4_2.md](DATA_CARD_V4_2.md), có bản
+đi kèm trong `phase_features_v4_2/`. Sau khi bổ sung test bằng bước 27, tái tạo
+tài liệu và evidence từ bundle/cache hiện hành bằng
+`python 28_build_data_card_v4_2.py`, rồi chạy lại verifier 26.
+Nếu đã nhận xác nhận D06 thực tế, truyền ngày nhận bằng `--d06-confirmed-on`;
+tham số này ghi nhận thông tin, không ký thay phiếu kiểm thủ công. Bước 28 đo
+Y37, kiểm Gctx và ghi nguồn thời gian của 12 cột, giữ nguyên hash của 20 file
+raw/ready cùng sáu artifact preprocessing/feature/QA23.
+
+Để bổ sung test P1–P4 vào bộ V4.2 đã có:
+
+```bash
+python 27_build_test_features_v4_2.py --threads 2 --memory 1200MB --batch-size 1500
+python 26_verify_phase_features_v4_2.py
+```
+
+Bước 27 đọc spine test V4 và event gốc, khôi phục nguyên trạng các tham số từ
+`preprocessing.json`, danh sách feature và QA23 đã chốt trên train. Bước này chỉ
+transform test, không gọi fit/QA23 hoặc huấn luyện mô hình. Hash của raw/ready
+train/dev/FULL_A và các artifact fit được đối chiếu trước/sau. Đầu ra test là
+`raw_features/pool_b/test_phase1.parquet` đến `test_phase4.parquet` cùng các file
+ready tương ứng trong `model_ready/`. Manifest, loader và checksum được cập nhật
+sau khi dữ liệu test qua kiểm tra; manifest dev-only ban đầu được lưu trong
+`provenance/pre_test_extension/`.
+
+Để xuất metadata `teacher_subgroup` chính thức theo Y31:
+
+```bash
+python 29_build_teacher_subgroup_v4_2.py
+python 28_build_data_card_v4_2.py
+python 26_verify_phase_features_v4_2.py
+```
+
+Bước 29 tạo `metadata/teacher_subgroup.parquet`, một dòng/course, từ relation
+`course_teacher` sau trim ID, bỏ NULL/rỗng và khử trùng. Reference là union
+teacher ID của các khóa train: `seen` khi tất cả đã gặp, `new` khi tất cả chưa
+gặp, `mixed` khi có cả hai, `missing` khi mapping không có ID dùng được. Không
+đòi hỏi profile teacher ghép được. Reference được đóng băng trong
+`metadata/train_teacher_reference.json`; chạy lại không tự mở rộng reference.
+Spec, mapping chuẩn hóa, audit, version/hash nằm trong bundle và manifest.
+
+Loader cung cấp `teacher_subgroups()` để đọc bảng metadata, hoặc
+`load(..., include_teacher_subgroup=True)` để ghép `teacher_subgroup`,
+`n_teachers`, `n_seen_teachers`, `n_new_teachers`. Mặc định loader giữ contract
+cũ; bốn cột bổ sung là metadata và giữ ngoài learner/selector allowlist.
+Raw/ready Parquet, nhãn, split và preprocessing được đối chiếu checksum trước/sau.
+Mapping nguồn không có lịch sử as-of; nhóm này dùng cho phân tích hồi cứu.
+
+Nguồn bắt buộc: `phase_features_v4/supervised_raw/P1..P4/{train,dev}.parquet`,
+`phase_features_v4/fulltrain_a/train_raw.parquet`, raw Parquet của MOOCubeX,
+cache Cardiff cũ và phần cache bổ sung trong `final_quality_v2/sentiment/`.
+Không suy ra feature CD3 bằng đổi tên aggregate V4. Catalog bài tập lấy
+`exercise_id`, `context_id` và điểm tối đa từ entity problem; `context_id` là
+cả mảng ngữ cảnh, không thay bằng chapter hoặc explode từng concept. Comment
+giữ cả text rỗng và các ID có cùng nội dung, nối course-comment và resource rồi
+khử trùng theo comment/course. Video giữ đồng hồ V4 và toàn bộ segment được
+chọn theo thời điểm bắt đầu, kể cả phần đuôi vượt cutoff, đúng helper đã giao.
+
+- `raw_features/`: 85 feature CD3, 3 mask audit và `phase_fraction`, cùng metadata/target V4.
+- `model_ready/`: learner view V1-Median; selector lấy subset theo allowlist.
+- `preprocessing.json`: median/IQR, log columns, gender maps, thứ tự fit và hash dòng train.
+- `audit/`: QA23 theo phase, union cột tạm loại, cardinality, event bounds, NULL/absence, sentiment coverage và so sánh D06 tự động.
+- `run_manifest.json`, `SHA256SUMS.txt`, `_SUCCESS.json`: provenance và trạng thái kiểm tra.
+- `load_cq_v4_2.py`: loader sinh cùng bundle, hỗ trợ `load(split='train', phase=None, view='learner', raw=False)`; sau bước 27 có thể gọi `load(split='test', phase='P1', view='learner')`.
+
+Trước QA23, learner có 76 cột, selector có 74 cột. Cột chưa được duyệt có
+|rho| ≥ 0,5 ở bất kỳ phase train nào bị tạm loại khỏi cả hai view; raw vẫn giữ
+đủ cột. Fit V1/gender một lần trên train P1–P4, cột tĩnh dùng một dòng/enrollment;
+dev, test và FULL_A chỉ transform. LR one-hot gender do nhóm thực nghiệm xử lý tiếp.
+So sánh D06 bằng máy không thay chữ ký kiểm thủ công hoặc phê duyệt của giảng viên.
+Verifier đọc lại file đã xuất, kiểm checksum, đối chiếu raw→V1 bằng SQL và tính
+lại median/IQR train; báo cáo riêng nằm ở `outputs/phase_features_v4_2_validation.json`.
 
 ## Giao diện bàn giao V4
 

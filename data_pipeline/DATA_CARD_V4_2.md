@@ -1,0 +1,326 @@
+# Data card Phase Features V4.2 theo công thức CQ CD3
+
+**Ngày cập nhật:** 2026-10-31. **Phiên bản tài liệu:** `phase_features_v4_2-data-card-2026-10-31-v3-code-only`.
+
+Bộ dữ liệu `phase_features_v4_2` cung cấp snapshot hành vi tích lũy để nghiên cứu dự đoán sớm chất lượng vận hành của khóa học và đánh giá các phương pháp coreset trên khóa học mới. Tên gọi `phase_feature_v4_2` trong trao đổi chỉ cùng bộ dữ liệu có tên contract và thư mục là `phase_features_v4_2`. Công thức feature CQ lấy từ CD3; cohort, nhãn, family/split, khóa dòng và cutoff kế thừa V4. Bản đầy đủ đã dựng train, dev, test P1–P4 và FULL_A train. Theo QĐ42, gói làm việc trước M1 chỉ được có train/dev/FULL_A và metadata đã lọc train/dev; test phải niêm phong riêng, chỉ mở sau freeze được giảng viên duyệt. Trạng thái thực hiện ghi trong [hồ sơ Review 31/10](GITHUB_REVIEW_2026_10_31.md).
+
+Card này ghi cách tính đang chạy và bằng chứng đo từ artifact. Ma trận feature và mọi tham số fit được giữ nguyên khi lập card; các phép đo mô tả không thay quyết định đánh giá mô hình. Trạng thái xác nhận D06 được ghi ở mục 11; phê duyệt M0/M1 và freeze thực nghiệm được quản lý theo hồ sơ giảng viên.
+
+## 1 Định danh và nguồn gốc
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Dataset version | `phase_features_v4_2` |
+| Đơn vị quản lý | Nhóm CN-23521830-VyNH-QuangTVX |
+| Dữ liệu gốc | MOOCCubeX của THU KEG, snapshot đã chuyển thành Parquet trong kho dữ liệu riêng; Yu và cộng sự, CIKM 2021, tr. 4643–4652 |
+| Spine | V4 supervised có nhãn; giữ metadata và split theo family |
+| Feature | CQ CD3, commit `5b14052ec6329c33f4d9f5324a118f7192b1a579`; helper pandas giữ công thức đã giao trong QĐ28 |
+| Phiên bản nhãn | `final-quality-v2-p95-signed-fa-2026-10-20` theo QĐ27 |
+| Target chính | `y_alpha_1`; `q_alpha_1` dùng audit/EC, nằm ngoài X |
+| Target độ nhạy | `q_alpha_0p1`, `y_alpha_0p1`; không thay target chính theo kết quả dev |
+| View chính | Learner 76 cột; selector 74 cột |
+| Trạng thái dữ liệu | Đã build; test thuộc phạm vi niêm phong QĐ42, không dùng trước freeze M1 |
+
+[CD3 tại commit nguồn](https://github.com/datachain-uit/CD3/tree/5b14052ec6329c33f4d9f5324a118f7192b1a579), manifest (`phase_features_v4_2/run_manifest.json`, SHA256 `3becd0ec3b20cb3a3d09d7d589b6db43969acbd682b0c6d6a0481d22d5c44576`; gói dữ liệu/hồ sơ riêng), feature contract (`phase_features_v4_2/feature_columns.json`, SHA256 `d7ece3fa8e6e3098eec272b6ff8aa028c33770c0e8676638af1bca444962b69a`; gói dữ liệu/hồ sơ riêng) và bằng chứng data card (`phase_features_v4_2/audit/data_card_evidence.json`, SHA256 `d8e9d71249643c8559e80c7a225872ad9e70ffecb147fb00148f5aa5343d9ccb`; gói dữ liệu/hồ sơ riêng) xác định phiên bản thực dùng. Đây là bản CQ thích nghi trên khung V4, không nhập nhãn, lịch mở khóa, tác vụ LO hoặc các biến thể imputation khác của CD3.
+
+## 2 Quần thể và cách chia tập
+
+V4.2 dùng toàn bộ 178.598 enrollment có nhãn đã giữ sau lọc V3/V4, thuộc 1.808 course và 1.740 family. Không tạo feature V4.2 cho toàn bộ 10.455.017 cặp đủ thời gian của kho final V4; 10.276.419 cặp chưa có nhãn vẫn ở kho nguồn và không được gán thành lớp A. Enrollment chỉ có một chapter quan sát và chapter đó là unknown `-1` đã bị loại ở V3; trường hợp có cả chapter đã biết và `-1` được giữ. Các bộ lọc này kế thừa, không chạy lại để chọn cohort thuận lợi hơn.
+
+| Split | Family | Course | User | Enrollment | E | G | A | Snapshot P1–P4 |
+|---|---|---|---|---|---|---|---|---|
+| train | 1.219 | 1.278 | 126.016 | 131.906 | 522 | 36.006 | 95.378 | 527.624 |
+| dev | 173 | 179 | 22.350 | 22.717 | 263 | 6.606 | 15.848 | 90.868 |
+| test | 348 | 351 | 23.445 | 23.975 | 263 | 4.225 | 19.487 | 95.900 |
+
+Pool B train có 527.624 snapshot. Dev có 22.717 dòng/phase; test có 23.975 dòng/phase. FULL_A có 131.906 dòng, một dòng/enrollment train, không ghép vào Pool B. Tổng gói có 846.298 dòng tính cả FULL_A. Bốn snapshot của một enrollment có cùng nhãn, không phải bốn người độc lập.
+
+Family là connected component của graph tương đồng tập ccid video, Jaccard ≥0,9, tối thiểu 5 ccid để xét gộp. Test lấy ceil(20% family) mở muộn nhất theo `(family_start, family_id)`. Trong phần còn lại, dev lấy theo seed 42, tầng quartile kích thước family × có lớp E, với quy tắc làm tròn của V4; train là phần còn lại. Không chia lại theo selector seed. Family/course/enrollment không giao nhau giữa ba split; user có thể xuất hiện ở nhiều split.
+
+Độ nhạy ngưỡng Jaccard 0,8 của V4 tạo 1.731 family, 18 course đổi nhóm; split chính giữ 0,9. Temporal overlap kế thừa V4 là 924/1.219 family train = 75,7998% còn hoạt động sau mốc mở family test đầu tiên. Cách chia này không bảo đảm mọi khóa train kết thúc trước test; đối chứng NOLFO thuộc phân tích sau của giao thức.
+
+## 3 Grain khóa và schema
+
+Khóa duy nhất cho snapshot là `row_id`, tương đương `(enrollment_id, phase)` trên cohort hiện hành. `enrollment_id` là hash SHA256 JSON của `(user_id, course_id)`; `row_id` là hash SHA256 JSON của enrollment và phase. Giá trị ID được sao chép từ V4, không sinh lại trong V4.2. Dùng `row_id` để ghép hai phiên bản; `enrollment_id` một mình có nhiều phase.
+
+| Vai trò | Cột |
+|---|---|
+| Metadata, 10 cột | `user_id`, `course_id`, `course_family_id`, `enrollment_id`, `row_id`, `phase`, `split`, `enroll_time`, `cutoff_time`, `course_end` |
+| Target, 4 cột | `q_alpha_0p1`, `y_alpha_0p1`, `q_alpha_1`, `y_alpha_1` |
+| Feature raw | 85 cột trong `feature_columns.json.raw_feature_columns` |
+| Mask audit | `video_observed_mask`, `problem_observed_mask`, `comment_observed_mask` |
+| Kênh phase | `phase_fraction`: P1=0,25; P2=0,50; P3=0,75; P4=0,90; FULL_A=1 |
+
+Mỗi raw table có 103 cột: 10 metadata + 4 target + 85 raw + 3 mask + phase_fraction. Ready có 90 cột: 10 metadata + 4 target + 76 learner. Selector là subset 74 cột của ready. Schema vật lý đầy đủ được lưu trong evidence JSON. `enroll_time` đổi kiểu DATE của V4 thành TIMESTAMP đầu ngày; giá trị ngày và cutoff giữ nguyên. ID/phase/split là chuỗi; thời gian là timestamp không timezone; `most_common_day` là ngày lịch dưới dạng timestamp trong raw.
+
+**teacher_subgroup chính thức:** phiên bản `teacher-subgroup-train-reference-v1`, bảng metadata theo course_id (`phase_features_v4_2/metadata/teacher_subgroup.parquet`, SHA256 `2cf347c2f8d296708251a620ed4f504de3b478537c98dae364c3900f187a4807`; gói dữ liệu/hồ sơ riêng). Reference gồm 4.446 teacher ID phân biệt của 1.278 khóa train, đóng băng riêng trong train reference (`phase_features_v4_2/metadata/train_teacher_reference.json`, SHA256 `382c5e731f893c9a7f3f893067bf3346efc9fd56d75e514e56dac9d7e4fd4d9b`; gói dữ liệu/hồ sơ riêng). Không dùng teacher ID từ dev/test để mở rộng reference.
+
+- `seen`: có giảng viên và toàn bộ ID nằm trong reference train.
+- `new`: có giảng viên và không ID nào nằm trong reference train.
+- `mixed`: có cả ID đã gặp và chưa gặp.
+- `missing`: không có teacher ID dùng được trong relation mapping; không kết luận khóa không có giảng viên.
+
+| Split | seen | new | mixed | missing |
+|---|---|---|---|---|
+| train | 1.268 | 0 | 0 | 10 |
+| dev | 18 | 139 | 21 | 1 |
+| test | 28 | 282 | 35 | 6 |
+
+Dùng relation `course_teacher`, trim ID, loại NULL/chuỗi rỗng và khử trùng course–teacher. ID vẫn hợp lệ khi thiếu profile trong `entities/teacher`; không suy nhóm từ code danh mục 0. Sidecar có `course_id`, `course_family_id`, `split`, `teacher_subgroup`, `n_teachers`, `n_seen_teachers`, `n_new_teachers`; một dòng/course, giữ cùng nhóm ở mọi enrollment/phase. Parquet raw/ready và feature allowlist giữ nguyên. Loader chỉ ghép bốn cột metadata khi gọi `include_teacher_subgroup=True`; các cột này giữ ngoài X. Quy tắc và nguồn (`phase_features_v4_2/metadata/teacher_subgroup_spec.json`, SHA256 `c610e25356c83b74d8b278959b7d72a8dd29797a93e56ad93e69410ae634d8f0`; gói dữ liệu/hồ sơ riêng), mapping chuẩn hóa (`phase_features_v4_2/metadata/course_teacher_mapping.parquet`, SHA256 `421ef74f30fe6f267caa8b6ff9676611a4ee478fce2dcf63a68264b3d0515d53`; gói dữ liệu/hồ sơ riêng) và audit (`phase_features_v4_2/audit/teacher_subgroup_validation.json`, SHA256 `f2a6d6157f68c331bcbf96b3c547edcd4a22a906f52b5f014bf18a88d0ceb255`; gói dữ liệu/hồ sơ riêng) có hash trong manifest. Mapping là snapshot cuối cùng, không có lịch sử as-of; nhóm này phục vụ phân tích hồi cứu.
+
+## 4 Nhãn chất lượng vận hành và reference P95
+
+Nhãn kế thừa nguyên giá trị V4. `q_alpha_1` là khoảng cách trung bình tới trạng thái chỉ số lý tưởng, không phải xác suất: q thấp hơn tương ứng mức chất lượng vận hành tốt hơn theo định nghĩa này. Tại chapter, `LOQV_alpha = sqrt(sum_available(w*(1-index)^2)/sum_available(w))`, với các index COELO/AFELO/ACELO và `w=(1,alpha,1)`. q của enrollment là mean LOQV trên các chapter có điểm. Thành phần NULL được bỏ khỏi tử/mẫu theo công thức; 0 hợp lệ được giữ.
+
+| Nhãn | Khoảng q |
+|---|---|
+| E | `q < 0.2` |
+| G | `0.2 <= q < 0.4` |
+| A | `q >= 0.4` |
+
+q thiếu thì y thiếu ở kho nguồn; cohort supervised V4.2 chỉ gồm enrollment có nhãn. COELO là mean TS/RV/AV/IF khả dụng, cần ít nhất 2/4; AFELO là mean FV/FA khả dụng; ACELO dùng tổng trọng số các problem đúng chia catalog problem, với trọng số attempt `max(0.1,1-0.1*(attempts-1))`.
+
+**Reference nhãn:** P95 dương của TS/IF/FV và P95 trị tuyệt đối khác 0 của FA được đóng băng trên quần thể final V2, trước lọc V3 và trước family split V4. Reference có đóng góp của enrollment sau này thuộc dev/test V4. Đây là một phần định nghĩa nhãn cố định; không mô tả P95 này là fit chỉ trên train V4 và không đồng nhất nó với scaler X. V4.2 không refit reference, không suy luận lại sentiment và không tính lại nhãn.
+
+Nhãn diễn tả chất lượng vận hành từ hành vi và các proxy đã công bố theo QĐ27; không phải nhãn chuyên gia hoặc kết quả đánh giá sư phạm độc lập. Các thích nghi từ công thức tham khảo được liệt kê ở mục 12 và [bảng giải trình nhãn](BANG_GIAI_TRINH_CONG_THUC_FEATURE_VA_NHAN_CQ_V4_2026_10_23.md).
+
+## 5 Cửa sổ và làm sạch event
+
+`cutoff_p = enroll_time + lambda_p * (course_end-enroll_time)` kế thừa chính xác độ phân giải microsecond của V4. Event được chọn theo điều kiện đóng hai đầu `enroll_time <= availability_time <= cutoff_time`. Video/comment dùng `event_time`; problem dùng `submit_time`. Enrollment là đầu ngày ghi danh. `course_end` là cuối ngày hoạt động cuối quan sát của khóa, không phải lịch đóng chính thức đã biết trước.
+
+| Họ | Mapping và điều kiện thực tế |
+|---|---|
+| Video | `user_video.seq.segment` → tài nguyên V_ của course → enrollment theo user/course. Có start/end, end≥start, speed>0 và thời gian hợp lệ. Giữ zero-length và start âm nếu thỏa helper. Không tự đổi giờ Asia/Shanghai như CD3 upstream; theo cùng đồng hồ UTC-naive của V4. Các input hợp lệ có giá trị non-finite bị guard, không âm thầm sửa công thức |
+| Problem | Raw user_problem → catalog entity problem theo exercise trong resource course → enrollment. `full_score` lấy score của entity problem, `context_id` là toàn bộ mảng JSON, không explode hoặc thay bằng chapter. Cần submit_time, full_score>0, attempts không thiếu và ≥0. Score thiếu/không parse được nhận 0; correctness đúng khi bằng 1, các giá trị khác kể cả NULL nhận 0 |
+| Comment | Tập trước lọc text, mapping course-comment hợp với resource-course; khử trùng theo comment/course/enrollment. Giữ text rỗng và các ID khác nhau có cùng text. Không lấy reply làm comment. Xác suất/label sentiment ghép từ cache theo hash text sau preprocessing |
+| Context | Catalog dedup theo course/resource; catalog problem theo course/problem. Hồ sơ teacher/school dùng mapping và inner join tới profile; đối tượng thiếu profile không được thay bằng categorical code |
+
+Các nhóm feature tích lũy đến cutoff. Thời lượng segment là `end-start`; thời gian thực là `(end-start)/speed`; segment được lấy toàn bộ khi thời điểm bắt đầu hợp lệ, kể cả đuôi sau cutoff. Phiên mới khi gap giữa hai điểm bắt đầu liên tiếp >30 phút; duration phiên lấy từ đuôi đầy đủ. Day offset dùng hiệu ngày lịch; std/variance dùng sample statistics của helper, với các ngoại lệ singleton nêu trong code.
+
+Không dùng aggregate V4 đổi tên để thay cho CD3: validity, NULL, denominator, comment dedup và clipping có khác biệt. Ví dụ problem_count là distinct problem; `score_fraction_mean` là mean của score/full_score; `problem_score_catalog_coverage` dùng tổng điểm catalog của cả course.
+
+## 6 Inventory feature và hai view
+
+| Họ | Số cột raw | Danh sách |
+|---|---|---|
+| Video | 24 | `segment_duration_seconds`, `avg_segment_duration`, `avg_real_watch_time`, `segment_count`, `avg_playback_speed`, `avg_day_of_week`, `unique_video_count`, `video_active_day_count`, `first_video_day_from_enroll`, `last_video_day_from_enroll`, `video_day_from_enroll_std`, `min_segment_duration`, `max_segment_duration`, `segment_duration_std`, `var_playback_speed`, `fast_forward_ratio`, `avg_segment_count_per_video`, `video_repeat_segment_ratio`, `video_events_per_active_day`, `most_common_hour`, `most_common_day`, `session_duration_std`, `course_video_count`, `video_catalog_coverage` |
+| Problem | 23 | `problem_count`, `exercise_count`, `problem_context_count`, `score_sum`, `score_mean`, `score_std`, `score_fraction_mean`, `score_fraction_std`, `correct_problem_count`, `incorrect_problem_count`, `correct_ratio`, `correct_ratio_std`, `attempts_sum`, `attempts_mean`, `attempts_std`, `first_submit_day_from_enroll`, `last_submit_day_from_enroll`, `avg_submit_day_from_enroll`, `submit_day_from_enroll_std`, `course_problem_count`, `course_problem_full_score_sum`, `problem_catalog_coverage`, `problem_score_catalog_coverage` |
+| Comment | 23 | `comment_count`, `unique_commented_resource_count`, `avg_comment_length_chars`, `min_comment_length_chars`, `max_comment_length_chars`, `comment_length_std_chars`, `avg_positive_score`, `avg_negative_score`, `avg_neutral_score`, `positive_score_std`, `negative_score_std`, `neutral_score_std`, `positive_comment_count`, `neutral_comment_count`, `negative_comment_count`, `positive_comment_ratio`, `negative_comment_ratio`, `first_comment_day_from_enroll`, `last_comment_day_from_enroll`, `avg_comment_day_from_enroll`, `comment_day_from_enroll_std`, `course_resource_count`, `commented_resource_catalog_coverage` |
+| Static | 15 | `gender`, `year_of_birth`, `age_at_enroll`, `resource_count`, `video_counts`, `ex_counts`, `teacher_count`, `teacher_bio_coverage`, `teacher_avg_bio_length_chars`, `teacher_org_count`, `school_count`, `school_bio_coverage`, `school_avg_bio_length_chars`, `school_motto_coverage`, `school_avg_motto_length_chars` |
+
+Raw 85 cột phục vụ audit và tái tạo. Theo CQ_RAW_EARLY, X loại `score_fraction_mean/std`, `correct_ratio/std`, ba coverage hồ sơ tĩnh (`teacher_bio_coverage`, `school_bio_coverage`, `school_motto_coverage`), `video_counts`, `year_of_birth`, `age_at_enroll`, `most_common_day`, cùng mọi ID/target/mask/metadata. `most_common_hour` được thay bằng sin/cos chu kỳ 24 giờ. Coverage catalog quan sát đến cutoff được giữ theo đúng quy tắc CD3.
+
+Selector có 74 cột số đã qua V1. Learner dùng cùng 74 giá trị đó, thêm gender dạng code train và phase_fraction giữ nguyên. Thứ tự cột chuẩn nằm ở learner allowlist (`phase_features_v4_2/learner_feature_columns.json`, SHA256 `9679f851491f9dc9dfed9e6e2ec4acbb668d5b6985789e39c0c640b8d62fb1db`; gói dữ liệu/hồ sơ riêng) và selector allowlist (`phase_features_v4_2/selector_feature_columns.json`, SHA256 `77cb83ec77366c8827acff7c5464ba5eabcd1aef6d33da93426b7e8f11d6cfe2`; gói dữ liệu/hồ sơ riêng); không lấy tất cả cột numeric của Parquet để làm X. Với LR, bước one-hot gender thuộc adapter thực nghiệm đã đăng ký, không được thay bằng coi code là thang số liên tục.
+
+## 7 V1 Median và thiếu dữ liệu
+
+Fit duy nhất trên 527.624 snapshot train P1–P4, thứ tự row_id tăng dần. Cột tĩnh của helper dùng một dòng cho mỗi 131.906 enrollment train; cột theo phase dùng toàn pool. Đây không phải fit một dòng mỗi course. `course_video_count`, `course_problem_count`, `course_problem_full_score_sum`, `course_resource_count` thuộc nhóm theo phase của helper vì có mask hoạt động.
+
+Với cột numeric j: log1p chỉ áp cho giá trị không âm khi tên khớp regex `(count|counts|sum|seconds|duration|length|attempts)`; tiếp đó `z=(logged_x-median_train)/IQR_train`. IQR nhỏ hơn `10*epsilon_float64` được thay bằng 1; ô NULL nhận 0 sau chuẩn hóa, bằng median train. Cột không có quan sát train nhận 0; danh sách thực tế: không có. Không thêm missing indicator vào X. Giá trị âm hữu hạn không được tự clip/log nếu helper không yêu cầu.
+
+Danh sách log thực tế có trong preprocessing và được chốt như sau: `segment_duration_seconds`, `avg_segment_duration`, `segment_count`, `unique_video_count`, `video_active_day_count`, `min_segment_duration`, `max_segment_duration`, `segment_duration_std`, `avg_segment_count_per_video`, `session_duration_std`, `course_video_count`, `problem_count`, `exercise_count`, `problem_context_count`, `score_sum`, `correct_problem_count`, `incorrect_problem_count`, `attempts_sum`, `attempts_mean`, `attempts_std`, `course_problem_count`, `course_problem_full_score_sum`, `comment_count`, `unique_commented_resource_count`, `avg_comment_length_chars`, `min_comment_length_chars`, `max_comment_length_chars`, `comment_length_std_chars`, `positive_comment_count`, `neutral_comment_count`, `negative_comment_count`, `course_resource_count`, `resource_count`, `ex_counts`, `teacher_count`, `teacher_avg_bio_length_chars`, `teacher_org_count`, `school_count`, `school_avg_bio_length_chars`, `school_avg_motto_length_chars`.
+
+Gender maps hiện hành là `0`→`1`, `1`→`2`, `2`→`3`. Code được gán theo thứ tự xuất hiện của token trong train; NULL là token riêng nếu xuất hiện trong train; token chưa gặp nhận code 0. Không diễn giải các số code này thành nghĩa giới tính chưa được schema nguồn xác nhận. Phase_fraction không chuẩn hóa trong V4.2. Dev, test và FULL_A chỉ transform bằng cùng artifact train.
+
+Không có event hợp lệ của một họ trước cutoff thì toàn bộ feature của họ là NULL, kể cả các catalog count ghép bên trong họ; mask audit=0. Có event thì mask=1, nhưng std singleton hoặc text/sentiment thiếu vẫn có thể NULL. Mask không thuộc X. Bảng sau đếm vắng họ bằng mask; tỷ lệ NULL cho từng feature được lưu đầy đủ trong evidence JSON.
+
+| Split | Phase | Số dòng | Vắng video | Vắng problem | Vắng comment | Vắng cả ba | Tỷ lệ vắng cả ba |
+|---|---|---|---|---|---|---|---|
+| dev | P1 | 22.717 | 20.848 | 15.218 | 19.076 | 10.279 | 45,2481% |
+| dev | P2 | 22.717 | 20.480 | 9.693 | 18.493 | 5.274 | 23,2161% |
+| dev | P3 | 22.717 | 20.130 | 8.948 | 18.283 | 4.212 | 18,5412% |
+| dev | P4 | 22.717 | 20.019 | 8.591 | 18.222 | 3.755 | 16,5295% |
+| test | P1 | 23.975 | 18.708 | 19.370 | 21.942 | 14.099 | 58,8071% |
+| test | P2 | 23.975 | 17.740 | 18.339 | 21.579 | 12.386 | 51,6621% |
+| test | P3 | 23.975 | 17.506 | 17.641 | 21.443 | 11.581 | 48,3045% |
+| test | P4 | 23.975 | 17.437 | 17.245 | 21.440 | 11.184 | 46,6486% |
+| train | FULL_A | 131.906 | 112.018 | 40.889 | 102.662 | 10.669 | 8,0883% |
+| train | P1 | 131.906 | 118.726 | 74.530 | 106.157 | 45.309 | 34,3495% |
+| train | P2 | 131.906 | 115.211 | 54.786 | 103.605 | 24.996 | 18,9499% |
+| train | P3 | 131.906 | 113.199 | 45.883 | 102.915 | 15.958 | 12,098% |
+| train | P4 | 131.906 | 112.385 | 42.901 | 102.762 | 12.725 | 9,647% |
+
+## 8 QA23 và kiểm soát proxy
+
+QA23 chỉ chạy trên raw Pool B train, riêng P1–P4, với q_alpha_1; hour sin/cos được tạo trước audit, chưa qua V1. Audit có 296 cặp cột–phase. Correlation dùng rank(method=min) như helper và NMI dùng ntile; NMI có thể nhạy với tie và thứ tự dòng, không dùng làm ngưỡng holdout.
+
+Có 26 cặp có |rho|≥0,5, đều thuộc tám cột hành vi đã được CD3 duyệt: `attempts_sum`, `correct_problem_count`, `exercise_count`, `problem_catalog_coverage`, `problem_context_count`, `problem_count`, `problem_score_catalog_coverage`, `score_sum`. Holdout hiện rỗng, nên main view vẫn 76/74 và qa23_all trùng main. Quy tắc chung là union cột chưa được duyệt bị gắn cờ ở bất kỳ phase train nào, bỏ khỏi cả hai view; raw luôn giữ đủ inventory. Không chạy lại QA23 trên test để chọn feature.
+
+## 9 Y37 và nguồn thời gian Gctx
+
+### Đuôi video sau cutoff
+
+Mỗi dòng đo là một segment được chọn trong một snapshot. Tổng giây sau cutoff là `max(0,(end-start)/speed-(cutoff-event_time))`, đơn vị giây thực; tỷ lệ dùng mẫu số selected segment của đúng split/phase. Không cộng các phase rồi coi là các segment độc lập.
+
+| Split | Phase | Segment được chọn | Vượt cutoff | Tỷ lệ | Tổng giây thực sau cutoff | Tối đa giây |
+|---|---|---|---|---|---|---|
+| dev | P1 | 21.302 | 0 | 0% | 0 | 0 |
+| dev | P2 | 26.928 | 0 | 0% | 0 | 0 |
+| dev | P3 | 32.537 | 0 | 0% | 0 | 0 |
+| dev | P4 | 33.696 | 0 | 0% | 0 | 0 |
+| train | P1 | 200.984 | 14 | 0,006966% | 1775,7333 | 495,15 |
+| train | P2 | 291.026 | 8 | 0,002749% | 447,2 | 365 |
+| train | P3 | 334.940 | 1 | 0,000299% | 810,55 | 810,55 |
+| train | P4 | 349.998 | 1 | 0,000286% | 15,132 | 15,132 |
+
+Dev không có đuôi vượt cutoff. Train có tỷ lệ cao nhất 0,006966% tại P1; một đuôi ở P3 dài 810,55 giây. Tỷ lệ nhỏ vẫn là giới hạn thời gian được công bố. Số đo này ghi nhận cách helper hiện hành vận hành, không thay thế clipping hoặc tự sửa X sau khi đã có panel.
+
+### Mười hai cột ngữ cảnh
+
+| Cột | Nhóm | Nguồn | Phép tính | Nguồn thời gian |
+|---|---|---|---|---|
+| `resource_count` | constant | entities/course.resource | Số resource_id phân biệt của khóa | Catalog cuối cùng |
+| `ex_counts` | constant | entities/course.resource | Số resource_id bắt đầu Ex_ | Catalog cuối cùng |
+| `teacher_count` | constant | relations/course_teacher + entities/teacher | Số teacher_id có profile ghép được | Hồ sơ tại thời điểm thu thập |
+| `teacher_avg_bio_length_chars` | constant | relations/course_teacher + entities/teacher.about | Mean độ dài about; hồ sơ trống nhận độ dài 0 | Hồ sơ tại thời điểm thu thập |
+| `teacher_org_count` | constant | relations/course_teacher + entities/teacher.org_name | Số org_name phân biệt sau trim dấu cách | Hồ sơ tại thời điểm thu thập |
+| `school_count` | constant | relations/course_school + entities/school | Số school_id có profile ghép được | Hồ sơ tại thời điểm thu thập |
+| `school_avg_bio_length_chars` | constant | relations/course_school + entities/school.about | Mean độ dài about; hồ sơ trống nhận độ dài 0 | Hồ sơ tại thời điểm thu thập |
+| `school_avg_motto_length_chars` | constant | relations/course_school + entities/school.motto | Mean độ dài motto; hồ sơ trống nhận độ dài 0 | Hồ sơ tại thời điểm thu thập |
+| `course_video_count` | constant_when_observed | entities/course.resource | Catalog video V_; NULL nếu chưa quan sát họ video | Catalog cuối cùng |
+| `course_problem_count` | constant_when_observed | entities/problem + entities/course.resource | Catalog problem theo exercise; NULL nếu chưa quan sát họ problem | Catalog cuối cùng |
+| `course_problem_full_score_sum` | constant_when_observed | entities/problem.score + entities/course.resource | Tổng full_score catalog; NULL nếu chưa quan sát họ problem | Catalog cuối cùng |
+| `course_resource_count` | constant_when_observed | entities/course.resource | Catalog resource; NULL nếu chưa quan sát họ comment | Catalog cuối cùng |
+
+Các nguồn đều là snapshot catalog cuối cùng hoặc hồ sơ ở thời điểm thu thập. Schema được dùng không có lịch sử phiên bản/per-value as-of timestamp để chứng minh từng giá trị đã có trước cutoff. File mtime hoặc thời gian chạy builder không phải bằng chứng về thời điểm nội dung gốc có sẵn. Bốn cột constant_when_observed được che bằng NULL khi vắng họ event, nhưng giá trị catalog bên dưới vẫn lấy từ snapshot cuối cùng. Đây là giới hạn hồi cứu bổ sung vào giới hạn cutoff dựa last activity.
+
+Audit lại theo QĐ35 trên raw train và dev P4, một dòng/course lấy giá trị không thiếu đầu tiên, round 9 chữ số để đối chiếu: 1.278 course train có 1.275 vector, 99,6088% course train có vector duy nhất; 0/179 course dev trùng vector train. Audit này mô tả quasi-identifier, không đổi family hoặc tự loại Gctx khỏi main view. Kết quả cd3_minus_ctx của nhóm thực nghiệm được review 27/10 ghi nhận: bỏ Gctx làm ULA8 FullTrain-B tăng ở cả ba seed; giữ kết luận theo QĐ35(e) và không nhập kết quả mô hình đó thành chứng nhận của lần build dữ liệu này.
+
+## 10 Sentiment và provenance văn bản
+
+Mô hình cache là `cardiffnlp/twitter-roberta-base-sentiment-latest`, revision `3216a57f2a0d9c45a2e6c20157c20c49fb4bf9c7`, hash trọng số được lock là `4d24a3e32a88ed1c4e5b789fc6644e2e767500554e954b27dccf52a8e762cbae`. Hai cache gốc và bổ sung V2 có cùng revision. Lần build V4.2 chỉ đọc cache; không tải hoặc suy luận lại trọng số.
+
+Khóa cache là SHA256 của text sau preprocessing mention/URL: token @ được chuẩn thành @user, token bắt đầu http thành http, tách/nối theo dấu cách như code. Text input lấy từ entity translated_comment đã có trong snapshot; builder không thực hiện dịch mới. Phương pháp và thời điểm của bước dịch trước đó chưa được metadata nguồn này xác lập. Cache label được đưa về lower-case; positive/neutral/negative là nhãn sentiment, không phải E/G/A của target chất lượng. Mean/std xác suất và count/ratio label được dùng theo từng công thức feature CD3.
+
+| Phạm vi staged event | Comment | Có cache sentiment | Text rỗng | Text không rỗng thiếu cache |
+|---|---|---|---|---|
+| train/dev/FULL_A | 117.029 | 117.028 | 1 | 0 |
+| test P1–P4 | 11.459 | 11.459 | 0 | 0 |
+
+Các số trên đếm event trong cửa sổ staged rộng nhất của từng enrollment, không phải cộng lại bốn phase. Comment không rỗng trong hai phạm vi đều ghép được cache; một comment text rỗng ở train/dev/FULL_A vẫn được giữ và không có sentiment. Model English/Twitter và text giáo dục đã dịch có khác biệt miền; sentiment là proxy trong định nghĩa vận hành. Rating và sentiment reply không được dựng thêm.
+
+## 11 Kiểm tra trạng thái sử dụng và giới hạn đánh giá
+
+Kiểm tra build ban đầu và bổ sung test có 1.163 check PASS. Kiểm tra độc lập bao gồm schema/khóa, metadata-target alignment, raw→V1 bằng SQL, tính lại median/IQR train, hash đầu vào, loader, và teacher_subgroup khi có metadata. Báo cáo mới nhất nằm trong validation report (`outputs/phase_features_v4_2_validation.json`, SHA256 `832410a307d46f47cb70d6446c889a87a941252acbc3379ab17a16253aa9a51a`; gói dữ liệu/hồ sơ riêng); số check bao gồm tài liệu và metadata có thể tăng, không phải số lượt chạy mô hình. Bộ test source kiểm tra thêm các trường hợp seen/new/mixed/missing, reference train và tính toàn vẹn của join.
+
+**D06:** Đã được người dùng xác nhận hoàn tất; ngày ghi nhận xác nhận 2026-10-30. Card ghi nhận xác nhận này và giữ nguyên hồ sơ kiểm thủ công gốc. Xác nhận này không kèm phiếu kiểm từng dòng. Y44 còn yêu cầu họ tên, MSSV người xác nhận và nội dung xác nhận đủ 80/80 snapshot, không có dòng FAIL; chỉ ghi câu hoàn tất khi có đủ thông tin thực tế. Audit CD3 20 cặp × 4 phase (`phase_features_v4_2/audit/d06_comparison.json`, SHA256 `936e5e398803bc206935beecc3d9e4440819f88cc5e13e3b2e06ea8efde3c041`; gói dữ liệu/hồ sơ riêng) là kết quả tự động lưu từ lúc build, giữ cờ lịch sử human_signoff=false; trạng thái xác nhận được ghi riêng trong evidence của card theo phát biểu người dùng. Không dùng kiểm tra máy để tự tạo chữ ký hoặc sửa phiếu gốc.
+
+Các hạn chế cần giữ khi báo cáo gồm: cohort có nhãn chỉ chiếm khoảng 1,7083% kho cặp đủ thời gian; mất cân bằng lớp E; quan sát lặp theo enrollment và cụm family; temporal overlap; cutoff hồi cứu; đuôi video; catalog/profile không có lịch sử as-of; trạng thái problem tổng hợp; source text/cache sentiment; reference P95 V2 có trước split V4; chỉ một dataset và một split chính. Dev có 263 enrollment E trong 20 family, không phải 1.052 người khi gộp bốn phase. Bộ chỉ số E ở ngân sách 0,5% được báo mô tả theo QĐ34, không đặt thêm gate coreset sau khi thấy kết quả.
+
+Nhãn và X được quản lý riêng. Việc fit X chỉ trên train không làm cho reference nhãn trở thành train-only. Các thống kê mô tả test ở card không được dùng để đổi split, feature, ngưỡng, seed hoặc siêu tham số.
+
+Gói hiện có test vì người dùng đã yêu cầu bổ sung feature test: manifest ghi test_data_read=true và test_in_bundle=true; test_used_for_fit=false, test_used_for_qa23=false, model_training_run=false. Việc xây feature khác với đánh giá mô hình/test endpoint. Test model theo review vẫn thực hiện sau freeze được duyệt; trước freeze, nhóm thực nghiệm dùng gói chỉ train/dev/FULL_A. Card không tự cấp phép chạy test, không tự chốt M1 và không báo chưa từng đọc test cho toàn bộ quá trình xây dữ liệu.
+
+Môi trường build trong manifest:
+
+| Thành phần | Môi trường build ghi trong manifest |
+|---|---|
+| python | 3.12.13 \| packaged by Anaconda, Inc. \| (main, Mar 19 2026, 20:12:32) [Clang 20.1.8 ] |
+| duckdb | 1.5.5 |
+| pandas | 3.0.3 |
+| numpy | 2.4.6 |
+
+Môi trường panel được review 26–27/10 yêu cầu khóa riêng: Python 3.13.2, NumPy/pandas 2.2.3, scikit-learn 1.6.1, XGBoost 3.0.0; đây là cấu hình giao thức thực nghiệm, không phải môi trường build ở bảng trên. Rank/NMI khi có tie có thể lệch nhẹ giữa thư viện; giữ environment_id, feature order và các tham số đã xuất để tái lập. Source/version được đóng băng bằng hash; không lấy commit local hiện tại để thay hash script lịch sử đã chạy.
+
+## 12 Những thích nghi công thức được công bố
+
+Bảng kế thừa 18 mục giải trình O24 và cập nhật ba mục X/video/scaler theo V4.2. Các hàng TS/IF/FV/FA/COELO/AFELO/ACELO mô tả nhãn cố định; không tự áp dụng preprocessing feature X vào công thức nhãn.
+
+| Nội dung | Cách tính hiện hành | Phạm vi và giới hạn |
+|---|---|---|
+| Đơn vị LO | Big chapter lấy thành phần số đầu | Quy ước mapping dataset tại notebook 02; không phải từng resource là một LO. |
+| TS | P95 theo video, sau đó mean theo số video catalog; gồm giây xem lặp | Thích nghi từ thời gian tương tác; không dùng duration proxy làm thước đo hoàn thành video. |
+| IF | Tổng attempts của trạng thái problem có submit_time quan sát được, chuẩn P95 | Không phải đếm riêng từng interaction theo timestamp attempt; không log IF. |
+| Chuẩn hóa | P95 dương và signed-P95 cho FA trong nhãn | Lựa chọn của phiên bản nhãn QĐ27; phạm vi reference là quần thể V2 đã đóng băng. |
+| FV | Phiên user–resource gap>30 phút; chuẩn P95 sau tỷ phần visits | Quy ước session của pipeline, không phải một click mặc nhiên là một visit. |
+| FA | Sentiment comment làm proxy positive/negative; mẫu số mọi comment chapter | Thay explicit appreciation; model English/Twitter và dữ liệu dịch có giới hạn miền. |
+| AFELO | Mean FV/FA khả dụng; bỏ RS | Input không cung cấp rating tương đương để đưa vào công thức hiện tại. |
+| CFA/ACELO | Penalty từng problem đúng, tổng hợp theo catalog; floor 0,1 cho attempts lớn | Mở rộng beyond thang 5 attempt của QASOC; khác feature `problem_efficiency_mean=mean(correct/attempts)`. |
+| Missing | Chấp nhận số chiều khác nhau, COELO có coverage ≥ 2 | Các điểm có cùng giá trị có thể dựa trên số nguồn bằng chứng khác nhau; cần báo coverage. |
+| Alpha | Chính=1; alpha 0,1 sensitivity | Chỉ đủ ba chiều và alpha 1 mới đồng nhất khoảng cách Euclid chuẩn hóa ba chiều của bài QASOC. |
+| Target user–course | Mean chapter có điểm của từng người | Không phải nhãn chuyên gia; khác bước tổng hợp population/chapter/course của nguồn tham khảo. |
+| Nhãn E/G/A | Ngưỡng distance 0,2 và 0,4 của giao thức hiện tại | Không gán ba ngưỡng này là toàn bộ hệ phân loại của tài liệu nguồn. |
+| Reference target | Đóng băng V2, không refit sau lọc V3/split V4 | Không tuyên bố P95 target fit chỉ trên V4 train. |
+| Time | Enrollment đầu ngày; course_end cuối ngày từ last activity hồi cứu | Không phải lịch vận hành online đã biết trước; không có sửa offset múi giờ nguồn. |
+| Video ở final so với phase | Nhãn giữ quy tắc lịch sử; X V4.2 dùng full segment có thời điểm bắt đầu trong cửa sổ | X V4 trước đây clip segment; V4.2 theo helper CD3 và công bố số đo Y37. |
+| Bộ X | 85 raw CD3; learner 76, selector 74 | CD3 CQ_RAW_EARLY; bỏ ID, proxy theo allowlist và giữ coverage danh mục quan sát. |
+| Chia tập | V4 group theo family nội dung, test là họ mở muộn | Thay assignment V3; raw numeric, cutoff và target không đổi. |
+| Scaler X | V1-Median, log1p và robust median/IQR train P1–P4; cột tĩnh một dòng/enrollment | Thay median/mean/std của X V4; độc lập với P95 dùng định nghĩa nhãn. |
+
+Provenance nhãn còn giữ phát hiện lịch sử của script 15: hash ghi trong manifest V2 là `5ab5a8f62bc94070cf34949617b28a04e6e3a61158c1b518e3bb2be590fbdd48`, còn hash trong bảng giải trình là `0eaa181c674ec3c8214c6ad27c6df6aa1fe71d21fe0dd9d0772f7b636f8044c2`. Đối chiếu năm SQL được báo là khớp không chứng minh toàn script lịch sử giống file mới. V4.2 giữ nguyên nhãn đã đóng băng, lưu giới hạn provenance này theo QĐ27, không thay nhãn để khớp script mới.
+
+## 13 File bàn giao cách đọc và tái tạo
+
+| Raw | Ready |
+|---|---|
+| `raw_features/pool_b/train.parquet` | `model_ready/pool_b/train.parquet` |
+| `raw_features/pool_b/dev_phase1.parquet` | `model_ready/pool_b/dev_phase1.parquet` |
+| `raw_features/pool_b/dev_phase2.parquet` | `model_ready/pool_b/dev_phase2.parquet` |
+| `raw_features/pool_b/dev_phase3.parquet` | `model_ready/pool_b/dev_phase3.parquet` |
+| `raw_features/pool_b/dev_phase4.parquet` | `model_ready/pool_b/dev_phase4.parquet` |
+| `raw_features/fulltrain_a/train.parquet` | `model_ready/fulltrain_a/train.parquet` |
+| `raw_features/pool_b/test_phase1.parquet` | `model_ready/pool_b/test_phase1.parquet` |
+| `raw_features/pool_b/test_phase2.parquet` | `model_ready/pool_b/test_phase2.parquet` |
+| `raw_features/pool_b/test_phase3.parquet` | `model_ready/pool_b/test_phase3.parquet` |
+| `raw_features/pool_b/test_phase4.parquet` | `model_ready/pool_b/test_phase4.parquet` |
+
+Các file contract và audit đi cùng gồm preprocessing.json, feature_columns.json, learner/selector_feature_columns.json, audit/qa23_by_phase.json, audit/held_out_columns.json, audit/null_and_absence.json, audit/test/, audit/data_card_evidence.json, context_temporal_lineage.json, run_manifest.json, SHA256SUMS.txt và _SUCCESS.json. `_stage/` và `_scratch/` phục vụ tái tạo local, nằm ngoài bộ checksum bàn giao; không dùng toàn bộ cây staging như gói runtime thực nghiệm.
+
+Ví dụ từ thư mục data_pipeline:
+
+```python
+from pathlib import Path
+import importlib.util
+
+root = Path("phase_features_v4_2").resolve()
+spec = importlib.util.spec_from_file_location("cq_v4_2", root / "load_cq_v4_2.py")
+loader = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(loader)
+train = loader.load(split="train", view="learner", root=root)
+dev_p1 = loader.load(split="dev", phase="P1", view="learner", root=root)
+full_a = loader.load(split="train", phase="FULL_A", root=root)
+X_columns = loader.feature_columns("learner", root=root)
+teacher_metadata = loader.teacher_subgroups(root=root)
+dev_with_teacher = loader.load(split="dev", phase="P1", root=root,
+                               include_teacher_subgroup=True)
+# Sau freeze được duyệt:
+# test_p1 = loader.load(split="test", phase="P1", view="learner", root=root)
+```
+
+Loader trả metadata, feature theo view và alias q/y; gọi raw=True để lấy raw đầy đủ. Chỉ X_columns là X, metadata/q/y đọc riêng. Loader hỗ trợ test khi manifest báo đã build và phải truyền phase; không có FULL_A dev/test.
+
+```bash
+python -m pip install -r requirements-v4_2.txt
+python -m pytest -q -p no:cacheprovider test_cq_tempo_features.py tests/test_cq_v4_2_builder.py
+python 25_build_phase_features_v4_2.py
+python 27_build_test_features_v4_2.py
+python 29_build_teacher_subgroup_v4_2.py
+python 28_build_data_card_v4_2.py --d06-confirmed-on 2026-10-30
+python 26_verify_phase_features_v4_2.py
+```
+
+Bước 28 cần artifact hiện hành và cache stage của bước 25 để đo Y37; tham số d06-confirmed-on ghi ngày nhận xác nhận thực tế, không tự thay kiểm thủ công. Cần dữ liệu nguồn private tương ứng manifest; không có dữ liệu giả thay thế. Các kiểm tra và data card không thay các lượt thực nghiệm đã đăng ký.
+
+## 14 Hash bảo toàn và hồ sơ nguồn
+
+| Artifact bất biến | SHA256 |
+|---|---|
+| `preprocessing.json` | `2c6883aa02b3adace83e35722af9a548a9e667b5152412b66820d0c046cbd542` |
+| `feature_columns.json` | `d7ece3fa8e6e3098eec272b6ff8aa028c33770c0e8676638af1bca444962b69a` |
+| `learner_feature_columns.json` | `9679f851491f9dc9dfed9e6e2ec4acbb668d5b6985789e39c0c640b8d62fb1db` |
+| `selector_feature_columns.json` | `77cb83ec77366c8827acff7c5464ba5eabcd1aef6d33da93426b7e8f11d6cfe2` |
+
+SHA256 của toàn bộ 20 raw/ready Parquet cùng sáu artifact policy được giữ trong evidence, đối chiếu trước/sau khi lập card. Card, evidence và lineage có version/hash riêng trong manifest; README nằm trong checksum gói. Thay đổi tài liệu làm đổi checksum gói nhưng không đổi hash X/y/cutoff/split/preprocessing. Khi đối chiếu panel, dùng hash đầu vào đúng phiên bản đã chạy; không suy ra hai archive bằng nhau chỉ vì cùng 76/74 cột hoặc cùng số dòng.
+
+Nguồn: [helper CD3](cq_tempo_features.py), [builder](25_build_phase_features_v4_2.py), [test extension](27_build_test_features_v4_2.py), [builder data card](28_build_data_card_v4_2.py), [builder teacher_subgroup](29_build_teacher_subgroup_v4_2.py), [verifier](26_verify_phase_features_v4_2.py), review 26/10 (`Review-2026-10-26.docx`, SHA256 `05176dc105f9e237d64b33c909f184a0b8947331738f23bcbd4d616bd95ef15d`; gói dữ liệu/hồ sơ riêng), review 27/10 (`Review-2026-10-27.docx`, SHA256 `0cba4c6a2b187026b15f0ca6b3f63d61d9df2b821312ece4cfef2c56fff0d7c4`; gói dữ liệu/hồ sơ riêng), [giải trình nhãn](BANG_GIAI_TRINH_CONG_THUC_FEATURE_VA_NHAN_CQ_V4_2026_10_23.md). Dữ liệu dòng, ID giả danh và nguồn audit private chỉ trao đổi trong nhóm có quyền truy cập. Gói này không tự cấp giấy phép công bố lại raw data hoặc đánh giá cá nhân người học/giảng viên.
+
+
+Nguồn dữ liệu: [MOOCCubeX của THU KEG](https://github.com/THU-KEG/MOOCCubeX). Yu và cộng sự, “MOOCCubeX: A Large Knowledge-centered Repository for Adaptive Learning in MOOCs”, Proceedings of CIKM 2021, tr. 4643–4652. Theo QĐ40g, dữ liệu được phép dùng cho nghiên cứu và phải khai báo nguồn; việc công bố dữ liệu dẫn xuất vẫn cần quyết định bằng văn bản của giảng viên (QĐ40e).
+
+## 15 Sự cố công khai dữ liệu và trạng thái niêm phong
+
+Ngày 31/10/2026, PR #5 đưa 422 artifact (3.321.010.862 byte, khoảng 3,09 GiB), gồm dữ liệu cấp người học và test, lên nhánh công khai. PR đã đóng không merge lúc 18:50:32 +07 ngày 31/10; nhánh phát hành trên GitHub và nhánh local đã xóa. Repo tiếp tục công khai cho mã theo QĐ40. Có 298 con trỏ ứng với 285 object LFS; xóa nhánh chưa gỡ được các object và cache/ref PR.
+
+[Hồ sơ bàn giao mã](GITHUB_REVIEW_2026_10_31.md) mô tả checker và kiểm thử. Hồ sơ sự cố chi tiết, Traffic, fork và ticket Support được quản lý riêng theo QĐ40f. Xóa nhánh không tự xác nhận ref/cache PR hoặc object LFS trên máy chủ đã purge.
+
+QĐ42 yêu cầu đưa test vào `test_sealed/` trong thư mục dữ liệu hạn chế. Số tệp, `manifest_sha256` và xác nhận niêm phong được quản lý trong hồ sơ riêng. Không coi việc thêm mã `cq_patch_1031.py` là đã niêm phong dữ liệu. `verify_seal` phải trả `ok=True` sau freeze M1 trước khi tính endpoint test.
