@@ -1,0 +1,164 @@
+[
+  {
+    "name": "bridge_course_comment",
+    "relative_path": "processed/bridge_course_comment",
+    "status": "success",
+    "row_count": 10181950,
+    "output_bytes": 52731661,
+    "elapsed_seconds": 7.11,
+    "error": null
+  },
+  {
+    "name": "bridge_exercise_problem",
+    "relative_path": "processed/bridge_exercise_problem",
+    "status": "success",
+    "row_count": 6252830,
+    "output_bytes": 45321770,
+    "elapsed_seconds": 10.736,
+    "error": null
+  },
+  {
+    "name": "bridge_lo_problem",
+    "relative_path": "processed/bridge_lo_problem",
+    "status": "success",
+    "row_count": 461180,
+    "output_bytes": 5121051,
+    "elapsed_seconds": 1.819,
+    "error": null
+  },
+  {
+    "name": "bridge_user_comment",
+    "relative_path": "processed/bridge_user_comment",
+    "status": "success",
+    "row_count": 8395141,
+    "output_bytes": 74545779,
+    "elapsed_seconds": 7.541,
+    "error": null
+  },
+  {
+    "name": "bridge_user_course_enrollment",
+    "relative_path": "processed/bridge_user_course_enrollment",
+    "status": "success",
+    "row_count": 11807090,
+    "output_bytes": 185631935,
+    "elapsed_seconds": 16.802,
+    "error": null
+  },
+  {
+    "name": "bridge_video_ccid",
+    "relative_path": "processed/bridge_video_ccid",
+    "status": "success",
+    "row_count": 2798892,
+    "output_bytes": 17213174,
+    "elapsed_seconds": 8.028,
+    "error": null
+  },
+  {
+    "name": "catalog_audit",
+    "relative_path": "quality/catalog_audit",
+    "status": "success",
+    "row_count": 17,
+    "output_bytes": 1458,
+    "elapsed_seconds": 0.013,
+    "error": null
+  },
+  {
+    "name": "dim_course",
+    "relative_path": "processed/dim_course",
+    "status": "success",
+    "row_count": 3781,
+    "output_bytes": 530438,
+    "elapsed_seconds": 0.462,
+    "error": null
+  },
+  {
+    "name": "dim_lo_catalog",
+    "relative_path": "processed/dim_lo_catalog",
+    "status": "success",
+    "row_count": 34843,
+    "output_bytes": 579525,
+    "elapsed_seconds": 1.497,
+    "error": null
+  },
+  {
+    "name": "dim_lo_resource",
+    "relative_path": "processed/dim_lo_resource",
+    "status": "success",
+    "row_count": 271043,
+    "output_bytes": 2365365,
+    "elapsed_seconds": 0.988,
+    "error": null
+  },
+  {
+    "name": "dim_problem",
+    "relative_path": "processed/dim_problem",
+    "status": "success",
+    "row_count": 2454422,
+    "output_bytes": 19338051,
+    "elapsed_seconds": 3.556,
+    "error": null
+  },
+  {
+    "name": "dim_resource",
+    "relative_path": "processed/dim_resource",
+    "status": "success",
+    "row_count": 271043,
+    "output_bytes": 1247243,
+    "elapsed_seconds": 0.28,
+    "error": null
+  },
+  {
+    "name": "dim_video",
+    "relative_path": "processed/dim_video",
+    "status": "success",
+    "row_count": 59581,
+    "output_bytes": 1521497,
+    "elapsed_seconds": 0.583,
+    "error": null
+  },
+  {
+    "name": "join_coverage_report",
+    "relative_path": "quality/join_coverage_report",
+    "status": "success",
+    "row_count": 4,
+    "output_bytes": 1225,
+    "elapsed_seconds": 0.835,
+    "error": null
+  },
+  {
+    "name": "quarantine_course_duplicate",
+    "relative_path": "quality/quarantine_course_duplicate",
+    "status": "success",
+    "row_count": 0,
+    "output_bytes": 154,
+    "elapsed_seconds": 0.058,
+    "error": null
+  },
+  {
+    "name": "quarantine_exercise_problem",
+    "relative_path": "quality/quarantine_exercise_problem",
+    "status": "success",
+    "row_count": 5980040,
+    "output_bytes": 42977327,
+    "elapsed_seconds": 2.228,
+    "error": null
+  },
+  {
+    "name": "quarantine_lo_resource",
+    "relative_path": "quality/quarantine_lo_resource",
+    "status": "success",
+    "row_count": 0,
+    "output_bytes": 240,
+    "elapsed_seconds": 0.447,
+    "error": null
+  },
+  {
+    "name": "quarantine_user_enrollment_length",
+    "relative_path": "quality/quarantine_user_enrollment_length",
+    "status": "success",
+    "row_count": 0,
+    "output_bytes": 170,
+    "elapsed_seconds": 1.691,
+    "error": null
+  }
+]

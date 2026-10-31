@@ -1,0 +1,94 @@
+{
+  "status": "automatic_comparison",
+  "original_train_dev_pairs": 18,
+  "total_pairs": 20,
+  "test_pairs_excluded": true,
+  "human_signoff": false,
+  "summary": [
+    {
+      "cd3_feature": "attempts_sum",
+      "v4_feature": "problem_attempts",
+      "snapshots": 80,
+      "exactly_equal": 8.0,
+      "max_absolute_delta": 92.0
+    },
+    {
+      "cd3_feature": "avg_comment_length_chars",
+      "v4_feature": "comment_mean_characters",
+      "snapshots": 80,
+      "exactly_equal": 80.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "avg_playback_speed",
+      "v4_feature": "video_mean_speed",
+      "snapshots": 80,
+      "exactly_equal": 80.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "avg_segment_duration",
+      "v4_feature": "video_mean_segment_seconds",
+      "snapshots": 80,
+      "exactly_equal": 80.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "comment_count",
+      "v4_feature": "n_comments",
+      "snapshots": 80,
+      "exactly_equal": 19.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "correct_problem_count",
+      "v4_feature": "n_correct_problems",
+      "snapshots": 80,
+      "exactly_equal": 10.0,
+      "max_absolute_delta": 83.0
+    },
+    {
+      "cd3_feature": "exercise_count",
+      "v4_feature": "n_exercises_attempted",
+      "snapshots": 80,
+      "exactly_equal": 10.0,
+      "max_absolute_delta": 17.0
+    },
+    {
+      "cd3_feature": "problem_count",
+      "v4_feature": "n_problem_submissions",
+      "snapshots": 80,
+      "exactly_equal": 8.0,
+      "max_absolute_delta": 84.0
+    },
+    {
+      "cd3_feature": "segment_count",
+      "v4_feature": "n_video_segments",
+      "snapshots": 80,
+      "exactly_equal": 12.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "segment_duration_seconds",
+      "v4_feature": "video_media_seconds",
+      "snapshots": 80,
+      "exactly_equal": 12.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "unique_video_count",
+      "v4_feature": "n_videos_watched",
+      "snapshots": 80,
+      "exactly_equal": 12.0,
+      "max_absolute_delta": 0.0
+    },
+    {
+      "cd3_feature": "video_active_day_count",
+      "v4_feature": "video_active_days",
+      "snapshots": 80,
+      "exactly_equal": 12.0,
+      "max_absolute_delta": 0.0
+    }
+  ],
+  "interpretation": "Differences are expected from full vs clipped segments, event validity, comment dedup/text filtering and NULL absence. Equal feature names do not imply identical event populations."
+}

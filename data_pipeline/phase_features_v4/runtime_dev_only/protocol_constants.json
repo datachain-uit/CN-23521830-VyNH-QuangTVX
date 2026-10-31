@@ -1,0 +1,18 @@
+{
+  "class_weight_policy": "natural",
+  "course_endpoint": "EC and signed error; course-class Macro-F1 not a primary endpoint",
+  "course_population": "retained labeled enrollments",
+  "dataset_version": "CQ V4",
+  "delta": 0.005,
+  "delta_C": 0.01,
+  "estimator": "PCC: Q_hat=sum(mean_probability_y * mu_y)",
+  "mu": {
+    "A": 0.6568367665323654,
+    "E": 0.10884758392937739,
+    "G": 0.35161243280999005
+  },
+  "mu_fit_population": "one row per retained labeled train enrollment",
+  "nmin": 30,
+  "score": "q_alpha_1",
+  "target": "y_alpha_1"
+}

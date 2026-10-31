@@ -1,0 +1,114 @@
+{
+  "dataset_version": "phase_features_v4_2",
+  "documentation_version": "phase_features_v4_2-data-card-2026-10-30-v2",
+  "columns": [
+    {
+      "column": "resource_count",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/entities/course.resource",
+      "definition": "Số resource_id phân biệt của khóa",
+      "source_time_basis": "final course catalog snapshot",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "ex_counts",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/entities/course.resource",
+      "definition": "Số resource_id bắt đầu Ex_",
+      "source_time_basis": "final course catalog snapshot",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "teacher_count",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/relations/course_teacher + entities/teacher",
+      "definition": "Số teacher_id có profile ghép được",
+      "source_time_basis": "profile snapshot at collection",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "teacher_avg_bio_length_chars",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/relations/course_teacher + entities/teacher.about",
+      "definition": "Mean độ dài about; hồ sơ trống nhận độ dài 0",
+      "source_time_basis": "profile snapshot at collection",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "teacher_org_count",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/relations/course_teacher + entities/teacher.org_name",
+      "definition": "Số org_name phân biệt sau trim dấu cách",
+      "source_time_basis": "profile snapshot at collection",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "school_count",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/relations/course_school + entities/school",
+      "definition": "Số school_id có profile ghép được",
+      "source_time_basis": "profile snapshot at collection",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "school_avg_bio_length_chars",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/relations/course_school + entities/school.about",
+      "definition": "Mean độ dài about; hồ sơ trống nhận độ dài 0",
+      "source_time_basis": "profile snapshot at collection",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "school_avg_motto_length_chars",
+      "group": "constant",
+      "source": "input/moocubex_parquet/tables/relations/course_school + entities/school.motto",
+      "definition": "Mean độ dài motto; hồ sơ trống nhận độ dài 0",
+      "source_time_basis": "profile snapshot at collection",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "course_video_count",
+      "group": "constant_when_observed",
+      "source": "input/moocubex_parquet/tables/entities/course.resource",
+      "definition": "Catalog video V_; NULL nếu chưa quan sát họ video",
+      "source_time_basis": "final course catalog snapshot",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "course_problem_count",
+      "group": "constant_when_observed",
+      "source": "input/moocubex_parquet/tables/entities/problem + entities/course.resource",
+      "definition": "Catalog problem theo exercise; NULL nếu chưa quan sát họ problem",
+      "source_time_basis": "final course catalog snapshot",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "course_problem_full_score_sum",
+      "group": "constant_when_observed",
+      "source": "input/moocubex_parquet/tables/entities/problem.score + entities/course.resource",
+      "definition": "Tổng full_score catalog; NULL nếu chưa quan sát họ problem",
+      "source_time_basis": "final course catalog snapshot",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    },
+    {
+      "column": "course_resource_count",
+      "group": "constant_when_observed",
+      "source": "input/moocubex_parquet/tables/entities/course.resource",
+      "definition": "Catalog resource; NULL nếu chưa quan sát họ comment",
+      "source_time_basis": "final course catalog snapshot",
+      "per_value_as_of_timestamp_available": false,
+      "known_available_before_cutoff": null
+    }
+  ]
+}

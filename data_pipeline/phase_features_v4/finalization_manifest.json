@@ -1,0 +1,9 @@
+{
+  "builder_sha256": "1a3391b0d6d0e4e4dbacc947e17a35cef7460f29f4cdf23f55122fae7e75a1d9",
+  "dataset_version": "CQ V4",
+  "date": "2026-10-22",
+  "independent_checks": 14,
+  "python": "3.12.13",
+  "root_card_sha256": "dc89fd54faa41e874e480cd8f51b155d240837682e9ef8c0b1e20c1c4751b463",
+  "unit_test_source_sha256": "8888a274f5fc896508127a3edf87c2295ca87e558cc0a6f3a97d4b065118505e"
+}

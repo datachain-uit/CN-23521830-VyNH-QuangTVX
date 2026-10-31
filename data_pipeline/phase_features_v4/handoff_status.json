@@ -1,0 +1,43 @@
+{
+  "data_build": "PASS",
+  "data_checks_passed": 285,
+  "data_ready_for_experiment": true,
+  "dataset_version": "CQ V4",
+  "no_failed_data_check": true,
+  "overall_handoff": "PARTIAL_EXPERIMENT_CHECKS_PENDING",
+  "pending": [
+    {
+      "item": "ID-only and missing-mask probes on V4",
+      "owner": "experiment",
+      "status": "NOT_RUN"
+    },
+    {
+      "item": "Shuffled-label / majority model checks on V4",
+      "owner": "experiment",
+      "status": "NOT_RUN"
+    },
+    {
+      "item": "Selector weight contract and baseline reproduction",
+      "owner": "experiment",
+      "status": "NOT_RUN"
+    },
+    {
+      "item": "FullTrain-A/B training, headroom, QD16 and panel",
+      "owner": "experiment",
+      "status": "NOT_RUN"
+    },
+    {
+      "item": "NOLFO comparison because temporal_overlap>5%",
+      "owner": "experiment, thesis",
+      "status": "REQUIRED_LATER"
+    },
+    {
+      "item": "Human review of 20-pair source comparison and scientific label validation",
+      "owner": "research",
+      "status": "PENDING"
+    }
+  ],
+  "ready_for_m0_v4": false,
+  "tempo_dq_comparison": "NOT_REQUIRED_BY_USER",
+  "test_excluded_from_runtime": true
+}

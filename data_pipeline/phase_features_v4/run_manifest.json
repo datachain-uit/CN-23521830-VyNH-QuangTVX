@@ -1,0 +1,20 @@
+{
+  "builder_sha256": "3aa7316ee0bd5b704a1da6c0978f3a7f5030843b106100665c832b66c30d83c1",
+  "common_sha256": "53b85faebed9106986b1eaa2d79acefebac30ca431a8fe9bac5e8ce2ee4df164",
+  "dataset_version": "CQ V4",
+  "date": "2026-10-22",
+  "elapsed_seconds": 61.975,
+  "feature_policy": "user supplied V3 features; no TEMPO-DQ comparison",
+  "preprocessing_sha256": "b7e83b433fecc09463c770a50162ff0c582832022ae4d1810fe28331b5ab774a",
+  "quality_manifest_sha256": "c365388297675eaafb561c6f8ccc34b37dbe94b052ee62f760ae75650150047d",
+  "raw_preserved": true,
+  "software": {
+    "duckdb": "1.5.5",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3"
+  },
+  "source_fullA_manifest_sha256": "f974390c2e0a9b318f609672452263f55d1020843d2b284e2c49e7d27174037e",
+  "source_phase_manifest_sha256": "6c7b8d44c5783d4d9d8633d1622644e4d02c43b2e6922925b74186b1efbedf1f",
+  "split_sha256": "7d388e17f193b61b917e908db7569860b0c0f2996456874fca40726bb7f4eba6",
+  "stage": "phase_features"
+}

@@ -1,0 +1,2617 @@
+{
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/phase_features_v4/supervised_raw/P1/test.parquet": {
+    "bytes": 3315276,
+    "mtime_ns": 1792667322213467930,
+    "sha256": "4a37921d191ad815c6931d844c9e6814d094064b48766d9489c08472a856e52b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/phase_features_v4/supervised_raw/P2/test.parquet": {
+    "bytes": 3404714,
+    "mtime_ns": 1792667335780473572,
+    "sha256": "8ae9b00dc111531cebe91fb5e5125d6f78a5744305f6944f2fdbbd4a4da02747"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/phase_features_v4/supervised_raw/P3/test.parquet": {
+    "bytes": 3487433,
+    "mtime_ns": 1792667349421937387,
+    "sha256": "4c7e0d65c9ef2cf0f0e2b62863ed1a493127ad0989b0cbf328dc8fa3c40b4131"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/phase_features_v4/supervised_raw/P4/test.parquet": {
+    "bytes": 3569034,
+    "mtime_ns": 1792667363556254493,
+    "sha256": "c9aaf22037150af5d2d2f019e9c13dbd3f6df21b736667173ce17064fa0203e5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/phase_features_v4/audit/cutoff_sample_20_pairs.parquet": {
+    "bytes": 8273,
+    "mtime_ns": 1792667369199871802,
+    "sha256": "08ff4321956f403acee5f14cae4bfe51d7ac39b9b156058978c3af7126192f14"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/course/data_0.parquet": {
+    "bytes": 5939348,
+    "mtime_ns": 1791884872000000000,
+    "sha256": "b99a930d3fe3255068ef99309104e15ce2e9a27ca7e00c3a4b28be76935fcd51"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/user/data_0.parquet": {
+    "bytes": 207058,
+    "mtime_ns": 1791885636000000000,
+    "sha256": "17f02f5ac620fde81babc943ff24a2815f1a9d4d470dd4a9f2c68f130ba3a9b0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/user/data_1.parquet": {
+    "bytes": 27504094,
+    "mtime_ns": 1791885636000000000,
+    "sha256": "f7553f5c01d088e29f4247a4b055aa2ea73b775c74a9bf794a5ecf9f9d2406c5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/user/data_2.parquet": {
+    "bytes": 43960932,
+    "mtime_ns": 1791885646000000000,
+    "sha256": "e44055b33a8d6301ecec05b3f2d74b8fbb0c48bc0f615c8ebac80916a0ed4f1b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/user/data_3.parquet": {
+    "bytes": 37094752,
+    "mtime_ns": 1791885660000000000,
+    "sha256": "3896b348ca83e5c82364163b1bc5779734afc7675400b171635deaf603276941"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_0.parquet": {
+    "bytes": 43072638,
+    "mtime_ns": 1791886028000000000,
+    "sha256": "882d176f0994029b9d34f0ee30503fc7e29e8a7fb4e54bb1885ef553ea7ad3b4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_1.parquet": {
+    "bytes": 43284936,
+    "mtime_ns": 1791886042000000000,
+    "sha256": "b965c3d086e7ff9edac283cdbb13018589d0b592e1b13a9f4a15d6225547adf5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_2.parquet": {
+    "bytes": 41299906,
+    "mtime_ns": 1791886054000000000,
+    "sha256": "edf5e9e73f5de9408b5b51d7265cde7b3fda4ace2c34bc6e769385c733a02c6f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_3.parquet": {
+    "bytes": 43114969,
+    "mtime_ns": 1791886064000000000,
+    "sha256": "faec7c38c05a47e278a383f150bc148090b88bf1c9fb9080deb90504299a7c82"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_0.parquet": {
+    "bytes": 171264593,
+    "mtime_ns": 1791885800000000000,
+    "sha256": "12b6c8b637abe2e40b6074ed3156017342f976bc75bf97dcbd44ade67f0f823b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_1.parquet": {
+    "bytes": 171626482,
+    "mtime_ns": 1791885854000000000,
+    "sha256": "e409ba6021cb17cc56b1d647dd02eb6e03fa3f5028f0808a7ef203ed5aed52dc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_2.parquet": {
+    "bytes": 171866791,
+    "mtime_ns": 1791885900000000000,
+    "sha256": "23f8dd4c04a28beec9225f4df5f5e555d41d4b3b50cbb0696dbe031b36b72b9c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_3.parquet": {
+    "bytes": 172763678,
+    "mtime_ns": 1791885954000000000,
+    "sha256": "51180e7423590415886afc0acf0f9172947d850687b05ff7469e00dec929f490"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/problem/data_0.parquet": {
+    "bytes": 29628465,
+    "mtime_ns": 1791885592000000000,
+    "sha256": "75e98ba80b1895c019e0c025d5bd0ad47594c32a95d96b4610bac4e7638fed36"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/problem/data_1.parquet": {
+    "bytes": 25727600,
+    "mtime_ns": 1791885600000000000,
+    "sha256": "97535950efd4af8c706a890fc57dffe0fd9586d7888815a6049c474ee5d9d38b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/problem/data_2.parquet": {
+    "bytes": 34328042,
+    "mtime_ns": 1791885606000000000,
+    "sha256": "88f32f04212a61aa112bd59ebe0368d3ffe6ca9d299fffb214c3f26c320c8aaa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/problem/data_3.parquet": {
+    "bytes": 29861010,
+    "mtime_ns": 1791885616000000000,
+    "sha256": "2d4b6c7f89f2407313390df8cddd2ab70f91cdb6ce066917301d6eeb6c6417ee"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/translated_comment/data_0.parquet": {
+    "bytes": 28371651,
+    "mtime_ns": 1791885626000000000,
+    "sha256": "32e686db2485365ddd2cb5cdc82d4bc7d08ccc2286f72397a65aff1c99d87cf0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/course_comment/data_0.parquet": {
+    "bytes": 7989701,
+    "mtime_ns": 1791885776000000000,
+    "sha256": "6d0d1d011d979346595dea5cc388acdc56740b347c56accffa4eeca9bf63ad76"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/course_comment/data_1.parquet": {
+    "bytes": 8047604,
+    "mtime_ns": 1791885778000000000,
+    "sha256": "34f53ec20e9c4710724cbd8ebc8d66cf12c4dbaba532e7f959eaedba26359384"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/course_comment/data_2.parquet": {
+    "bytes": 7247995,
+    "mtime_ns": 1791885780000000000,
+    "sha256": "c2af1da2d501740db1fea250534c6d4700987341973783eebdc2c385f01856cb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/course_comment/data_3.parquet": {
+    "bytes": 7294733,
+    "mtime_ns": 1791885782000000000,
+    "sha256": "422e138b6f7043a9edb858899a3cf494f9c1a50bdb873a3a50c70e00d969676c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/course_teacher/data_0.parquet": {
+    "bytes": 172151,
+    "mtime_ns": 1791885784000000000,
+    "sha256": "77e79c71ccfe52d0064f7743933c5f12a6a270926c68231e728dd1ed5f96dbe6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/teacher/data_0.parquet": {
+    "bytes": 2328333,
+    "mtime_ns": 1791885624000000000,
+    "sha256": "00f8bfcd5fde410cbf6dfa0941f6b9bdb48fbfbaa037ece2c4f127ff0b5c1887"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/course_school/data_0.parquet": {
+    "bytes": 31330,
+    "mtime_ns": 1791885784000000000,
+    "sha256": "88de08e25305cc8ea1edd41de00b67490b168a42386263ef50cf4311b2adc6b1"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/entities/school/data_0.parquet": {
+    "bytes": 183591,
+    "mtime_ns": 1791885624000000000,
+    "sha256": "181642af6b632231354b371ebc54d4cacb27ca3a0ef6b14e12f7b23cc3131481"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00000.parquet": {
+    "bytes": 96712,
+    "mtime_ns": 1792213797665114264,
+    "sha256": "00f2387e0ed130f26d6727ee42f4c2b2efd1c91b3e5039777abc520f27113aa0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00001.parquet": {
+    "bytes": 96893,
+    "mtime_ns": 1792213798941370325,
+    "sha256": "f816f216d1b445b7cb92294b3090323bc06fb4c1f1edde18e5f360ea3c2537a2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00002.parquet": {
+    "bytes": 96957,
+    "mtime_ns": 1792213800232280357,
+    "sha256": "9f49d66341cc7a4d323ea3974bd6c2350b956726af21050615babe5597322b95"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00003.parquet": {
+    "bytes": 96905,
+    "mtime_ns": 1792213801674156602,
+    "sha256": "f9b9954f46a730ef3ddbe31d094563a28eb0b8a56cf0d7f988d8632cba2f8d9e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00004.parquet": {
+    "bytes": 96992,
+    "mtime_ns": 1792213803160062134,
+    "sha256": "92dbb02683df4b575c4b7284b509b7e1cd3cb00d0b19c367a49ecf01198d6f11"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00005.parquet": {
+    "bytes": 96944,
+    "mtime_ns": 1792213804672833459,
+    "sha256": "20a49e822799201dc309140b153b6542679e15774bcebf13f438b32cd332a5be"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00006.parquet": {
+    "bytes": 96982,
+    "mtime_ns": 1792213806312361060,
+    "sha256": "d97f53bdc6dd2c9fa7e7913fad7d983831a8dd74f85f311ce06500b3f0dd2e97"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00007.parquet": {
+    "bytes": 96993,
+    "mtime_ns": 1792213807988289005,
+    "sha256": "df84bdc2c012aca5420ed3bb78b6fb81129007d46be8afe0d344bd37de7b8706"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00008.parquet": {
+    "bytes": 96928,
+    "mtime_ns": 1792213809628942431,
+    "sha256": "6f6dcb9173e72ad8785ffbc49a0b36ac1fca9e0d1d2f86b7556179e5124602bd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00009.parquet": {
+    "bytes": 97009,
+    "mtime_ns": 1792213811429769000,
+    "sha256": "3992576321b3c84869c5b3bbb6662fd52ab40dcd99ba060f6bdce6ff3f1a74fd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00010.parquet": {
+    "bytes": 96970,
+    "mtime_ns": 1792213813274994852,
+    "sha256": "0e7e0199faa364f4a2c286cca758ad8152c6d69ca419c542c6281c9bee5b1c2b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00011.parquet": {
+    "bytes": 96955,
+    "mtime_ns": 1792213815093175703,
+    "sha256": "f399524a2440cb46dd0269c6403852dfeac7413425e556dfb1e97abcfd41bdae"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00012.parquet": {
+    "bytes": 96937,
+    "mtime_ns": 1792213816925194740,
+    "sha256": "5800ed50b07e57f9c7b1b7b964011692fc80f6680e6eabf8ed72d56b67eb5628"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00013.parquet": {
+    "bytes": 97050,
+    "mtime_ns": 1792213818853490079,
+    "sha256": "b6a1b4b6e3f287b9a51490516325ce1e0e7f20386793de75bfcd245292941435"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00014.parquet": {
+    "bytes": 97017,
+    "mtime_ns": 1792213820831217828,
+    "sha256": "95d11d42c2b05ab612496f20c8861cd83f8e3df738f7d48ea84242504561d600"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00015.parquet": {
+    "bytes": 96981,
+    "mtime_ns": 1792213822798099828,
+    "sha256": "b07c08062cd5724bd7cbb894b3839f5974ac0e1f252925173d6892baf162acda"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00016.parquet": {
+    "bytes": 97042,
+    "mtime_ns": 1792213824817585341,
+    "sha256": "a5bbdf6ddae4596bf078d049c6b5f6066ced3c0700076a91a9de85bc774ede90"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00017.parquet": {
+    "bytes": 96907,
+    "mtime_ns": 1792213826800797590,
+    "sha256": "d8aaa8bd83661adba41238db6fe8d4aa66eccba80f07b9dd7e2d3da4b904573a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00018.parquet": {
+    "bytes": 96969,
+    "mtime_ns": 1792213829006438962,
+    "sha256": "d13820dd72469b229031958fbb69303548524fc6ad67ee36aa7a18460e33c2a2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00019.parquet": {
+    "bytes": 97041,
+    "mtime_ns": 1792213831117991308,
+    "sha256": "13fe8c3bcd411f6983251439e2a27acee8320d8eb21e60ce22a9f9aa3c1797db"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00020.parquet": {
+    "bytes": 96958,
+    "mtime_ns": 1792213833491307766,
+    "sha256": "7a51e5ea0971f9876228a7fb2deefea296dee1d85b3a9fd1ade95ad3067088f5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00021.parquet": {
+    "bytes": 96957,
+    "mtime_ns": 1792213835645221994,
+    "sha256": "d0efc3fe9fe23d3c2552c7c8cc360cc155b06a79bea55a10f27c5865100f7cdf"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00022.parquet": {
+    "bytes": 97004,
+    "mtime_ns": 1792213837850773492,
+    "sha256": "1f12d3cbaf0a2af1669d2f9837e8a029e191c6e520bc0bc52ff6f6b87e643161"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00023.parquet": {
+    "bytes": 97073,
+    "mtime_ns": 1792213840173272299,
+    "sha256": "e7513cb04eb297ba93ee0ae8d7d5330ec05f07b793ab52736f5ddaf23a811d6d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00024.parquet": {
+    "bytes": 96950,
+    "mtime_ns": 1792213842451724612,
+    "sha256": "fd44cfd0f7b8b6baa5953083f8dd4bbea0560b5c196496122f2f7ab3f128019a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00025.parquet": {
+    "bytes": 96958,
+    "mtime_ns": 1792213844728462771,
+    "sha256": "5ec86f5dac55bea08d1b0818554f01d251c8766cb74a7219f91272dc3f227ea6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00026.parquet": {
+    "bytes": 97068,
+    "mtime_ns": 1792213847071343212,
+    "sha256": "03dab56585e423efa815cf814cc6dc115cd6d200a5818647331374cc7ac9cbcc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00027.parquet": {
+    "bytes": 97026,
+    "mtime_ns": 1792213849550869145,
+    "sha256": "1a702f48a31fd3d2cbc8ff88f8940ee032c68570a82fc67a5af128fa183aee9d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00028.parquet": {
+    "bytes": 96978,
+    "mtime_ns": 1792213852024012419,
+    "sha256": "2d2af09b08ab5ff85c2ca35cf8750c3083667af9a3e950174342106b75533487"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00029.parquet": {
+    "bytes": 96999,
+    "mtime_ns": 1792213854567819941,
+    "sha256": "98d5e014fe3c5ff53c74429620f83b16fb9d09705d18d69a9278dc692ec61a70"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00030.parquet": {
+    "bytes": 97034,
+    "mtime_ns": 1792213857039328851,
+    "sha256": "bc98186753238ed0451d8734533fa925b858c76a4928382f06dc773a82b30fe7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00031.parquet": {
+    "bytes": 97051,
+    "mtime_ns": 1792213859596976851,
+    "sha256": "0424963242256a4d96df30cea947da6490e03f33d117154a7f7d3d4683c9e01d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00032.parquet": {
+    "bytes": 97061,
+    "mtime_ns": 1792213862159550311,
+    "sha256": "dbf50e08b689858b589be4c7760ef93cf755d5661df61822f6dda1352a5939c3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00033.parquet": {
+    "bytes": 97095,
+    "mtime_ns": 1792213864752538247,
+    "sha256": "518e89af17022ddf0a10023668bf5738697c15623442b8b55b3abec3fbf4fc61"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00034.parquet": {
+    "bytes": 97019,
+    "mtime_ns": 1792213867482590128,
+    "sha256": "f5cc74c1fb65848ed54df82b01ea90ce5eaf5b9badaaa10539eba7e990b04db1"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00035.parquet": {
+    "bytes": 97094,
+    "mtime_ns": 1792213870377247244,
+    "sha256": "9e7b93a8884cb4a6ba83630f6d38fe41b27db4a392097ffd98b9d5faf728356e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00036.parquet": {
+    "bytes": 97102,
+    "mtime_ns": 1792213873222360032,
+    "sha256": "b33424c8fc45e570b1de9f9921be0a3af84fedf33a811292c11c559042b46437"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00037.parquet": {
+    "bytes": 97120,
+    "mtime_ns": 1792213876174944243,
+    "sha256": "777cc5a490c0e4b5ef050f9eff4dea2382ef977e4ece2134c3e6698163176c4d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00038.parquet": {
+    "bytes": 97126,
+    "mtime_ns": 1792213879328454285,
+    "sha256": "e412cd53d3602f7a5fceb999f0840c30919f1e1ee6fbd92f28e1f631c54ef6a9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00039.parquet": {
+    "bytes": 97067,
+    "mtime_ns": 1792213882409580633,
+    "sha256": "e371c8be6273cb891f1f7f2b64dee0fdc6594a960fb75373988adfc7f3d2da2a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00040.parquet": {
+    "bytes": 97100,
+    "mtime_ns": 1792213885619485116,
+    "sha256": "2c64892f276ea0c9e32cf4080553940e98d24352d8a9340977cafff79904fc71"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00041.parquet": {
+    "bytes": 97086,
+    "mtime_ns": 1792213888954119432,
+    "sha256": "48076a668e78d91dced5d17f38a58c1b0109d3779489be658a83db23415f30d4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00042.parquet": {
+    "bytes": 97144,
+    "mtime_ns": 1792213892253968973,
+    "sha256": "efc67dd8f48b4b5f7272352b1c580c38a18e996dbb34305175d81eec00fa7356"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00043.parquet": {
+    "bytes": 97134,
+    "mtime_ns": 1792213895964657855,
+    "sha256": "60a313eb8593b06267c5266f570170aa0f7527afd5f0f5f87e11248aa1e056ae"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00044.parquet": {
+    "bytes": 97180,
+    "mtime_ns": 1792213899514009978,
+    "sha256": "19bde12a7a960f369bdf9156572dd1e328cb4cfbe1e18572814a0593202b9978"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00045.parquet": {
+    "bytes": 97217,
+    "mtime_ns": 1792213903378772342,
+    "sha256": "27ff44ddc052a72f3b7da4f9a5ff333265ca9dcf3ed373a5bfc6d872a0e7ecfd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00046.parquet": {
+    "bytes": 97115,
+    "mtime_ns": 1792213907126920852,
+    "sha256": "5111ebd5d9e9632d36a27bf208436d8c3d43372d28f9661d0648550dd025da39"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00047.parquet": {
+    "bytes": 97178,
+    "mtime_ns": 1792213911072374595,
+    "sha256": "0af678cd276539c001a9db446d5b7db96f927a378b73f09f09d244bd16afc5e3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00048.parquet": {
+    "bytes": 97268,
+    "mtime_ns": 1792213915047721692,
+    "sha256": "b19ebf7a63c46e130b533e84bb084a575434a4ca762b1ea04acaa504b48847aa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00049.parquet": {
+    "bytes": 97160,
+    "mtime_ns": 1792213919314805713,
+    "sha256": "9c1df65090f0a69d87ae474ac3721a9015abbc031c0d94faf0007c7f12c03adb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00050.parquet": {
+    "bytes": 97231,
+    "mtime_ns": 1792213923634938783,
+    "sha256": "b98f043065e62ac3dbba2de7044bfb16447d60350a58ef55cb2b76b1465f072d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00051.parquet": {
+    "bytes": 97244,
+    "mtime_ns": 1792213928102030306,
+    "sha256": "1127885280142e1925fc10f00084faecd3a2ff172040fee4fa61550b954e760f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00052.parquet": {
+    "bytes": 97298,
+    "mtime_ns": 1792213932756569597,
+    "sha256": "3bec4c831faa99ce0c8d50de4b8a5b5f4c32cb6bdcba9482e418524c4c8cb4a5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00053.parquet": {
+    "bytes": 97307,
+    "mtime_ns": 1792213937595374554,
+    "sha256": "07c6b4927ab89fdb728b16687a679be74ea095b1273b7bfe84a64f12da5d1ab7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00054.parquet": {
+    "bytes": 97285,
+    "mtime_ns": 1792213942534735780,
+    "sha256": "9dcfcdbc4fed554f5cd8f028b8fa9757ef5e1fb21b9452511903d127f9d4c689"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00055.parquet": {
+    "bytes": 97312,
+    "mtime_ns": 1792213947662982136,
+    "sha256": "cad958522ea720cb70df5737ed8d0a2dc1510b336b2b8ba9f1ed441ff7f8a734"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00056.parquet": {
+    "bytes": 97289,
+    "mtime_ns": 1792213953037274141,
+    "sha256": "dd0d38fbdeba8910b4665d900d5318843f24eed4244277872ee0b1d20d84ec92"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00057.parquet": {
+    "bytes": 97325,
+    "mtime_ns": 1792213958716909591,
+    "sha256": "7f9936c5e2b61ae20989d3d42de9a8fb37ab95f3a800c0cff9dad9b4963e3375"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00058.parquet": {
+    "bytes": 97347,
+    "mtime_ns": 1792213964620453360,
+    "sha256": "f2692943e0331a7b7000e4c73c655117faac421d2bde6fcbd7bcc6ef6f9c82a9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00059.parquet": {
+    "bytes": 97327,
+    "mtime_ns": 1792213970775801193,
+    "sha256": "e2ea3659f8f3775c1ae3465bd7cca7f8ad38a0c20468cde927005c671f2349be"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00060.parquet": {
+    "bytes": 97358,
+    "mtime_ns": 1792213977343900852,
+    "sha256": "9a8464ec25e5c42fa7ead5f518e661e572210669ad7f64a972dc52c67c19862d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00061.parquet": {
+    "bytes": 97348,
+    "mtime_ns": 1792213984498959372,
+    "sha256": "b8eccb2b17ddc43e7abba83a19637218aab69d6332bdaa93405974fe59cf128d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00062.parquet": {
+    "bytes": 97434,
+    "mtime_ns": 1792213992127245378,
+    "sha256": "b8e2143fe4142251844f7e7a6d2e63242d89b45218bbb6aeff4886b1ff0605af"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00063.parquet": {
+    "bytes": 97373,
+    "mtime_ns": 1792214000751883640,
+    "sha256": "b522e68e4293fd6d65bee754531b95a45722e395f56ad485eaff78062672bbff"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00064.parquet": {
+    "bytes": 97392,
+    "mtime_ns": 1792214009987130288,
+    "sha256": "4605bb7ac5ad9d7b996a9cb4f14957bf57e7c1a4011bf6b129355e1693e315d8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00065.parquet": {
+    "bytes": 97382,
+    "mtime_ns": 1792214019960385012,
+    "sha256": "985bdd9eb6b1ffe58198768e1d577481730e0bbeb6f6ce9be85dfdd1f7546a5a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00066.parquet": {
+    "bytes": 97463,
+    "mtime_ns": 1792214031235540479,
+    "sha256": "ac4a39dbe5d3a9adbd8c57682dd7e986f9dedf734314a36ac276ba0dcda20c3d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00067.parquet": {
+    "bytes": 97416,
+    "mtime_ns": 1792214043801266934,
+    "sha256": "17ab294f54df05e3b32071a498d0abbdb4af60e35d174de7c970ff7607046168"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00068.parquet": {
+    "bytes": 97516,
+    "mtime_ns": 1792214057958051122,
+    "sha256": "1221b95286a3060e271c1056ff82e866ddf0fa846535af94d434f4d649ca1a71"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00069.parquet": {
+    "bytes": 97528,
+    "mtime_ns": 1792214074653602802,
+    "sha256": "ac8367de0ef5bf4630cbf75e8fbcd46254ae5bd842c29794ba22c41db8dbe081"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00070.parquet": {
+    "bytes": 97533,
+    "mtime_ns": 1792214094960259415,
+    "sha256": "5c0d55217c2faba9d7de6fd2061b2320d9aa6da319f49b5e734761fe2534cde9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00071.parquet": {
+    "bytes": 97676,
+    "mtime_ns": 1792214121906500709,
+    "sha256": "f883392eabc90038740c22d176a14426f9d31c57480d8e11a60074be0594508e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/afelo_sentiment_cardiff/text_predictions/part-00072.parquet": {
+    "bytes": 78462,
+    "mtime_ns": 1792214169247256834,
+    "sha256": "a4855da26434bace5828cedb5a66d657481454e45a1a3b9c644a6a766baa6409"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00000.parquet": {
+    "bytes": 49925,
+    "mtime_ns": 1792496202709129609,
+    "sha256": "68ec334b6683566052feea748e18de3e2bc7365f51a6fbccb7634734b5543487"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00001.parquet": {
+    "bytes": 49933,
+    "mtime_ns": 1792496204089616320,
+    "sha256": "ce17042e8926946c7501270753da001c022cd5fc8e660533c6760b5246ceead7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00002.parquet": {
+    "bytes": 49856,
+    "mtime_ns": 1792496205315247505,
+    "sha256": "6962c2edcd0a0e35d914896796cdeaf98e2f19c2574f6ce9a8e7d4b7afd1da1c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00003.parquet": {
+    "bytes": 49855,
+    "mtime_ns": 1792496206638765978,
+    "sha256": "162c35f2a05babc925e6eae3fe15b6718266e19a4f59740285298387f78e8506"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00004.parquet": {
+    "bytes": 49894,
+    "mtime_ns": 1792496207470141653,
+    "sha256": "755f8a552745ffaa153865b5479cafc480c61efc25bd4b17cae3a7e10e0f2f37"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00005.parquet": {
+    "bytes": 49964,
+    "mtime_ns": 1792496208729249416,
+    "sha256": "d6b228f8c585e7a72ea24cd940d2710338687d7b3fc47af79fe1e1b77b76148e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00006.parquet": {
+    "bytes": 49953,
+    "mtime_ns": 1792496209602333031,
+    "sha256": "a23e0d814ca4e51f4b1e0fe3f6e5f74e5e4b51d4532e2b6acee804d6d4674ccf"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00007.parquet": {
+    "bytes": 50020,
+    "mtime_ns": 1792496210753226472,
+    "sha256": "dc3235637f0caaf8ed442e79037ca2d8d963769ddc64dcfabacc4d9a3f53d112"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00008.parquet": {
+    "bytes": 50014,
+    "mtime_ns": 1792496211647232813,
+    "sha256": "e8ddb9f0f19519a642cece94bdd6467d06e89535e525d030135e761ca2731945"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00009.parquet": {
+    "bytes": 50051,
+    "mtime_ns": 1792496212712290856,
+    "sha256": "9cd608cecdef221237a816e228134f9ce81cf43b5eb972f007ef6d70fb5dadf6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00010.parquet": {
+    "bytes": 50010,
+    "mtime_ns": 1792496213689238145,
+    "sha256": "856e4d724d4d7b99d4e61c602c77b44c7bcfddc4eec7ead317c1cb62683c89e7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00011.parquet": {
+    "bytes": 50050,
+    "mtime_ns": 1792496214667002612,
+    "sha256": "d53d79e5db3c11ccaeeee4f5745b8da14725f220ca40b87abb4d38926c7142a7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00012.parquet": {
+    "bytes": 49947,
+    "mtime_ns": 1792496215616680239,
+    "sha256": "1769d174ffc6f554e63407ac0391aef730090ad3c53166132e3015109a9ff8ee"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00013.parquet": {
+    "bytes": 49979,
+    "mtime_ns": 1792496216478414403,
+    "sha256": "a3aabb12063581d6efd10c88a7f4a63ffe634bbaa5fa9ace370d48b2dc93a994"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00014.parquet": {
+    "bytes": 50021,
+    "mtime_ns": 1792496217332294811,
+    "sha256": "283e896034a9b4f1b4188a2251cc0e19dbdab1c4346697b112eef6c03222e9e8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00015.parquet": {
+    "bytes": 49968,
+    "mtime_ns": 1792496218215771368,
+    "sha256": "9a45f8ba3f1f3e8070f380d108d91ad6add3a75040d53d36dde4b5e0ffccaf6f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00016.parquet": {
+    "bytes": 50036,
+    "mtime_ns": 1792496219820033632,
+    "sha256": "1ed9e66de21199c72c1635281b0f619de1af162b8c82d57b5fb363388b9f8b7b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00017.parquet": {
+    "bytes": 50023,
+    "mtime_ns": 1792496220841471108,
+    "sha256": "446d9f3ff193208db017b76d84b8f9cbe37876eb65a6007f5f7c316f77caff30"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00018.parquet": {
+    "bytes": 49975,
+    "mtime_ns": 1792496221760812777,
+    "sha256": "bfe646b7bf31f4bd0a23405d44f069b480d8cb9f4ec33cc4a04aafac500cafb4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00019.parquet": {
+    "bytes": 49861,
+    "mtime_ns": 1792496222519455436,
+    "sha256": "1a688f2cdfadaa85ff50e2e27e60aa75459bcf9b6641111b7913fe08c8058f79"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00020.parquet": {
+    "bytes": 49928,
+    "mtime_ns": 1792496223434606835,
+    "sha256": "d1b0f85b7bed3014b31afbefd61b423c9214b52da7f31e7c24a2274d18d4c4de"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00021.parquet": {
+    "bytes": 49835,
+    "mtime_ns": 1792496224164996361,
+    "sha256": "41853bcaee76db4089b64ab1d4e99587564ce68cff3590ef976a05e674a12aaa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00022.parquet": {
+    "bytes": 50036,
+    "mtime_ns": 1792496225188202862,
+    "sha256": "a1ccdcd56b267695482ffa04b1b51304bd6a40b9f28d49352b9a114676f171b0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00023.parquet": {
+    "bytes": 49993,
+    "mtime_ns": 1792496226127607254,
+    "sha256": "122405d572578cc0cd3b4e31e227d00c85733fcbed33ed8fc768a7f72ed0406a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00024.parquet": {
+    "bytes": 49978,
+    "mtime_ns": 1792496226928230563,
+    "sha256": "91918db25e220ed014e791ff1f149d2ed3d9b5bfb58d7c314406358622732f88"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00025.parquet": {
+    "bytes": 50111,
+    "mtime_ns": 1792496227888606382,
+    "sha256": "cd04a1a29ab10e628570b04a3f2703b4489ab2a60e1a5592a4c6cd10cea26251"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00026.parquet": {
+    "bytes": 50082,
+    "mtime_ns": 1792496228822893206,
+    "sha256": "c1695adfe961c7377345d8a40d6726f39d92d3d44887e1d47828057b3440e51d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00027.parquet": {
+    "bytes": 49980,
+    "mtime_ns": 1792496229708474849,
+    "sha256": "d0e5a4f3d8b9a1d0ad8fc3496323928ed9823fa82fdff60fb1d724003ecded5f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00028.parquet": {
+    "bytes": 49818,
+    "mtime_ns": 1792496230398879883,
+    "sha256": "0b0408c10fd6897e00326ba601026e739586488263ccb4d873b4ee75bdbed420"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00029.parquet": {
+    "bytes": 50037,
+    "mtime_ns": 1792496231329840815,
+    "sha256": "2ddbc2930004855861b07a87e9c4101f55c4b0a2061b25e50dfecfb9f22b0ba0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00030.parquet": {
+    "bytes": 50000,
+    "mtime_ns": 1792496232173802823,
+    "sha256": "b5484eb91d6a64bcc20275e25a74584190c11379902f0e70880e2a14c49cb93a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00031.parquet": {
+    "bytes": 50012,
+    "mtime_ns": 1792496233178085430,
+    "sha256": "94f8e58f4fd6894b087ae3d97cee4005e3b7411f3360a1132e9ba72aec796537"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00032.parquet": {
+    "bytes": 49852,
+    "mtime_ns": 1792496234024454331,
+    "sha256": "ae48f31ee311409f44b360d8c20f9704d05996d47e702eea1bbcf4d791883ad0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00033.parquet": {
+    "bytes": 49920,
+    "mtime_ns": 1792496234820200329,
+    "sha256": "1dc36579c7d106fce2ceed578d02cb31eca57a2ef9727629b8158aef793f2032"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00034.parquet": {
+    "bytes": 50005,
+    "mtime_ns": 1792496235878070864,
+    "sha256": "da50ef1ad1b46b0b5aaf9045c4d8b8eaeb379a894d4e1137ab43732d11e4dfe4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00035.parquet": {
+    "bytes": 50046,
+    "mtime_ns": 1792496236882263017,
+    "sha256": "6410b652a6506e4e84f4baec82fd2b358037660d376a049fe52d901de4cf8e0a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00036.parquet": {
+    "bytes": 50069,
+    "mtime_ns": 1792496237756890476,
+    "sha256": "3e7a1932af5d2b6985901ac4f2bcada595e121cf9e277eec914749c94ec915bf"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00037.parquet": {
+    "bytes": 49970,
+    "mtime_ns": 1792496238687889877,
+    "sha256": "4c2090b580a1abd75ddc9a965267811204ce9b55ba4f6621dbc32ff1aff51547"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00038.parquet": {
+    "bytes": 49906,
+    "mtime_ns": 1792496239427767734,
+    "sha256": "51ff062d70d160a3dc1a7001065c177ef5d112e0c60b6d5a7586e4e5ac6abf70"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00039.parquet": {
+    "bytes": 49811,
+    "mtime_ns": 1792496240142524432,
+    "sha256": "6cd5d51243952f2174b72fb4033ce03a5a46d0f7e6fc30a8ec108e1e3e41adbb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00040.parquet": {
+    "bytes": 49872,
+    "mtime_ns": 1792496240878924018,
+    "sha256": "a0c51ce44cf45592a43bb8e111e6eb1866509db1089520e6663d2a619498a81a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00041.parquet": {
+    "bytes": 49927,
+    "mtime_ns": 1792496241596999655,
+    "sha256": "bf428969975b17f0ba9a1cd76f40e7ccecd62e0bf79725dd75bfc6603184c678"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00042.parquet": {
+    "bytes": 49905,
+    "mtime_ns": 1792496242324082267,
+    "sha256": "81b10ba0462b1cf4d39b541b89cf50a847ee07f9980be97f80e364c0e27bf94d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00043.parquet": {
+    "bytes": 49849,
+    "mtime_ns": 1792496243053008307,
+    "sha256": "8d8eaff8c8a2b0b8a10cee6fc94c37fce2228e0d13fa5e44bf7abcd76b8c31db"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00044.parquet": {
+    "bytes": 49897,
+    "mtime_ns": 1792496243875361023,
+    "sha256": "9d2e27af47c3c105795d7edf69549c689dd0993ee23cbff7cdf9a97eaf25cfe5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00045.parquet": {
+    "bytes": 49877,
+    "mtime_ns": 1792496244586008573,
+    "sha256": "1c9fc70b9b102133b7b569969cb4afee09b34809bde4fd9d66bb729b2d7a50fa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00046.parquet": {
+    "bytes": 49996,
+    "mtime_ns": 1792496245626643884,
+    "sha256": "6742d5eec77b99bd02dcdfdc59f79543416b54a8484298987f342895c238d5c8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00047.parquet": {
+    "bytes": 49896,
+    "mtime_ns": 1792496246483278027,
+    "sha256": "d850dab4558b16aabed885013d7690c32f342615d1acab9bcf6230fcf5af6577"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00048.parquet": {
+    "bytes": 49950,
+    "mtime_ns": 1792496247303227897,
+    "sha256": "b60594d4af9302308d9bb9d93b3b5f7e1ad5ea47883814c8fbdef120bb0b7a9f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00049.parquet": {
+    "bytes": 49933,
+    "mtime_ns": 1792496248175432307,
+    "sha256": "6b6044111b929140d029b0c156864546e5397adc2a730a9148842ef41fb7db39"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00050.parquet": {
+    "bytes": 50075,
+    "mtime_ns": 1792496249060392173,
+    "sha256": "ef1fe3095ddb1bf4c2295425a6cd86c3f9612446b25f9356737c4bc6c9d27b63"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00051.parquet": {
+    "bytes": 50057,
+    "mtime_ns": 1792496249972653672,
+    "sha256": "0a990d99aa9f6ac13b64d60dd6a5bf0b837753a5aec6e554ebe541e83a04f8fb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00052.parquet": {
+    "bytes": 50059,
+    "mtime_ns": 1792496250868521442,
+    "sha256": "ed11778fc6207293f99d9e6389616f2322b28ce68e0aea21bc0162d1c423df4f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00053.parquet": {
+    "bytes": 49853,
+    "mtime_ns": 1792496251627869096,
+    "sha256": "1457d11bc3682bab27effc251901ea5e304c3ee199f0515b9894bc31c1fe2965"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00054.parquet": {
+    "bytes": 50042,
+    "mtime_ns": 1792496252441453219,
+    "sha256": "234827177129dbc7cb75a22f6205852d4ae29b6f1219df1f6e8604c2d64aaeb5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00055.parquet": {
+    "bytes": 50017,
+    "mtime_ns": 1792496253381818106,
+    "sha256": "26cf4c3452e95cb38d9b8af9b6e902b02d1bf75c0620ae0e3af5a94388b0e8d3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00056.parquet": {
+    "bytes": 50044,
+    "mtime_ns": 1792496254367171987,
+    "sha256": "16440d4a7c45f9a6d7839f8bb9a1517f5b958a87a863af68744a1c2282583b73"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00057.parquet": {
+    "bytes": 50077,
+    "mtime_ns": 1792496255231861394,
+    "sha256": "cc425a5625da0bd838baa2b3a26e76aaa1cf13683bb65dc1ff02d494abae5aa1"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00058.parquet": {
+    "bytes": 50047,
+    "mtime_ns": 1792496256068126454,
+    "sha256": "bbe13cfd6e74c9f44eba3286345b220f13f85f01396846dceb798bae3facce7d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00059.parquet": {
+    "bytes": 50059,
+    "mtime_ns": 1792496257085323455,
+    "sha256": "a057ca5e98bdd4351a7d4fd4ec869add59a04a7c5a329b0b9a6765c2e8233a27"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00060.parquet": {
+    "bytes": 50051,
+    "mtime_ns": 1792496258178104853,
+    "sha256": "b93ab13fa2dfebcaca385f13667e0f8b28a454cb9c9beec503c16109d3283698"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00061.parquet": {
+    "bytes": 49836,
+    "mtime_ns": 1792496259153041753,
+    "sha256": "05201dfadc1b116b16145424f6a3739e1df9c932d4e44d63a0904547c10c77fd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00062.parquet": {
+    "bytes": 50087,
+    "mtime_ns": 1792496260106609768,
+    "sha256": "cc87708aa58388dbc76472abf05379f049714c6ddd55e4cc40d94f333cc9c0ad"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00063.parquet": {
+    "bytes": 49963,
+    "mtime_ns": 1792496260909424117,
+    "sha256": "d618d8f1ee295275bd4ac612650d27668a958d882437c147bb1bf967539d012f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00064.parquet": {
+    "bytes": 49901,
+    "mtime_ns": 1792496261697832917,
+    "sha256": "071b946092a7c89e7a1e47f072fa428974b9e02ca9fc93a12ef26433dea675f5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00065.parquet": {
+    "bytes": 49878,
+    "mtime_ns": 1792496262501865608,
+    "sha256": "d39f2f423eb5ef7c5a86d3829abba1ce8f840872792ec32ea6894d1a7ddc809b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00066.parquet": {
+    "bytes": 49896,
+    "mtime_ns": 1792496263270032321,
+    "sha256": "1ba3107adf3deb11a2d81836264f58ebe7d3722bb54c300b963c1d6d96bfebae"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00067.parquet": {
+    "bytes": 49945,
+    "mtime_ns": 1792496264037585613,
+    "sha256": "af3ad7cf7ecc347725c98eb294c0d1d7c5133543de3fd377713eeb401bbddb14"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00068.parquet": {
+    "bytes": 49949,
+    "mtime_ns": 1792496264814271422,
+    "sha256": "865c869e186bd57e6c2c65cfe56f483291c73adc6b2e14704765cbfe4eb3d038"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00069.parquet": {
+    "bytes": 49928,
+    "mtime_ns": 1792496265617004105,
+    "sha256": "2350399c1832e63336c09b07335c2894c042879e42d645f0b2d2fb3f1950fcd8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00070.parquet": {
+    "bytes": 50044,
+    "mtime_ns": 1792496266469575562,
+    "sha256": "ca07434e904c65d180ffb309746d7eac0d1c6d2838d91b5b1df95661d63d75e3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00071.parquet": {
+    "bytes": 50143,
+    "mtime_ns": 1792496267397468082,
+    "sha256": "bf545230351af1793d70b2ed317f52b9676a91773f932d60b84e6345aa9b79d6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00072.parquet": {
+    "bytes": 49954,
+    "mtime_ns": 1792496268200716435,
+    "sha256": "6612e0b138ebfd8db36f33ae00a503e52927399a91ba318e13af3c77db26fe01"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00073.parquet": {
+    "bytes": 50075,
+    "mtime_ns": 1792496269074396153,
+    "sha256": "1b640fa43c6bf3211afcd1c2ebb6d7d9d00520b5a69c15939fb8c5b32a73ac18"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00074.parquet": {
+    "bytes": 50093,
+    "mtime_ns": 1792496269926445899,
+    "sha256": "cd258e52b159c7dcb0f399774d84583d39ee8f3630e28475c2135576d62b4b65"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00075.parquet": {
+    "bytes": 49934,
+    "mtime_ns": 1792496270762915296,
+    "sha256": "a38f1b7fb6190a7be4e9b298c323531cd67b7888c2909fa3586b5ed379673f29"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00076.parquet": {
+    "bytes": 50047,
+    "mtime_ns": 1792496271858315506,
+    "sha256": "c3ed6d9efce8ab5a7f29638e85f0b353b93741fa6536f6cdf5c46e3dbdfa7d3d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00077.parquet": {
+    "bytes": 49900,
+    "mtime_ns": 1792496272647362436,
+    "sha256": "1fdd70522a1ccadb774723807056ca209b5284b0512eaa2cd00d4d54e3423222"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00078.parquet": {
+    "bytes": 49896,
+    "mtime_ns": 1792496273501850907,
+    "sha256": "419767631ede01621cc92281139ffc8c6570819e8a6e465685f00d55e188d561"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00079.parquet": {
+    "bytes": 49925,
+    "mtime_ns": 1792496274335109077,
+    "sha256": "e951e29763a30d2ee697d086af9c2863255fad85501abf18cc6923fd559fdab8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00080.parquet": {
+    "bytes": 50062,
+    "mtime_ns": 1792496275481203276,
+    "sha256": "44d3d0bc35b7ca2e77b2e62171fd3fc6d1576265cd8c44ffd95dc24be208d4be"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00081.parquet": {
+    "bytes": 50042,
+    "mtime_ns": 1792496276402475047,
+    "sha256": "f9e02f54473dc6ad72eda84373a6b490d4bb8185a50768a6998459b80a4bf4ae"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00082.parquet": {
+    "bytes": 49912,
+    "mtime_ns": 1792496277864373252,
+    "sha256": "0071fbbf5601b9e8723c535500b690dcc0b91a7cb16d96b01e9275d1d01ad0cd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00083.parquet": {
+    "bytes": 49948,
+    "mtime_ns": 1792496278815835964,
+    "sha256": "92b68be9a2a53e6786072baf4811b765305caeba1a9833924f2444b1303d3d68"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00084.parquet": {
+    "bytes": 49967,
+    "mtime_ns": 1792496279684223274,
+    "sha256": "b3082a994ba21954b5ac51d44eefa49ee6231d281a5ebd989297af47e2631dbc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00085.parquet": {
+    "bytes": 50027,
+    "mtime_ns": 1792496280873296247,
+    "sha256": "80b07e35c2998ffc205dbd97f3a64634e82fc93d3fc2b8e4aa9dea6adf07335c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00086.parquet": {
+    "bytes": 50036,
+    "mtime_ns": 1792496281872181636,
+    "sha256": "3d45d32e4f7d6869281e7aa9ae4e53084053585236b1d2149658eb993ac979d6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00087.parquet": {
+    "bytes": 49956,
+    "mtime_ns": 1792496282774462828,
+    "sha256": "89cbf4a2ed6aaba59c3cce2f267ce571f41b517373881770bae8fd96ba89a525"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00088.parquet": {
+    "bytes": 50063,
+    "mtime_ns": 1792496284094785177,
+    "sha256": "6eb190b47818a25450e244e8d0ac75b09f4b8e015e4bb20e51b9dddf98926b9e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00089.parquet": {
+    "bytes": 49931,
+    "mtime_ns": 1792496284911726286,
+    "sha256": "02bb1ab074e388af90055a7b1876d36c08563e3aca1eeb6295e7180c26f42635"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00090.parquet": {
+    "bytes": 49960,
+    "mtime_ns": 1792496285806027719,
+    "sha256": "c7e84ccc21e067a6f22390f2a9f8d9e9d1b45ac56f7056fa1bf5bd9f58419cbf"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00091.parquet": {
+    "bytes": 49893,
+    "mtime_ns": 1792496286647984736,
+    "sha256": "1206d1f7fe8c22af2354c7028b96ded5056f874e8624e3ebaf8840dbe4d06634"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00092.parquet": {
+    "bytes": 49951,
+    "mtime_ns": 1792496287484631637,
+    "sha256": "2b4f987358d032d2be2e7cebea42080f61f86a011280962b64fd19c7022e06b3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00093.parquet": {
+    "bytes": 49949,
+    "mtime_ns": 1792496288595808199,
+    "sha256": "ae438d60d0bf136a9f7b8aa32b71dc262e96a39eb09a4e5b282aea20cc87586e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00094.parquet": {
+    "bytes": 49977,
+    "mtime_ns": 1792496289624861530,
+    "sha256": "a7c151ee1e57dec0f744552719b6fe7a4c627852ef6b3298778be87dac63620c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00095.parquet": {
+    "bytes": 49943,
+    "mtime_ns": 1792496290506594926,
+    "sha256": "42d51f312789711c345f5557476f74aa2dbb7b7ca502fed5cf1b5f121917c601"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00096.parquet": {
+    "bytes": 49940,
+    "mtime_ns": 1792496291330927040,
+    "sha256": "1ea45fbb34620ea977cf73e755b04c93fa82d3c1efb72155550ef5f688410e30"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00097.parquet": {
+    "bytes": 49978,
+    "mtime_ns": 1792496292200848610,
+    "sha256": "8b06be2da760f802e393d72097774a139d77a5873333c9c68b25c64c435928f3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00098.parquet": {
+    "bytes": 50004,
+    "mtime_ns": 1792496293155006840,
+    "sha256": "7bacfdf5b20223a501d66f80d5f61a56352bd0435370bc09d65c33ce8fcc3b69"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00099.parquet": {
+    "bytes": 50051,
+    "mtime_ns": 1792496294140448478,
+    "sha256": "4ab70df5e225d6acad272caed33593c1f6d798c6f21e1be8656ac4fb8daf0855"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00100.parquet": {
+    "bytes": 49956,
+    "mtime_ns": 1792496295389446499,
+    "sha256": "1b257d0de047580c354ff527dfafa6d0d1889146423af21202c90d552b37c6a0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00101.parquet": {
+    "bytes": 50067,
+    "mtime_ns": 1792496296404846452,
+    "sha256": "7ac3682cce8dee6b33bd4284454ec9fa5ac30fc6d1bfde78c449b64998f082ad"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00102.parquet": {
+    "bytes": 49906,
+    "mtime_ns": 1792496297318758926,
+    "sha256": "5c76d6dfb2c832b68623e2cf47ca5f130a1d16259f1d335c25b9f4c1bde95192"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00103.parquet": {
+    "bytes": 50095,
+    "mtime_ns": 1792496298290261392,
+    "sha256": "83238d57a4255cf2c7bc50d4c483951db668321bf84daa1937f14c9004388ab2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00104.parquet": {
+    "bytes": 49953,
+    "mtime_ns": 1792496299248364730,
+    "sha256": "7506099e9fb13dec5892f153a0a3d8bb0c82104862c5d400d793efb46ab75b6f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00105.parquet": {
+    "bytes": 49924,
+    "mtime_ns": 1792496300312664620,
+    "sha256": "032540d165a2d43d02a9e8b51bd1725f9bfec86a96f76644dddd1519e0d998cd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00106.parquet": {
+    "bytes": 49935,
+    "mtime_ns": 1792496301427743957,
+    "sha256": "e82e60e970ade291a6026cbe4f866c1bb397169188e7a1c2a04acb2c742285ca"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00107.parquet": {
+    "bytes": 50126,
+    "mtime_ns": 1792496302564382389,
+    "sha256": "ab7416eb3a02bc7dc5fcadefa66a0210a9f47ca90138eb0776bd1192415b27f4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00108.parquet": {
+    "bytes": 50133,
+    "mtime_ns": 1792496303686437854,
+    "sha256": "25f790b50063c4e40871471c73774f70ba2b360977f65f23a8bc46c57ac6be07"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00109.parquet": {
+    "bytes": 49930,
+    "mtime_ns": 1792496304677242651,
+    "sha256": "fb5955893b7d6118253dfb159f2deaa0bcad547033f31d71a7cdd949b671d51d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00110.parquet": {
+    "bytes": 49927,
+    "mtime_ns": 1792496305689648960,
+    "sha256": "725371299998e690e07ef20b425d1cec1fed22157e049e410b7967b4bf070deb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00111.parquet": {
+    "bytes": 49949,
+    "mtime_ns": 1792496306616639392,
+    "sha256": "c5068fa4069a2dc6612c52a44baf19fecd380dd3b7fd1c20a40cd57a2e826014"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00112.parquet": {
+    "bytes": 49945,
+    "mtime_ns": 1792496307668386409,
+    "sha256": "d708d8b96b261dfd1ba3edb364528f727811e53e4e5fee197b058a4aa1ef6b22"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00113.parquet": {
+    "bytes": 49948,
+    "mtime_ns": 1792496308609095555,
+    "sha256": "7668b1556b1960c6d27c4aaa1905143ac2dbc60419f147f0a0db56047e756cff"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00114.parquet": {
+    "bytes": 50162,
+    "mtime_ns": 1792496309718780732,
+    "sha256": "e087b3d030e5649ba93c7dd538e9fa221158f76aca3d7886c0cefdd0124779c2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00115.parquet": {
+    "bytes": 50189,
+    "mtime_ns": 1792496310841327490,
+    "sha256": "0f4c722429713fc57a560dfa9f386240b066d9cce18d4222fd1912a5bdc50faa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00116.parquet": {
+    "bytes": 49971,
+    "mtime_ns": 1792496312410764173,
+    "sha256": "0a15ec899f413ce89ad9550c4a4452628697d2b76bc3b000fea4bfb6eb65d454"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00117.parquet": {
+    "bytes": 49993,
+    "mtime_ns": 1792496313723974477,
+    "sha256": "a25f194d2ebc0d1350ce0eb470363b58ac76168854e9fc801b9655603f5e6d0c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00118.parquet": {
+    "bytes": 49950,
+    "mtime_ns": 1792496314907485832,
+    "sha256": "022cdf8d12687cf71de3b7c86c5b60411ebdb6f1d696aa8f3c0d4204632afc28"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00119.parquet": {
+    "bytes": 50117,
+    "mtime_ns": 1792496316685191048,
+    "sha256": "52dbad63433abd4f72e9da642d64a23966a891a68225d70504d4a03304e8b64c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00120.parquet": {
+    "bytes": 50160,
+    "mtime_ns": 1792496318785913024,
+    "sha256": "8ae5576cd458bcc54f8455a233bfaef4e25b849f57f65e7b723a097da3bb137b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00121.parquet": {
+    "bytes": 49957,
+    "mtime_ns": 1792496320019476698,
+    "sha256": "032df99e48a78408eb33e54807744f3cd3258800ca321fa09ed0db2ac37f2954"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00122.parquet": {
+    "bytes": 50110,
+    "mtime_ns": 1792496321714906806,
+    "sha256": "40ae378ad45c60ff170c78103fbb4b4ee7b1d25c0c0e1a5fe2087f30868ab049"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00123.parquet": {
+    "bytes": 49983,
+    "mtime_ns": 1792496323384050455,
+    "sha256": "9da78bb3da2e3ee13156c976346272528f8a9a5cac82a073e9abaa5ca3a8ffa7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00124.parquet": {
+    "bytes": 50095,
+    "mtime_ns": 1792496324910471573,
+    "sha256": "a478c4b207d97c38b31a25fdab5daae3e3a2ae3e85faf7a4d3bc8fbedd5d131c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00125.parquet": {
+    "bytes": 49945,
+    "mtime_ns": 1792496326152391216,
+    "sha256": "f0e06287a8399ac1ea5b027dca724815fbe329e16f7a08a63f580fa6670aa36b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00126.parquet": {
+    "bytes": 50094,
+    "mtime_ns": 1792496327715310733,
+    "sha256": "c40dd71a75f1862179d3dca01d00384e02a15848f45365d8e59a73e44d9bc5cd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00127.parquet": {
+    "bytes": 49965,
+    "mtime_ns": 1792496328877927373,
+    "sha256": "a89c151b9bdb3faf9ed09dc69824a0a4201f47f30f4080ecde9b7ed49af57919"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00128.parquet": {
+    "bytes": 49974,
+    "mtime_ns": 1792496329991501618,
+    "sha256": "aa9b45ec6383319438a559b3a8d31610d557ea70cba73f5c0d0b72b7f232f10b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00129.parquet": {
+    "bytes": 50102,
+    "mtime_ns": 1792496331366370690,
+    "sha256": "7555b70f68e443304242f1f2c915ca3bf0f39a7f226cf7286d61366e37771b4f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00130.parquet": {
+    "bytes": 50123,
+    "mtime_ns": 1792496332773587800,
+    "sha256": "2dd4ed9e836949224fd32d1a1c4db2d6d1bc73d40c6aa7cf5e1c0c1de7babc7c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00131.parquet": {
+    "bytes": 49981,
+    "mtime_ns": 1792496334092999312,
+    "sha256": "1e1f070729db312adda6c775fd8a3567fa1ce8119e35bead824685fddf603c8d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00132.parquet": {
+    "bytes": 50070,
+    "mtime_ns": 1792496335502875314,
+    "sha256": "112343679118cb225691f973146ef547b9d49f5a3e3ce22647f15a5768397ffa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00133.parquet": {
+    "bytes": 50090,
+    "mtime_ns": 1792496336928237749,
+    "sha256": "93dbd39db6d97263a1af890e0ac5ca127e8778dc273342c64ba58f38c3bf5395"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00134.parquet": {
+    "bytes": 50103,
+    "mtime_ns": 1792496339771715488,
+    "sha256": "f82f39011466ec9ee61ef7be56af158cb6f7d0ea1808fd0d3bbf75f906229df9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00135.parquet": {
+    "bytes": 49932,
+    "mtime_ns": 1792496341224848391,
+    "sha256": "605d32cad661f0c5ba7e8728a244199d4e2d05bd93ddf4fdb3e3fbacd6dcde4b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00136.parquet": {
+    "bytes": 50112,
+    "mtime_ns": 1792496342685443841,
+    "sha256": "bb5b3668f9ad12d4006bf0cb7db7de12730363fbd6eea5dc4d2f4402299a478a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00137.parquet": {
+    "bytes": 50004,
+    "mtime_ns": 1792496344330917633,
+    "sha256": "15edacdeb5776d7e0128394e05417381a9abf33bbf3628074395d72a8ca31a19"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00138.parquet": {
+    "bytes": 49990,
+    "mtime_ns": 1792496345852261011,
+    "sha256": "8603a0b5042e6ea5a01e5071d5243941765ff7468655a2a401013629cd4e2ef8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00139.parquet": {
+    "bytes": 49962,
+    "mtime_ns": 1792496347492951689,
+    "sha256": "00b21f90b8f2b22037c538e4cf7bd76c4a729675a7f13ccbb57eae8f57a5391f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00140.parquet": {
+    "bytes": 49964,
+    "mtime_ns": 1792496349233827379,
+    "sha256": "fde168c3d8c15d680f4624f74d46a5856efde0b733c2dbd25c596220e98dc7c0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00141.parquet": {
+    "bytes": 50157,
+    "mtime_ns": 1792496351295777277,
+    "sha256": "50e097475c60a92ef0abbd7c1ecb8f0c1c2b42c39f38169f58349b7ab5c8bfcf"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00142.parquet": {
+    "bytes": 50117,
+    "mtime_ns": 1792496352903840623,
+    "sha256": "8b43266a75e76bb924e5550968d51ff8542ab8a0713f1cc426ca0f6dceb8c305"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00143.parquet": {
+    "bytes": 49978,
+    "mtime_ns": 1792496354215031665,
+    "sha256": "756acb62236c0b7ee3bf2ffe9df864ea344f34bb399144c7643582cce55b2ad0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00144.parquet": {
+    "bytes": 50161,
+    "mtime_ns": 1792496355778178642,
+    "sha256": "5b9d9e653143863b3d629b7c1b66376fa27966b0eaa5f1e6e76f80ec1914b968"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00145.parquet": {
+    "bytes": 50105,
+    "mtime_ns": 1792496357509211436,
+    "sha256": "daedd38f620c3a2bab74bc4c56da2cc24ea9e4b9bbc0d9f269c5085baed520a5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00146.parquet": {
+    "bytes": 49969,
+    "mtime_ns": 1792496359210418874,
+    "sha256": "9a02edc05431218b6e007499f98f0163fcf25dabb3f8eba46507626b4fffb0cc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00147.parquet": {
+    "bytes": 50013,
+    "mtime_ns": 1792496360864844889,
+    "sha256": "ffeee48b18f15c4b5fd037c186da3e384a0f538aa525b605428c94e1dd6922c1"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00148.parquet": {
+    "bytes": 50033,
+    "mtime_ns": 1792496362616414231,
+    "sha256": "701ee69a94c2ce858d7ee1a73d82ba0211f199b42418a4f0f5864edef22be9a5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00149.parquet": {
+    "bytes": 50121,
+    "mtime_ns": 1792496364343162747,
+    "sha256": "2106b06cebbb7820c77b1cef49f8718bb8f441552dd8293568df143210854e25"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00150.parquet": {
+    "bytes": 50023,
+    "mtime_ns": 1792496366060698039,
+    "sha256": "fb0fa3f184213bd1a7b7424cb78d58115a39822895ef6661ea74595a8b2e0706"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00151.parquet": {
+    "bytes": 50129,
+    "mtime_ns": 1792496367617114057,
+    "sha256": "46030afa0d2bf3bc2400d6eb73180d931463376874dfd0a33ef216d9efed2ace"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00152.parquet": {
+    "bytes": 50142,
+    "mtime_ns": 1792496369320981970,
+    "sha256": "c85571105086e30624e5313ffe6c5722728384032139c9ce760961af4c5c0b4d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00153.parquet": {
+    "bytes": 50139,
+    "mtime_ns": 1792496371134785081,
+    "sha256": "24c592490a1dd5a0a1b8b197c122d2998dfd549c79c9f1366d283673e2acb040"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00154.parquet": {
+    "bytes": 49935,
+    "mtime_ns": 1792496373103623970,
+    "sha256": "76e33cfc5e65a6fa11a979325f2cf6a685f0aeb58bb3cfa7a68eee7271bf4c56"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00155.parquet": {
+    "bytes": 49973,
+    "mtime_ns": 1792496374949920539,
+    "sha256": "130cea887be9b87c80abe99c0784fff1d103d8c5757758b387e009e182312231"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00156.parquet": {
+    "bytes": 50080,
+    "mtime_ns": 1792496376680661164,
+    "sha256": "f2a456d37beff88aea6bbfe934218f26aa09c68a6ae0283cc66bb52f1c35b1c6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00157.parquet": {
+    "bytes": 50144,
+    "mtime_ns": 1792496378425332295,
+    "sha256": "01585c3628767d7f13586688156a8732418930d64ff598e493317d120fe8de13"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00158.parquet": {
+    "bytes": 50114,
+    "mtime_ns": 1792496380682208806,
+    "sha256": "d3ffec18f4810eacb23bf952710d922798a0d9d07d4a8a2ad53c4d0bc64584ea"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00159.parquet": {
+    "bytes": 50131,
+    "mtime_ns": 1792496383040563338,
+    "sha256": "9b6a854b4b1c812bfc73e08e6fd4aba90dd6d01a44a0851856b5f44551b5f9c5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00160.parquet": {
+    "bytes": 50137,
+    "mtime_ns": 1792496385032042287,
+    "sha256": "93a7c5ee6f10c171833b1a1648e01093d1a0cefa78cd8d27b91ff7014e56eab4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00161.parquet": {
+    "bytes": 50160,
+    "mtime_ns": 1792496387132628680,
+    "sha256": "630913bbc5404464ae7c02581c1608a4c012aaf2c341d64c131b1fc820d54b3f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00162.parquet": {
+    "bytes": 50198,
+    "mtime_ns": 1792496388936922898,
+    "sha256": "aaefa25bff869565ca69ae524f5f3d6774a92c52da902fea51f00d1a531ad185"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00163.parquet": {
+    "bytes": 50023,
+    "mtime_ns": 1792496391030100452,
+    "sha256": "7d91b0846f4cf6c3cc98a5e98af89ae4b1f666fa99f737d0b5a19d800f72c718"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00164.parquet": {
+    "bytes": 50195,
+    "mtime_ns": 1792496393195259547,
+    "sha256": "8b1eae76033bf6d55daea9679454660d2c5438df44f4e4be867e58d13e3d07d2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00165.parquet": {
+    "bytes": 50114,
+    "mtime_ns": 1792496395138445398,
+    "sha256": "a6afb0731be8bd1ba866ffda5180adfc80612da1542ea7e49860490d7d3e1860"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00166.parquet": {
+    "bytes": 50134,
+    "mtime_ns": 1792496397441325035,
+    "sha256": "560f0c101ceacfd8b4a8b6003523c6ce84e14c26b412cc51d6c57b3be457246c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00167.parquet": {
+    "bytes": 50108,
+    "mtime_ns": 1792496399622793776,
+    "sha256": "2214af6eb45cf9fc498eb6a6c9aab6867615603dd701fb151f5e5609ab22b92e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00168.parquet": {
+    "bytes": 50162,
+    "mtime_ns": 1792496402523534463,
+    "sha256": "91c6089d4285b297835ac3ad77351f840900300fea5d4ef872451056d1c1e1ba"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00169.parquet": {
+    "bytes": 50105,
+    "mtime_ns": 1792496404625611074,
+    "sha256": "64e4f3f0408b88e4a7b431501010175742d7fd551d72d848f4b45f83358a82e9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00170.parquet": {
+    "bytes": 50093,
+    "mtime_ns": 1792496406650105149,
+    "sha256": "17b735c824b0bf6b30bfe62317e7a8c5670d441654f51748d12cc7b17bbf23b2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00171.parquet": {
+    "bytes": 50159,
+    "mtime_ns": 1792496409286385281,
+    "sha256": "0a757ac55719fcb1c2515a24b556877a198f7fdce1c4d2d502991e4e0edb8b9c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00172.parquet": {
+    "bytes": 50024,
+    "mtime_ns": 1792496411366591169,
+    "sha256": "fa44ce76515c4ac54ed33e95bdd2802f8aa32c1941ecf537e79a8922fff714a2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00173.parquet": {
+    "bytes": 50139,
+    "mtime_ns": 1792496413873241976,
+    "sha256": "9bc85877c1dae4de09f1af7332a41c68d6f58283573d708c29efcfc5d11b972f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00174.parquet": {
+    "bytes": 50135,
+    "mtime_ns": 1792496416145267792,
+    "sha256": "1badbec28e1bbb4d34435228c7d187f4cccbbf8e3de9922358bbe931ab6ce8af"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00175.parquet": {
+    "bytes": 49950,
+    "mtime_ns": 1792496418256221210,
+    "sha256": "03f5975c29244f94669569c7352ff1806de3259376d135d910d91e1ca461d277"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00176.parquet": {
+    "bytes": 50140,
+    "mtime_ns": 1792496420355638512,
+    "sha256": "2c2aa9ad2786fd24071d624adbd6244639b5632a865232dd0655640be5a89440"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00177.parquet": {
+    "bytes": 50014,
+    "mtime_ns": 1792496422140556940,
+    "sha256": "de7ae0a1df31f41e66a8ed061ce65fb649c45282b611157fc097a1d11738afdd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00178.parquet": {
+    "bytes": 50185,
+    "mtime_ns": 1792496424144571719,
+    "sha256": "7bc97b989c12d12395b0e1de87ec94b71f7a9e28991a7770cf29a2dd4e0ab88d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00179.parquet": {
+    "bytes": 50154,
+    "mtime_ns": 1792496425928462224,
+    "sha256": "cd24267981774dd2fc50a9ffafe4c48e9487d65535bd6833b03466aef7eb8a45"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00180.parquet": {
+    "bytes": 50139,
+    "mtime_ns": 1792496428078097804,
+    "sha256": "704df5107449f520fe25f7f827b5b7115c8bb33dc70f3ded6f12cc0b7aa26dd6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00181.parquet": {
+    "bytes": 49997,
+    "mtime_ns": 1792496429879067751,
+    "sha256": "479f5b104a7e47a7df584b0bdabbee52d7441afdbf12ddcd1fdc136132e4f25b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00182.parquet": {
+    "bytes": 50185,
+    "mtime_ns": 1792496431722967679,
+    "sha256": "8919bb0358b0923ccf288b05c097d8479966efc17b649782b5dca8c095109d85"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00183.parquet": {
+    "bytes": 50183,
+    "mtime_ns": 1792496433560770818,
+    "sha256": "6a0fd5e01420d61ab82626104dfe3203567057bb9cbd9887f3ba0b2834b7b9d4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00184.parquet": {
+    "bytes": 50138,
+    "mtime_ns": 1792496435309574267,
+    "sha256": "0b7e4b787b8b19dad7b467bf34583afbd09fdb396235eddf91fbf6932d600d99"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00185.parquet": {
+    "bytes": 50035,
+    "mtime_ns": 1792496437149580337,
+    "sha256": "8627ad5328f56e9a251c89465e0a42e5d2134120554f1d77943c42c0b917f7da"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00186.parquet": {
+    "bytes": 50183,
+    "mtime_ns": 1792496439022529242,
+    "sha256": "2153d9bca5404bfbebecd6499ee4c8aa53ef14dd710e19b436134c2fde7d0a4a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00187.parquet": {
+    "bytes": 50122,
+    "mtime_ns": 1792496440805369865,
+    "sha256": "c55bbc85291e7baf1cb38851931c7d8e15ba9c74f1e7e2c1a10c0499736c1d60"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00188.parquet": {
+    "bytes": 50182,
+    "mtime_ns": 1792496442595003323,
+    "sha256": "35d3bd52665fbe3342ec563912324a32642be4be74fd3b9b5481b69b5771a7c2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00189.parquet": {
+    "bytes": 50226,
+    "mtime_ns": 1792496444248519875,
+    "sha256": "4dcb0a7b2a8dab49bffcf3727ca99607ea358209af3fa0dcc0b701d9e3627ac4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00190.parquet": {
+    "bytes": 50130,
+    "mtime_ns": 1792496445875751759,
+    "sha256": "dabcf424e9ff297419cab9a80097d65bdee3bf2278b637145b5e24c7f8fd612f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00191.parquet": {
+    "bytes": 50168,
+    "mtime_ns": 1792496447491820989,
+    "sha256": "5032b984bd12602d1c20d442dc8b198b01a0de7c5fd8eaf9d90cb79449fb163e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00192.parquet": {
+    "bytes": 50054,
+    "mtime_ns": 1792496449070414564,
+    "sha256": "598dbbd74a69514d5f4de9f0e588edf11432c94598df8e75a2aea1ff42af0293"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00193.parquet": {
+    "bytes": 50148,
+    "mtime_ns": 1792496450976908015,
+    "sha256": "8738a624aac7825110a4cbe93a15d93a01c787bc62b79a13ed27e68666926c07"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00194.parquet": {
+    "bytes": 50111,
+    "mtime_ns": 1792496452900807619,
+    "sha256": "9c9b9b7bc726cb5131a3ff5565c52a99ede330c7453957d1bcda83c835621e8a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00195.parquet": {
+    "bytes": 50166,
+    "mtime_ns": 1792496454526046490,
+    "sha256": "9257867f8b5a9236f0e4bbc2a4b9003d0f0dd286785fced70f891fbbfe933e02"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00196.parquet": {
+    "bytes": 50077,
+    "mtime_ns": 1792496456024109929,
+    "sha256": "b87070637dd5e677a017087dad57d03d0a2b2dd4365bfd16294ae5f956fbda1d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00197.parquet": {
+    "bytes": 50202,
+    "mtime_ns": 1792496457646591158,
+    "sha256": "55ab12239a7bf38c73c57bc8f5f1afb5c2119f4574d600208569adba585fdb98"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00198.parquet": {
+    "bytes": 50135,
+    "mtime_ns": 1792496459524821012,
+    "sha256": "a4f8929a95987611754d048427e2dcdfb47722ea589f86089746cf3b22047d81"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00199.parquet": {
+    "bytes": 50161,
+    "mtime_ns": 1792496461010140537,
+    "sha256": "17764ecaecea6524051af95e61ca69c123c57b5061e91ed1001c60d2c28fc4ca"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00200.parquet": {
+    "bytes": 50176,
+    "mtime_ns": 1792496462861401053,
+    "sha256": "8a23c5373b82793d00b79883e98377081087cd1dc3f07da25423a5bb4fd9a50a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00201.parquet": {
+    "bytes": 50144,
+    "mtime_ns": 1792496464555195236,
+    "sha256": "e5cb53292ebfcf8f726e841fa2d73f95dd397b8df0c9d762fac605af76c5ed7a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00202.parquet": {
+    "bytes": 50201,
+    "mtime_ns": 1792496466253060111,
+    "sha256": "14eb97cfaaaee34d6d2d5a16648e1f3ebde5f358e73b0fd26dad13a256ca8a63"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00203.parquet": {
+    "bytes": 50192,
+    "mtime_ns": 1792496468360701132,
+    "sha256": "52a71e79baeaa09dc92342dd5893856f255ad458aa009d969715c798a229ecc4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00204.parquet": {
+    "bytes": 50196,
+    "mtime_ns": 1792496470027629602,
+    "sha256": "ef83c3cea7abf322ab372362710f569d41207eeec70043f239d32b0d0307d69a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00205.parquet": {
+    "bytes": 50133,
+    "mtime_ns": 1792496472078439970,
+    "sha256": "7c123fa25dba8da5ab6267ce8d788d1021c23424a797af0f2307e025c82ac29c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00206.parquet": {
+    "bytes": 50183,
+    "mtime_ns": 1792496473750307721,
+    "sha256": "08d2fe439ee83b1d6e8507f3d20da7b85a4130398f3265c3720bd89477cb3c1e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00207.parquet": {
+    "bytes": 50204,
+    "mtime_ns": 1792496475436334771,
+    "sha256": "dc163c5d472f7ca10f3ab720ddb0b79a73fddd0422fe0e580be5524d9f98b222"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00208.parquet": {
+    "bytes": 50185,
+    "mtime_ns": 1792496477106308760,
+    "sha256": "648d7888eff47bbff2cd17bab1023990dcd80153c94f2499c85cf12b857a789f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00209.parquet": {
+    "bytes": 50036,
+    "mtime_ns": 1792496478747162315,
+    "sha256": "de23d4048077cd792621073e5d07d381458c27d87cc870245798d66058649514"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00210.parquet": {
+    "bytes": 50200,
+    "mtime_ns": 1792496480563280108,
+    "sha256": "3c4e02674cad3944f50a80ddc8e92c321490a2a4b6fc709320cfcbb7ef0256e0"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00211.parquet": {
+    "bytes": 50173,
+    "mtime_ns": 1792496482435651550,
+    "sha256": "25cb89db662eb6ae768c0931be43329567fe14e7e26b2c55f9be065b360e5678"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00212.parquet": {
+    "bytes": 50200,
+    "mtime_ns": 1792496484302615958,
+    "sha256": "4bfc73b9beb5bb3e0d3e2bf339ef9cbbe51674c56e95389f1f216a7452ebb304"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00213.parquet": {
+    "bytes": 50235,
+    "mtime_ns": 1792496487194946592,
+    "sha256": "643ab1ff19ee059ff3bc73990353adb3d656aba6fbca8ed725221a678925a849"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00214.parquet": {
+    "bytes": 50210,
+    "mtime_ns": 1792496488758474571,
+    "sha256": "7dd34c6f88a3c0af423cf20c6bba4b4a226f50d30af1193cb776ffbb3bf77565"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00215.parquet": {
+    "bytes": 50193,
+    "mtime_ns": 1792496490326523746,
+    "sha256": "c82ad0311e89dd9573b987897defd6e349dd930136359f6fe23fd0b830f35469"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00216.parquet": {
+    "bytes": 50124,
+    "mtime_ns": 1792496492170861719,
+    "sha256": "08a2e83d1076e20172cd6ac4536482cbaa2ef4e023299f1ef4a1d5875da92fb9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00217.parquet": {
+    "bytes": 50206,
+    "mtime_ns": 1792496493854110167,
+    "sha256": "1ab388b321def36ac2e732cd14c805b09a51dbc6e557b8437e64009757f7699a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00218.parquet": {
+    "bytes": 50185,
+    "mtime_ns": 1792496495521026137,
+    "sha256": "92bbc3fab691c4ea726d3157c6d8cdf1cdc4fe29c19cf9d51df6eabdb901fc0a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00219.parquet": {
+    "bytes": 50225,
+    "mtime_ns": 1792496497292660606,
+    "sha256": "f040d30cd1f0fba2a5ca27c8e1c1cedcdae77acefc003106ef0a4835f13ef777"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00220.parquet": {
+    "bytes": 50267,
+    "mtime_ns": 1792496499134591022,
+    "sha256": "1e03a3ec991f33b10af231ac9c3185e7d1ce3b0564217f72b9e50a4fe71b8346"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00221.parquet": {
+    "bytes": 50254,
+    "mtime_ns": 1792496501236799467,
+    "sha256": "32503a05e62c23a35ab82ded772835adf2cd2d8d4ff6e24fbf9d8acedaa8e3dc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00222.parquet": {
+    "bytes": 50238,
+    "mtime_ns": 1792496503118178300,
+    "sha256": "21fb796c963a258f3a0204801cfc4e675e2db3f4059932a469f2b9e06792dfef"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00223.parquet": {
+    "bytes": 50188,
+    "mtime_ns": 1792496504820101492,
+    "sha256": "9a8f05d8fa99ddb0afacd0b75ca44588f4e21c46778552c8ead9c7fd18b97bc3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00224.parquet": {
+    "bytes": 50187,
+    "mtime_ns": 1792496506668124405,
+    "sha256": "e6d2fb833317e14b2425a9bc110dc8d353c89e94e53aba7041b0acfd58b191e2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00225.parquet": {
+    "bytes": 50224,
+    "mtime_ns": 1792496508374363208,
+    "sha256": "aad5fa917ff84074dda68fa2b05f0158512cc1615aeb6d074ecbb2c53fb8b500"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00226.parquet": {
+    "bytes": 50234,
+    "mtime_ns": 1792496510180169936,
+    "sha256": "9f48671a2d4e55fe9241d17c86d6182898ac80c4a30f96ee0f7b4e94c30c23c6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00227.parquet": {
+    "bytes": 50172,
+    "mtime_ns": 1792496512378185406,
+    "sha256": "11c29a9f52424e156be1bb22285836a1c192c01d9bf15a924d2e3ce877c80fdb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00228.parquet": {
+    "bytes": 50231,
+    "mtime_ns": 1792496514237353765,
+    "sha256": "60a5a627df1bd6bdcd18e6d4b8654e2bf067b46405a041841f7d8e4949581578"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00229.parquet": {
+    "bytes": 50224,
+    "mtime_ns": 1792496515970263946,
+    "sha256": "9dd171e1ed57106f9ec842879f6a91855dfb92095fbd533387bf8746e539fd27"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00230.parquet": {
+    "bytes": 50170,
+    "mtime_ns": 1792496519035084426,
+    "sha256": "4d8f033335c9713b8c84b9bb8ab16553e22f4a73e7f0aeb93541932fc8a8d009"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00231.parquet": {
+    "bytes": 50222,
+    "mtime_ns": 1792496520919931822,
+    "sha256": "1fc39700d621ab6f1c42e64a80c4bd55881692df605557cac34a81335a988e8c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00232.parquet": {
+    "bytes": 50184,
+    "mtime_ns": 1792496523534324898,
+    "sha256": "a7830f55d474190aec8f5d9b19434d438e7ec495d266cb424f486ff4b9e5d965"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00233.parquet": {
+    "bytes": 50197,
+    "mtime_ns": 1792496525440534347,
+    "sha256": "06955b1cde296e0259f50ac028ac880d0945b9faf124a2a547d1d29729c8b70a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00234.parquet": {
+    "bytes": 50273,
+    "mtime_ns": 1792496527409636821,
+    "sha256": "6bf4af60fd90fbda34ef5e57c4e71bae8d3cca09464682cdeffec9221d3789ac"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00235.parquet": {
+    "bytes": 50201,
+    "mtime_ns": 1792496529319637669,
+    "sha256": "4443c6fd04c5604367ab9ff3940038f88483ba637ebfb4c2dee8922e253a6e91"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00236.parquet": {
+    "bytes": 50191,
+    "mtime_ns": 1792496531025183927,
+    "sha256": "929aff5a635c911a4d0bfb77e7a3678b01e919940d71a51d7049afa8e752351e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00237.parquet": {
+    "bytes": 50233,
+    "mtime_ns": 1792496533018953891,
+    "sha256": "ceca11772d6e58be944dca567550419c2deb2156c06252930bd2dccf33cc9313"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00238.parquet": {
+    "bytes": 50178,
+    "mtime_ns": 1792496534848132058,
+    "sha256": "e2faf4f0a1a951e3099942d07d69b5edeae4090baf462086583eb5f3519eb80d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00239.parquet": {
+    "bytes": 50267,
+    "mtime_ns": 1792496537796673258,
+    "sha256": "a0cfed3ea32a9c51cf50d15267d1937aa31a6155190db21b2afdf68cae0cda58"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00240.parquet": {
+    "bytes": 50263,
+    "mtime_ns": 1792496539810578516,
+    "sha256": "4c5c8eb2719ca12c134362c6db06a6b0921d59e91b6a1c3df01588459464b8b6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00241.parquet": {
+    "bytes": 50268,
+    "mtime_ns": 1792496542275974186,
+    "sha256": "af7ece9d5d4e6f61f6b32b1ff695178bbf74e0c12ee3f597bc39169582bf51bd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00242.parquet": {
+    "bytes": 50246,
+    "mtime_ns": 1792496544801546656,
+    "sha256": "3c183cc01cf28c51c88c00530c28b20afe93eb53ec8684828166a438e2e25303"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00243.parquet": {
+    "bytes": 50179,
+    "mtime_ns": 1792496546979113621,
+    "sha256": "fe9a5046f5be2caa9c6fd4bf7b615660a165c8535accacaa017ea114035b74af"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00244.parquet": {
+    "bytes": 50247,
+    "mtime_ns": 1792496548711457590,
+    "sha256": "5b88c8d2c5c99a5ceeb5bfd4637c0f8218da9665c5666d825be537728f5abb38"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00245.parquet": {
+    "bytes": 50228,
+    "mtime_ns": 1792496551235866344,
+    "sha256": "9e1ffe7fc2afa49d93a0f854a93e80c8f07ce8569ff89146a8aeb4581f9c17f3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00246.parquet": {
+    "bytes": 50274,
+    "mtime_ns": 1792496553558043895,
+    "sha256": "807e8d0a0807767e73f7f38182c8924e8950dcbcfb9db8baf5ffb4a5c9a6eb45"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00247.parquet": {
+    "bytes": 50223,
+    "mtime_ns": 1792496555397143751,
+    "sha256": "9269bad6b5c5db0f027e580039c2d60c0ff02bd792540f01a9090a39a5d981d7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00248.parquet": {
+    "bytes": 50237,
+    "mtime_ns": 1792496557476553676,
+    "sha256": "3c3888f78ffe7b5f8316037cf7643df63fd23b969016a7e730bfde29b348a48c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00249.parquet": {
+    "bytes": 50235,
+    "mtime_ns": 1792496559372877729,
+    "sha256": "446ef6786d1017ba2dcf3d467a29ae8c9c291e3a467062b15e80124a89bb2b9f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00250.parquet": {
+    "bytes": 50243,
+    "mtime_ns": 1792496561375064538,
+    "sha256": "a7a5b3112fa8565fee5d297c36b385e043ccd0b693fb2a697e1fea8dc8f05b64"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00251.parquet": {
+    "bytes": 50235,
+    "mtime_ns": 1792496563675643827,
+    "sha256": "e91ee96028505cb8e9ee0ca5ce0ef5d912c7fc7896fae5fe810e601be59ecfaf"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00252.parquet": {
+    "bytes": 50243,
+    "mtime_ns": 1792496565770381766,
+    "sha256": "7ec98b7d7b7c21a22863d41d01f20c09d8de0c9526d96ee1f5bda3eb4687e9b2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00253.parquet": {
+    "bytes": 50229,
+    "mtime_ns": 1792496567853923926,
+    "sha256": "01bd47feb5194078b332eb957b7bf6c2dc4fc2f504c0106191167fdfe596915d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00254.parquet": {
+    "bytes": 50206,
+    "mtime_ns": 1792496569898958008,
+    "sha256": "c1c1fd52233a716a9521cea4047ac031e9111fbef3b19b60c1821a99cb3c9284"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00255.parquet": {
+    "bytes": 50232,
+    "mtime_ns": 1792496572101189588,
+    "sha256": "08561d6d5ea5af610d1f6a847b83299d71b8296a103a7fdc41643f0a2f3fd0b6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00256.parquet": {
+    "bytes": 50263,
+    "mtime_ns": 1792496574138959957,
+    "sha256": "6182b6648d8731458b1c3a1e7cef54bd2c3115a0b46948527a8bdbcec7e616b5"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00257.parquet": {
+    "bytes": 50228,
+    "mtime_ns": 1792496576088704183,
+    "sha256": "9ac2fb183cb1727d4dfb3a9bda4c7a8a38d0cec3eeea4b04f180029124dcfa01"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00258.parquet": {
+    "bytes": 50242,
+    "mtime_ns": 1792496578344655230,
+    "sha256": "85607430a4922ab6a146486508e7aa03a185bda14a27a3bfd5df3f6fba94eb9c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00259.parquet": {
+    "bytes": 50268,
+    "mtime_ns": 1792496581439288566,
+    "sha256": "d3eb6d0b0aaaa19f326e9eedbac5c4ec183f2c4e639a514ca2bda8df31bf4271"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00260.parquet": {
+    "bytes": 50228,
+    "mtime_ns": 1792496583892336158,
+    "sha256": "b539fc9fbc89ed279879557e9bd66060d48679c200285b3ada81156cb4a8deed"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00261.parquet": {
+    "bytes": 50200,
+    "mtime_ns": 1792496586379828510,
+    "sha256": "209da31246edcde86b2d484c233b390b8ce9c61d524d4666c8758df1e119c02b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00262.parquet": {
+    "bytes": 50206,
+    "mtime_ns": 1792496589038271865,
+    "sha256": "26fbf8b0c72dcfac7e6a6d262d02ea83fb948ffbafa5eed90231ee9d36a05f17"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00263.parquet": {
+    "bytes": 50245,
+    "mtime_ns": 1792496591086268174,
+    "sha256": "bec4838556f583bb4e9e52c387b0b37d248abf32ff8c7df5c2a6a1480b6859fe"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00264.parquet": {
+    "bytes": 50254,
+    "mtime_ns": 1792496593504251793,
+    "sha256": "40f778f288c49e40adf49d2cd291c45142b0afcdde55853213cadc24f5c1ccb4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00265.parquet": {
+    "bytes": 50251,
+    "mtime_ns": 1792496595558839268,
+    "sha256": "78ddbbdd9dadd88eeb6a90d07ce80083f26090fd809276c09b4f60cf8337a480"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00266.parquet": {
+    "bytes": 50270,
+    "mtime_ns": 1792496597812021798,
+    "sha256": "dc0a21f13f287849af6abbb27ae7cd245d9344b5487742ca7d1e133031f64209"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00267.parquet": {
+    "bytes": 50240,
+    "mtime_ns": 1792496600172144257,
+    "sha256": "3ac5c3e614c4295ca89dd8f33e2c3299718c506fad65920c6f847ed843c97c0f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00268.parquet": {
+    "bytes": 50223,
+    "mtime_ns": 1792496602467845515,
+    "sha256": "1a4efca8c732e4a5e543315ce0a6758f04c112f3a3de179a8237b4c31ca677a6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00269.parquet": {
+    "bytes": 50253,
+    "mtime_ns": 1792496604775593641,
+    "sha256": "471942431886c82d488826488171f70707bfb6da3c86ea76613cc3e923f9c36e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00270.parquet": {
+    "bytes": 50274,
+    "mtime_ns": 1792496606956670129,
+    "sha256": "9feb159bb4c8caf1f45af2ac639c901b1fb5a5c0609d9ebdd4ab92865202b489"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00271.parquet": {
+    "bytes": 50251,
+    "mtime_ns": 1792496609558393874,
+    "sha256": "2098108d5014247b7cdf2909d4ea787f2a9d00419e7478969b5c9d41942a85d6"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00272.parquet": {
+    "bytes": 50307,
+    "mtime_ns": 1792496612549758554,
+    "sha256": "563a374473a287cdca0647cba0d9f33810e961f563c5d55eab2d344c15782e56"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00273.parquet": {
+    "bytes": 50265,
+    "mtime_ns": 1792496615351148401,
+    "sha256": "6e44cf9e50efa6ce7c973ab349f02dbd26c55b9353a0181ef651d734dd33160b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00274.parquet": {
+    "bytes": 50252,
+    "mtime_ns": 1792496617899718100,
+    "sha256": "ad60d39077072ba413586480a6332eb28ee91e5bf85aefa20fc1b0f2ca13c293"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00275.parquet": {
+    "bytes": 50312,
+    "mtime_ns": 1792496620571522582,
+    "sha256": "d09d9cda9a57705274574988a57a7d2f2388543c189cda638941ef16a65e8f39"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00276.parquet": {
+    "bytes": 50257,
+    "mtime_ns": 1792496623230882860,
+    "sha256": "e639cb85ef419c75f1500b0273bad849af44d845064f92ea45a7bf6bdd0f427d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00277.parquet": {
+    "bytes": 50256,
+    "mtime_ns": 1792496625780186188,
+    "sha256": "6b8f8eb4e327a6579b1e4bd9b326a4358eacb00c895ab1d2a4bac751873d3bdb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00278.parquet": {
+    "bytes": 50263,
+    "mtime_ns": 1792496628661363834,
+    "sha256": "367b51d78e7335cdae9c5192e8ffa6f2130440b6bce28b99c38b455d583b1d73"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00279.parquet": {
+    "bytes": 50226,
+    "mtime_ns": 1792496631345756146,
+    "sha256": "0c6a037474bbb2b493d4a376c639224c8c0b7ee41c1824d1825a5cfa571c19d4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00280.parquet": {
+    "bytes": 50281,
+    "mtime_ns": 1792496634494824662,
+    "sha256": "eb9247e381586382ad2b2ec63efa0233a3294f0b98bd881ad0206bb4f720f130"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00281.parquet": {
+    "bytes": 50248,
+    "mtime_ns": 1792496637554980779,
+    "sha256": "99cbb6c89056ff4402b76e074cb1c6200de85ee06ba905c5b63034d16dbf1603"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00282.parquet": {
+    "bytes": 50304,
+    "mtime_ns": 1792496640343164542,
+    "sha256": "64b7db6ec0513d49445ff21f67541a354d7151cd32bef0bb706a5e22797e4d2e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00283.parquet": {
+    "bytes": 50329,
+    "mtime_ns": 1792496643191981316,
+    "sha256": "790f28cd9996726d191b5d5c259f330059415bbe3e06bcd0c3df8add8f91c825"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00284.parquet": {
+    "bytes": 50243,
+    "mtime_ns": 1792496645735223356,
+    "sha256": "a30ff81faec4b8e13e5df275615191c993dd491520cc0409e0cf749fc34776b3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00285.parquet": {
+    "bytes": 50298,
+    "mtime_ns": 1792496648434662055,
+    "sha256": "313c8f64b42180879fd909f04f46939355fb054f3d55d566953102369c03822c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00286.parquet": {
+    "bytes": 50263,
+    "mtime_ns": 1792496651409626506,
+    "sha256": "6438d73d92057eef37ffeed6c091f40564eef5bdce00ab86eb551870c0849d35"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00287.parquet": {
+    "bytes": 50263,
+    "mtime_ns": 1792496658077219969,
+    "sha256": "e4d6f51ad5705a089c62a3c1bb29012736de01ba38a97cb9b6a5eb36b3763b63"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00288.parquet": {
+    "bytes": 50298,
+    "mtime_ns": 1792496661864269956,
+    "sha256": "3f7235c37a02909aae32a7b01268a12c4a3500dcb069bcb259a7637ffeb3dd47"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00289.parquet": {
+    "bytes": 50289,
+    "mtime_ns": 1792496664855047882,
+    "sha256": "ce33e3910151cf692915f510b7293944f856bd8156649c15260f790f6653fc5e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00290.parquet": {
+    "bytes": 50274,
+    "mtime_ns": 1792496668084312782,
+    "sha256": "342e4db087659e10f8bc10c6495cd7fa381a6768ca19cb51716398989888d028"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00291.parquet": {
+    "bytes": 50254,
+    "mtime_ns": 1792496671726965185,
+    "sha256": "6c2efd1280dfd3433b8a2b0a7a13bc99557437fcdd2357c7e7ae522b5f698242"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00292.parquet": {
+    "bytes": 50278,
+    "mtime_ns": 1792496674671609776,
+    "sha256": "1a7237b78308b0992b2fdbeb0fc3c79a041b2970ec07d79809296c10f66304fd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00293.parquet": {
+    "bytes": 50353,
+    "mtime_ns": 1792496680247401633,
+    "sha256": "7835936c379925f497ca8c5dceb446a15777c5ae48db49f75a6619e157645627"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00294.parquet": {
+    "bytes": 50276,
+    "mtime_ns": 1792496682997304070,
+    "sha256": "114ebe61abd73f51b8c3f94229dae4c328cf76993f854253a5dd980e261bae8c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00295.parquet": {
+    "bytes": 50304,
+    "mtime_ns": 1792496685598328310,
+    "sha256": "77662eafca9f47a93c42430f78828dbfd716614d2cf88424fe32122bd5f2d5a8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00296.parquet": {
+    "bytes": 50279,
+    "mtime_ns": 1792496688090241940,
+    "sha256": "dd9a767ee1436bad70fa03fa242c22c4a3e8ff2577fd99b5e1d6c3a9b9aaa23b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00297.parquet": {
+    "bytes": 50312,
+    "mtime_ns": 1792496691063408005,
+    "sha256": "3fe64102574f4790ab80e97533d68967cfe16b5c5fb8b383522295b93ff5b4bc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00298.parquet": {
+    "bytes": 50275,
+    "mtime_ns": 1792496693855729628,
+    "sha256": "8bb45a5ab774cd60caf39011a6a3636e0b48a649ce72cf13ddf5e4d0d9dc8a29"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00299.parquet": {
+    "bytes": 50297,
+    "mtime_ns": 1792496696543599545,
+    "sha256": "a48f9589336cbf9f3a81fcd22e2bf86709e5390a6bfe27ff5fa22430ef22665f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00300.parquet": {
+    "bytes": 50348,
+    "mtime_ns": 1792496699540354717,
+    "sha256": "b83d04f5dc0d45841bc6cb595040fd6b90328b8610a5487363fb8a7b9a3d82fc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00301.parquet": {
+    "bytes": 50256,
+    "mtime_ns": 1792496702745067420,
+    "sha256": "30855dd3561f679064840aa17e79a26fca0e2750be6b896b1280532076c90f9b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00302.parquet": {
+    "bytes": 50282,
+    "mtime_ns": 1792496705205389975,
+    "sha256": "17653d94190e5630d93fa96ee8f06e40b5b593f16828480c7456f86e48063c30"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00303.parquet": {
+    "bytes": 50261,
+    "mtime_ns": 1792496708045647736,
+    "sha256": "37b23d19047749eefee280fe6e3d277d6107ec9746786db75fa8e409036e86e8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00304.parquet": {
+    "bytes": 50294,
+    "mtime_ns": 1792496710944818204,
+    "sha256": "c6094d3c3d8292cba7dd15e4607a950b5152855d613dcdcd75ce2ee3de7f5736"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00305.parquet": {
+    "bytes": 50252,
+    "mtime_ns": 1792496713657498946,
+    "sha256": "cf88a4762fc73584651754014513bd33891f2b476a702d0f9eae1b37d8ab7a4b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00306.parquet": {
+    "bytes": 50290,
+    "mtime_ns": 1792496716380633880,
+    "sha256": "5b366cd026e022b417ee8d3114103e6515c1ca41217695a51154945313f1b920"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00307.parquet": {
+    "bytes": 50303,
+    "mtime_ns": 1792496718994144491,
+    "sha256": "328d03b09b0511aa30f9f8e196eb32958e1cb15ef9b531e279008320843bbf74"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00308.parquet": {
+    "bytes": 50296,
+    "mtime_ns": 1792496722373928473,
+    "sha256": "6cff53babbf8d360aaf10bf8c3b6ff9fe10f75dc4ff8aa968e74312b1039be6b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00309.parquet": {
+    "bytes": 50331,
+    "mtime_ns": 1792496725589348077,
+    "sha256": "4831cad7673aa4d658df24ca450f98b8f3dd9074b5f39657f89e141a2f98d8a9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00310.parquet": {
+    "bytes": 50361,
+    "mtime_ns": 1792496728716847206,
+    "sha256": "75809e432a27c888380e8bf58bd31243e48c001c970ec8a0de56cf9fdd6e121d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00311.parquet": {
+    "bytes": 50312,
+    "mtime_ns": 1792496731552719855,
+    "sha256": "ff50e59b1eaa244b8866dd308a2d911c822dd036a33c10bb8131ee59aa156a55"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00312.parquet": {
+    "bytes": 50299,
+    "mtime_ns": 1792496734458462658,
+    "sha256": "590a2a18d58521caf5098f2f33986f5dba6dbb62e337ae39c776d012f3eac921"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00313.parquet": {
+    "bytes": 50324,
+    "mtime_ns": 1792496737559448701,
+    "sha256": "c6e167f73161d923c116459dfcc9fb98118b084d2542cf5786511b7ef9b98a71"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00314.parquet": {
+    "bytes": 50297,
+    "mtime_ns": 1792496740693455954,
+    "sha256": "7feba1fca547452be004d2f53604d69b2babf14865a540d0ea12d920a4b3aa07"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00315.parquet": {
+    "bytes": 50316,
+    "mtime_ns": 1792496743855331510,
+    "sha256": "e6ebb6f8c6d0ee96afeee9cc2f06b50f962543062a7dbb49c4253bac50d1ebfc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00316.parquet": {
+    "bytes": 50304,
+    "mtime_ns": 1792496747664685055,
+    "sha256": "bedb0aaa1fb88236309ae78f9a74a772f2dd7b4391d6957d588213662532b27c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00317.parquet": {
+    "bytes": 50311,
+    "mtime_ns": 1792496750573850213,
+    "sha256": "5b05c3580c4c134138ef90b5c4ce416496edab916f3aec0f80080165e2341132"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00318.parquet": {
+    "bytes": 50344,
+    "mtime_ns": 1792496754031190896,
+    "sha256": "57d3ec42d11bfcddabc7c37f8254d77859afd7af1e9f159ddd4bb6ab7a2ee460"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00319.parquet": {
+    "bytes": 50308,
+    "mtime_ns": 1792496757075998749,
+    "sha256": "a42fa15316d95e084e3fecf4b762af221d15a44c5fd8539eb95d709d7a8a77fd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00320.parquet": {
+    "bytes": 50310,
+    "mtime_ns": 1792496760352484449,
+    "sha256": "6c9d3c94f2f5b1f50d4bc92131e76a2ec7ff63dc984ca84aa7de1d9f57174231"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00321.parquet": {
+    "bytes": 50327,
+    "mtime_ns": 1792496763060822747,
+    "sha256": "fcd4745935f8a9d74c92b8be95786018d6c68ee3368f041a6aa2b0ab4612b0fc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00322.parquet": {
+    "bytes": 50365,
+    "mtime_ns": 1792496766236915351,
+    "sha256": "998c0d9e0e715f196dc3c9d7d7ae288f9c1924bcb6e17d3eb25abd30811676aa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00323.parquet": {
+    "bytes": 50304,
+    "mtime_ns": 1792496769323054216,
+    "sha256": "b92d9e098640be7a5e0f65079384e724213e1b410f67687315e7f28c303c902b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00324.parquet": {
+    "bytes": 50308,
+    "mtime_ns": 1792496773094449521,
+    "sha256": "7864dac49e205fad9f2e84a5f4ed8903af25d2b0a8a881e58b891c44e07a3884"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00325.parquet": {
+    "bytes": 50314,
+    "mtime_ns": 1792496777046681183,
+    "sha256": "997dc3ca4fdaebedb0bbd3c0b15cf345dd425139d4480eb6c1ca654b379077ad"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00326.parquet": {
+    "bytes": 50332,
+    "mtime_ns": 1792496780439158412,
+    "sha256": "2e09af5b641ed120c638fa66e6d0e5a0666a3f6b868c54ba5c083d2f7153a3fb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00327.parquet": {
+    "bytes": 50465,
+    "mtime_ns": 1792496785878399318,
+    "sha256": "ccd0b9b9054b66af95f6fb8b202bb61fe7e8ec1e77222c42d72b2ae7c0ad518d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00328.parquet": {
+    "bytes": 50296,
+    "mtime_ns": 1792496789039731536,
+    "sha256": "6a34861aaf72de1c7fd273618bfc32d8413581e7c3d570c7fb29b579abfd6ca2"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00329.parquet": {
+    "bytes": 50364,
+    "mtime_ns": 1792496792248794266,
+    "sha256": "fe3b7c6ab159d84c6d6259b0d74b22aa82fa5b6eb1dd6575f3d53a9cb67e12a1"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00330.parquet": {
+    "bytes": 50313,
+    "mtime_ns": 1792496795608748914,
+    "sha256": "713e1a500dbcf4271e010956e8c2523c180b27353c938b90629f50e3542faf4e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00331.parquet": {
+    "bytes": 50421,
+    "mtime_ns": 1792496798907508964,
+    "sha256": "218405876e5a7ac5c8bc0e39a5a07e42ce2bdf0a02712203b1d4cfccaf29f7a3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00332.parquet": {
+    "bytes": 50379,
+    "mtime_ns": 1792496802322650421,
+    "sha256": "f56f9cdcb8fa0a2378cc77053bf6f018b913b5b880b00a4a234183d8a332b9ea"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00333.parquet": {
+    "bytes": 50431,
+    "mtime_ns": 1792496805649986069,
+    "sha256": "54c8bcfb72d1ed62675762e78590ddfb5c0a05dbae0fbacc5c7dd18f9f19ad8e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00334.parquet": {
+    "bytes": 50404,
+    "mtime_ns": 1792496809555113391,
+    "sha256": "d53993f6206679b2129317e5a048c74d9ea9bc2ac0eb1c7d94adecd341ba0197"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00335.parquet": {
+    "bytes": 50347,
+    "mtime_ns": 1792496813005035235,
+    "sha256": "b735ea24e91bb06bb078c4975181dc6ed2afcf791c76ba9e6b021e2f317b1265"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00336.parquet": {
+    "bytes": 50337,
+    "mtime_ns": 1792496817726624371,
+    "sha256": "df80448d1500e5b303857350188a077ddc10aab4953b8a21a1bae9e1c9cce85e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00337.parquet": {
+    "bytes": 50391,
+    "mtime_ns": 1792496823489079455,
+    "sha256": "3c7aa97999582a53050531f4db9b375e7fb9291b28aa8d5951ad40c1d5b56611"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00338.parquet": {
+    "bytes": 50408,
+    "mtime_ns": 1792496827119636906,
+    "sha256": "2e4280223897d2e0c062a479f7c67e19967f3fdd4d14dc5def5656dedc20fd85"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00339.parquet": {
+    "bytes": 50389,
+    "mtime_ns": 1792496831205249291,
+    "sha256": "4556e5c132708d2a11e8053e1a78f5f599583ba208a3564d206695bd03640724"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00340.parquet": {
+    "bytes": 50291,
+    "mtime_ns": 1792496834632283365,
+    "sha256": "87e438211c0d6143cc2023c765fb6d6f02ed17bd663f6eb27a1afafbd81bf9d7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00341.parquet": {
+    "bytes": 50365,
+    "mtime_ns": 1792496838411620470,
+    "sha256": "bedde552797b380dbe69d7a0ad1b7b4eab423d2eac3a3eb106642c4c5058d245"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00342.parquet": {
+    "bytes": 50531,
+    "mtime_ns": 1792496842866565577,
+    "sha256": "c373dffc91179ff3b6beab6b0fae6cf6669b33db17dee9b9cf8c95b2a7b55e6e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00343.parquet": {
+    "bytes": 50383,
+    "mtime_ns": 1792496847819669768,
+    "sha256": "c22fb6da31b6fda21ef99c18ac6195be97fcf37aaecd72a962d7d6d66bd56a86"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00344.parquet": {
+    "bytes": 50412,
+    "mtime_ns": 1792496852474747272,
+    "sha256": "186ee552924cb515be16fb8f71dfa7910f9c5ac89dd1411a162c21663f185e84"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00345.parquet": {
+    "bytes": 50386,
+    "mtime_ns": 1792496856294274924,
+    "sha256": "df030fc3bf5ce47f39a7215ee0cbfafdc6a3b5f7f1905980779a1bc367e1c909"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00346.parquet": {
+    "bytes": 50344,
+    "mtime_ns": 1792496860468071494,
+    "sha256": "25518a6a3783b2f8d7faacada69ebd40c45fda488b1df32cbea27a8738a57533"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00347.parquet": {
+    "bytes": 50376,
+    "mtime_ns": 1792496864844780563,
+    "sha256": "533af211b5e73bf3f6b174e4a9b3033b1f62a9ed2721602640f3eda17acecfcc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00348.parquet": {
+    "bytes": 50374,
+    "mtime_ns": 1792496869336500487,
+    "sha256": "d7339743d8ac66cf77caaeff9da3893dfbc49168267598a295aa6777d748630f"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00349.parquet": {
+    "bytes": 50367,
+    "mtime_ns": 1792496873683830994,
+    "sha256": "03a1e2bdf4b9dd848a126730cf3367dc79934e3e0e3c46095aeaf9cd9c2d4749"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00350.parquet": {
+    "bytes": 50523,
+    "mtime_ns": 1792496878102536329,
+    "sha256": "df307b7921acba6d61033c7865ee99f59772ee0a1238666c5f294abd6a0e3787"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00351.parquet": {
+    "bytes": 50547,
+    "mtime_ns": 1792496882490312135,
+    "sha256": "4e4affa33b74d2463519220563be8c51716d403c8f25f89363a3d764204fbe6d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00352.parquet": {
+    "bytes": 50552,
+    "mtime_ns": 1792496887961054865,
+    "sha256": "c0cdd76b752962192901b329e474909e86e794b83b28d9c75eff32f45bed3722"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00353.parquet": {
+    "bytes": 50333,
+    "mtime_ns": 1792496892504821537,
+    "sha256": "d017e255024b04a4fe4a34fffc27aebc43e5a291b5ee66070d5d1ff88743faa8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00354.parquet": {
+    "bytes": 50553,
+    "mtime_ns": 1792496897314289940,
+    "sha256": "37c7ab5b175f4a6ca7088ac712b79d188b184951898cf8c6771fafcbd33dd68b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00355.parquet": {
+    "bytes": 50526,
+    "mtime_ns": 1792496902058056800,
+    "sha256": "cc226dab74cd9c69ce5c6cbe4cf8a3376f0ab0ddaeaba36d3e0e7708ea872289"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00356.parquet": {
+    "bytes": 50369,
+    "mtime_ns": 1792496906647380928,
+    "sha256": "fdd3f35773864fd84e8de3534ede010cd30fd632a3c01a44c82d936c293eb995"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00357.parquet": {
+    "bytes": 50394,
+    "mtime_ns": 1792496910774082866,
+    "sha256": "b8ca842a94ab5e1c415ce90de4712cf8f2a21407976fa10eb2ba84269e165d23"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00358.parquet": {
+    "bytes": 50589,
+    "mtime_ns": 1792496916360043787,
+    "sha256": "cadff7e7a80b05e7c40dfc75f51b3442fc4eac92338d0bf227d51ddde07a9ecd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00359.parquet": {
+    "bytes": 50395,
+    "mtime_ns": 1792496921389307878,
+    "sha256": "bee46293a06df7aca9eed942438d95b628b117b1176adcf5adf68fdf85c4d368"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00360.parquet": {
+    "bytes": 50404,
+    "mtime_ns": 1792496926008577030,
+    "sha256": "56d000fa265703f772dcc4c91661683409f4ad6fd1437dccaf7a20afc1a848d3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00361.parquet": {
+    "bytes": 50575,
+    "mtime_ns": 1792496930894534918,
+    "sha256": "226e5495a6333883b06b1b254dfc9a84fb9f8261bb151abfe62a75caf1c1e340"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00362.parquet": {
+    "bytes": 50535,
+    "mtime_ns": 1792496935622384010,
+    "sha256": "3966569288e65af00ef33cf93de16dddd90bcf74c0ca872cc582035e114f4429"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00363.parquet": {
+    "bytes": 50542,
+    "mtime_ns": 1792496939990420066,
+    "sha256": "e9825639db6739c549129bbb512e912c59d9d1ae885a043e86c7cbffbe614a39"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00364.parquet": {
+    "bytes": 50568,
+    "mtime_ns": 1792496944991969772,
+    "sha256": "e8913dfbceccec37652ff05761d49391919936d4859e9441571eda894ab10b9e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00365.parquet": {
+    "bytes": 50537,
+    "mtime_ns": 1792496950106197487,
+    "sha256": "7b7c8be9c8939e3ebcf057029f5b94456143dd694b0871f8560b2ce712caf3f8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00366.parquet": {
+    "bytes": 50551,
+    "mtime_ns": 1792496954859752159,
+    "sha256": "c570e8771a18461bcadf6872c4a5b1684dda812143e1d901d4a3dc02a98fa92d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00367.parquet": {
+    "bytes": 50542,
+    "mtime_ns": 1792496959985502446,
+    "sha256": "5f1128dcc88cdf3ee56d9c40a1f0728fbe0b444dbad93a61aacaf8e4de21e651"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00368.parquet": {
+    "bytes": 50538,
+    "mtime_ns": 1792496965677293123,
+    "sha256": "078c7ee9ff2a17a84b11e7f35f2997c4dcef045d3e1d8ec3d749d1fd1d1eec7c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00369.parquet": {
+    "bytes": 50551,
+    "mtime_ns": 1792496970771981214,
+    "sha256": "41f4cad9098899f378d73736c6ab8d5db05b2e9c64794a5356f64af228704dca"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00370.parquet": {
+    "bytes": 50514,
+    "mtime_ns": 1792496975360504920,
+    "sha256": "3bae653561ea2b744a7c5c7ba1cbb13910b33965e85a9187a74bf078c30cf472"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00371.parquet": {
+    "bytes": 50348,
+    "mtime_ns": 1792496980324325054,
+    "sha256": "8204e204600045dab18b2c07665d888cdd8081a59ae7c0a21c06fdd9fa5552cd"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00372.parquet": {
+    "bytes": 50585,
+    "mtime_ns": 1792496985350180706,
+    "sha256": "fc2d0e4a6359b9855f951740e963297b1a805564dde67a040c01df4ca9d297bb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00373.parquet": {
+    "bytes": 50554,
+    "mtime_ns": 1792496991014413927,
+    "sha256": "4c544687ca5e515625120160fd151bd09a438802d8f96b7ca41e5dcccafd87ae"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00374.parquet": {
+    "bytes": 50607,
+    "mtime_ns": 1792496996888446757,
+    "sha256": "182433cd6f083540ce5036fe3ac50575e32e0563ee27c3076f30de362b2d7400"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00375.parquet": {
+    "bytes": 50690,
+    "mtime_ns": 1792497007830796199,
+    "sha256": "241bc1ea349a686a3a3068646913cb631b9e80eef541dfa7648bcc7ea2c65d69"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00376.parquet": {
+    "bytes": 50565,
+    "mtime_ns": 1792497013444275094,
+    "sha256": "b3bb83114b653ae5fdf8d1b2b51489a66ae9953b9e7c8dab52a67ef25341a40b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00377.parquet": {
+    "bytes": 50714,
+    "mtime_ns": 1792497021700868891,
+    "sha256": "d9b6906c59e1306c8ff556178509f8b0411abf10f5160c1e50d9d7f78c80e7f1"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00378.parquet": {
+    "bytes": 50596,
+    "mtime_ns": 1792497027391470998,
+    "sha256": "a291dcbb2bb5c6c36fcfbd2b68c588eabefd044ad3470f58bb68549e27d89e24"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00379.parquet": {
+    "bytes": 50553,
+    "mtime_ns": 1792497033213683247,
+    "sha256": "04acbfd2a74edc939d7389997095b75b8a825410e7b002a8fd1e0d1cb664e108"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00380.parquet": {
+    "bytes": 50551,
+    "mtime_ns": 1792497039603786806,
+    "sha256": "7dc374baec5cb0bafc97312a862746751467d08746575aa1d22a2ba085371575"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00381.parquet": {
+    "bytes": 50578,
+    "mtime_ns": 1792497046459769926,
+    "sha256": "2ba96c8c488c2721429f6c49c25d51dd13149277faa2aee13938f437e80e9903"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00382.parquet": {
+    "bytes": 50543,
+    "mtime_ns": 1792497052607607662,
+    "sha256": "c158062c5d6aac888d82d8a40d795ea8a6d607922aa25025db5e2a68670fbcba"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00383.parquet": {
+    "bytes": 50563,
+    "mtime_ns": 1792497058951897975,
+    "sha256": "34827caffe0154831c3818fb02a099821400feb81ccda46da9d10fe32bc0aed3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00384.parquet": {
+    "bytes": 50540,
+    "mtime_ns": 1792497064957169210,
+    "sha256": "fbe38ad86c57ee1f1e972f343ec3716aed944a5246f3beb2f9c3deebf39748af"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00385.parquet": {
+    "bytes": 50580,
+    "mtime_ns": 1792497071003811052,
+    "sha256": "80fce6b0b8e888f2e03bb04c96e53357a056302f005211b244e3b1cbf3a6decc"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00386.parquet": {
+    "bytes": 50545,
+    "mtime_ns": 1792497077256117107,
+    "sha256": "347e0313f9dcd4b021438a465e3027f92896d3b3be215b386c1d2478125acac4"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00387.parquet": {
+    "bytes": 50660,
+    "mtime_ns": 1792497086097117510,
+    "sha256": "2827833081ec1187100b8a7fb5685bc575cf6dc9b8b9cd5eff8ea236fb4871d9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00388.parquet": {
+    "bytes": 50596,
+    "mtime_ns": 1792497092497422114,
+    "sha256": "ee26c2bed85502e0c0d11cc207f96d82519aa8b284d5d6420c4ac6872fe40a0b"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00389.parquet": {
+    "bytes": 50590,
+    "mtime_ns": 1792497099162332504,
+    "sha256": "48dde23862c49c0feb6529a7c93a2c8954f31706d510f8a347b02169286af78d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00390.parquet": {
+    "bytes": 50527,
+    "mtime_ns": 1792497106213953414,
+    "sha256": "bae4e9919225dc7b8d1912b3823180ec076c24a2090345f42d4d04d8f5883e60"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00391.parquet": {
+    "bytes": 50576,
+    "mtime_ns": 1792497114291922960,
+    "sha256": "e30ca888ba700a379b72e62ceed058c6804c643ef812fe120b9de74af13e76c7"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00392.parquet": {
+    "bytes": 50568,
+    "mtime_ns": 1792497121767147238,
+    "sha256": "14542d1536106c02dba9511d2f2f28b54582067011d69f265c35d7e66935f068"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00393.parquet": {
+    "bytes": 50623,
+    "mtime_ns": 1792497129205044917,
+    "sha256": "7ab408c33819af905279ea5f5e9f62fb59fc6232b87e297708e86bf28bd00c30"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00394.parquet": {
+    "bytes": 50767,
+    "mtime_ns": 1792497137963268946,
+    "sha256": "7fea68cce0ae31057b7ba73a5762b42f90555b8625897317270033c9663ac18e"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00395.parquet": {
+    "bytes": 50579,
+    "mtime_ns": 1792497145937288906,
+    "sha256": "fbc1ce3d9decbe95895f5f5e0b220f6ae84ca80c15f101e9ccdeaed8f98fb97c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00396.parquet": {
+    "bytes": 50566,
+    "mtime_ns": 1792497153808367028,
+    "sha256": "daa163cb4c6dc8f076b4b76f368582de23a0c175e8816cb3306fddf68eab8df3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00397.parquet": {
+    "bytes": 50603,
+    "mtime_ns": 1792497163684444633,
+    "sha256": "17528b2426753d4fe9a2984201bfb672f408f2581f24904c41f4ecdadeb1d94c"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00398.parquet": {
+    "bytes": 50661,
+    "mtime_ns": 1792497172492052695,
+    "sha256": "57d8639334afb0587b302394a9e12d2e7bd626e4d6f762e0baa59f281a4f76d3"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00399.parquet": {
+    "bytes": 50620,
+    "mtime_ns": 1792497182245607357,
+    "sha256": "e82afb6c328ce94a0ee8be4578b4a898334c47aed40f6ed5d35866cfafa51854"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00400.parquet": {
+    "bytes": 50629,
+    "mtime_ns": 1792497191642979713,
+    "sha256": "a7cc17b2924d3d7b803de4ed356e74a823672932d175b9078e277b7a0caff16d"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00401.parquet": {
+    "bytes": 50626,
+    "mtime_ns": 1792497200860800965,
+    "sha256": "3d016d41ff4a12f3f0d195f2b295544598860bc49bb98085c53cc1713e31cff9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00402.parquet": {
+    "bytes": 50591,
+    "mtime_ns": 1792497209745064210,
+    "sha256": "0ade6914387086a21b8b82fd0d70cb98ab3a67184a7f2e8b62f1e41277e4ec0a"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00403.parquet": {
+    "bytes": 50731,
+    "mtime_ns": 1792497220359576915,
+    "sha256": "2ff30b3a629c8a983f9dc002acb49ad57f77704cd1f1bd206b21e8fb37948075"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00404.parquet": {
+    "bytes": 50617,
+    "mtime_ns": 1792497230119844416,
+    "sha256": "8810f4cc7760df808c8b35a43da85df79b04f24ed6ad861c8b2507f82fc74e52"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00405.parquet": {
+    "bytes": 50939,
+    "mtime_ns": 1792497244194189917,
+    "sha256": "35d02ff3fbadc6aa135c573661cacfae7651c18eae2463aec6f128d238682345"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00406.parquet": {
+    "bytes": 50776,
+    "mtime_ns": 1792497254598814177,
+    "sha256": "a7b8dc25a5a7174b38ae48bb7b381d5832f568127b0b17c315fdcd17571e5352"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00407.parquet": {
+    "bytes": 50757,
+    "mtime_ns": 1792497266368897260,
+    "sha256": "43ddd5ace4bc0fc70063a38c3cd9a17bb11d43d60f0e1d471872178e28443492"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00408.parquet": {
+    "bytes": 50925,
+    "mtime_ns": 1792497278418703882,
+    "sha256": "2f0ec5fac89a68117a728aef00cec04dbc6d11522b517eeea370191bd2974eaa"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00409.parquet": {
+    "bytes": 50965,
+    "mtime_ns": 1792497292399996911,
+    "sha256": "2fa6a71cdf496ed4c293a55479a3ee622266bdc19decbc1432e7b80ae48651bb"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00410.parquet": {
+    "bytes": 50932,
+    "mtime_ns": 1792497306090132461,
+    "sha256": "77be1b24a13bb46a1213c33ad230867a717eda49a28ca56123688a598f72ea18"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00411.parquet": {
+    "bytes": 50955,
+    "mtime_ns": 1792497321616164086,
+    "sha256": "d4a6ebd28b6abb242f10aa266c53476cfce036e179d573c306d1d16ec365e545"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00412.parquet": {
+    "bytes": 50907,
+    "mtime_ns": 1792497336896120579,
+    "sha256": "b87cfe29034e6055b9531240c801749897e082946e32de4cd7aba03462bdb0b9"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00413.parquet": {
+    "bytes": 50998,
+    "mtime_ns": 1792497358323628326,
+    "sha256": "b0d97fa65aa94c3283cd460cb34cd53972bcb6fae0120dd99c67ca01b547f552"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00414.parquet": {
+    "bytes": 51025,
+    "mtime_ns": 1792497379965139996,
+    "sha256": "040d4d1221d373e965d5f48d3a5644ba6eba998cce6e1032cc0af54f60d4b4a8"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00415.parquet": {
+    "bytes": 51364,
+    "mtime_ns": 1792497402244285585,
+    "sha256": "db0c448331b199bd3a0715e3efa43f61488c70c4dc3cf8b6c5061a40c0665fad"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00416.parquet": {
+    "bytes": 51375,
+    "mtime_ns": 1792497428893296257,
+    "sha256": "2cdaaa43b44c8e526dade510420543acd49ca4cbf9ef06fa9d404e78c3dafbce"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00417.parquet": {
+    "bytes": 51528,
+    "mtime_ns": 1792497462060730161,
+    "sha256": "5e7d28b10f44ed741794c002b461319936b84fdeeed8b2eeede365a862b36957"
+  },
+  "/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/final_quality_v2/sentiment/text_predictions/part-00418.parquet": {
+    "bytes": 40036,
+    "mtime_ns": 1792497499817910791,
+    "sha256": "449af45ebfe52d38cadff3f9b8a76b7c25ff2f78d3d124aab30da339279f54cb"
+  }
+}

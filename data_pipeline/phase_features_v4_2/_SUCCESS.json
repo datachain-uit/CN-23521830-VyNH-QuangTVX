@@ -1,0 +1,10 @@
+{
+  "dataset_version": "phase_features_v4_2",
+  "checks_passed": 1163,
+  "test_checks_passed": 590,
+  "manifest_sha256": "3becd0ec3b20cb3a3d09d7d589b6db43969acbd682b0c6d6a0481d22d5c44576",
+  "checksums_sha256": "dfd7d507e73b760c2652fbb9cd8aebd0f082a7027f7d7fc7e92de1c54669076a",
+  "documentation_version": "phase_features_v4_2-data-card-2026-10-30-v2",
+  "model_inputs_changed": false,
+  "teacher_subgroup_version": "teacher-subgroup-train-reference-v1"
+}

@@ -1,0 +1,122 @@
+{
+  "spine": {
+    "rows": 750398,
+    "seconds": 1.228,
+    "sql": "SELECT user_id,course_id,course_family_id,enrollment_id,row_id,phase,split,cast(enroll_time AS TIMESTAMP) AS enroll_time,cutoff_time,course_end,q_alpha_0p1,y_alpha_0p1,q_alpha_1,y_alpha_1 FROM source_spine ORDER BY row_id",
+    "sha256": "c3c7105d9c74f87ba598dfb0880773596c98a0c6655c06341562b7550c9ea2c0"
+  },
+  "cohort": {
+    "rows": 154623,
+    "seconds": 0.255,
+    "sql": "SELECT enrollment_id,user_id,course_id,split,min(enroll_time) enroll_time,\n            max(cutoff_time) max_cutoff FROM spine GROUP BY 1,2,3,4 ORDER BY course_id,enrollment_id",
+    "sha256": "bf2de521388393ae3d131f6ed6e23019ff3da800a8535ff5eb07265cdcb17308"
+  },
+  "resources": {
+    "rows": 111713,
+    "seconds": 0.354,
+    "sql": "SELECT DISTINCT c.id course_id,r.resource_id resource_id\n            FROM courses c,UNNEST(c.resource) t(r) WHERE c.id IN (SELECT course_id FROM cohort)\n            AND r.resource_id IS NOT NULL ORDER BY course_id,resource_id",
+    "sha256": "6df0043f6c1791aba84c10e16fde4a4be14cf97cb5d9780b3023e6f66eb1165a"
+  },
+  "catalog": {
+    "rows": 132179,
+    "seconds": 0.165,
+    "sql": "SELECT r.course_id,\n            CASE WHEN starts_with(p.problem_id,'Pm_') THEN p.problem_id ELSE 'Pm_'||p.problem_id END problem_id,\n            p.exercise_id,json(p.context_id)::VARCHAR context_id,p.score::DOUBLE full_score\n            FROM problems p JOIN resources r ON p.exercise_id=r.resource_id\n            WHERE starts_with(r.resource_id,'Ex_') ORDER BY r.course_id,problem_id",
+    "sha256": "baa3bc644194200a6efef1b47cc54cfd9bf3b437d7c7624bd03680b50efb77db"
+  },
+  "enrollments": {
+    "rows": 154623,
+    "seconds": 0.229,
+    "sql": "SELECT e.enrollment_id,p.gender,p.year_of_birth,e.enroll_time\n            FROM cohort e LEFT JOIN people p ON p.id=e.user_id ORDER BY e.enrollment_id",
+    "sha256": "2b27d056eb675fa71aaa6f599990d81798d6552611c5679ee831231358785beb"
+  },
+  "course_teacher": {
+    "rows": 5768,
+    "seconds": 0.016,
+    "sql": "SELECT DISTINCT course_id,teacher_id FROM ct WHERE course_id IN (SELECT course_id FROM cohort)",
+    "sha256": "0d8a55321dd25bce77e765daa4c5962984b3b7db65df90416ab1922cf97abb9a"
+  },
+  "teachers": {
+    "rows": 5079,
+    "seconds": 0.044,
+    "sql": "SELECT id teacher_id,org_name,about FROM teachers_src WHERE id IN (SELECT teacher_id FROM course_teacher)",
+    "sha256": "6984750e4686f00dc55e22435037b0a6e36d5994202a8bf596279d45582645da"
+  },
+  "course_school": {
+    "rows": 1463,
+    "seconds": 0.007,
+    "sql": "SELECT DISTINCT course_id,school_id FROM cs WHERE course_id IN (SELECT course_id FROM cohort)",
+    "sha256": "9f7f6b5729a9921d665826f74a2fd4b96600599be316c36361eaded0aed6b21b"
+  },
+  "schools": {
+    "rows": 319,
+    "seconds": 0.01,
+    "sql": "SELECT id school_id,about,motto FROM schools_src WHERE id IN (SELECT school_id FROM course_school)",
+    "sha256": "87524d422028c17dce0d5d6bcab8eba31f929021dc4c99408943d702f5a8b935"
+  },
+  "video_source_000": {
+    "rows": 148378,
+    "seconds": 1.0,
+    "sql": "WITH items AS (\n            SELECT u.user_id,unnest(u.seq) item FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_0.parquet') u\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) users USING(user_id)),\n            segments AS (SELECT e.enrollment_id,e.course_id,r.resource_id,\n                unnest(list_filter(item.segment,s -> s.local_start_time BETWEEN epoch(e.enroll_time) AND epoch(e.max_cutoff))) seg\n                FROM items v JOIN resources r ON item.video_id=r.resource_id\n                JOIN cohort e ON e.user_id=v.user_id AND e.course_id=r.course_id\n                WHERE starts_with(r.resource_id,'V_'))\n            SELECT enrollment_id,course_id,resource_id,\n            cast(to_timestamp(seg.local_start_time) AS TIMESTAMP) event_time,\n            seg.start_point start_point,seg.end_point end_point,seg.speed speed FROM segments\n            ORDER BY course_id,enrollment_id,event_time,resource_id",
+    "sha256": "21636bd6312b2ce853ff90fb11c53c3668be6f771eff6c952b4d0c1237dc4edb"
+  },
+  "video_source_001": {
+    "rows": 69455,
+    "seconds": 0.872,
+    "sql": "WITH items AS (\n            SELECT u.user_id,unnest(u.seq) item FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_1.parquet') u\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) users USING(user_id)),\n            segments AS (SELECT e.enrollment_id,e.course_id,r.resource_id,\n                unnest(list_filter(item.segment,s -> s.local_start_time BETWEEN epoch(e.enroll_time) AND epoch(e.max_cutoff))) seg\n                FROM items v JOIN resources r ON item.video_id=r.resource_id\n                JOIN cohort e ON e.user_id=v.user_id AND e.course_id=r.course_id\n                WHERE starts_with(r.resource_id,'V_'))\n            SELECT enrollment_id,course_id,resource_id,\n            cast(to_timestamp(seg.local_start_time) AS TIMESTAMP) event_time,\n            seg.start_point start_point,seg.end_point end_point,seg.speed speed FROM segments\n            ORDER BY course_id,enrollment_id,event_time,resource_id",
+    "sha256": "3155fe5e4a399e16542b4c2bafed7c14950d824133962668e9685162d6cd6ae9"
+  },
+  "video_source_002": {
+    "rows": 44332,
+    "seconds": 0.866,
+    "sql": "WITH items AS (\n            SELECT u.user_id,unnest(u.seq) item FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_2.parquet') u\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) users USING(user_id)),\n            segments AS (SELECT e.enrollment_id,e.course_id,r.resource_id,\n                unnest(list_filter(item.segment,s -> s.local_start_time BETWEEN epoch(e.enroll_time) AND epoch(e.max_cutoff))) seg\n                FROM items v JOIN resources r ON item.video_id=r.resource_id\n                JOIN cohort e ON e.user_id=v.user_id AND e.course_id=r.course_id\n                WHERE starts_with(r.resource_id,'V_'))\n            SELECT enrollment_id,course_id,resource_id,\n            cast(to_timestamp(seg.local_start_time) AS TIMESTAMP) event_time,\n            seg.start_point start_point,seg.end_point end_point,seg.speed speed FROM segments\n            ORDER BY course_id,enrollment_id,event_time,resource_id",
+    "sha256": "e14ed1de223ba8197441c06a86ac0663634ffd2367bcede3140ce726c7f7790d"
+  },
+  "video_source_003": {
+    "rows": 129026,
+    "seconds": 0.943,
+    "sql": "WITH items AS (\n            SELECT u.user_id,unnest(u.seq) item FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_video/data_3.parquet') u\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) users USING(user_id)),\n            segments AS (SELECT e.enrollment_id,e.course_id,r.resource_id,\n                unnest(list_filter(item.segment,s -> s.local_start_time BETWEEN epoch(e.enroll_time) AND epoch(e.max_cutoff))) seg\n                FROM items v JOIN resources r ON item.video_id=r.resource_id\n                JOIN cohort e ON e.user_id=v.user_id AND e.course_id=r.course_id\n                WHERE starts_with(r.resource_id,'V_'))\n            SELECT enrollment_id,course_id,resource_id,\n            cast(to_timestamp(seg.local_start_time) AS TIMESTAMP) event_time,\n            seg.start_point start_point,seg.end_point end_point,seg.speed speed FROM segments\n            ORDER BY course_id,enrollment_id,event_time,resource_id",
+    "sha256": "e9842542f55de76f96fd5be06861e0763bd38e453693eb3d05dd32876d24707b"
+  },
+  "video": {
+    "rows": 391191,
+    "seconds": 0.205,
+    "sql": "SELECT * FROM (SELECT * FROM video_source_000 UNION ALL SELECT * FROM video_source_001 UNION ALL SELECT * FROM video_source_002 UNION ALL SELECT * FROM video_source_003) ORDER BY course_id,enrollment_id,event_time,resource_id",
+    "sha256": "ce9192524559d3556aeee7af597ac14a285b9cae2d143f70f664e60e6c40bb2c"
+  },
+  "problem_source_000": {
+    "rows": 2617870,
+    "seconds": 3.508,
+    "sql": "WITH relevant AS MATERIALIZED (\n            SELECT p.user_id,p.problem_id,p.score,p.is_correct,p.attempts,p.submit_time FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_0.parquet') p\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) u USING(user_id)\n            SEMI JOIN (SELECT DISTINCT problem_id FROM catalog) c USING(problem_id)),\n            mapped AS MATERIALIZED (SELECT p.*,c.course_id,c.exercise_id,c.context_id,c.full_score\n                FROM relevant p JOIN catalog c USING(problem_id))\n            SELECT e.enrollment_id,e.course_id,p.problem_id,\n            p.exercise_id,p.context_id,p.score,p.full_score,p.is_correct,p.attempts,\n            try_cast(p.submit_time AS TIMESTAMP) submit_time\n            FROM mapped p JOIN cohort e USING(user_id,course_id)\n            WHERE try_cast(p.submit_time AS TIMESTAMP) BETWEEN e.enroll_time AND e.max_cutoff\n            ORDER BY e.course_id,e.enrollment_id,submit_time,p.problem_id",
+    "sha256": "91cb71fd004784dbe2ff8ddaf5a03b4249c4a873deabf2b721de726cd8154944"
+  },
+  "problem_source_001": {
+    "rows": 2212070,
+    "seconds": 2.959,
+    "sql": "WITH relevant AS MATERIALIZED (\n            SELECT p.user_id,p.problem_id,p.score,p.is_correct,p.attempts,p.submit_time FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_1.parquet') p\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) u USING(user_id)\n            SEMI JOIN (SELECT DISTINCT problem_id FROM catalog) c USING(problem_id)),\n            mapped AS MATERIALIZED (SELECT p.*,c.course_id,c.exercise_id,c.context_id,c.full_score\n                FROM relevant p JOIN catalog c USING(problem_id))\n            SELECT e.enrollment_id,e.course_id,p.problem_id,\n            p.exercise_id,p.context_id,p.score,p.full_score,p.is_correct,p.attempts,\n            try_cast(p.submit_time AS TIMESTAMP) submit_time\n            FROM mapped p JOIN cohort e USING(user_id,course_id)\n            WHERE try_cast(p.submit_time AS TIMESTAMP) BETWEEN e.enroll_time AND e.max_cutoff\n            ORDER BY e.course_id,e.enrollment_id,submit_time,p.problem_id",
+    "sha256": "51c5dcd968ec00f0378269698f3bf15e33bca8b89825f44fa2fa6a4865def6d1"
+  },
+  "problem_source_002": {
+    "rows": 2692437,
+    "seconds": 3.402,
+    "sql": "WITH relevant AS MATERIALIZED (\n            SELECT p.user_id,p.problem_id,p.score,p.is_correct,p.attempts,p.submit_time FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_2.parquet') p\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) u USING(user_id)\n            SEMI JOIN (SELECT DISTINCT problem_id FROM catalog) c USING(problem_id)),\n            mapped AS MATERIALIZED (SELECT p.*,c.course_id,c.exercise_id,c.context_id,c.full_score\n                FROM relevant p JOIN catalog c USING(problem_id))\n            SELECT e.enrollment_id,e.course_id,p.problem_id,\n            p.exercise_id,p.context_id,p.score,p.full_score,p.is_correct,p.attempts,\n            try_cast(p.submit_time AS TIMESTAMP) submit_time\n            FROM mapped p JOIN cohort e USING(user_id,course_id)\n            WHERE try_cast(p.submit_time AS TIMESTAMP) BETWEEN e.enroll_time AND e.max_cutoff\n            ORDER BY e.course_id,e.enrollment_id,submit_time,p.problem_id",
+    "sha256": "2e00b0a894dde2e31fe8e57e06f517cecaa190e89e7111c9195592ee3eaa73f8"
+  },
+  "problem_source_003": {
+    "rows": 3041613,
+    "seconds": 3.823,
+    "sql": "WITH relevant AS MATERIALIZED (\n            SELECT p.user_id,p.problem_id,p.score,p.is_correct,p.attempts,p.submit_time FROM read_parquet('/Users/w4ng/xquang/paper3/working_13-10/CN-23521830-VyNH-QuangTVX/data_pipeline/input/moocubex_parquet/tables/relations/user_problem/data_3.parquet') p\n            SEMI JOIN (SELECT DISTINCT user_id FROM cohort) u USING(user_id)\n            SEMI JOIN (SELECT DISTINCT problem_id FROM catalog) c USING(problem_id)),\n            mapped AS MATERIALIZED (SELECT p.*,c.course_id,c.exercise_id,c.context_id,c.full_score\n                FROM relevant p JOIN catalog c USING(problem_id))\n            SELECT e.enrollment_id,e.course_id,p.problem_id,\n            p.exercise_id,p.context_id,p.score,p.full_score,p.is_correct,p.attempts,\n            try_cast(p.submit_time AS TIMESTAMP) submit_time\n            FROM mapped p JOIN cohort e USING(user_id,course_id)\n            WHERE try_cast(p.submit_time AS TIMESTAMP) BETWEEN e.enroll_time AND e.max_cutoff\n            ORDER BY e.course_id,e.enrollment_id,submit_time,p.problem_id",
+    "sha256": "7d8d837d9a2f7ef15170c2e5879f77828a31fd8ea25c86bed4b14619c3563b1a"
+  },
+  "problem": {
+    "rows": 10563990,
+    "seconds": 5.99,
+    "sql": "SELECT * FROM (SELECT * FROM problem_source_000 UNION ALL SELECT * FROM problem_source_001 UNION ALL SELECT * FROM problem_source_002 UNION ALL SELECT * FROM problem_source_003) ORDER BY course_id,enrollment_id,submit_time,problem_id",
+    "sha256": "458e783e2fef330e54c076701af17d1e40fe39a95fc0f75d85a2fa5cfb184aa1"
+  },
+  "comment": {
+    "rows": 117029,
+    "seconds": 1.848,
+    "sql": "WITH typed AS MATERIALIZED (\n            SELECT c.id comment_id,'U_'||cast(c.user_id AS VARCHAR) user_id,c.resource_id,c.text,\n                cast(to_timestamp(c.create_time/1000.0) AS TIMESTAMP) event_time\n            FROM comments c WHERE c.id IS NOT NULL AND c.user_id IS NOT NULL\n                AND c.create_time BETWEEN 0 AND 4102444800000\n                AND 'U_'||cast(c.user_id AS VARCHAR) IN (SELECT user_id FROM cohort)),\n            mappings AS (SELECT c.comment_id,m.course_id FROM typed c JOIN course_comments m USING(comment_id)\n                WHERE m.course_id IN (SELECT course_id FROM cohort)\n                UNION SELECT c.comment_id,r.course_id FROM typed c JOIN resources r USING(resource_id)),\n            selected AS (SELECT e.enrollment_id,e.course_id,c.comment_id,c.resource_id,c.event_time,c.text,\n                cardiff_hash(c.text) text_hash\n                FROM typed c JOIN mappings m USING(comment_id) JOIN cohort e USING(user_id,course_id)\n                WHERE c.event_time BETWEEN e.enroll_time AND e.max_cutoff)\n            SELECT s.*,p.p_pos positive_score,p.p_neg negative_score,p.p_neu neutral_score,\n                lower(p.predicted_label) sentiment_label\n            FROM selected s LEFT JOIN predictions p USING(text_hash)\n            ORDER BY s.course_id,s.enrollment_id,s.comment_id",
+    "sha256": "0d5d9be77f58ef85242aa82497a6ca6b947ad6562605ca6739c6c96586d2ab61"
+  }
+}

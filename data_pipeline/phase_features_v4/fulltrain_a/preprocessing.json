@@ -1,0 +1,493 @@
+{
+  "add_missing_indicators": false,
+  "all_missing_train_excluded": [],
+  "categorical_columns": [
+    "learner_code",
+    "teacher_set_code",
+    "school_set_code",
+    "field_set_code",
+    "gender_code"
+  ],
+  "categorical_policy": "train-only vocabularies; unknown/missing=0; gender retains source codes",
+  "dataset_version": "CQ V4",
+  "fit_rows": 527624,
+  "fit_split": "train",
+  "input_order": [
+    "n_video_segments",
+    "n_videos_watched",
+    "video_media_seconds",
+    "video_wall_seconds",
+    "video_unique_seconds",
+    "video_rewatch_seconds",
+    "video_sessions_30m",
+    "n_revisited_videos",
+    "video_mean_speed",
+    "video_mean_segment_seconds",
+    "video_active_days",
+    "video_recency_days",
+    "n_video_events",
+    "n_rewind_segments",
+    "n_invalid_video_segments",
+    "n_zero_length_segments",
+    "n_problem_submissions",
+    "n_exercises_attempted",
+    "problem_attempts",
+    "n_correct_problems",
+    "n_first_try_correct",
+    "problem_correct_rate",
+    "problem_first_try_correct_rate",
+    "problem_mean_attempts",
+    "problem_attempted_score_ratio",
+    "problem_efficiency_mean",
+    "problem_active_days",
+    "problem_recency_days",
+    "n_comments",
+    "comment_mean_characters",
+    "n_replies_authored",
+    "n_replies_received",
+    "n_comments_with_reply",
+    "comment_reply_rate",
+    "sentiment_p_positive_mean",
+    "sentiment_p_neutral_mean",
+    "sentiment_p_negative_mean",
+    "social_active_days",
+    "social_recency_days",
+    "n_events",
+    "n_active_days",
+    "n_chapters_touched",
+    "activity_span_days",
+    "activity_recency_days",
+    "n_visits_30m",
+    "n_unknown_chapters_touched",
+    "n_chapters_touched_all",
+    "course_n_videos",
+    "course_n_exercises",
+    "course_n_problems",
+    "course_n_chapters",
+    "learner_age_at_enrollment",
+    "phase_fraction",
+    "video_coverage_ratio",
+    "exercise_coverage_ratio",
+    "problem_coverage_ratio",
+    "chapter_coverage_ratio",
+    "learner_code",
+    "teacher_set_code",
+    "school_set_code",
+    "field_set_code",
+    "gender_code"
+  ],
+  "numeric": {
+    "activity_recency_days": {
+      "constant_after_imputation": false,
+      "mean": 66.44807024280654,
+      "median": 55.84758680555556,
+      "scale": 52.867912678446885
+    },
+    "activity_span_days": {
+      "constant_after_imputation": false,
+      "mean": 8.989318130371712,
+      "median": 0.5666435185185185,
+      "scale": 19.71058460237462
+    },
+    "chapter_coverage_ratio": {
+      "constant_after_imputation": false,
+      "mean": 0.39997429981827837,
+      "median": 0.23076923076923078,
+      "scale": 0.36713105109512323
+    },
+    "comment_mean_characters": {
+      "constant_after_imputation": false,
+      "mean": 33.384249655933566,
+      "median": 26.714285714285715,
+      "scale": 63.312025396835836
+    },
+    "comment_reply_rate": {
+      "constant_after_imputation": false,
+      "mean": 0.012643738001687036,
+      "median": 0.0,
+      "scale": 0.10478731792374428
+    },
+    "course_n_chapters": {
+      "constant_after_imputation": false,
+      "mean": 10.243764498961381,
+      "median": 10.0,
+      "scale": 4.591161964653458
+    },
+    "course_n_exercises": {
+      "constant_after_imputation": false,
+      "mean": 34.109964671811746,
+      "median": 22.0,
+      "scale": 30.017587671075894
+    },
+    "course_n_problems": {
+      "constant_after_imputation": false,
+      "mean": 210.0885630676391,
+      "median": 186.0,
+      "scale": 162.74903189816538
+    },
+    "course_n_videos": {
+      "constant_after_imputation": false,
+      "mean": 67.65558807029248,
+      "median": 60.0,
+      "scale": 56.97960060309266
+    },
+    "exercise_coverage_ratio": {
+      "constant_after_imputation": false,
+      "mean": 0.3338032311284468,
+      "median": 0.125,
+      "scale": 0.3859696944663057
+    },
+    "learner_age_at_enrollment": {
+      "constant_after_imputation": false,
+      "mean": 26.001804315194153,
+      "median": 26.0,
+      "scale": 0.2147921356901086
+    },
+    "n_active_days": {
+      "constant_after_imputation": false,
+      "mean": 2.24124945036617,
+      "median": 1.0,
+      "scale": 2.5766547047745214
+    },
+    "n_chapters_touched": {
+      "constant_after_imputation": false,
+      "mean": 4.0031499704334905,
+      "median": 2.0,
+      "scale": 4.2771417829208564
+    },
+    "n_chapters_touched_all": {
+      "constant_after_imputation": false,
+      "mean": 4.014959516625476,
+      "median": 2.0,
+      "scale": 4.275313112351798
+    },
+    "n_comments": {
+      "constant_after_imputation": false,
+      "mean": 0.706952299364699,
+      "median": 0.0,
+      "scale": 2.7321399867513545
+    },
+    "n_comments_with_reply": {
+      "constant_after_imputation": false,
+      "mean": 0.03583423043682622,
+      "median": 0.0,
+      "scale": 0.6085855803324293
+    },
+    "n_correct_problems": {
+      "constant_after_imputation": false,
+      "mean": 57.52521303049141,
+      "median": 9.0,
+      "scale": 90.51980643681651
+    },
+    "n_events": {
+      "constant_after_imputation": false,
+      "mean": 71.57916432914348,
+      "median": 17.0,
+      "scale": 103.47810661394904
+    },
+    "n_exercises_attempted": {
+      "constant_after_imputation": false,
+      "mean": 12.89616848361712,
+      "median": 2.0,
+      "scale": 21.57478567135511
+    },
+    "n_first_try_correct": {
+      "constant_after_imputation": false,
+      "mean": 55.109045456613046,
+      "median": 9.0,
+      "scale": 87.49539152192742
+    },
+    "n_invalid_video_segments": {
+      "constant_after_imputation": false,
+      "mean": 0.015169893712188983,
+      "median": 0.0,
+      "scale": 0.5774157782406925
+    },
+    "n_problem_submissions": {
+      "constant_after_imputation": false,
+      "mean": 68.59073885949086,
+      "median": 14.0,
+      "scale": 100.16234492549826
+    },
+    "n_replies_authored": {
+      "constant_after_imputation": false,
+      "mean": 0.03649379103300836,
+      "median": 0.0,
+      "scale": 2.414931104927507
+    },
+    "n_replies_received": {
+      "constant_after_imputation": false,
+      "mean": 0.04553052931633133,
+      "median": 0.0,
+      "scale": 0.7289092517461179
+    },
+    "n_revisited_videos": {
+      "constant_after_imputation": false,
+      "mean": 0.0320209088290146,
+      "median": 0.0,
+      "scale": 0.28660397948389804
+    },
+    "n_rewind_segments": {
+      "constant_after_imputation": false,
+      "mean": 0.014307537185571543,
+      "median": 0.0,
+      "scale": 0.5677877864590248
+    },
+    "n_unknown_chapters_touched": {
+      "constant_after_imputation": false,
+      "mean": 0.011809546191985201,
+      "median": 0.0,
+      "scale": 0.10802814823334055
+    },
+    "n_video_events": {
+      "constant_after_imputation": false,
+      "mean": 2.244964216942368,
+      "median": 0.0,
+      "scale": 26.03765856865145
+    },
+    "n_video_segments": {
+      "constant_after_imputation": false,
+      "mean": 2.229794323230179,
+      "median": 0.0,
+      "scale": 25.919327669425165
+    },
+    "n_videos_watched": {
+      "constant_after_imputation": false,
+      "mean": 0.527610571164314,
+      "median": 0.0,
+      "scale": 2.430443290142389
+    },
+    "n_visits_30m": {
+      "constant_after_imputation": false,
+      "mean": 14.495244719724653,
+      "median": 4.0,
+      "scale": 22.122152897491453
+    },
+    "n_zero_length_segments": {
+      "constant_after_imputation": false,
+      "mean": 0.0008623565266174396,
+      "median": 0.0,
+      "scale": 0.03880735950131952
+    },
+    "phase_fraction": {
+      "constant_after_imputation": false,
+      "mean": 0.5999999999985448,
+      "median": 0.625,
+      "scale": 0.24748737341529117
+    },
+    "problem_active_days": {
+      "constant_after_imputation": false,
+      "mean": 1.7898996254908799,
+      "median": 1.0,
+      "scale": 2.5496099394041107
+    },
+    "problem_attempted_score_ratio": {
+      "constant_after_imputation": false,
+      "mean": 0.7346568319748155,
+      "median": 0.75,
+      "scale": 0.1517227888283444
+    },
+    "problem_attempts": {
+      "constant_after_imputation": false,
+      "mean": 73.46594544599942,
+      "median": 14.0,
+      "scale": 109.60676687461955
+    },
+    "problem_correct_rate": {
+      "constant_after_imputation": false,
+      "mean": 0.772936988837141,
+      "median": 0.821969696969697,
+      "scale": 0.21187299391255812
+    },
+    "problem_coverage_ratio": {
+      "constant_after_imputation": false,
+      "mean": 0.31967567741443437,
+      "median": 0.1,
+      "scale": 0.3801740673950865
+    },
+    "problem_efficiency_mean": {
+      "constant_after_imputation": false,
+      "mean": 0.7563763772510432,
+      "median": 0.8,
+      "scale": 0.20953807112829312
+    },
+    "problem_first_try_correct_rate": {
+      "constant_after_imputation": false,
+      "mean": 0.7430219503968992,
+      "median": 0.7840909090909091,
+      "scale": 0.21213261871397435
+    },
+    "problem_mean_attempts": {
+      "constant_after_imputation": false,
+      "mean": 1.0380186083613119,
+      "median": 1.0,
+      "scale": 0.15345192871080257
+    },
+    "problem_recency_days": {
+      "constant_after_imputation": false,
+      "mean": 57.127604497143594,
+      "median": 51.95708622685185,
+      "scale": 36.20313315923866
+    },
+    "sentiment_p_negative_mean": {
+      "constant_after_imputation": false,
+      "mean": 0.06452180777866237,
+      "median": 0.05438278609801067,
+      "scale": 0.07264731501058283
+    },
+    "sentiment_p_neutral_mean": {
+      "constant_after_imputation": false,
+      "mean": 0.5241790155371743,
+      "median": 0.5327827750466506,
+      "scale": 0.12628328931582186
+    },
+    "sentiment_p_positive_mean": {
+      "constant_after_imputation": false,
+      "mean": 0.33938090511774394,
+      "median": 0.3214953827802263,
+      "scale": 0.14643609445280853
+    },
+    "social_active_days": {
+      "constant_after_imputation": false,
+      "mean": 0.3854601003745091,
+      "median": 0.0,
+      "scale": 1.0533164242356667
+    },
+    "social_recency_days": {
+      "constant_after_imputation": false,
+      "mean": 96.29141582035241,
+      "median": 92.83808217592536,
+      "scale": 35.93779678868378
+    },
+    "video_active_days": {
+      "constant_after_imputation": false,
+      "mean": 0.18522091489393963,
+      "median": 0.0,
+      "scale": 0.5770797887056525
+    },
+    "video_coverage_ratio": {
+      "constant_after_imputation": false,
+      "mean": 0.009940675381738383,
+      "median": 0.0,
+      "scale": 0.04904225948091635
+    },
+    "video_mean_segment_seconds": {
+      "constant_after_imputation": false,
+      "mean": 81.8457200160792,
+      "median": 76.88052631578948,
+      "scale": 45.454283231917074
+    },
+    "video_mean_speed": {
+      "constant_after_imputation": false,
+      "mean": 1.023735386429022,
+      "median": 1.0,
+      "scale": 0.13073904742893708
+    },
+    "video_media_seconds": {
+      "constant_after_imputation": false,
+      "mean": 168.86025458240087,
+      "median": 0.0,
+      "scale": 918.1296376331562
+    },
+    "video_recency_days": {
+      "constant_after_imputation": false,
+      "mean": 38.59709123495069,
+      "median": 38.19506712962908,
+      "scale": 9.524781938513497
+    },
+    "video_rewatch_seconds": {
+      "constant_after_imputation": false,
+      "mean": 5.0525174068198355,
+      "median": 0.0,
+      "scale": 74.43684668844136
+    },
+    "video_sessions_30m": {
+      "constant_after_imputation": false,
+      "mean": 0.251364608130032,
+      "median": 0.0,
+      "scale": 0.9052630727895621
+    },
+    "video_unique_seconds": {
+      "constant_after_imputation": false,
+      "mean": 163.80773717558108,
+      "median": 0.0,
+      "scale": 884.8292638324158
+    },
+    "video_wall_seconds": {
+      "constant_after_imputation": false,
+      "mean": 140.4907124386846,
+      "median": 0.0,
+      "scale": 735.4252731373413
+    }
+  },
+  "output_order": [
+    "n_video_segments",
+    "n_videos_watched",
+    "video_media_seconds",
+    "video_wall_seconds",
+    "video_unique_seconds",
+    "video_rewatch_seconds",
+    "video_sessions_30m",
+    "n_revisited_videos",
+    "video_mean_speed",
+    "video_mean_segment_seconds",
+    "video_active_days",
+    "video_recency_days",
+    "n_video_events",
+    "n_rewind_segments",
+    "n_invalid_video_segments",
+    "n_zero_length_segments",
+    "n_problem_submissions",
+    "n_exercises_attempted",
+    "problem_attempts",
+    "n_correct_problems",
+    "n_first_try_correct",
+    "problem_correct_rate",
+    "problem_first_try_correct_rate",
+    "problem_mean_attempts",
+    "problem_attempted_score_ratio",
+    "problem_efficiency_mean",
+    "problem_active_days",
+    "problem_recency_days",
+    "n_comments",
+    "comment_mean_characters",
+    "n_replies_authored",
+    "n_replies_received",
+    "n_comments_with_reply",
+    "comment_reply_rate",
+    "sentiment_p_positive_mean",
+    "sentiment_p_neutral_mean",
+    "sentiment_p_negative_mean",
+    "social_active_days",
+    "social_recency_days",
+    "n_events",
+    "n_active_days",
+    "n_chapters_touched",
+    "activity_span_days",
+    "activity_recency_days",
+    "n_visits_30m",
+    "n_unknown_chapters_touched",
+    "n_chapters_touched_all",
+    "course_n_videos",
+    "course_n_exercises",
+    "course_n_problems",
+    "course_n_chapters",
+    "learner_age_at_enrollment",
+    "phase_fraction",
+    "video_coverage_ratio",
+    "exercise_coverage_ratio",
+    "problem_coverage_ratio",
+    "chapter_coverage_ratio",
+    "learner_code",
+    "teacher_set_code",
+    "school_set_code",
+    "field_set_code",
+    "gender_code"
+  ],
+  "pool": "all four labeled train phases",
+  "software": {
+    "duckdb": "1.5.5",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3"
+  }
+}

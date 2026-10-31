@@ -1,0 +1,87 @@
+{
+  "checks": {
+    "20_pairs_80_snapshots_match_raw_event_sources": {
+      "evidence": {
+        "query": "SELECT count(*)=80 AND bool_and(source_match) FROM comparison",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "P1_private_runtime_same_dev_count": {
+      "evidence": null,
+      "status": "PASS"
+    },
+    "P1_weekly_sequence_values_exactly_preserved": {
+      "evidence": {
+        "query": "SELECT count(*)=0 FROM new_seq n FULL JOIN old_seq o USING(user_id,course_id)\n            WHERE n.user_id IS NULL OR o.user_id IS NULL OR n.behavior_sequence IS DISTINCT FROM o.behavior_sequence",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "P2_private_runtime_same_dev_count": {
+      "evidence": null,
+      "status": "PASS"
+    },
+    "P2_weekly_sequence_values_exactly_preserved": {
+      "evidence": {
+        "query": "SELECT count(*)=0 FROM new_seq n FULL JOIN old_seq o USING(user_id,course_id)\n            WHERE n.user_id IS NULL OR o.user_id IS NULL OR n.behavior_sequence IS DISTINCT FROM o.behavior_sequence",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "P3_private_runtime_same_dev_count": {
+      "evidence": null,
+      "status": "PASS"
+    },
+    "P3_weekly_sequence_values_exactly_preserved": {
+      "evidence": {
+        "query": "SELECT count(*)=0 FROM new_seq n FULL JOIN old_seq o USING(user_id,course_id)\n            WHERE n.user_id IS NULL OR o.user_id IS NULL OR n.behavior_sequence IS DISTINCT FROM o.behavior_sequence",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "P4_private_runtime_same_dev_count": {
+      "evidence": null,
+      "status": "PASS"
+    },
+    "P4_weekly_sequence_values_exactly_preserved": {
+      "evidence": {
+        "query": "SELECT count(*)=0 FROM new_seq n FULL JOIN old_seq o USING(user_id,course_id)\n            WHERE n.user_id IS NULL OR o.user_id IS NULL OR n.behavior_sequence IS DISTINCT FROM o.behavior_sequence",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "family_resource_video_set_matches_raw_catalog": {
+      "evidence": {
+        "query": "WITH ids AS(SELECT DISTINCT course_id FROM assignment),\n        a AS(SELECT DISTINCT c.id course_id,x.resource_id video_id FROM raw_courses c CROSS JOIN unnest(resource) t(x)\n            JOIN ids ON c.id=ids.course_id WHERE starts_with(x.resource_id,'V_')),\n        b AS(SELECT DISTINCT course_id,resource_id video_id FROM dim_resources JOIN ids USING(course_id) WHERE starts_with(resource_id,'V_'))\n        SELECT (SELECT count(*) FROM a ANTI JOIN b USING(course_id,video_id))=0\n        AND (SELECT count(*) FROM b ANTI JOIN a USING(course_id,video_id))=0",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "fullA_source_targets_match_frozen_quality": {
+      "evidence": {
+        "query": "SELECT count(*)=0 FROM old_fullA f JOIN assignment a USING(user_id,course_id)\n        WHERE f.q_alpha_1 IS DISTINCT FROM a.q_alpha_1 OR f.y_alpha_1 IS DISTINCT FROM a.y_alpha_1",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "learner_feature_order_hash": {
+      "evidence": null,
+      "status": "PASS"
+    },
+    "sample_source_events_within_cutoff": {
+      "evidence": {
+        "query": "SELECT count(*)=0 FROM source_sample_events e JOIN sample s USING(row_id)\n        WHERE e.event_time<s.enroll_time OR e.observed_end_time>s.cutoff_time+INTERVAL '1 microsecond' ",
+        "result": true
+      },
+      "status": "PASS"
+    },
+    "selector_feature_order_hash": {
+      "evidence": null,
+      "status": "PASS"
+    }
+  },
+  "checks_passed": 14,
+  "checks_total": 14,
+  "dataset_version": "CQ V4"
+}

@@ -1,0 +1,64 @@
+{
+  "counts": [
+    {
+      "phase": "FULL_A",
+      "split": "train",
+      "n_rows": 131906,
+      "enrollments": 131906
+    },
+    {
+      "phase": "P1",
+      "split": "dev",
+      "n_rows": 22717,
+      "enrollments": 22717
+    },
+    {
+      "phase": "P1",
+      "split": "train",
+      "n_rows": 131906,
+      "enrollments": 131906
+    },
+    {
+      "phase": "P2",
+      "split": "dev",
+      "n_rows": 22717,
+      "enrollments": 22717
+    },
+    {
+      "phase": "P2",
+      "split": "train",
+      "n_rows": 131906,
+      "enrollments": 131906
+    },
+    {
+      "phase": "P3",
+      "split": "dev",
+      "n_rows": 22717,
+      "enrollments": 22717
+    },
+    {
+      "phase": "P3",
+      "split": "train",
+      "n_rows": 131906,
+      "enrollments": 131906
+    },
+    {
+      "phase": "P4",
+      "split": "dev",
+      "n_rows": 22717,
+      "enrollments": 22717
+    },
+    {
+      "phase": "P4",
+      "split": "train",
+      "n_rows": 131906,
+      "enrollments": 131906
+    }
+  ],
+  "raw_feature_count": 85,
+  "learner_columns": 76,
+  "selector_columns": 74,
+  "held_out_columns": [],
+  "checks_passed": 573,
+  "seconds": 187.21117916610092
+}

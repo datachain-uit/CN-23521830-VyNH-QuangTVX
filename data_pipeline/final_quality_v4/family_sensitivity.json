@@ -1,0 +1,75 @@
+{
+  "0.8": {
+    "edges": 77,
+    "families": 1731,
+    "family_size_distribution": {
+      "1": 1654,
+      "2": 77
+    },
+    "max_family_courses": 2,
+    "multi_course_families": 77,
+    "split_counts": [
+      {
+        "A": 11646,
+        "E": 115,
+        "G": 3825,
+        "courses": 177,
+        "enrollments": 15586,
+        "split": "dev"
+      },
+      {
+        "A": 19487,
+        "E": 263,
+        "G": 4225,
+        "courses": 351,
+        "enrollments": 23975,
+        "split": "test"
+      },
+      {
+        "A": 99580,
+        "E": 670,
+        "G": 38787,
+        "courses": 1280,
+        "enrollments": 139037,
+        "split": "train"
+      }
+    ]
+  },
+  "0.9": {
+    "edges": 68,
+    "families": 1740,
+    "family_size_distribution": {
+      "1": 1672,
+      "2": 68
+    },
+    "max_family_courses": 2,
+    "multi_course_families": 68,
+    "split_counts": [
+      {
+        "A": 15848,
+        "E": 263,
+        "G": 6606,
+        "courses": 179,
+        "enrollments": 22717,
+        "split": "dev"
+      },
+      {
+        "A": 19487,
+        "E": 263,
+        "G": 4225,
+        "courses": 351,
+        "enrollments": 23975,
+        "split": "test"
+      },
+      {
+        "A": 95378,
+        "E": 522,
+        "G": 36006,
+        "courses": 1278,
+        "enrollments": 131906,
+        "split": "train"
+      }
+    ]
+  },
+  "courses_changed_component_membership": 18
+}

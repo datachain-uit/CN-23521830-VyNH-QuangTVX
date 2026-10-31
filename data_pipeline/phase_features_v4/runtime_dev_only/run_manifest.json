@@ -1,0 +1,8 @@
+{
+  "bundle_manifest_sha256": "d9f8700c380d89ebef4998e3226664af877fb78109b7430f78307451248ad635",
+  "dataset_version": "CQ V4",
+  "date": "2026-10-22",
+  "finalization_manifest_sha256": "eca77f3461fc6c992aa9eb8ce4f8c273276a5c2e117948496e2dedf9225804f6",
+  "scope": "dev-only runtime",
+  "source_phase_manifest_sha256": "ef3a88b18e373ce15340612e7635d56cd4b5a9e2ae740ff25b84500d1be08d02"
+}

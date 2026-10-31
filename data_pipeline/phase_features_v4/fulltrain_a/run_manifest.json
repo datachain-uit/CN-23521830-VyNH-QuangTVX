@@ -1,0 +1,10 @@
+{
+  "dataset_version": "CQ V4",
+  "phase_fraction": 1.0,
+  "preprocessing": "same artifact as Pool B train",
+  "rows": 131906,
+  "source": "/Users/w4ng/xquang/paper3/working_13-10/fullA",
+  "source_manifest_sha256": "f974390c2e0a9b318f609672452263f55d1020843d2b284e2c49e7d27174037e",
+  "split": "train",
+  "window_fraction": 1.0
+}

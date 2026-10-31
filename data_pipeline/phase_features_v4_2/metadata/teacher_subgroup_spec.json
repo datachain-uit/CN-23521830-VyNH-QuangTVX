@@ -1,0 +1,40 @@
+{
+  "version": "teacher-subgroup-train-reference-v1",
+  "dataset_version": "phase_features_v4_2",
+  "grain": "One row per course_id; subgroup constant across all phases and enrollments of a course",
+  "join_key": "course_id",
+  "metadata_columns": [
+    "teacher_subgroup",
+    "n_teachers",
+    "n_seen_teachers",
+    "n_new_teachers"
+  ],
+  "excluded_from_X": true,
+  "reference_split": "train",
+  "reference_ids_sha256": "69bb780dfe47c81d495370ee391dee3dd5ca774825800364a856793b6488f3b8",
+  "source": "input/moocubex_parquet/tables/relations/course_teacher/*.parquet",
+  "source_sha256": {
+    "input/moocubex_parquet/tables/relations/course_teacher/data_0.parquet": "77e79c71ccfe52d0064f7743933c5f12a6a270926c68231e728dd1ed5f96dbe6"
+  },
+  "normalization": "Cast course_id/teacher_id to string, trim surrounding spaces; discard NULL/empty teacher_id; deduplicate (course_id,teacher_id); restrict to bundle courses",
+  "profile_requirement": "None; teacher relation IDs remain valid when entities/teacher has no matching profile",
+  "rules": {
+    "missing": "n_teachers == 0",
+    "seen": "n_teachers > 0 and n_new_teachers == 0",
+    "new": "n_teachers > 0 and n_seen_teachers == 0",
+    "mixed": "n_seen_teachers > 0 and n_new_teachers > 0"
+  },
+  "count_definitions": {
+    "n_teachers": "Distinct usable teacher IDs for the course",
+    "n_seen_teachers": "Intersection with the frozen train teacher ID reference",
+    "n_new_teachers": "Course teacher IDs outside the frozen train reference"
+  },
+  "missing_meaning": "No usable teacher ID in the relation mapping; does not establish that the course has no teachers",
+  "temporal_scope": "Final relationship snapshot at collection; no per-edge as-of history; retrospective analysis metadata, not an online feature",
+  "interpretation": "A relation to train teachers, independent of learner subgroup and categorical codes; no target values used",
+  "review_basis": [
+    "Review-2026-10-26.docx / Y31",
+    "Review-2026-10-27.docx / Y31"
+  ],
+  "model_inputs_changed": false
+}

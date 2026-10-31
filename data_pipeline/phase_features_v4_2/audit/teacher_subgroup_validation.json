@@ -1,0 +1,219 @@
+{
+  "version": "teacher-subgroup-train-reference-v1",
+  "status": "PASS",
+  "checks": {
+    "course_has_one_family_and_split": {
+      "status": "PASS"
+    },
+    "train_reference_available": {
+      "status": "PASS"
+    },
+    "one_metadata_row_per_course": {
+      "status": "PASS"
+    },
+    "counts_consistent": {
+      "status": "PASS"
+    },
+    "train_is_seen_or_missing": {
+      "status": "PASS"
+    },
+    "no_teacher_metadata_in_X": {
+      "status": "PASS"
+    },
+    "all_snapshots_match_metadata": {
+      "status": "PASS"
+    },
+    "frozen_train_teacher_reference": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/train.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/dev_phase1.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/dev_phase2.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/dev_phase3.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/dev_phase4.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/fulltrain_a/train.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/test_phase1.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/test_phase2.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/test_phase3.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/raw_features/pool_b/test_phase4.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/train.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/dev_phase1.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/dev_phase2.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/dev_phase3.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/dev_phase4.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/fulltrain_a/train.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/test_phase1.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/test_phase2.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/test_phase3.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/model_ready/pool_b/test_phase4.parquet": {
+      "status": "PASS"
+    },
+    "unchanged/preprocessing.json": {
+      "status": "PASS"
+    },
+    "unchanged/feature_columns.json": {
+      "status": "PASS"
+    },
+    "unchanged/learner_feature_columns.json": {
+      "status": "PASS"
+    },
+    "unchanged/selector_feature_columns.json": {
+      "status": "PASS"
+    },
+    "unchanged/audit/qa23_by_phase.json": {
+      "status": "PASS"
+    },
+    "unchanged/audit/held_out_columns.json": {
+      "status": "PASS"
+    },
+    "source_unchanged/input/moocubex_parquet/tables/relations/course_teacher/data_0.parquet": {
+      "status": "PASS"
+    }
+  },
+  "checks_passed": 35,
+  "summary": [
+    {
+      "split": "dev",
+      "teacher_subgroup": "missing",
+      "courses": 1,
+      "enrollments": 6,
+      "snapshots_including_full_a": 24
+    },
+    {
+      "split": "dev",
+      "teacher_subgroup": "mixed",
+      "courses": 21,
+      "enrollments": 1050,
+      "snapshots_including_full_a": 4200
+    },
+    {
+      "split": "dev",
+      "teacher_subgroup": "new",
+      "courses": 139,
+      "enrollments": 18404,
+      "snapshots_including_full_a": 73616
+    },
+    {
+      "split": "dev",
+      "teacher_subgroup": "seen",
+      "courses": 18,
+      "enrollments": 3257,
+      "snapshots_including_full_a": 13028
+    },
+    {
+      "split": "test",
+      "teacher_subgroup": "missing",
+      "courses": 6,
+      "enrollments": 251,
+      "snapshots_including_full_a": 1004
+    },
+    {
+      "split": "test",
+      "teacher_subgroup": "mixed",
+      "courses": 35,
+      "enrollments": 2384,
+      "snapshots_including_full_a": 9536
+    },
+    {
+      "split": "test",
+      "teacher_subgroup": "new",
+      "courses": 282,
+      "enrollments": 20773,
+      "snapshots_including_full_a": 83092
+    },
+    {
+      "split": "test",
+      "teacher_subgroup": "seen",
+      "courses": 28,
+      "enrollments": 567,
+      "snapshots_including_full_a": 2268
+    },
+    {
+      "split": "train",
+      "teacher_subgroup": "missing",
+      "courses": 10,
+      "enrollments": 111,
+      "snapshots_including_full_a": 555
+    },
+    {
+      "split": "train",
+      "teacher_subgroup": "seen",
+      "courses": 1268,
+      "enrollments": 131795,
+      "snapshots_including_full_a": 658975
+    }
+  ],
+  "source_summary": {
+    "raw_mapping_rows": 17732,
+    "invalid_teacher_rows": 0,
+    "distinct_valid_edges": 7064
+  },
+  "reference_ids_sha256": "69bb780dfe47c81d495370ee391dee3dd5ca774825800364a856793b6488f3b8",
+  "model_input_sha256": {
+    "raw_features/pool_b/train.parquet": "a72415e35407acc0f0b86dc54056427f142807cdbe825fb1af2fd3bb65607f4f",
+    "raw_features/pool_b/dev_phase1.parquet": "d13cdf8615bbd986b1884d13b19e3404be5b37c28ebaab37b6d450aa9901eeb9",
+    "raw_features/pool_b/dev_phase2.parquet": "bdb62cee990ba4c5d9bd9ec9e579c4d37ef2ddab2e9eb66ff99400ed67e984c8",
+    "raw_features/pool_b/dev_phase3.parquet": "4141722eafd4515d4aa98603a584ebf7288f9fad7fa5c12da0b99bb906ad0065",
+    "raw_features/pool_b/dev_phase4.parquet": "c73d583ba601ec2ab1392a9139ddcba25976f22ada98afd968bec19ac73087a3",
+    "raw_features/fulltrain_a/train.parquet": "d3c7f11921c1cc464cec8068d33b707c21ad8002ee3aeb6f1d904b6dfeffb5bc",
+    "raw_features/pool_b/test_phase1.parquet": "90a2aac00756a4c18e98c1882c958955d7716e07ed6f75a1f45c0ee0d24ebb8f",
+    "raw_features/pool_b/test_phase2.parquet": "c8d3ed5b7155abe72f7e88268829159e9b9ffe78e3c12614db7909e918c65b6e",
+    "raw_features/pool_b/test_phase3.parquet": "4b5275176a8bd947e6a376fe224f7a1419112e9d342a10b27b5b96c609d54607",
+    "raw_features/pool_b/test_phase4.parquet": "93f294762ddf63d7f525fe9ea90f2b35bcd5eb3a7c629de9cf9f3198a953b997",
+    "model_ready/pool_b/train.parquet": "e58e5047b488fb43a324a8577f29f924ad6f22b8bde2d4d03c7dea401c819054",
+    "model_ready/pool_b/dev_phase1.parquet": "ced62cab07e7a2ae9f0e6e274380771efbe668f7f0e811675950be54989f5a91",
+    "model_ready/pool_b/dev_phase2.parquet": "685f7e443bbb86dc5188f962b07bab0a0ce649a6ca84bd344b12dcc1a7bd68e1",
+    "model_ready/pool_b/dev_phase3.parquet": "f1ceb8005bf254e4abd4b74715a9d4a24748699e7a4bf260f78d0168384b378c",
+    "model_ready/pool_b/dev_phase4.parquet": "e9228bce74320d37a112216fcf67610f49a4370479d1c1707e52265a8d867d47",
+    "model_ready/fulltrain_a/train.parquet": "23fc2cb04eb7ac1e13b387f0216617ae49ed2e2946c25effa37a42d07fe73365",
+    "model_ready/pool_b/test_phase1.parquet": "30aab17bc83eeafaca78fced30f2194968f8815418d1ae053cac40f9b2266bc1",
+    "model_ready/pool_b/test_phase2.parquet": "299612fe1204936140421ccfe5ba78fec6e886f495796ff7b437f81ec78bcd7f",
+    "model_ready/pool_b/test_phase3.parquet": "94919c7ea39000bc0ffd92ea328357356235bc0392c464df6b46a8f59c90355d",
+    "model_ready/pool_b/test_phase4.parquet": "1b8b949a5b09d31b25224518c24487aa41ee724f6768bfce4f602e2d852156f8",
+    "preprocessing.json": "2c6883aa02b3adace83e35722af9a548a9e667b5152412b66820d0c046cbd542",
+    "feature_columns.json": "d7ece3fa8e6e3098eec272b6ff8aa028c33770c0e8676638af1bca444962b69a",
+    "learner_feature_columns.json": "9679f851491f9dc9dfed9e6e2ec4acbb668d5b6985789e39c0c640b8d62fb1db",
+    "selector_feature_columns.json": "77cb83ec77366c8827acff7c5464ba5eabcd1aef6d33da93426b7e8f11d6cfe2",
+    "audit/qa23_by_phase.json": "482c1526faa153e0c7c55992acd4705634180697f054a8f5326ae9ef176c8cf8",
+    "audit/held_out_columns.json": "9b2b2bdb1cde3016f5fc1d5d88304e882c56ea5ad746bb806617a7c8223aca97"
+  },
+  "model_inputs_changed": false
+}

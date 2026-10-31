@@ -1,0 +1,6 @@
+{
+  "columns": [],
+  "threshold": 0.5,
+  "rule": "union of unreviewed flagged columns across train P1-P4",
+  "status": "none"
+}

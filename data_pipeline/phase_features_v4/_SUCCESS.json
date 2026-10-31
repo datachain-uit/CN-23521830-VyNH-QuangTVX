@@ -1,0 +1,8 @@
+{
+  "checks_passed": 188,
+  "dataset_version": "CQ V4",
+  "manifest_sha256": "ef3a88b18e373ce15340612e7635d56cd4b5a9e2ae740ff25b84500d1be08d02",
+  "pending": "model/probe checks and independent review; see handoff_status.json",
+  "ready_for_m0_v4": false,
+  "scope": "data build and loader checks only"
+}

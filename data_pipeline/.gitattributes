@@ -2,3 +2,9 @@
 *.ipynb text eol=lf
 *.sh text eol=lf
 *.md text eol=lf
+
+# Frozen artifacts must keep their original bytes, including historical metadata.
+input/moocubex_model/** -text
+final_quality_v4/** -text
+phase_features_v4/** -text
+phase_features_v4_2/** -text

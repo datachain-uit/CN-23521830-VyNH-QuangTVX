@@ -1,0 +1,203 @@
+{
+  "concentration_course": [
+    {
+      "effective_courses": 16.667783284554172,
+      "largest_share": 0.13382048686006076,
+      "n_courses": 179,
+      "split": "dev"
+    },
+    {
+      "effective_courses": 21.627283706798014,
+      "largest_share": 0.1778102189781022,
+      "n_courses": 351,
+      "split": "test"
+    },
+    {
+      "effective_courses": 48.47915003659482,
+      "largest_share": 0.12214000879414129,
+      "n_courses": 1278,
+      "split": "train"
+    }
+  ],
+  "concentration_family": [
+    {
+      "effective_families": 16.66673574778796,
+      "largest_share": 0.13382048686006076,
+      "n_families": 173,
+      "split": "dev"
+    },
+    {
+      "effective_families": 21.62659530299305,
+      "largest_share": 0.1778102189781022,
+      "n_families": 348,
+      "split": "test"
+    },
+    {
+      "effective_families": 48.42284254414797,
+      "largest_share": 0.12214000879414129,
+      "n_families": 1219,
+      "split": "train"
+    }
+  ],
+  "course_classes": [
+    {
+      "Y_c": "A",
+      "n": 162,
+      "n_ec": 59,
+      "split": "dev"
+    },
+    {
+      "Y_c": "E",
+      "n": 1,
+      "n_ec": 0,
+      "split": "dev"
+    },
+    {
+      "Y_c": "G",
+      "n": 16,
+      "n_ec": 8,
+      "split": "dev"
+    },
+    {
+      "Y_c": "A",
+      "n": 286,
+      "n_ec": 98,
+      "split": "test"
+    },
+    {
+      "Y_c": "E",
+      "n": 15,
+      "n_ec": 1,
+      "split": "test"
+    },
+    {
+      "Y_c": "G",
+      "n": 50,
+      "n_ec": 10,
+      "split": "test"
+    },
+    {
+      "Y_c": "A",
+      "n": 1185,
+      "n_ec": 436,
+      "split": "train"
+    },
+    {
+      "Y_c": "E",
+      "n": 11,
+      "n_ec": 0,
+      "split": "train"
+    },
+    {
+      "Y_c": "G",
+      "n": 82,
+      "n_ec": 19,
+      "split": "train"
+    }
+  ],
+  "course_sizes": [
+    {
+      "max_n": 3040,
+      "median_n": 14.0,
+      "min_n": 1,
+      "n_courses": 179,
+      "n_courses_below_30": 112,
+      "n_courses_ec": 67,
+      "n_families_with_ec_course": 67,
+      "p25_n": 4.0,
+      "p75_n": 60.0,
+      "sd_pi_A": 0.2743175964899419,
+      "sd_pi_E": 0.10976571825450653,
+      "sd_pi_G": 0.2553376224466161,
+      "split": "dev"
+    },
+    {
+      "max_n": 4263,
+      "median_n": 9.0,
+      "min_n": 1,
+      "n_courses": 351,
+      "n_courses_below_30": 242,
+      "n_courses_ec": 109,
+      "n_families_with_ec_course": 109,
+      "p25_n": 2.0,
+      "p75_n": 40.0,
+      "sd_pi_A": 0.33902311309635047,
+      "sd_pi_E": 0.20460899714536399,
+      "sd_pi_G": 0.3080419405815992,
+      "split": "test"
+    },
+    {
+      "max_n": 16111,
+      "median_n": 15.0,
+      "min_n": 1,
+      "n_courses": 1278,
+      "n_courses_below_30": 823,
+      "n_courses_ec": 455,
+      "n_families_with_ec_course": 451,
+      "p25_n": 4.0,
+      "p75_n": 58.75,
+      "sd_pi_A": 0.2556783077585664,
+      "sd_pi_E": 0.10173600112078952,
+      "sd_pi_G": 0.23225557803509525,
+      "split": "train"
+    }
+  ],
+  "icc1": [
+    {
+      "K": 1278,
+      "N": 131906,
+      "icc1": 0.45952450982860715,
+      "split": "train"
+    },
+    {
+      "K": 179,
+      "N": 22717,
+      "icc1": 0.5024627695606129,
+      "split": "dev"
+    },
+    {
+      "K": 351,
+      "N": 23975,
+      "icc1": 0.40700910209974045,
+      "split": "test"
+    },
+    {
+      "K": 1808,
+      "N": 178598,
+      "icc1": 0.45837919143132266,
+      "split": "all"
+    }
+  ],
+  "oracle_floor": [
+    {
+      "floor": 0.0828091470081712,
+      "n_courses": 67,
+      "signed": -0.031945757198830416,
+      "split": "dev"
+    },
+    {
+      "floor": 0.06421558737462792,
+      "n_courses": 109,
+      "signed": 0.024376177428903724,
+      "split": "test"
+    },
+    {
+      "floor": 0.08690529157607026,
+      "n_courses": 455,
+      "signed": -0.02780042454694239,
+      "split": "train"
+    }
+  ],
+  "test_teacher_old_new": {
+    "all_teachers_new": 20773,
+    "all_teachers_old": 567,
+    "mixed_old_new": 2384,
+    "n_test_enrollments": 23975,
+    "no_teacher_metadata": 251
+  },
+  "test_user_old_new": {
+    "n_test_enrollments": 23975,
+    "new_user_enrollments": 22328,
+    "old_user_enrollments": 1647
+  }
+}

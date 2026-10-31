@@ -1,0 +1,18 @@
+{
+  "assignment_sha256": "5f031af03bda0cefc685706c4042104331730f16a59a3ebd2c2d5df8fdfa71d7",
+  "builder_sha256": "89be3aefd8ac9afa18a1ea3955e33c1a8c2b05bbaceb4131d942178894cada86",
+  "common_sha256": "53b85faebed9106986b1eaa2d79acefebac30ca431a8fe9bac5e8ce2ee4df164",
+  "created_date": "2026-10-22",
+  "dataset_version": "CQ V4",
+  "duckdb_version": "1.5.5",
+  "elapsed_seconds": 40.802,
+  "numpy_version": "2.4.6",
+  "pandas_version": "3.0.3",
+  "preserved": "All V3 scalar values, targets, chapters and cutoffs; only split and new metadata differ",
+  "seed": 42,
+  "source": "/Users/w4ng/xquang/paper3/working_13-10/final_quality_v3",
+  "source_inventory_sha256": "ca4b7298c7a11767148a3b3db68e30b3b0ada5ab8432752315e16b51ccbd4681",
+  "source_manifest_sha256": "d0c9439db80c2c1260dbed87e3c91ff80bf161e70d2ef114e1179e4365cff441",
+  "split_sha256": "7d388e17f193b61b917e908db7569860b0c0f2996456874fca40726bb7f4eba6",
+  "stage": "final_quality"
+}

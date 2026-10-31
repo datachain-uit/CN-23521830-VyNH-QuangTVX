@@ -1,0 +1,7 @@
+{
+  "dataset_version": "phase_features_v4_2",
+  "checks_passed": 1163,
+  "test_checks_passed": 590,
+  "manifest_sha256": "f40e50837d3dc404f2b8d0c086f9b777a21e57f2dc43100556dd1ee0d720d0c9",
+  "checksums_sha256": "0b321e42500a7792ad04a5309eca47a1735bf33c47c9c982e529395aece03cd0"
+}

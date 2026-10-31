@@ -1,0 +1,16 @@
+{
+  "dataset_version": "CQ V4",
+  "preprocessing_sha256": "b7e83b433fecc09463c770a50162ff0c582832022ae4d1810fe28331b5ab774a",
+  "scope": "train/dev only",
+  "split_sha256": "7d388e17f193b61b917e908db7569860b0c0f2996456874fca40726bb7f4eba6",
+  "tables": [
+    "pool_b/train.parquet",
+    "pool_b/dev_phase1.parquet",
+    "pool_b/dev_phase2.parquet",
+    "pool_b/dev_phase3.parquet",
+    "pool_b/dev_phase4.parquet",
+    "fulltrain_a/train.parquet"
+  ],
+  "test_excluded": true,
+  "test_note": "Split metadata may list test families/courses; no test feature or row label is distributed"
+}

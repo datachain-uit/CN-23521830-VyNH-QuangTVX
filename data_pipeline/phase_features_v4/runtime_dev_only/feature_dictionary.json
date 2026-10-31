@@ -1,0 +1,493 @@
+[
+  {
+    "definition": "Số segment video hợp lệ có thời lượng quan sát >0 trước cutoff.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_video_segments",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số video khác nhau có segment quan sát được.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_videos_watched",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Tổng giây nội dung video đã quan sát; clip đoạn cuối theo cutoff và playback speed.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_media_seconds",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Tổng observed_media_seconds/speed; proxy thời gian xem, chưa khử chồng đồng thời.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_wall_seconds",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Tổng độ dài hợp các khoảng nội dung đã xem theo từng video, chỉ dùng segment trước cutoff.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_unique_seconds",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "video_media_seconds - video_unique_seconds.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_rewatch_seconds",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số phiên video trong user-course; phiên mới nếu khoảng cách giữa hai thời điểm bắt đầu >30 phút.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_sessions_30m",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số video có hơn một phiên; phiên trong từng video tách bằng gap bắt đầu >30 phút.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_revisited_videos",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình playback speed của segment có thời lượng quan sát >0.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_mean_speed",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình giây nội dung của các segment sau clip cutoff.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_mean_segment_seconds",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày UTC khác nhau có segment bắt đầu được quan sát.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_active_days",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày từ kết thúc segment quan sát cuối đến cutoff.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "video_recency_days",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số dòng user-problem có submit_time trong cửa sổ; không phải chuỗi từng attempt.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "n_problem_submissions",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số exercise_id khác nhau được nối từ problem đã xuất hiện trước cutoff.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "n_exercises_attempted",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Tổng attempts dương của các dòng trạng thái user-problem có sẵn trước cutoff.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_attempts",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số dòng problem có is_correct=1 trước cutoff.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "n_correct_problems",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số dòng is_correct=1 và attempts=1 trước cutoff.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "n_first_try_correct",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình is_correct trên các problem quan sát được.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_correct_rate",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "n_first_try_correct/n_problem_submissions.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_first_try_correct_rate",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình attempts dương trên các problem quan sát được.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_mean_attempts",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Tổng điểm thu được/tổng max score của problem đã làm; giữ điểm từng phần, fallback binary như notebook 06; null nếu có điểm không giải được.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_attempted_score_ratio",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình is_correct/attempts trên các dòng attempts dương hợp lệ đã quan sát.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_efficiency_mean",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày UTC có submit_time trước cutoff.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_active_days",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày từ submit_time cuối quan sát đến cutoff.",
+    "group": "problem",
+    "kind": "numeric",
+    "name": "problem_recency_days",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số comment không rỗng, loại trùng user/resource/time/normalized-text theo quy ước notebook 06.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "n_comments",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình số ký tự text của comment hợp lệ trước cutoff.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "comment_mean_characters",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số reply do người học viết, nối được về resource/course và thời gian hợp lệ.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "n_replies_authored",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số reply tới comment hợp lệ của người học, reply_time không sau cutoff của người nhận.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "n_replies_received",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số comment khác nhau đã nhận ít nhất một reply trước cutoff.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "n_comments_with_reply",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "n_comments_with_reply/n_comments; có comment chưa nhận reply ->0; không có comment ->null.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "comment_reply_rate",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình p_pos đã suy luận ở notebook 07, chỉ trên comment trước cutoff; không có comment ->null.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "sentiment_p_positive_mean",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình p_neu của comment trước cutoff; không có comment ->null.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "sentiment_p_neutral_mean",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Trung bình p_neg của comment trước cutoff; không có comment ->null.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "sentiment_p_negative_mean",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày UTC có comment, reply viết hoặc reply nhận trong cửa sổ.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "social_active_days",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày từ tương tác xã hội cuối quan sát đến cutoff.",
+    "group": "social",
+    "kind": "numeric",
+    "name": "social_recency_days",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số raw event video, problem, comment đã mapping/thời gian hợp lệ và reply authored; gồm invalid video và comment trước lọc text, không đếm thêm reply received.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "n_events",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày UTC có ít nhất một sự kiện của người học; không tính riêng reply nhận.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "n_active_days",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số chapter catalog có hoạt động riêng user trước cutoff, không gồm chapter -1.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "n_chapters_touched",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Khoảng ngày giữa sự kiện đầu tiên và kết thúc quan sát cuối, không gồm riêng reply nhận.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "activity_span_days",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số ngày từ kết thúc quan sát cuối của sự kiện người học đến cutoff.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "activity_recency_days",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "inclusive enrollment through per-pair phase cutoff"
+  },
+  {
+    "definition": "Số video_id khác nhau trong catalog course; giả định catalog tĩnh.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "course_n_videos",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "Số exercise_id khác nhau trong catalog course.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "course_n_exercises",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "Số problem_id khác nhau trong bridge_lo_problem của course.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "course_n_problems",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "Số big chapter trong dim_lo_catalog của course.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "course_n_chapters",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "Năm ghi danh trừ year_of_birth; chỉ giữ birth>=1900 và tuổi trong [10,100]; ngoài miền ->null.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "learner_age_at_enrollment",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "Window fraction: P1=.25,P2=.50,P3=.75,P4=.90; FullTrain-A=1.0; shared train scaling.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "phase_fraction",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "n_videos_watched/course_n_videos; mẫu số 0 ->null.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "video_coverage_ratio",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "n_exercises_attempted/course_n_exercises; mẫu số 0 ->null.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "exercise_coverage_ratio",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "n_problem_submissions/course_n_problems; mẫu số 0 ->null.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "problem_coverage_ratio",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "n_chapters_touched/course_n_chapters; mẫu số 0 ->null.",
+    "group": "context",
+    "kind": "numeric",
+    "name": "chapter_coverage_ratio",
+    "no_event_rule": "null for undefined ratios/means/recency; static fields follow catalog",
+    "time_scope": "static snapshot/enrollment"
+  },
+  {
+    "definition": "Mã danh mục user_id; vocabulary fit trên user của các cặp train có nhãn; chưa thấy ->0. Không dùng làm tọa độ khoảng cách.",
+    "distance_feature": false,
+    "group": "static_identity",
+    "kind": "categorical",
+    "name": "learner_code"
+  },
+  {
+    "definition": "Mã danh mục cho tập teacher_id đã sort và ghép của course; vocabulary chỉ fit train. Giữ chữ ký gốc ở course_static_metadata.",
+    "distance_feature": false,
+    "group": "static_identity",
+    "kind": "categorical",
+    "name": "teacher_set_code"
+  },
+  {
+    "definition": "Mã danh mục cho tập school_id của đơn vị cung cấp course; vocabulary chỉ fit train.",
+    "distance_feature": false,
+    "group": "static_identity",
+    "kind": "categorical",
+    "name": "school_set_code"
+  },
+  {
+    "definition": "Mã danh mục cho tập lĩnh vực field của course; vocabulary chỉ fit train.",
+    "distance_feature": false,
+    "group": "static_identity",
+    "kind": "categorical",
+    "name": "field_set_code"
+  },
+  {
+    "definition": "Mã nguồn gender 0/1/2; giá trị khác hoặc thiếu ->-1; xử lý như danh mục, không suy diễn ý nghĩa chưa được tài liệu xác nhận.",
+    "distance_feature": false,
+    "group": "static_identity",
+    "kind": "categorical",
+    "name": "gender_code"
+  },
+  {
+    "definition": "Số event video có timestamp trong cửa sổ, gồm hợp lệ, tua ngược, zero-length và valid start đúng cutoff chưa có thời lượng.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_video_events",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  },
+  {
+    "definition": "Số segment start_point>end_point với vị trí hữu hạn; proxy tua ngược, không cộng duration.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_rewind_segments",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  },
+  {
+    "definition": "Số video event không hợp lệ về interval/speed, vẫn là hoạt động timestamped.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_invalid_video_segments",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  },
+  {
+    "definition": "Số video event start_point=end_point; duration=0, không gộp với tua ngược.",
+    "group": "video",
+    "kind": "numeric",
+    "name": "n_zero_length_segments",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  },
+  {
+    "definition": "Số phiên cùng user-resource (giữ course/chapter), ngắt gap>30 phút, từ video/problem/comment/reply; không đếm reply nhận thêm lần nữa.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "n_visits_30m",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  },
+  {
+    "definition": "Số chapter -1 có hoạt động riêng user trong course; tối đa 1, không cộng vào mẫu số/chỉ số coverage catalog.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "n_unknown_chapters_touched",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  },
+  {
+    "definition": "Số chapter catalog và chapter -1 có hoạt động riêng user trước cutoff.",
+    "group": "activity",
+    "kind": "numeric",
+    "name": "n_chapters_touched_all",
+    "no_event_rule": "zero",
+    "time_scope": "inclusive enrollment through stored v2 cutoff"
+  }
+]

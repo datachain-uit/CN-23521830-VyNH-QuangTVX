@@ -1,0 +1,9 @@
+{
+  "dataset_version": "phase_features_v4_2",
+  "checks_passed": 1163,
+  "test_checks_passed": 590,
+  "manifest_sha256": "834aa0a58c860cc86ed0fce170b4d2a7c66ed326527a6a3ddd50859fea260603",
+  "checksums_sha256": "03651a9a85d0cbd5b44bab1988d06012f970cc76d78fa962a4b2757391a8aac2",
+  "documentation_version": "phase_features_v4_2-data-card-2026-10-30-v1",
+  "model_inputs_changed": false
+}

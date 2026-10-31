@@ -1,0 +1,2962 @@
+[
+  {
+    "phase": "P1",
+    "column": "correct_problem_count",
+    "n_obs": 57376,
+    "spearman_rho": -0.6297488309,
+    "nmi": 0.1708257158,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "problem_catalog_coverage",
+    "n_obs": 57376,
+    "spearman_rho": -0.6076171595,
+    "nmi": 0.1711190299,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "problem_count",
+    "n_obs": 57376,
+    "spearman_rho": -0.5734050972,
+    "nmi": 0.1550977482,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "attempts_sum",
+    "n_obs": 57376,
+    "spearman_rho": -0.5658507044,
+    "nmi": 0.1527499919,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "problem_score_catalog_coverage",
+    "n_obs": 57376,
+    "spearman_rho": -0.5564393744,
+    "nmi": 0.1665340625,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "exercise_count",
+    "n_obs": 57376,
+    "spearman_rho": -0.5483544881,
+    "nmi": 0.1374881106,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "problem_context_count",
+    "n_obs": 57376,
+    "spearman_rho": -0.5041295235,
+    "nmi": 0.1346048146,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "score_sum",
+    "n_obs": 57376,
+    "spearman_rho": -0.5030188709,
+    "nmi": 0.1501923458,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "unique_video_count",
+    "n_obs": 13180,
+    "spearman_rho": -0.3600123121,
+    "nmi": 0.0471249772,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "video_catalog_coverage",
+    "n_obs": 13180,
+    "spearman_rho": -0.3500746569,
+    "nmi": 0.0880747116,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "segment_duration_seconds",
+    "n_obs": 13180,
+    "spearman_rho": -0.3209936185,
+    "nmi": 0.0407876997,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "score_mean",
+    "n_obs": 57376,
+    "spearman_rho": -0.3110469451,
+    "nmi": 0.089205784,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "segment_count",
+    "n_obs": 13180,
+    "spearman_rho": -0.301061858,
+    "nmi": 0.0354058663,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "video_events_per_active_day",
+    "n_obs": 13180,
+    "spearman_rho": -0.281874292,
+    "nmi": 0.0307591692,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "last_video_day_from_enroll",
+    "n_obs": 13180,
+    "spearman_rho": -0.2714039484,
+    "nmi": 0.0281261,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "session_duration_std",
+    "n_obs": 13180,
+    "spearman_rho": -0.2596375841,
+    "nmi": 0.0274905013,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "max_segment_duration",
+    "n_obs": 13180,
+    "spearman_rho": -0.2490407099,
+    "nmi": 0.0245748065,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "submit_day_from_enroll_std",
+    "n_obs": 55056,
+    "spearman_rho": -0.2476756193,
+    "nmi": 0.0236389303,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "last_submit_day_from_enroll",
+    "n_obs": 57376,
+    "spearman_rho": -0.2454053132,
+    "nmi": 0.0251275178,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_submit_day_from_enroll",
+    "n_obs": 57376,
+    "spearman_rho": -0.2396635428,
+    "nmi": 0.0239499827,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "teacher_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.2245248046,
+    "nmi": 0.057065891,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "course_resource_count",
+    "n_obs": 25749,
+    "spearman_rho": -0.2229490984,
+    "nmi": 0.0898331423,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "attempts_mean",
+    "n_obs": 57376,
+    "spearman_rho": -0.2156532836,
+    "nmi": 0.0750756944,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "first_video_day_from_enroll",
+    "n_obs": 13180,
+    "spearman_rho": -0.2093770727,
+    "nmi": 0.0218253163,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "attempts_std",
+    "n_obs": 55056,
+    "spearman_rho": -0.1985889228,
+    "nmi": 0.076543782,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "video_active_day_count",
+    "n_obs": 13180,
+    "spearman_rho": -0.1870925312,
+    "nmi": 0.0160077475,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "positive_comment_count",
+    "n_obs": 25749,
+    "spearman_rho": -0.1867182771,
+    "nmi": 0.0533143393,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "unique_commented_resource_count",
+    "n_obs": 25749,
+    "spearman_rho": -0.1668304409,
+    "nmi": 0.0313807485,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "positive_comment_ratio",
+    "n_obs": 25749,
+    "spearman_rho": -0.1647754039,
+    "nmi": 0.0506305642,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "comment_count",
+    "n_obs": 25749,
+    "spearman_rho": -0.1632759745,
+    "nmi": 0.0319501202,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "ex_counts",
+    "n_obs": 131906,
+    "spearman_rho": -0.1598046609,
+    "nmi": 0.0679777986,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_segment_duration",
+    "n_obs": 13180,
+    "spearman_rho": -0.1587552919,
+    "nmi": 0.0148588804,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "video_day_from_enroll_std",
+    "n_obs": 10523,
+    "spearman_rho": -0.1534381097,
+    "nmi": 0.0146262632,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "score_std",
+    "n_obs": 55056,
+    "spearman_rho": 0.1469461965,
+    "nmi": 0.0850069678,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_segment_count_per_video",
+    "n_obs": 13180,
+    "spearman_rho": -0.1448212301,
+    "nmi": 0.0182281143,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "video_repeat_segment_ratio",
+    "n_obs": 13180,
+    "spearman_rho": -0.1448212301,
+    "nmi": 0.0182281143,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_positive_score",
+    "n_obs": 25749,
+    "spearman_rho": -0.1414977431,
+    "nmi": 0.0369415462,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_real_watch_time",
+    "n_obs": 13180,
+    "spearman_rho": -0.1397827885,
+    "nmi": 0.0138557049,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "segment_duration_std",
+    "n_obs": 10523,
+    "spearman_rho": -0.1167584158,
+    "nmi": 0.0136559484,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "var_playback_speed",
+    "n_obs": 13180,
+    "spearman_rho": -0.1131448123,
+    "nmi": 0.0094727394,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "course_problem_full_score_sum",
+    "n_obs": 57376,
+    "spearman_rho": 0.1107673923,
+    "nmi": 0.0844214141,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "incorrect_problem_count",
+    "n_obs": 57376,
+    "spearman_rho": -0.1022101809,
+    "nmi": 0.0404338109,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "min_segment_duration",
+    "n_obs": 13180,
+    "spearman_rho": 0.0983417893,
+    "nmi": 0.0118733026,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "last_comment_day_from_enroll",
+    "n_obs": 25749,
+    "spearman_rho": -0.0972980927,
+    "nmi": 0.0156301384,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_playback_speed",
+    "n_obs": 13180,
+    "spearman_rho": -0.0932676963,
+    "nmi": 0.0117125181,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "resource_count",
+    "n_obs": 131906,
+    "spearman_rho": -0.0901791719,
+    "nmi": 0.0602028314,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_comment_day_from_enroll",
+    "n_obs": 25749,
+    "spearman_rho": -0.089731681,
+    "nmi": 0.0148854351,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_negative_score",
+    "n_obs": 25749,
+    "spearman_rho": 0.0847491772,
+    "nmi": 0.0271261166,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_day_of_week",
+    "n_obs": 13180,
+    "spearman_rho": -0.0827841886,
+    "nmi": 0.0144057256,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "neutral_comment_count",
+    "n_obs": 25749,
+    "spearman_rho": -0.0811557904,
+    "nmi": 0.0379103733,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "fast_forward_ratio",
+    "n_obs": 13180,
+    "spearman_rho": -0.0798335948,
+    "nmi": 0.0105205333,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "positive_score_std",
+    "n_obs": 11403,
+    "spearman_rho": -0.0769878576,
+    "nmi": 0.0140475822,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "negative_comment_ratio",
+    "n_obs": 25749,
+    "spearman_rho": 0.0751810614,
+    "nmi": 0.0230882597,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "teacher_org_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.0744103732,
+    "nmi": 0.0068315227,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "negative_comment_count",
+    "n_obs": 25749,
+    "spearman_rho": 0.0696524668,
+    "nmi": 0.0176175259,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "neutral_score_std",
+    "n_obs": 11403,
+    "spearman_rho": -0.0650242225,
+    "nmi": 0.0101658445,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "first_submit_day_from_enroll",
+    "n_obs": 57376,
+    "spearman_rho": -0.0613898179,
+    "nmi": 0.0081353378,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_neutral_score",
+    "n_obs": 25749,
+    "spearman_rho": 0.0608308251,
+    "nmi": 0.0217157133,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "course_video_count",
+    "n_obs": 13180,
+    "spearman_rho": 0.0575110965,
+    "nmi": 0.0792422904,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "comment_day_from_enroll_std",
+    "n_obs": 11403,
+    "spearman_rho": -0.0560074811,
+    "nmi": 0.0166361294,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "teacher_avg_bio_length_chars",
+    "n_obs": 131795,
+    "spearman_rho": -0.0555023551,
+    "nmi": 0.066368387,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "school_avg_motto_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0542571903,
+    "nmi": 0.0110145886,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "min_comment_length_chars",
+    "n_obs": 25749,
+    "spearman_rho": 0.0455530244,
+    "nmi": 0.0075963745,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "max_comment_length_chars",
+    "n_obs": 25749,
+    "spearman_rho": -0.0401169884,
+    "nmi": 0.0086298792,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "first_comment_day_from_enroll",
+    "n_obs": 25749,
+    "spearman_rho": -0.0385718692,
+    "nmi": 0.0117923391,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "school_avg_bio_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0226508608,
+    "nmi": 0.0596861018,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "most_common_hour_sin",
+    "n_obs": 13180,
+    "spearman_rho": -0.0223852023,
+    "nmi": 0.0057745521,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "course_problem_count",
+    "n_obs": 57376,
+    "spearman_rho": 0.0201155064,
+    "nmi": 0.088698282,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "negative_score_std",
+    "n_obs": 11403,
+    "spearman_rho": -0.0198600416,
+    "nmi": 0.012900452,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "comment_length_std_chars",
+    "n_obs": 11403,
+    "spearman_rho": 0.0191446043,
+    "nmi": 0.0091184085,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "school_count",
+    "n_obs": 131819,
+    "spearman_rho": 0.0133733291,
+    "nmi": 0.0004719221,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "most_common_hour_cos",
+    "n_obs": 13180,
+    "spearman_rho": -0.0104922714,
+    "nmi": 0.0058622445,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "commented_resource_catalog_coverage",
+    "n_obs": 25749,
+    "spearman_rho": 0.0086526727,
+    "nmi": 0.0559338085,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P1",
+    "column": "avg_comment_length_chars",
+    "n_obs": 25749,
+    "spearman_rho": -0.0069755438,
+    "nmi": 0.0072696709,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "correct_problem_count",
+    "n_obs": 77120,
+    "spearman_rho": -0.6195085495,
+    "nmi": 0.1616487629,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "problem_catalog_coverage",
+    "n_obs": 77120,
+    "spearman_rho": -0.609901749,
+    "nmi": 0.1678734005,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "problem_count",
+    "n_obs": 77120,
+    "spearman_rho": -0.563320576,
+    "nmi": 0.1507202317,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "attempts_sum",
+    "n_obs": 77120,
+    "spearman_rho": -0.5541369035,
+    "nmi": 0.1508500898,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "exercise_count",
+    "n_obs": 77120,
+    "spearman_rho": -0.5413687864,
+    "nmi": 0.1329876884,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "problem_score_catalog_coverage",
+    "n_obs": 77120,
+    "spearman_rho": -0.5350308067,
+    "nmi": 0.1597347009,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "problem_context_count",
+    "n_obs": 77120,
+    "spearman_rho": -0.4888209175,
+    "nmi": 0.1272901333,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "score_sum",
+    "n_obs": 77120,
+    "spearman_rho": -0.470510691,
+    "nmi": 0.1404303509,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "unique_video_count",
+    "n_obs": 16695,
+    "spearman_rho": -0.3709962134,
+    "nmi": 0.0455589018,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "video_catalog_coverage",
+    "n_obs": 16695,
+    "spearman_rho": -0.3540741897,
+    "nmi": 0.075174716,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "segment_duration_seconds",
+    "n_obs": 16695,
+    "spearman_rho": -0.3374223864,
+    "nmi": 0.0396382111,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "last_video_day_from_enroll",
+    "n_obs": 16695,
+    "spearman_rho": -0.2914870542,
+    "nmi": 0.0294321638,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "score_mean",
+    "n_obs": 77120,
+    "spearman_rho": -0.286009968,
+    "nmi": 0.0755697397,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "max_segment_duration",
+    "n_obs": 16695,
+    "spearman_rho": -0.2818018872,
+    "nmi": 0.0254199542,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "segment_count",
+    "n_obs": 16695,
+    "spearman_rho": -0.281578108,
+    "nmi": 0.0326184657,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "session_duration_std",
+    "n_obs": 16695,
+    "spearman_rho": -0.2772604308,
+    "nmi": 0.0275007803,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "video_events_per_active_day",
+    "n_obs": 16695,
+    "spearman_rho": -0.2466125548,
+    "nmi": 0.0271242734,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "course_resource_count",
+    "n_obs": 28301,
+    "spearman_rho": -0.2289980703,
+    "nmi": 0.0924043222,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "teacher_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.2245248046,
+    "nmi": 0.057102069,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "first_video_day_from_enroll",
+    "n_obs": 16695,
+    "spearman_rho": -0.2233335124,
+    "nmi": 0.0214042793,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "video_active_day_count",
+    "n_obs": 16695,
+    "spearman_rho": -0.2167117381,
+    "nmi": 0.0160700426,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_segment_duration",
+    "n_obs": 16695,
+    "spearman_rho": -0.1952526112,
+    "nmi": 0.015655531,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "submit_day_from_enroll_std",
+    "n_obs": 74389,
+    "spearman_rho": -0.1939356542,
+    "nmi": 0.0209970293,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "video_day_from_enroll_std",
+    "n_obs": 13557,
+    "spearman_rho": -0.1887680376,
+    "nmi": 0.0167526914,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "positive_comment_count",
+    "n_obs": 28301,
+    "spearman_rho": -0.1847603922,
+    "nmi": 0.049751005,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "unique_commented_resource_count",
+    "n_obs": 28301,
+    "spearman_rho": -0.1843809618,
+    "nmi": 0.0341016054,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "attempts_mean",
+    "n_obs": 77120,
+    "spearman_rho": -0.1808952871,
+    "nmi": 0.0552906621,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "last_submit_day_from_enroll",
+    "n_obs": 77120,
+    "spearman_rho": -0.1808927492,
+    "nmi": 0.0253467961,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "comment_count",
+    "n_obs": 28301,
+    "spearman_rho": -0.1803026996,
+    "nmi": 0.0336698723,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_submit_day_from_enroll",
+    "n_obs": 77120,
+    "spearman_rho": -0.1784466896,
+    "nmi": 0.0243561029,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_real_watch_time",
+    "n_obs": 16695,
+    "spearman_rho": -0.1738020945,
+    "nmi": 0.0139243782,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "attempts_std",
+    "n_obs": 74389,
+    "spearman_rho": -0.1667996279,
+    "nmi": 0.0560945079,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "ex_counts",
+    "n_obs": 131906,
+    "spearman_rho": -0.1598046609,
+    "nmi": 0.0678859245,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "segment_duration_std",
+    "n_obs": 13557,
+    "spearman_rho": -0.1586606962,
+    "nmi": 0.0136118084,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "last_comment_day_from_enroll",
+    "n_obs": 28301,
+    "spearman_rho": -0.1571616648,
+    "nmi": 0.0201669361,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "positive_comment_ratio",
+    "n_obs": 28301,
+    "spearman_rho": -0.1565690393,
+    "nmi": 0.0478768641,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_comment_day_from_enroll",
+    "n_obs": 28301,
+    "spearman_rho": -0.149348761,
+    "nmi": 0.0179379766,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "score_std",
+    "n_obs": 74389,
+    "spearman_rho": 0.1433577551,
+    "nmi": 0.0637658021,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_positive_score",
+    "n_obs": 28301,
+    "spearman_rho": -0.1270654859,
+    "nmi": 0.0370796366,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "var_playback_speed",
+    "n_obs": 16695,
+    "spearman_rho": -0.1225036549,
+    "nmi": 0.0096719325,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "neutral_comment_count",
+    "n_obs": 28301,
+    "spearman_rho": -0.1017628258,
+    "nmi": 0.0347412231,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_playback_speed",
+    "n_obs": 16695,
+    "spearman_rho": -0.1001699375,
+    "nmi": 0.0101695026,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "course_problem_full_score_sum",
+    "n_obs": 77120,
+    "spearman_rho": 0.0930758708,
+    "nmi": 0.0765504407,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_day_of_week",
+    "n_obs": 16695,
+    "spearman_rho": -0.091422851,
+    "nmi": 0.0120673378,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "first_comment_day_from_enroll",
+    "n_obs": 28301,
+    "spearman_rho": -0.0913183321,
+    "nmi": 0.0120528845,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "resource_count",
+    "n_obs": 131906,
+    "spearman_rho": -0.0901791719,
+    "nmi": 0.0598728059,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_segment_count_per_video",
+    "n_obs": 16695,
+    "spearman_rho": -0.0870314697,
+    "nmi": 0.0166784312,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "video_repeat_segment_ratio",
+    "n_obs": 16695,
+    "spearman_rho": -0.0870314697,
+    "nmi": 0.0166784312,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "comment_day_from_enroll_std",
+    "n_obs": 13020,
+    "spearman_rho": -0.0861140367,
+    "nmi": 0.0215623893,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "fast_forward_ratio",
+    "n_obs": 16695,
+    "spearman_rho": -0.083438464,
+    "nmi": 0.0087063212,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "positive_score_std",
+    "n_obs": 13020,
+    "spearman_rho": -0.0801769886,
+    "nmi": 0.0134700673,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "incorrect_problem_count",
+    "n_obs": 77120,
+    "spearman_rho": -0.0764104074,
+    "nmi": 0.0359166196,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "teacher_org_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.0744103732,
+    "nmi": 0.0068739208,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "neutral_score_std",
+    "n_obs": 13020,
+    "spearman_rho": -0.0732784704,
+    "nmi": 0.0094874074,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "min_segment_duration",
+    "n_obs": 16695,
+    "spearman_rho": 0.0679721534,
+    "nmi": 0.0115884428,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "first_submit_day_from_enroll",
+    "n_obs": 77120,
+    "spearman_rho": -0.0652728928,
+    "nmi": 0.0124713064,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_negative_score",
+    "n_obs": 28301,
+    "spearman_rho": 0.0603206359,
+    "nmi": 0.0269624189,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "teacher_avg_bio_length_chars",
+    "n_obs": 131795,
+    "spearman_rho": -0.0555023551,
+    "nmi": 0.0664664711,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "school_avg_motto_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0542571903,
+    "nmi": 0.0110260981,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_neutral_score",
+    "n_obs": 28301,
+    "spearman_rho": 0.0531683798,
+    "nmi": 0.0225300317,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "min_comment_length_chars",
+    "n_obs": 28301,
+    "spearman_rho": 0.0530455306,
+    "nmi": 0.0080341054,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "negative_comment_ratio",
+    "n_obs": 28301,
+    "spearman_rho": 0.0462405341,
+    "nmi": 0.0199326365,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "course_video_count",
+    "n_obs": 16695,
+    "spearman_rho": 0.0430564539,
+    "nmi": 0.0859092475,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "max_comment_length_chars",
+    "n_obs": 28301,
+    "spearman_rho": -0.0425775703,
+    "nmi": 0.0088700502,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "most_common_hour_sin",
+    "n_obs": 16695,
+    "spearman_rho": -0.0411910314,
+    "nmi": 0.005350844,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "negative_comment_count",
+    "n_obs": 28301,
+    "spearman_rho": 0.0393463773,
+    "nmi": 0.0133452062,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "negative_score_std",
+    "n_obs": 13020,
+    "spearman_rho": -0.0389046092,
+    "nmi": 0.0126418013,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "school_avg_bio_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0226508608,
+    "nmi": 0.0595874034,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "course_problem_count",
+    "n_obs": 77120,
+    "spearman_rho": 0.0223336282,
+    "nmi": 0.0765299648,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "comment_length_std_chars",
+    "n_obs": 13020,
+    "spearman_rho": 0.0178022687,
+    "nmi": 0.0098533921,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "school_count",
+    "n_obs": 131819,
+    "spearman_rho": 0.0133733291,
+    "nmi": 0.0005380751,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "commented_resource_catalog_coverage",
+    "n_obs": 28301,
+    "spearman_rho": -0.0079771684,
+    "nmi": 0.0579324148,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "avg_comment_length_chars",
+    "n_obs": 28301,
+    "spearman_rho": -0.0057440569,
+    "nmi": 0.0076440156,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P2",
+    "column": "most_common_hour_cos",
+    "n_obs": 16695,
+    "spearman_rho": -0.0025130772,
+    "nmi": 0.0050689829,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "correct_problem_count",
+    "n_obs": 86023,
+    "spearman_rho": -0.631380396,
+    "nmi": 0.1586189479,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "problem_catalog_coverage",
+    "n_obs": 86023,
+    "spearman_rho": -0.6187233282,
+    "nmi": 0.1683777515,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "problem_count",
+    "n_obs": 86023,
+    "spearman_rho": -0.5737843199,
+    "nmi": 0.151011404,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "attempts_sum",
+    "n_obs": 86023,
+    "spearman_rho": -0.5643057953,
+    "nmi": 0.1444526842,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "exercise_count",
+    "n_obs": 86023,
+    "spearman_rho": -0.5591378561,
+    "nmi": 0.1293029747,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "problem_score_catalog_coverage",
+    "n_obs": 86023,
+    "spearman_rho": -0.501390431,
+    "nmi": 0.1495752833,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "problem_context_count",
+    "n_obs": 86023,
+    "spearman_rho": -0.4982780035,
+    "nmi": 0.1218430003,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "score_sum",
+    "n_obs": 86023,
+    "spearman_rho": -0.4368054658,
+    "nmi": 0.129457677,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "unique_video_count",
+    "n_obs": 18707,
+    "spearman_rho": -0.3752330833,
+    "nmi": 0.0457220019,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "video_catalog_coverage",
+    "n_obs": 18707,
+    "spearman_rho": -0.3652114496,
+    "nmi": 0.0726825561,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "segment_duration_seconds",
+    "n_obs": 18707,
+    "spearman_rho": -0.3448901947,
+    "nmi": 0.0394630692,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "max_segment_duration",
+    "n_obs": 18707,
+    "spearman_rho": -0.2944967666,
+    "nmi": 0.0251204308,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "session_duration_std",
+    "n_obs": 18707,
+    "spearman_rho": -0.2863639923,
+    "nmi": 0.0280464223,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "segment_count",
+    "n_obs": 18707,
+    "spearman_rho": -0.2809007422,
+    "nmi": 0.0327448474,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "score_mean",
+    "n_obs": 86023,
+    "spearman_rho": -0.26226644,
+    "nmi": 0.0682849999,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "video_events_per_active_day",
+    "n_obs": 18707,
+    "spearman_rho": -0.2416143043,
+    "nmi": 0.0264320287,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "course_resource_count",
+    "n_obs": 28991,
+    "spearman_rho": -0.238191496,
+    "nmi": 0.0895574727,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "last_video_day_from_enroll",
+    "n_obs": 18707,
+    "spearman_rho": -0.2267355708,
+    "nmi": 0.0275399322,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "video_active_day_count",
+    "n_obs": 18707,
+    "spearman_rho": -0.2251595709,
+    "nmi": 0.0169288422,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "teacher_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.2245248046,
+    "nmi": 0.0572919419,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_segment_duration",
+    "n_obs": 18707,
+    "spearman_rho": -0.2089897095,
+    "nmi": 0.0152048843,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "video_day_from_enroll_std",
+    "n_obs": 15233,
+    "spearman_rho": -0.1972941804,
+    "nmi": 0.0156389514,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "last_comment_day_from_enroll",
+    "n_obs": 28991,
+    "spearman_rho": -0.185190495,
+    "nmi": 0.0216576251,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "unique_commented_resource_count",
+    "n_obs": 28991,
+    "spearman_rho": -0.1851487958,
+    "nmi": 0.0325242602,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_real_watch_time",
+    "n_obs": 18707,
+    "spearman_rho": -0.1841040398,
+    "nmi": 0.0136364058,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "positive_comment_count",
+    "n_obs": 28991,
+    "spearman_rho": -0.1824658885,
+    "nmi": 0.0477554336,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "comment_count",
+    "n_obs": 28991,
+    "spearman_rho": -0.1811393735,
+    "nmi": 0.0317711577,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "submit_day_from_enroll_std",
+    "n_obs": 83148,
+    "spearman_rho": -0.1786297049,
+    "nmi": 0.0197054564,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_comment_day_from_enroll",
+    "n_obs": 28991,
+    "spearman_rho": -0.1774006714,
+    "nmi": 0.0197476743,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "last_submit_day_from_enroll",
+    "n_obs": 86023,
+    "spearman_rho": -0.1728055795,
+    "nmi": 0.0270031715,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_submit_day_from_enroll",
+    "n_obs": 86023,
+    "spearman_rho": -0.1713302201,
+    "nmi": 0.0258906114,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "segment_duration_std",
+    "n_obs": 15233,
+    "spearman_rho": -0.1708750767,
+    "nmi": 0.0128248564,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "attempts_mean",
+    "n_obs": 86023,
+    "spearman_rho": -0.167765445,
+    "nmi": 0.0507323331,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "first_video_day_from_enroll",
+    "n_obs": 18707,
+    "spearman_rho": -0.1625468043,
+    "nmi": 0.0205685654,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "ex_counts",
+    "n_obs": 131906,
+    "spearman_rho": -0.1598046609,
+    "nmi": 0.067869652,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "attempts_std",
+    "n_obs": 83148,
+    "spearman_rho": -0.1541496237,
+    "nmi": 0.0556030243,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "score_std",
+    "n_obs": 83148,
+    "spearman_rho": 0.1529512234,
+    "nmi": 0.062997933,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "positive_comment_ratio",
+    "n_obs": 28991,
+    "spearman_rho": -0.1519468349,
+    "nmi": 0.0463430089,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "var_playback_speed",
+    "n_obs": 18707,
+    "spearman_rho": -0.1282159876,
+    "nmi": 0.0095371167,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_positive_score",
+    "n_obs": 28991,
+    "spearman_rho": -0.122368626,
+    "nmi": 0.038554668,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "first_comment_day_from_enroll",
+    "n_obs": 28991,
+    "spearman_rho": -0.113414815,
+    "nmi": 0.0133847743,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_playback_speed",
+    "n_obs": 18707,
+    "spearman_rho": -0.1109212043,
+    "nmi": 0.011323428,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "neutral_comment_count",
+    "n_obs": 28991,
+    "spearman_rho": -0.1050049213,
+    "nmi": 0.0343543719,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "comment_day_from_enroll_std",
+    "n_obs": 13434,
+    "spearman_rho": -0.1012010873,
+    "nmi": 0.0244247531,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_day_of_week",
+    "n_obs": 18707,
+    "spearman_rho": -0.0993870874,
+    "nmi": 0.012075124,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "fast_forward_ratio",
+    "n_obs": 18707,
+    "spearman_rho": -0.0926950314,
+    "nmi": 0.0092635862,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "resource_count",
+    "n_obs": 131906,
+    "spearman_rho": -0.0901791719,
+    "nmi": 0.0598465274,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "course_problem_full_score_sum",
+    "n_obs": 86023,
+    "spearman_rho": 0.0884676875,
+    "nmi": 0.0702989033,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "positive_score_std",
+    "n_obs": 13434,
+    "spearman_rho": -0.0800387018,
+    "nmi": 0.0126604006,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_segment_count_per_video",
+    "n_obs": 18707,
+    "spearman_rho": -0.0782920255,
+    "nmi": 0.0172438518,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "video_repeat_segment_ratio",
+    "n_obs": 18707,
+    "spearman_rho": -0.0782920255,
+    "nmi": 0.0172438518,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "first_submit_day_from_enroll",
+    "n_obs": 86023,
+    "spearman_rho": -0.0758818318,
+    "nmi": 0.0145200144,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "teacher_org_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.0744103732,
+    "nmi": 0.0068183561,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "neutral_score_std",
+    "n_obs": 13434,
+    "spearman_rho": -0.0718147034,
+    "nmi": 0.0086954054,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "min_comment_length_chars",
+    "n_obs": 28991,
+    "spearman_rho": 0.0618769447,
+    "nmi": 0.0078448214,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "min_segment_duration",
+    "n_obs": 18707,
+    "spearman_rho": 0.0581004054,
+    "nmi": 0.0114491538,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "incorrect_problem_count",
+    "n_obs": 86023,
+    "spearman_rho": -0.0560288283,
+    "nmi": 0.035248794,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "teacher_avg_bio_length_chars",
+    "n_obs": 131795,
+    "spearman_rho": -0.0555023551,
+    "nmi": 0.0665623415,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "school_avg_motto_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0542571903,
+    "nmi": 0.0109856238,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_negative_score",
+    "n_obs": 28991,
+    "spearman_rho": 0.0527313752,
+    "nmi": 0.0283479751,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "course_video_count",
+    "n_obs": 18707,
+    "spearman_rho": 0.0523569174,
+    "nmi": 0.0765417381,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_neutral_score",
+    "n_obs": 28991,
+    "spearman_rho": 0.0492601392,
+    "nmi": 0.0241709716,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "negative_score_std",
+    "n_obs": 13434,
+    "spearman_rho": -0.0444505095,
+    "nmi": 0.0127299163,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "negative_comment_ratio",
+    "n_obs": 28991,
+    "spearman_rho": 0.0416670958,
+    "nmi": 0.0187994897,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "most_common_hour_sin",
+    "n_obs": 18707,
+    "spearman_rho": -0.0385226859,
+    "nmi": 0.0046262922,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "max_comment_length_chars",
+    "n_obs": 28991,
+    "spearman_rho": -0.0370615874,
+    "nmi": 0.0090291581,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "negative_comment_count",
+    "n_obs": 28991,
+    "spearman_rho": 0.0343182087,
+    "nmi": 0.0126455283,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "school_avg_bio_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0226508608,
+    "nmi": 0.0595336857,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "course_problem_count",
+    "n_obs": 86023,
+    "spearman_rho": 0.0199197612,
+    "nmi": 0.0753820577,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "comment_length_std_chars",
+    "n_obs": 13434,
+    "spearman_rho": 0.0197028551,
+    "nmi": 0.0093178038,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "school_count",
+    "n_obs": 131819,
+    "spearman_rho": 0.0133733291,
+    "nmi": 0.0004897886,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "commented_resource_catalog_coverage",
+    "n_obs": 28991,
+    "spearman_rho": -0.004897067,
+    "nmi": 0.0567423988,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "most_common_hour_cos",
+    "n_obs": 18707,
+    "spearman_rho": 0.0022773959,
+    "nmi": 0.0041818567,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P3",
+    "column": "avg_comment_length_chars",
+    "n_obs": 28991,
+    "spearman_rho": 0.0013184824,
+    "nmi": 0.0076883772,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "correct_problem_count",
+    "n_obs": 89005,
+    "spearman_rho": -0.6402574765,
+    "nmi": 0.1593194505,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "problem_catalog_coverage",
+    "n_obs": 89005,
+    "spearman_rho": -0.6253225755,
+    "nmi": 0.1745876372,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "problem_count",
+    "n_obs": 89005,
+    "spearman_rho": -0.5829160963,
+    "nmi": 0.1517937378,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "attempts_sum",
+    "n_obs": 89005,
+    "spearman_rho": -0.5726337552,
+    "nmi": 0.1437938736,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "exercise_count",
+    "n_obs": 89005,
+    "spearman_rho": -0.5703155092,
+    "nmi": 0.1303641092,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "problem_context_count",
+    "n_obs": 89005,
+    "spearman_rho": -0.5039214426,
+    "nmi": 0.1212711035,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": true,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "problem_score_catalog_coverage",
+    "n_obs": 89005,
+    "spearman_rho": -0.4697540225,
+    "nmi": 0.1446146971,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "score_sum",
+    "n_obs": 89005,
+    "spearman_rho": -0.4083094111,
+    "nmi": 0.1257955049,
+    "proxy_review_note": "reviewed_prefix_observed_behaviour__not_label_derived",
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "unique_video_count",
+    "n_obs": 19521,
+    "spearman_rho": -0.3694207219,
+    "nmi": 0.0451967542,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "video_catalog_coverage",
+    "n_obs": 19521,
+    "spearman_rho": -0.3681395474,
+    "nmi": 0.0716507222,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "segment_duration_seconds",
+    "n_obs": 19521,
+    "spearman_rho": -0.3412681195,
+    "nmi": 0.0382694379,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "max_segment_duration",
+    "n_obs": 19521,
+    "spearman_rho": -0.2914647419,
+    "nmi": 0.0247704349,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "session_duration_std",
+    "n_obs": 19521,
+    "spearman_rho": -0.2814065419,
+    "nmi": 0.0267477337,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "segment_count",
+    "n_obs": 19521,
+    "spearman_rho": -0.2781026422,
+    "nmi": 0.0320151188,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "score_mean",
+    "n_obs": 89005,
+    "spearman_rho": -0.2446578677,
+    "nmi": 0.0683654712,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "video_events_per_active_day",
+    "n_obs": 19521,
+    "spearman_rho": -0.2395622014,
+    "nmi": 0.0261239162,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "course_resource_count",
+    "n_obs": 29144,
+    "spearman_rho": -0.2392465615,
+    "nmi": 0.0884167931,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "teacher_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.2245248046,
+    "nmi": 0.0570781509,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "video_active_day_count",
+    "n_obs": 19521,
+    "spearman_rho": -0.2215211799,
+    "nmi": 0.0162880227,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_segment_duration",
+    "n_obs": 19521,
+    "spearman_rho": -0.2080386791,
+    "nmi": 0.0147907158,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "last_video_day_from_enroll",
+    "n_obs": 19521,
+    "spearman_rho": -0.1957587019,
+    "nmi": 0.0280508466,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "video_day_from_enroll_std",
+    "n_obs": 15902,
+    "spearman_rho": -0.1936310821,
+    "nmi": 0.0152373296,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "last_comment_day_from_enroll",
+    "n_obs": 29144,
+    "spearman_rho": -0.190075353,
+    "nmi": 0.0233343886,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "unique_commented_resource_count",
+    "n_obs": 29144,
+    "spearman_rho": -0.1872243652,
+    "nmi": 0.0332761779,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_real_watch_time",
+    "n_obs": 19521,
+    "spearman_rho": -0.1844581746,
+    "nmi": 0.013245405,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "positive_comment_count",
+    "n_obs": 29144,
+    "spearman_rho": -0.1834382059,
+    "nmi": 0.0482820619,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "comment_count",
+    "n_obs": 29144,
+    "spearman_rho": -0.1832988686,
+    "nmi": 0.0320725666,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_comment_day_from_enroll",
+    "n_obs": 29144,
+    "spearman_rho": -0.1821054401,
+    "nmi": 0.0207386482,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "submit_day_from_enroll_std",
+    "n_obs": 86091,
+    "spearman_rho": -0.1785730243,
+    "nmi": 0.0191661238,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "last_submit_day_from_enroll",
+    "n_obs": 89005,
+    "spearman_rho": -0.1713292709,
+    "nmi": 0.0271408894,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_submit_day_from_enroll",
+    "n_obs": 89005,
+    "spearman_rho": -0.1699903113,
+    "nmi": 0.0261424923,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "segment_duration_std",
+    "n_obs": 15902,
+    "spearman_rho": -0.169084139,
+    "nmi": 0.0127928857,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "attempts_mean",
+    "n_obs": 89005,
+    "spearman_rho": -0.1661604473,
+    "nmi": 0.0484723659,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "ex_counts",
+    "n_obs": 131906,
+    "spearman_rho": -0.1598046609,
+    "nmi": 0.0677044762,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "attempts_std",
+    "n_obs": 86091,
+    "spearman_rho": -0.1527495613,
+    "nmi": 0.0534658514,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "positive_comment_ratio",
+    "n_obs": 29144,
+    "spearman_rho": -0.1522357662,
+    "nmi": 0.0469116673,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "score_std",
+    "n_obs": 86091,
+    "spearman_rho": 0.1505122621,
+    "nmi": 0.0575860741,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "first_video_day_from_enroll",
+    "n_obs": 19521,
+    "spearman_rho": -0.1364364979,
+    "nmi": 0.0212116982,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "var_playback_speed",
+    "n_obs": 19521,
+    "spearman_rho": -0.1229205174,
+    "nmi": 0.0092852509,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_positive_score",
+    "n_obs": 29144,
+    "spearman_rho": -0.122707454,
+    "nmi": 0.0384363582,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "first_comment_day_from_enroll",
+    "n_obs": 29144,
+    "spearman_rho": -0.1173052649,
+    "nmi": 0.0133800483,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "neutral_comment_count",
+    "n_obs": 29144,
+    "spearman_rho": -0.1067424968,
+    "nmi": 0.0354473874,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_playback_speed",
+    "n_obs": 19521,
+    "spearman_rho": -0.1057787497,
+    "nmi": 0.0111150793,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "comment_day_from_enroll_std",
+    "n_obs": 13536,
+    "spearman_rho": -0.1045751499,
+    "nmi": 0.0246508279,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_day_of_week",
+    "n_obs": 19521,
+    "spearman_rho": -0.0948371134,
+    "nmi": 0.0115862999,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "resource_count",
+    "n_obs": 131906,
+    "spearman_rho": -0.0901791719,
+    "nmi": 0.0600115124,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "fast_forward_ratio",
+    "n_obs": 19521,
+    "spearman_rho": -0.0878979605,
+    "nmi": 0.0090750302,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "course_problem_full_score_sum",
+    "n_obs": 89005,
+    "spearman_rho": 0.081154398,
+    "nmi": 0.0683325682,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "positive_score_std",
+    "n_obs": 13536,
+    "spearman_rho": -0.0795727311,
+    "nmi": 0.0127894797,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_segment_count_per_video",
+    "n_obs": 19521,
+    "spearman_rho": -0.0791965283,
+    "nmi": 0.0163812118,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "video_repeat_segment_ratio",
+    "n_obs": 19521,
+    "spearman_rho": -0.0791965283,
+    "nmi": 0.0163812118,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "first_submit_day_from_enroll",
+    "n_obs": 89005,
+    "spearman_rho": -0.0784183744,
+    "nmi": 0.0150569058,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "teacher_org_count",
+    "n_obs": 131795,
+    "spearman_rho": -0.0744103732,
+    "nmi": 0.0068373996,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "neutral_score_std",
+    "n_obs": 13536,
+    "spearman_rho": -0.0707744381,
+    "nmi": 0.0088137309,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "min_comment_length_chars",
+    "n_obs": 29144,
+    "spearman_rho": 0.0641724993,
+    "nmi": 0.0080373386,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "course_video_count",
+    "n_obs": 19521,
+    "spearman_rho": 0.0629629688,
+    "nmi": 0.0741174828,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "min_segment_duration",
+    "n_obs": 19521,
+    "spearman_rho": 0.0569636894,
+    "nmi": 0.0116440917,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "teacher_avg_bio_length_chars",
+    "n_obs": 131795,
+    "spearman_rho": -0.0555023551,
+    "nmi": 0.0661572342,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "school_avg_motto_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0542571903,
+    "nmi": 0.0110279195,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "incorrect_problem_count",
+    "n_obs": 89005,
+    "spearman_rho": -0.0519952482,
+    "nmi": 0.0347890654,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_negative_score",
+    "n_obs": 29144,
+    "spearman_rho": 0.05181394,
+    "nmi": 0.0283789391,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_neutral_score",
+    "n_obs": 29144,
+    "spearman_rho": 0.0497450439,
+    "nmi": 0.0241341373,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "negative_score_std",
+    "n_obs": 13536,
+    "spearman_rho": -0.0445143459,
+    "nmi": 0.0125256819,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "most_common_hour_sin",
+    "n_obs": 19521,
+    "spearman_rho": -0.0419385754,
+    "nmi": 0.0046107435,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "negative_comment_ratio",
+    "n_obs": 29144,
+    "spearman_rho": 0.0412870027,
+    "nmi": 0.0197847174,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "max_comment_length_chars",
+    "n_obs": 29144,
+    "spearman_rho": -0.0360711137,
+    "nmi": 0.009314415,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "negative_comment_count",
+    "n_obs": 29144,
+    "spearman_rho": 0.0338922064,
+    "nmi": 0.0131533951,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "school_avg_bio_length_chars",
+    "n_obs": 131819,
+    "spearman_rho": 0.0226508608,
+    "nmi": 0.0597220659,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "comment_length_std_chars",
+    "n_obs": 13536,
+    "spearman_rho": 0.0207580425,
+    "nmi": 0.009143124,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "course_problem_count",
+    "n_obs": 89005,
+    "spearman_rho": 0.0171872102,
+    "nmi": 0.0729731751,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "school_count",
+    "n_obs": 131819,
+    "spearman_rho": 0.0133733291,
+    "nmi": 0.0004798484,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "commented_resource_catalog_coverage",
+    "n_obs": 29144,
+    "spearman_rho": -0.0064857133,
+    "nmi": 0.0569183879,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "avg_comment_length_chars",
+    "n_obs": 29144,
+    "spearman_rho": 0.0027496725,
+    "nmi": 0.0081489739,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  },
+  {
+    "phase": "P4",
+    "column": "most_common_hour_cos",
+    "n_obs": 19521,
+    "spearman_rho": 0.0020405644,
+    "nmi": 0.0041790953,
+    "proxy_review_note": null,
+    "needs_review": false,
+    "hold_out": false
+  }
+]

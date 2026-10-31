@@ -1,0 +1,50 @@
+{
+  "ACELO": "sum_correct(max(0.1,1-0.1*(attempts-1)))/catalog_problem_count",
+  "AFELO": "mean available FV,FA only; no CP/RP/response rate",
+  "COELO": "mean available TS,RV,AV,IF; at least 2 components, unchanged coverage rule",
+  "CQV": "mean of available chapter LOQV including synthetic chapter -1; no requirement that all chapters have all indices",
+  "FA": "(positive_comments-negative_comments)/all comments of chapter; 0.5+0.5*clip(FA_raw/P95_nonzero(abs(FA_raw)),-1,1)",
+  "FA_missing": "no inferred comments => NULL; all-neutral evidence => 0.5; reply text is not separately inferred",
+  "FV": "30-minute user-resource sessions from video/problem/comment/reply; NVL/TNVL; clip(FV_raw/P95_positive(FV_raw),0,1)",
+  "IF": "sum problem attempts / P95 of positive sums among users of same chapter-course, clipped [0,1]; no log transform",
+  "LOQV": "sqrt(sum_available(w*(1-index)^2)/sum_available(w)); weights=(1,alpha,1)",
+  "P95_reference": "final-window eligible observed users; positive values (absolute nonzero for FA); not an input scaler for P1-P4",
+  "TS": "sum positive content seconds including repeats / P95 of the same total across users of the same video, clipped [0,1]; chapter mean over catalog videos (unwatched=0)",
+  "alphas": [
+    0.1,
+    1.0
+  ],
+  "course_quality_population": "retained labeled enrollments only",
+  "cutoffs": {
+    "P1": [
+      1,
+      4
+    ],
+    "P2": [
+      1,
+      2
+    ],
+    "P3": [
+      3,
+      4
+    ],
+    "P4": [
+      9,
+      10
+    ]
+  },
+  "dataset_version": "CQ V4",
+  "exclusion": "n_chapters_observed=1 AND n_unknown_chapters=1",
+  "feature_policy": "user supplied features; TEMPO-DQ comparison not required by user",
+  "labels": "E:q<0.2; G:0.2<=q<0.4; A:q>=0.4; all missing => NULL",
+  "mixed_chapters": "Keep -1 together with known chapters for retained user-course pairs",
+  "normalization": "Frozen v2 reference cohort; all retained numerical values unchanged",
+  "primary_target": "y_alpha_1",
+  "rewind": "start_point>end_point counted as rewind proxy; contributes no watch duration, remains timestamped activity",
+  "split_unit_default": "course_family_id",
+  "time": "enrollment day 00:00:00; course last activity day 23:59:59; original event timestamps",
+  "unknown_chapter": "course_id:CH-1; catalog denominators NULL; linked replies inherit parent chapter/resource",
+  "unlabeled_split": null,
+  "version": "final-quality-v2-p95-signed-fa-2026-10-20",
+  "zero_missing": "valid zero is preserved; missing stays NULL; positive singleton P95 equals its value"
+}

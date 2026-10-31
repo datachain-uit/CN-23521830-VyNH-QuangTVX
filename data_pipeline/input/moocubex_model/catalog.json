@@ -1,0 +1,98 @@
+{
+  "source_parquet_root": "/kaggle/input/datasets/w4ngggg/moocubex-parquet/moocubex_parquet",
+  "output_root": "/kaggle/working/moocubex_model",
+  "created_with_duckdb": "1.3.2",
+  "lo_definition": "big_chapter_first_numeric_component",
+  "tables": {
+    "quarantine_course_duplicate": {
+      "parquet_glob": "/kaggle/working/moocubex_model/quality/quarantine_course_duplicate/*.parquet",
+      "row_count": 0,
+      "output_bytes": 154
+    },
+    "dim_course": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/dim_course/*.parquet",
+      "row_count": 3781,
+      "output_bytes": 530438
+    },
+    "dim_problem": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/dim_problem/*.parquet",
+      "row_count": 2454422,
+      "output_bytes": 19338051
+    },
+    "dim_video": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/dim_video/*.parquet",
+      "row_count": 59581,
+      "output_bytes": 1521497
+    },
+    "quarantine_lo_resource": {
+      "parquet_glob": "/kaggle/working/moocubex_model/quality/quarantine_lo_resource/*.parquet",
+      "row_count": 0,
+      "output_bytes": 240
+    },
+    "dim_lo_resource": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/dim_lo_resource/*.parquet",
+      "row_count": 271043,
+      "output_bytes": 2365365
+    },
+    "dim_resource": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/dim_resource/*.parquet",
+      "row_count": 271043,
+      "output_bytes": 1247243
+    },
+    "bridge_video_ccid": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/bridge_video_ccid/*.parquet",
+      "row_count": 2798892,
+      "output_bytes": 17213174
+    },
+    "bridge_exercise_problem": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/bridge_exercise_problem/*.parquet",
+      "row_count": 6252830,
+      "output_bytes": 45321770
+    },
+    "quarantine_exercise_problem": {
+      "parquet_glob": "/kaggle/working/moocubex_model/quality/quarantine_exercise_problem/*.parquet",
+      "row_count": 5980040,
+      "output_bytes": 42977327
+    },
+    "bridge_lo_problem": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/bridge_lo_problem/*.parquet",
+      "row_count": 461180,
+      "output_bytes": 5121051
+    },
+    "dim_lo_catalog": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/dim_lo_catalog/*.parquet",
+      "row_count": 34843,
+      "output_bytes": 579525
+    },
+    "quarantine_user_enrollment_length": {
+      "parquet_glob": "/kaggle/working/moocubex_model/quality/quarantine_user_enrollment_length/*.parquet",
+      "row_count": 0,
+      "output_bytes": 170
+    },
+    "bridge_user_course_enrollment": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/bridge_user_course_enrollment/*.parquet",
+      "row_count": 11807090,
+      "output_bytes": 185631935
+    },
+    "bridge_course_comment": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/bridge_course_comment/*.parquet",
+      "row_count": 10181950,
+      "output_bytes": 52731661
+    },
+    "bridge_user_comment": {
+      "parquet_glob": "/kaggle/working/moocubex_model/processed/bridge_user_comment/*.parquet",
+      "row_count": 8395141,
+      "output_bytes": 74545779
+    },
+    "join_coverage_report": {
+      "parquet_glob": "/kaggle/working/moocubex_model/quality/join_coverage_report/*.parquet",
+      "row_count": 4,
+      "output_bytes": 1225
+    },
+    "catalog_audit": {
+      "parquet_glob": "/kaggle/working/moocubex_model/quality/catalog_audit/*.parquet",
+      "row_count": 17,
+      "output_bytes": 1458
+    }
+  }
+}
