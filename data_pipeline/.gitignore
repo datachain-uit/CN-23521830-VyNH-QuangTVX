@@ -10,6 +10,8 @@
 !/.gitattributes
 !/README.md
 !/GITHUB_CODE_ONLY.md
+!/GITHUB_REVIEW_2026_10_31.md
+/_github_incident_2026_10_31/
 
 # Reviewed aggregate documentation for the CD3/V4.2 source handoff.
 !/DATA_CARD_V4_2.md

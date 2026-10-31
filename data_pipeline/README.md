@@ -2,6 +2,10 @@
 
 Mã nguồn của nhóm dữ liệu để chuyển raw MOOCubeX thành bảng chất lượng, nhãn, đặc trưng theo phase, FullTrain-A và bundle bàn giao V4. Thư mục này giữ cấu trúc các script/notebook đã phát triển; không chứa dataset, model, cache hoặc kết quả thực nghiệm.
 
+Nguồn dữ liệu: [MOOCCubeX của THU KEG](https://github.com/THU-KEG/MOOCCubeX); Yu và cộng sự, “MOOCCubeX: A Large Knowledge-centered Repository for Adaptive Learning in MOOCs”, CIKM 2021, tr. 4643–4652. Repo công khai chỉ bàn giao mã và tài liệu tổng hợp theo QĐ40. Xem [hồ sơ xử lý Review 31/10](GITHUB_REVIEW_2026_10_31.md) để biết trạng thái gỡ PR #5/LFS và niêm phong test.
+
+Trước freeze M1 được duyệt, chỉ dùng gói train/dev/FULL_A và metadata đã lọc train/dev. Các lệnh dựng test hoặc kiểm bundle đầy đủ bên dưới mô tả khả năng của source, chỉ thực hiện khi có quyết định của giảng viên theo QĐ42. Bản data card công khai đã hiệu đính ngày 31/10; builder 28 tái lập bản đo 30/10 và không được chạy lại để ghi đè các hiệu đính này trong quá trình xử lý GitHub.
+
 Phần chạy mô hình/selector ở [`../experiments/`](../experiments/) được giữ riêng. Việc nhập source này không thay đổi thuật toán, công thức, split hoặc kết quả đã có của hai nhóm.
 
 ## Lấy code và môi trường
@@ -9,7 +13,7 @@ Phần chạy mô hình/selector ở [`../experiments/`](../experiments/) đư�
 Lần đầu:
 
 ```bash
-git clone --branch data-pipeline https://github.com/datachain-uit/CN-23521830-VyNH-QuangTVX.git
+git clone --branch feat/cd3-v4-2-data-handoff https://github.com/datachain-uit/CN-23521830-VyNH-QuangTVX.git
 cd CN-23521830-VyNH-QuangTVX/data_pipeline
 python3.12 -m venv .venv
 source .venv/bin/activate
@@ -19,7 +23,7 @@ python -m pip install -r requirements-v4.txt
 Các lần cập nhật sau, tại repo đã clone:
 
 ```bash
-git pull --ff-only origin data-pipeline
+git pull --ff-only origin feat/cd3-v4-2-data-handoff
 ```
 
 `requirements-v4.txt` khóa môi trường cho builder V4 và kiểm thử giao thức. Các bước cũ/sentiment có dependency riêng; tham khảo import của từng script và [`afelo_sentiment_cardiff/requirements-sentiment.txt`](afelo_sentiment_cardiff/requirements-sentiment.txt). Không chạy toàn bộ pipeline nếu chỉ cần cập nhật code.
