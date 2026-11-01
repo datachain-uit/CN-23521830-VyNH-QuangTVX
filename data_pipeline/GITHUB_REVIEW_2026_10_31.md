@@ -38,4 +38,6 @@ Y44 đã có câu xác nhận D06 đủ 80/80, không FAIL của Xuân Quang, MS
 
 Người dùng đã xác nhận niêm phong test local; n_files/manifest_sha256, phạm vi 244 tệp và trạng thái mở test được ghi ở card mục 15. Gói làm việc thực nghiệm đã tách train/dev/FULL_A. Chưa coi việc niêm phong local là bằng chứng quyền Drive hoặc email đã gửi. GitHub Support/purge vẫn cần admin; 0 fork được kiểm lại ngày 02/11, Traffic mới giữ trong hồ sơ riêng.
 
-Toàn bộ workbench, code nghiên cứu, archive, model và dự đoán trong experiments_local/ được Git ignore; checker chặn cả source của vùng này nếu force-add. Không đưa code thực nghiệm vào PR công khai theo yêu cầu người dùng. Kiểm tra cập nhật: 12 test tập trung về payload/seal PASS và working-tree payload checker PASS. Những con số 44 test ở phần trước là kết quả source ngày 31/10, không phải kết quả chạy lại toàn bộ suite ngày 02/11.
+Toàn bộ workbench, code nghiên cứu, archive, model và dự đoán trong experiments_local/ được Git ignore; checker chặn cả source của vùng này nếu force-add. Không đưa code thực nghiệm vào PR công khai theo yêu cầu người dùng. Kiểm tra cập nhật: 13 test tập trung về payload/seal PASS và working-tree payload checker PASS. Những con số 44 test ở phần trước là kết quả source ngày 31/10, không phải kết quả chạy lại toàn bộ suite ngày 02/11.
+
+Vault test đã niêm phong được tách ra ngoài workbench thực nghiệm và được Git ignore riêng; kiểm `find_test_files` trên toàn workbench trả danh sách rỗng. Checker chặn cả source force-add từ vùng bàn giao private này.

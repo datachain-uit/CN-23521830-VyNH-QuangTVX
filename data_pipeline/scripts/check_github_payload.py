@@ -19,7 +19,7 @@ PRIVATE_DIRS = {
     "__pycache__", ".ipynb_checkpoints", ".pytest_cache", ".cache", ".venv", "venv", ".aws", ".ssh",
 }
 PRIVATE_PREFIXES = ("final_quality", "phase_features", "weighted_loqv", "fullA", "fulltrain_a", "cq_v4",
-                    "private_d06", "_github_incident")
+                    "private_d06", "_github_incident", "_review31_private_handoff")
 PUBLIC_DOCUMENTS = {
     "DATA_CARD_V4_2.md",
     "GITHUB_REVIEW_2026_10_31.md",

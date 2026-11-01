@@ -53,11 +53,12 @@ def test_clean_code_and_commented_lfs_rule_pass(repo):
     assert "PASS:" in result.stdout
 
 
-def test_force_added_local_experiment_code_is_blocked(repo):
-    stage_blob(repo, "data_pipeline/experiments_local/helper.py", b"print('local experiment')\n")
+@pytest.mark.parametrize("folder", ["experiments_local", "_review31_private_handoff"])
+def test_force_added_private_code_is_blocked(repo, folder):
+    stage_blob(repo, f"data_pipeline/{folder}/helper.py", b"print('private fixture')\n")
     result = run_checker(repo, "--staged")
     assert result.returncode == 1
-    assert "experiments_local/helper.py" in result.stdout
+    assert f"{folder}/helper.py" in result.stdout
 
 
 def test_staged_root_rule_cannot_be_hidden_by_clean_working_tree(repo):

@@ -180,3 +180,5 @@ Trước commit, chạy các bước trong [`GITHUB_CODE_ONLY.md`](GITHUB_CODE_O
 Xác nhận D06, kết quả đối chiếu hash đầu vào panel và trạng thái niêm phong test được cập nhật trong [data card](DATA_CARD_V4_2.md) và [hồ sơ bàn giao mã](GITHUB_REVIEW_2026_10_31.md). Các hiệu đính tài liệu không thay feature, nhãn, split hoặc 26 artifact model-input bảo vệ.
 
 Workbench nghiên cứu local nằm trong `experiments_local/`, được Git ignore cùng code, dữ liệu và artifact thực nghiệm; checker cũng chặn force-add vùng này. Source pipeline bàn giao qua PR4 vẫn code-only. Test chỉ mở sau freeze được giảng viên duyệt và kiểm seal hợp lệ.
+
+Vault test local ở vùng bàn giao private riêng, ngoài `experiments_local/`; chỉ metadata/receipt được giữ trong workbench. Cả vault và workbench đều bị chặn công bố, kể cả force-add source vào các vùng private.
