@@ -58,3 +58,11 @@ Notebook đang chạy từ repo cá nhân giữ nguyên URL/commit/input. Không
 - Drive chung lưu báo cáo theo ngày, dữ liệu và archive theo quyền truy cập. Link Drive: **chờ nhóm bổ sung**.
 - Không commit dữ liệu, predictions, selected indices, model, token, archive hoặc notebook có output.
 - Repo ngoài chỉ fetch đúng commit khóa, không vendor vào Git.
+
+## Nguồn dữ liệu và xử lý Review ngày 31 tháng 10 năm 2026
+
+Dữ liệu nghiên cứu lấy từ [MOOCCubeX của THU KEG](https://github.com/THU-KEG/MOOCCubeX). Trích dẫn: Yu và cộng sự, “MOOCCubeX: A Large Knowledge-centered Repository for Adaptive Learning in MOOCs”, CIKM 2021, tr. 4643–4652; BibTeX trong `experiments/references.bib`.
+
+Repo công khai chỉ bàn giao mã và tài liệu tổng hợp theo QĐ40. PR #5 đã đóng không merge, nhánh dữ liệu đã xóa; ref/cache PR và object LFS còn chờ GitHub Support. Mã CD3/V4.2 bàn giao qua PR #4, chờ giảng viên xem. [Hồ sơ xử lý](data_pipeline/GITHUB_REVIEW_2026_10_31.md) ghi trạng thái thực tế, Traffic và các việc còn cần xác nhận.
+
+Trước freeze M1 được giảng viên duyệt, chỉ dùng gói train/dev/FULL_A và metadata đã lọc train/dev. Test thuộc phạm vi niêm phong QĐ42; không công bố dữ liệu dòng, nhãn, dự đoán, chỉ số dòng, con trỏ hoặc luật Git LFS trên bất kỳ nhánh, tag hay PR nào.

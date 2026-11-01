@@ -1,0 +1,6 @@
+# CD3 helper, reproducible V4.2 builder and integration tests; Python 3.12.
+duckdb==1.5.5
+numpy==2.4.6
+pandas==3.0.3
+pytest==8.4.2
+scikit-learn==1.9.0

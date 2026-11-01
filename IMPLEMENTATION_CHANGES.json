@@ -57,7 +57,7 @@
     "experiments/scripts/materialize_cq_review2310_configs.py": "a42dec320c457c6409677f03b5d99562451809c038dd3f95a8237b51c1be788d",
     "experiments/src/skq_exp/methods/proposed/cq_ablations.py": "a9708b8c56cf401f0fabdbce4bf6283278f89e015f9410b9e9e4eaa312a75917",
     "experiments/src/skq_exp/experiments/cq_decisions_1023.py": "0226ae6627fc326b96c19e2a70b5ec16768a9b3718c586930a26467af8a44a94",
-    "README.md": "74e0b960e19a713900bbfa40948d12104a5fc337bafa56b1a7887c8b8284a320",
+    "README.md": "c5373324dfb2dd90f19a9b5c835ccf1a25d8bc105dc7772c5bc3e2851e416408",
     "experiments/configs/cq_v4_review2310_lr_04_v1.json": "b2fd89f5da36ef767c8961361642b0d5fa4b844017ae16736edca755c8a372ff",
     "experiments/docs/cq_v4/REVIEW_2026_10_23_IMPLEMENTATION.md": "f0c613db2b7ee275861093215b9ea7bc58fb0785467a941f97bca47fd7e20d55",
     "experiments/configs/cq_v4_review2310_a_reference_v1.json": "a63491c622e30909a2cee95cb62cf7f6ae7714cacf125a25a7a0db72a523c1b7",
@@ -83,7 +83,7 @@
     "experiments/docs/REVIEW1025_APPENDIX_SOURCE.json": "1a9e3090d176cca6e5af9981d0789fe1c5c2408e59149b195e0366212de02abb",
     "experiments/docs/REVIEW1025_IMPLEMENTATION.md": "958f5a3140de624d89f650d46721346fdf384b9652e4d3aab3185b0711ab854f",
     "experiments/docs/REVIEW1025_TEST_RESULT.json": "dc38024fdac137282b905aa43a00f8341f498584e5adaa04f033d67b80e11905",
-    "experiments/references.bib": "d961d0d189e487a5924303895fcb518f8c77b15bf24ffa4625dfdf45691694d7",
+    "experiments/references.bib": "e26bf1917b1b5e14abdd8dda7af00510d1a5b1f5efeb91af44b162a016f09f9b",
     "experiments/scripts/analyze_cq_review2510_saved.py": "10f95866bb78842a0044a5895c864de38c0fe05cd900dd26880d4194565c6cd4",
     "experiments/scripts/audit_cq_probability_basis.py": "f722e69d7bdb01d501e08f0c52da198023fb48309131dcf685ad410a710971c7",
     "experiments/scripts/materialize_cq_review2510_configs.py": "dd647faec2728063fc2c5d04fc2692b1b6dcab7f9c5ac5a0e2d4e7ba5296477f",
@@ -263,5 +263,17 @@
     "human_D06_signoff": "pending_data_team",
     "resource_hours": "pending_user_confirmation",
     "unchanged_imported_files": 177
+  },
+  "review1031_github_documents": {
+    "date": "2026-10-31",
+    "reason": "QD40g dataset attribution and GitHub remediation status; no algorithms or result artifacts changed",
+    "original_sha256": {
+      "README.md": "74e0b960e19a713900bbfa40948d12104a5fc337bafa56b1a7887c8b8284a320",
+      "experiments/references.bib": "d961d0d189e487a5924303895fcb518f8c77b15bf24ffa4625dfdf45691694d7"
+    },
+    "current_sha256": {
+      "README.md": "c5373324dfb2dd90f19a9b5c835ccf1a25d8bc105dc7772c5bc3e2851e416408",
+      "experiments/references.bib": "e26bf1917b1b5e14abdd8dda7af00510d1a5b1f5efeb91af44b162a016f09f9b"
+    }
   }
 }

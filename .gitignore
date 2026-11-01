@@ -1,4 +1,5 @@
 # Source code only. Research data and row-level artifacts must stay private.
+.DS_Store
 **/__pycache__/
 **/*.py[cod]
 **/.pytest_cache/
