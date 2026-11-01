@@ -53,6 +53,13 @@ def test_clean_code_and_commented_lfs_rule_pass(repo):
     assert "PASS:" in result.stdout
 
 
+def test_force_added_local_experiment_code_is_blocked(repo):
+    stage_blob(repo, "data_pipeline/experiments_local/helper.py", b"print('local experiment')\n")
+    result = run_checker(repo, "--staged")
+    assert result.returncode == 1
+    assert "experiments_local/helper.py" in result.stdout
+
+
 def test_staged_root_rule_cannot_be_hidden_by_clean_working_tree(repo):
     stage_blob(repo, ".gitattributes", b"*.parquet filter=lfs diff=lfs -text\n")
     (repo / ".gitattributes").write_text("*.py text\n")

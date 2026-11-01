@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT))
 from cq_patch_1031 import LFS_POINTER_PREFIX, payload_guard  # noqa: E402
 MAX_SOURCE_BYTES = 2 * 1024 * 1024
 PRIVATE_DIRS = {
-    "input", "data", "datasets", "artifacts", "_stage", "_scratch", "encoders",
+    "input", "data", "datasets", "artifacts", "experiments_local", "_stage", "_scratch", "encoders",
     "pretrained", "models", "checkpoints", "source_snapshot", ".local_notebook_backups",
     "__pycache__", ".ipynb_checkpoints", ".pytest_cache", ".cache", ".venv", "venv", ".aws", ".ssh",
 }

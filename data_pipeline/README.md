@@ -174,3 +174,9 @@ python tests/test_phase_feature_cutoff.py
 Lệnh thứ hai kiểm tra thêm log tương lai không thay đổi đặc trưng của phase trước; bằng chứng được ghi vào thư mục output đã ignore.
 
 Trước commit, chạy các bước trong [`GITHUB_CODE_ONLY.md`](GITHUB_CODE_ONLY.md). Không đưa raw/derived data, bảng ID, predictions, model, archive, thông tin đăng nhập hoặc notebook có output lên GitHub. Làm việc trên nhánh `data-pipeline` và mở pull request vào `main` theo [`HANDOFF.md`](HANDOFF.md).
+
+## Bổ sung Review27/31
+
+Xác nhận D06, kết quả đối chiếu hash đầu vào panel và trạng thái niêm phong test được cập nhật trong [data card](DATA_CARD_V4_2.md) và [hồ sơ bàn giao mã](GITHUB_REVIEW_2026_10_31.md). Các hiệu đính tài liệu không thay feature, nhãn, split hoặc 26 artifact model-input bảo vệ.
+
+Workbench nghiên cứu local nằm trong `experiments_local/`, được Git ignore cùng code, dữ liệu và artifact thực nghiệm; checker cũng chặn force-add vùng này. Source pipeline bàn giao qua PR4 vẫn code-only. Test chỉ mở sau freeze được giảng viên duyệt và kiểm seal hợp lệ.

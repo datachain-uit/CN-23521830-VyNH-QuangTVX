@@ -31,3 +31,11 @@ Lệnh kiểm commit phát hành đã rút phải trả exit 1 và `BLOCKED`. Sa
 Data card công khai được hiệu đính từ số đo/checksum đã có ngày 30/10: thay 14 liên kết artifact riêng bằng tên tệp và SHA256, bổ sung nguồn dữ liệu và quy tắc sử dụng test. Không chạy lại builder hoặc đổi checksum bundle riêng. Builder 28 tái lập bản đo 30/10; lần tái tạo tài liệu sau cần áp dụng tiếp hiệu đính Review 31/10 và trạng thái thực tế. Hồ sơ sự cố chi tiết và xác nhận D06/niêm phong/hash panel được quản lý riêng theo Review.
 
 Nguồn dữ liệu: [MOOCCubeX của THU KEG](https://github.com/THU-KEG/MOOCCubeX); Yu và cộng sự, “MOOCCubeX: A Large Knowledge-centered Repository for Adaptive Learning in MOOCs”, CIKM 2021, tr. 4643–4652. Công bố dữ liệu dẫn xuất về sau cần quyết định bằng văn bản của giảng viên (QĐ40e).
+
+## Bổ sung ngày 02/11/2026
+
+Y44 đã có câu xác nhận D06 đủ 80/80, không FAIL của Xuân Quang, MSSV 23521294 trong card và evidence riêng; audit tự động gốc giữ human_signoff=false. Y45 đã nối được input receipt panel với manifest đầu vào bảo tồn: 18 non-test khớp, 0 mismatch, 8 test mới thiếu phía manifest cũ. Các 26 artifact model-input bảo vệ được hash lại và giữ nguyên byte khi hiệu đính tài liệu.
+
+Người dùng đã xác nhận niêm phong test local; n_files/manifest_sha256, phạm vi 244 tệp và trạng thái mở test được ghi ở card mục 15. Gói làm việc thực nghiệm đã tách train/dev/FULL_A. Chưa coi việc niêm phong local là bằng chứng quyền Drive hoặc email đã gửi. GitHub Support/purge vẫn cần admin; 0 fork được kiểm lại ngày 02/11, Traffic mới giữ trong hồ sơ riêng.
+
+Toàn bộ workbench, code nghiên cứu, archive, model và dự đoán trong experiments_local/ được Git ignore; checker chặn cả source của vùng này nếu force-add. Không đưa code thực nghiệm vào PR công khai theo yêu cầu người dùng. Kiểm tra cập nhật: 12 test tập trung về payload/seal PASS và working-tree payload checker PASS. Những con số 44 test ở phần trước là kết quả source ngày 31/10, không phải kết quả chạy lại toàn bộ suite ngày 02/11.
